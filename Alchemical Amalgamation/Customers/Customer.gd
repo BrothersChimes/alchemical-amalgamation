@@ -7,5 +7,4 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		emit_signal("sell_potion_to", self)
 
 func sell_potion(potion): 
-	print("SOLD POTION " + str(potion))
 	queue_free()

@@ -12,35 +12,35 @@
 [ext_resource path="res://Assets/Ingredients/ingredient_water.png" type="Texture" id=10]
 [ext_resource path="res://Stations/Combinator.tscn" type="PackedScene" id=11]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 48, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 7 )
 region = Rect2( 48, 0, 48, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 7 )
 region = Rect2( 96, 0, 48, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
 region = Rect2( 144, 0, 48, 32 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 4
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 5 )
 
 [node name="Workroom" type="Node2D"]
@@ -77,7 +77,8 @@ z_index = -1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Bellows"]
 position = Vector2( 192, 640 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
+frame = 3
 playing = true
 centered = false
 
@@ -101,7 +102,7 @@ margin_left = 331.735
 margin_top = 54.1123
 margin_right = 371.735
 margin_bottom = 102.112
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "This is water you can drink"
 __meta__ = {
@@ -113,7 +114,7 @@ margin_left = 297.0
 margin_top = 33.0
 margin_right = 377.0
 margin_bottom = 53.0
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 tab_size = 12
 text = "Water"
@@ -125,3 +126,5 @@ __meta__ = {
 [node name="Combinator" parent="." instance=ExtResource( 11 )]
 [connection signal="drag_resource" from="IngredientsShelf" to="." method="_on_IngredientsShelf_drag_resource"]
 [connection signal="destroy_resource" from="WasteBasket" to="." method="_on_WasteBasket_destroy_resource"]
+[connection signal="dropped_resource" from="Combinator" to="." method="_on_Combinator_dropped_resource"]
+[connection signal="pick_up_resource" from="Combinator" to="." method="_on_pick_up_resource"]

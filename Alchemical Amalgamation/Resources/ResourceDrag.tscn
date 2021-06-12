@@ -9,3 +9,4 @@ script = ExtResource( 2 )
 [node name="ingredient_water" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
+centered = false

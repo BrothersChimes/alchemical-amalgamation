@@ -1,7 +1,8 @@
 extends Node2D
 
-func _ready():
-	pass # Replace with function body.
+# onready var global_vars = get_node("/root/GlobalVariables")
+
+var resource_type
 
 func _process(delta):
 	var pos = get_viewport().get_mouse_position()
