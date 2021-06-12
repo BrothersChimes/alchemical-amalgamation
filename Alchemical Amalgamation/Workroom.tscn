@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Stations/station_coal.png" type="Texture" id=1]
 [ext_resource path="res://Resources/IngredientsShelf.tscn" type="PackedScene" id=2]
@@ -8,10 +8,9 @@
 [ext_resource path="res://Assets/Stations/background_workshop.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Stations/station_bellows_spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://Stations/WasteBasket.tscn" type="PackedScene" id=8]
-
-[sub_resource type="DynamicFont" id=1]
-size = 24
-font_data = ExtResource( 5 )
+[ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ingredients/ingredient_water.png" type="Texture" id=10]
+[ext_resource path="res://Stations/Combinator.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 7 )
@@ -37,6 +36,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=7]
+size = 4
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 5 )
+
 [node name="Workroom" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -51,15 +57,6 @@ position = Vector2( 128, 640 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 centered = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_right = 320.0
-margin_bottom = 128.0
-custom_fonts/normal_font = SubResource( 1 )
-text = "This is some test text to see what rendering looks like"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="background" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
@@ -81,11 +78,50 @@ z_index = -1
 position = Vector2( 192, 640 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 6 )
-frame = 2
 playing = true
 centered = false
 
 [node name="WasteBasket" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 512 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="station_book" type="Sprite" parent="Node2D"]
+position = Vector2( 256.265, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ingredient_water" type="Sprite" parent="Node2D"]
+position = Vector2( 320, 64 )
+texture = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+margin_left = 331.735
+margin_top = 54.1123
+margin_right = 371.735
+margin_bottom = 102.112
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "This is water you can drink"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Node2D"]
+margin_left = 297.0
+margin_top = 33.0
+margin_right = 377.0
+margin_bottom = 53.0
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+tab_size = 12
+text = "Water"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Combinator" parent="." instance=ExtResource( 11 )]
 [connection signal="drag_resource" from="IngredientsShelf" to="." method="_on_IngredientsShelf_drag_resource"]
 [connection signal="destroy_resource" from="WasteBasket" to="." method="_on_WasteBasket_destroy_resource"]

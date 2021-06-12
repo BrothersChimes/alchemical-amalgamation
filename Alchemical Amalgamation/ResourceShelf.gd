@@ -19,7 +19,7 @@ func _ready():
 #	pass
 
 
-func _on_ResourceArea_input_event(viewport, event, shape_idx):
+func _on_ResourceArea_input_event(_viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		create_resource_drag()
 
