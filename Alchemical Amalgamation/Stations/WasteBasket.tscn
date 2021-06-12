@@ -4,7 +4,7 @@
 [ext_resource path="res://Stations/WasteBasket.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 88, 56 )
+extents = Vector2( 56, 56 )
 
 [node name="WasteBasket" type="Node2D"]
 script = ExtResource( 2 )
@@ -17,6 +17,6 @@ centered = false
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 96, 64 )
+position = Vector2( 64, 64 )
 shape = SubResource( 1 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
