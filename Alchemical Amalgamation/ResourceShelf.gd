@@ -21,11 +21,7 @@ func _ready():
 
 func _on_ResourceArea_input_event(_viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
-		create_resource_drag()
-
-func create_resource_drag(): 
-	emit_signal("drag_resource")
-
+		emit_signal("drag_resource")
 
 func _on_ResourceArea_area_entered(area):
 	if area.name == "HoverHackArea":

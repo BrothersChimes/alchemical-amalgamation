@@ -16,10 +16,10 @@ centered = false
 position = Vector2( 127.245, 48.7575 )
 
 [node name="CombinatorSlot2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 205.733, 212.868 )
+position = Vector2( 212.407, 174.158 )
 
 [node name="CombinatorSlot3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 45.1898, 214.057 )
+position = Vector2( 42.5201, 182.021 )
 [connection signal="drop_resource" from="CombinatorSlot1" to="." method="_on_CombinatorSlot1_drop_resource"]
 [connection signal="pick_up_resource" from="CombinatorSlot1" to="." method="_on_CombinatorSlot_pick_up_resource"]
 [connection signal="drop_resource" from="CombinatorSlot2" to="." method="_on_CombinatorSlot2_drop_resource"]

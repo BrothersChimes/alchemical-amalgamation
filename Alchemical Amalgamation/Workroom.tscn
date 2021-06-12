@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/Stations/station_coal.png" type="Texture" id=1]
-[ext_resource path="res://Resources/IngredientsShelf.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/ShelfForIngredients.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Workroom.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Stations/station_woodpile.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=5]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Assets/Stations/station_mortar_in_use.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Stations/station_retort_in_use.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Stations/station_aludel_empty.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Stations/station_cauldron.png" type="Texture" id=19]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
@@ -52,6 +53,11 @@ font_data = ExtResource( 5 )
 
 [node name="Workroom" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="station_cauldron" type="Sprite" parent="."]
+position = Vector2( 576, 448 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
 
 [node name="station_woodpile" type="Sprite" parent="."]
 position = Vector2( 0, 640 )
@@ -116,10 +122,6 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="IngredientsShelf" parent="." instance=ExtResource( 2 )]
-position = Vector2( 896, 64 )
-z_index = -1
-
 [node name="Bellows" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Bellows"]
@@ -172,7 +174,10 @@ __meta__ = {
 }
 
 [node name="Combinator" parent="." instance=ExtResource( 11 )]
-[connection signal="drag_resource" from="IngredientsShelf" to="." method="_on_IngredientsShelf_drag_resource"]
+
+[node name="ShelfForIngredients" parent="." instance=ExtResource( 2 )]
+position = Vector2( 896, 64 )
 [connection signal="destroy_resource" from="WasteBasket" to="." method="_on_WasteBasket_destroy_resource"]
 [connection signal="dropped_resource" from="Combinator" to="." method="_on_Combinator_dropped_resource"]
 [connection signal="pick_up_resource" from="Combinator" to="." method="_on_pick_up_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients" to="." method="_on_ShelfForIngredients_drag_resource"]
