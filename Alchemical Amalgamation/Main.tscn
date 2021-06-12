@@ -23,4 +23,4 @@ position = Vector2( 256, 768 )
 position = Vector2( 1280, 768 )
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
 [connection signal="drag_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_drag_resource"]
-[connection signal="sell_potion" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_sell_potion"]
+[connection signal="sell_potion_to" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_sell_potion_to"]

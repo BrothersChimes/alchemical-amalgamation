@@ -33,4 +33,4 @@ __meta__ = {
 
 [node name="Customer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, 32 )
-[connection signal="sell_potion" from="Customer" to="." method="_on_Customer_sell_potion"]
+[connection signal="sell_potion_to" from="Customer" to="." method="_on_Customer_sell_potion_to"]

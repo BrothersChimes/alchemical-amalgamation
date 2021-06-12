@@ -16,10 +16,11 @@ func _on_Workroom_destroy_resource():
 	if held_resource != null:
 		held_resource.destroy()
 
-
-func _on_CustomerText_sell_potion():
+func _on_CustomerText_sell_potion_to(customer):
 	i += 1
 	print("SELL POTION " + str(i))
 	var held_resource = $ResourceDrag
 	if held_resource != null:
 		held_resource.destroy()
+		customer.sell_potion(held_resource)
+		
