@@ -13,7 +13,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CombinatorSlot0" parent="." instance=ExtResource( 2 )]
-position = Vector2( 131.245, 34.2575 )
+position = Vector2( 128.572, 36.9302 )
 
 [node name="CombinatorSlot1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 216.907, 173.158 )
