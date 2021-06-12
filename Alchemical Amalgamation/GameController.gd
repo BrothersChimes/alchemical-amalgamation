@@ -1,0 +1,16 @@
+extends Node2D
+
+var ResourceDrag = preload("res://Resources/ResourceDrag.tscn") # resource is loaded at compile time
+
+func _ready():
+	pass # Replace with function body.
+
+func _on_Workroom_drag_resource():
+	var res = ResourceDrag.instance()
+	add_child(res)
+
+func _on_Workroom_destroy_resource():
+	print("DESTROY RESOURCE")
+	var held_resource = $ResourceDrag
+	if held_resource != null:
+		held_resource.destroy()

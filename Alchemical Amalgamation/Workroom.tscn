@@ -1,17 +1,44 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Stations/station_coal.png" type="Texture" id=1]
 [ext_resource path="res://Resources/IngredientsShelf.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Resources/resource_log.png" type="Texture" id=3]
+[ext_resource path="res://Workroom.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Stations/station_woodpile.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/Stations/background_workshop.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Stations/station_bellows_spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://Stations/WasteBasket.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 5 )
 
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 7 )
+region = Rect2( 144, 0, 48, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Workroom" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="station_woodpile" type="Sprite" parent="."]
 position = Vector2( 0, 640 )
@@ -23,12 +50,6 @@ centered = false
 position = Vector2( 128, 640 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
-centered = false
-
-[node name="resource_log" type="Sprite" parent="."]
-position = Vector2( 192, 704 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 3 )
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -53,3 +74,18 @@ __meta__ = {
 [node name="IngredientsShelf" parent="." instance=ExtResource( 2 )]
 position = Vector2( 896, 64 )
 z_index = -1
+
+[node name="Bellows" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Bellows"]
+position = Vector2( 192, 640 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 6 )
+frame = 3
+playing = true
+centered = false
+
+[node name="WasteBasket" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 512 )
+[connection signal="drag_resource" from="IngredientsShelf" to="." method="_on_IngredientsShelf_drag_resource"]
+[connection signal="destroy_resource" from="WasteBasket" to="." method="_on_WasteBasket_destroy_resource"]
