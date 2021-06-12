@@ -28,8 +28,7 @@ position = Vector2( 1280, 768 )
 
 [node name="HoverHack" parent="." instance=ExtResource( 6 )]
 z_index = -4
+[connection signal="click_on_combinator_slot" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_slot"]
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
 [connection signal="drag_resource_from_shelf" from="GameController/Workroom" to="GameController" method="_on_Workroom_drag_resource_from_shelf"]
-[connection signal="drop_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_drop_resource"]
-[connection signal="pick_up_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_pick_up_resource"]
 [connection signal="sell_potion_to" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_sell_potion_to"]

@@ -128,7 +128,7 @@ centered = false
 position = Vector2( 192, 640 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 centered = false
 
@@ -178,6 +178,5 @@ __meta__ = {
 [node name="ShelfForIngredients" parent="." instance=ExtResource( 2 )]
 position = Vector2( 896, 64 )
 [connection signal="destroy_resource" from="WasteBasket" to="." method="_on_WasteBasket_destroy_resource"]
-[connection signal="dropped_resource" from="Combinator" to="." method="_on_Combinator_dropped_resource"]
-[connection signal="pick_up_resource" from="Combinator" to="." method="_on_pick_up_resource"]
+[connection signal="click_on_combinator_slot" from="Combinator" to="." method="_on_Combinator_click_on_combinator_slot"]
 [connection signal="drag_resource" from="ShelfForIngredients" to="." method="_on_ShelfForIngredients_drag_resource"]

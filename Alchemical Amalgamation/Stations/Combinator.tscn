@@ -12,17 +12,16 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 centered = false
 
+[node name="CombinatorSlot0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 131.245, 34.2575 )
+
 [node name="CombinatorSlot1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 127.245, 48.7575 )
+position = Vector2( 216.907, 173.158 )
+slot_num = 1
 
 [node name="CombinatorSlot2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 212.407, 174.158 )
-
-[node name="CombinatorSlot3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 42.5201, 182.021 )
-[connection signal="drop_resource" from="CombinatorSlot1" to="." method="_on_CombinatorSlot1_drop_resource"]
-[connection signal="pick_up_resource" from="CombinatorSlot1" to="." method="_on_CombinatorSlot_pick_up_resource"]
-[connection signal="drop_resource" from="CombinatorSlot2" to="." method="_on_CombinatorSlot2_drop_resource"]
-[connection signal="pick_up_resource" from="CombinatorSlot2" to="." method="_on_CombinatorSlot_pick_up_resource"]
-[connection signal="drop_resource" from="CombinatorSlot3" to="." method="_on_CombinatorSlot3_drop_resource"]
-[connection signal="pick_up_resource" from="CombinatorSlot3" to="." method="_on_CombinatorSlot_pick_up_resource"]
+position = Vector2( 40.6292, 181.521 )
+slot_num = 2
+[connection signal="click_on_combinator_slot" from="CombinatorSlot0" to="." method="click_on_combinator_slot"]
+[connection signal="click_on_combinator_slot" from="CombinatorSlot1" to="." method="click_on_combinator_slot"]
+[connection signal="click_on_combinator_slot" from="CombinatorSlot2" to="." method="click_on_combinator_slot"]
