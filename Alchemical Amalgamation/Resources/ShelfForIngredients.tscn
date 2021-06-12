@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Resources/ResourceShelf.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/ResourceForShelf.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Backgrounds/background_ingredients.png" type="Texture" id=2]
 [ext_resource path="res://Resources/IngredientsShelf.gd" type="Script" id=3]
 
@@ -13,6 +13,12 @@ z_index = -1
 texture = ExtResource( 2 )
 centered = false
 
-[node name="ResourceShelf" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16, 8 )
-[connection signal="drag_resource" from="ResourceShelf" to="." method="_on_ResourceShelf_drag_resource"]
+[node name="Water" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 16 )
+
+[node name="Ettercap" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88, 16 )
+resource_type = 2
+display_name = "Etter Cap"
+[connection signal="drag_resource" from="Water" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="Ettercap" to="." method="_on_ResourceForShelf_drag_resource"]

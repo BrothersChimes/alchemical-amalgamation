@@ -1,22 +1,11 @@
 extends Node2D
 
-signal drag_resource
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+signal drag_resource(resource_type)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_ResourceShelf_drag_resource():
-	emit_signal("drag_resource")
+func _on_ResourceForShelf_drag_resource(resource_type):
+	emit_signal("drag_resource", resource_type)
