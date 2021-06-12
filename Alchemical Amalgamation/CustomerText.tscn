@@ -23,6 +23,7 @@ offset = Vector2( 256, 40 )
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 224.0
 margin_bottom = 128.0
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Some more test text

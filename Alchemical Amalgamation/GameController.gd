@@ -7,8 +7,10 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Workroom_drag_resource():
-	var res = ResourceDrag.instance()
-	add_child(res)
+	var held_resource = $ResourceDrag
+	if held_resource == null:
+		var res = ResourceDrag.instance()
+		add_child(res)
 
 func _on_Workroom_destroy_resource():
 	print("DESTROY RESOURCE")

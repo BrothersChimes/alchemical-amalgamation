@@ -25,3 +25,13 @@ func _on_ResourceArea_input_event(viewport, event, shape_idx):
 
 func create_resource_drag(): 
 	emit_signal("drag_resource")
+
+
+func _on_ResourceArea_area_entered(area):
+	if area.name == "HoverHackArea":
+		$RichTextLabel.visible = true
+
+func _on_ResourceArea_area_exited(area):
+	if area.name == "HoverHackArea":
+		$RichTextLabel.visible = false
+
