@@ -16,6 +16,8 @@ var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NON
 var CustomersQueue = preload("res://Customers/CustomersQueue.gd")
 var customersQueue = CustomersQueue.new()
 
+var cauldron_contents = ResourceType.NONE
+
 var customer_desired_resources = [
 	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
 	ResourceType.NONE, ResourceType.NONE
@@ -102,4 +104,21 @@ func _on_BookArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		emit_signal("open_book")
 	
+func _on_CauldronArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		on_cauldron_click()
 
+func on_cauldron_click(): 
+	if resource_carried != ResourceType.NONE and cauldron_contents == ResourceType.NONE:
+		print("ADDING TO CAULDRON")
+		var cauldron_set = $CauldronSet
+		cauldron_set.add_ingredient_to_cauldron()
+		cauldron_contents = resource_carried
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and cauldron_contents != ResourceType.NONE:
+		print("REMOVING FROM CAULDRON")
+		var cauldron_set = $CauldronSet
+		cauldron_set.empty_cauldron()
+		set_carried_resource_to(cauldron_contents)
+		cauldron_contents = ResourceType.NONE
+		

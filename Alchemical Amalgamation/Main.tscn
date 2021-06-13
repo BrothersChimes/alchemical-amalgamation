@@ -46,7 +46,14 @@ z_index = -4
 position = Vector2( 352, 352 )
 z_index = -1
 
+[node name="CauldronArea" type="Area2D" parent="GameController/CauldronSet"]
+position = Vector2( 416, 192 )
+
+[node name="CauldronCollider" type="CollisionShape2D" parent="GameController/CauldronSet/CauldronArea"]
+shape = SubResource( 1 )
+
 [node name="Book" parent="." instance=ExtResource( 10 )]
+visible = false
 z_index = 10
 [connection signal="open_book" from="GameController" to="." method="_on_GameController_open_book"]
 [connection signal="input_event" from="GameController/BookArea" to="GameController" method="_on_BookArea_input_event"]
@@ -55,3 +62,4 @@ z_index = 10
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
 [connection signal="drag_resource_from_shelf" from="GameController/Workroom" to="GameController" method="_on_Workroom_drag_resource_from_shelf"]
 [connection signal="sell_potion_to" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_sell_potion_to"]
+[connection signal="input_event" from="GameController/CauldronSet/CauldronArea" to="GameController" method="_on_CauldronArea_input_event"]
