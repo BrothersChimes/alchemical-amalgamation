@@ -121,19 +121,19 @@ centered = false
 [node name="WasteBasket" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 512 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Book" type="Node2D" parent="."]
 
-[node name="station_book" type="Sprite" parent="Node2D"]
+[node name="station_book" type="Sprite" parent="Book"]
 position = Vector2( 256.265, 0 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 centered = false
 
-[node name="ingredient_water" type="Sprite" parent="Node2D"]
+[node name="ingredient_water" type="Sprite" parent="Book"]
 position = Vector2( 320, 64 )
 texture = ExtResource( 10 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Book"]
 margin_left = 331.735
 margin_top = 54.1123
 margin_right = 371.735
@@ -145,7 +145,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Node2D"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Book"]
 margin_left = 297.0
 margin_top = 33.0
 margin_right = 377.0

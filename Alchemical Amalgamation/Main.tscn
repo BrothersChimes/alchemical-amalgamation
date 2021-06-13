@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Workroom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CustomerText.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://HoverHack.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/ResourceDrag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://CauldronSet.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 96 )
 
 [node name="Main" type="Node2D"]
 
@@ -32,6 +35,12 @@ z_index = -4
 
 [node name="CauldronSet" parent="." instance=ExtResource( 8 )]
 position = Vector2( 352, 352 )
+
+[node name="BookArea" type="Area2D" parent="."]
+position = Vector2( 640, 128 )
+
+[node name="BookCollider" type="CollisionShape2D" parent="BookArea"]
+shape = SubResource( 1 )
 [connection signal="click_on_combinator_output" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_output"]
 [connection signal="click_on_combinator_slot" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_slot"]
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
