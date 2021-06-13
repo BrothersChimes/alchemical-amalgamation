@@ -5,6 +5,10 @@ extends Node2D
 const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
 var ResourceType = ResourceTypeFile.ResourceType
 
+const CombinatorRecipes = preload("res://Stations/CombinatorRecipe.gd")
+var recipes = CombinatorRecipes.new()
+
+var NOTHING = [ResourceType.NONE, ResourceType.NONE, ResourceType.NONE]
 var resource_carried = ResourceType.NONE
 var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NONE]
 
@@ -84,4 +88,11 @@ func set_carried_resource_to(resource_type):
 	resource_carried = resource_type
 	$ResourceDrag.change_resource(resource_type)
 
-
+func _on_Workroom_click_on_combinator_output():
+	print("GAME CONTROLLER CLICK ON COMBINATOR OUTPUT")
+	if resource_combinator == NOTHING:
+		return
+	var recipe_output = recipes.recipe_for(resource_combinator)
+	for slot_num in range(0,3,1):
+		set_combinator_resource_to(slot_num, ResourceType.NONE)
+	set_carried_resource_to(recipe_output)

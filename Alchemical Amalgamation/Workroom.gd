@@ -3,7 +3,7 @@ extends Node2D
 signal drag_resource_from_shelf(resource_type)
 signal destroy_resource
 signal click_on_combinator_slot(slot_num)
-
+signal click_on_combinator_output
 
 func _ready():
 	pass # Replace with function body.
@@ -20,3 +20,6 @@ func set_combinator_slot_to_item(slot_num, resource_type):
 
 func _on_ResourceForShelf_drag_resource(resource_type):
 	emit_signal("drag_resource_from_shelf", resource_type)
+
+func _on_Combinator_click_on_combinator_output():
+	emit_signal("click_on_combinator_output")
