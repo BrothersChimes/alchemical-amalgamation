@@ -1,5 +1,6 @@
 extends Node2D
 
+signal open_book
 
 
 const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
@@ -96,3 +97,9 @@ func _on_Workroom_click_on_combinator_output():
 	for slot_num in range(0,3,1):
 		set_combinator_resource_to(slot_num, ResourceType.NONE)
 	set_carried_resource_to(recipe_output)
+	
+func _on_BookArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		emit_signal("open_book")
+	
+
