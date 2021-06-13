@@ -32,6 +32,7 @@ z_index = -4
 
 [node name="CauldronSet" parent="." instance=ExtResource( 8 )]
 position = Vector2( 352, 352 )
+[connection signal="click_on_combinator_output" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_output"]
 [connection signal="click_on_combinator_slot" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_slot"]
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
 [connection signal="drag_resource_from_shelf" from="GameController/Workroom" to="GameController" method="_on_Workroom_drag_resource_from_shelf"]

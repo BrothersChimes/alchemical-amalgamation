@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_Item_single.png-906ce7ed119e03935a03e2331ab9009b.stex"
+path="res://.import/potion_empty.png-783622f82700f555cdfb1c5b28e31d55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/background_Item_single.png"
-dest_files=[ "res://.import/background_Item_single.png-906ce7ed119e03935a03e2331ab9009b.stex" ]
+source_file="res://Assets/Ingredients/potion_empty.png"
+dest_files=[ "res://.import/potion_empty.png-783622f82700f555cdfb1c5b28e31d55.stex" ]
 
 [params]
 
