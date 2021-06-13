@@ -10,11 +10,13 @@ height = 0.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 font_data = ExtResource( 1 )
 
 [node name="ResourceForShelf" type="Node2D"]
+z_index = -1
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -28,14 +30,12 @@ centered = false
 position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-margin_right = 192.0
-margin_bottom = 104.0
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+[node name="Label" type="Label" parent="."]
+margin_left = -128.0
+margin_right = -62.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
 text = "Water"
-scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

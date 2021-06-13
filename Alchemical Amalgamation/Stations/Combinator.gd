@@ -1,17 +1,14 @@
 extends Node2D
 
-signal dropped_resource()
-signal pick_up_resource(resource_type)
+signal click_on_combinator_slot(slot_num)
 
-func _on_CombinatorSlot1_drop_resource():
-	emit_signal("dropped_resource")
 
-func _on_CombinatorSlot2_drop_resource():
-	emit_signal("dropped_resource")
+func click_on_combinator_slot(slot_num):
+	print("COMBINATOR COMBINATOR SLOT " + str(slot_num) + " CLICKED")
+	emit_signal("click_on_combinator_slot", slot_num)
 
-func _on_CombinatorSlot3_drop_resource():
-	emit_signal("dropped_resource")
-
-func _on_CombinatorSlot_pick_up_resource(resource_type):
-	print("COMBINATOR PICK UP RESOURCE")
-	emit_signal("pick_up_resource", resource_type)
+func set_slot_to_item(slot_num, resource_type): 
+	match slot_num: 
+		0: $CombinatorSlot0.set_item_to(resource_type)
+		1: $CombinatorSlot1.set_item_to(resource_type)
+		2: $CombinatorSlot2.set_item_to(resource_type)
