@@ -6,7 +6,7 @@
 [ext_resource path="res://CauldronSet.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Stations/station_cauldron_shine.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Stations/station_embers.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Stations/station_wood.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Stations/station_cauldron_wood_spritesheet.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -88,25 +88,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 80, 16 )
+region = Rect2( 192, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 7 )
-region = Rect2( 80, 0, 80, 16 )
+region = Rect2( 128, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 7 )
-region = Rect2( 160, 0, 80, 16 )
+region = Rect2( 64, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 7 )
-region = Rect2( 240, 0, 80, 16 )
+region = Rect2( 0, 0, 64, 96 )
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -116,45 +116,53 @@ animations = [ {
 script = ExtResource( 4 )
 
 [node name="Bellows" type="Node2D" parent="."]
+position = Vector2( 112, 208 )
 
 [node name="BellowsSprite" type="AnimatedSprite" parent="Bellows"]
 position = Vector2( 1, 0 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 speed_scale = 0.5
 centered = false
 
 [node name="Cauldron" type="Node2D" parent="."]
-position = Vector2( 200, 200 )
+position = Vector2( 288, 48 )
 
 [node name="CauldronHotSprite" type="Sprite" parent="Cauldron"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 centered = false
 
 [node name="CauldronColdSprite" type="Sprite" parent="Cauldron"]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 centered = false
 
 [node name="Fire" type="Node2D" parent="."]
-position = Vector2( 200, 200 )
+position = Vector2( 288, 192 )
+z_index = 1
 
 [node name="FireSprite" type="AnimatedSprite" parent="Fire"]
-position = Vector2( 0, 32 )
+position = Vector2( 0, 48 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 11 )
 frame = 2
 centered = false
 
 [node name="Coals" type="Node2D" parent="."]
-position = Vector2( 300, 200 )
+position = Vector2( 688, 352 )
 
 [node name="CoalsSprite" type="AnimatedSprite" parent="Coals"]
+scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
 centered = false
 
 [node name="Wood" type="Node2D" parent="."]
-position = Vector2( 200, 200 )
+position = Vector2( 288, 192 )
 
 [node name="WoodSprite" type="AnimatedSprite" parent="Wood"]
-position = Vector2( 32, 64 )
+position = Vector2( 0, -144 )
+scale = Vector2( 4, 4 )
 frames = SubResource( 22 )
-
+centered = false
 [connection signal="animation_finished" from="Bellows/BellowsSprite" to="." method="_on_BellowsSprite_animation_finished"]
