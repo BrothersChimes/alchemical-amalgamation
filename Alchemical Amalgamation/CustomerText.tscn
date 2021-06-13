@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Stations/background_customers.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Backgrounds/background_customers.png" type="Texture" id=1]
 [ext_resource path="res://Customers/Customer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CustomerText.gd" type="Script" id=4]
 
@@ -33,7 +33,6 @@ customer_number = 3
 [node name="Customer4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, 672 )
 customer_number = 4
-
 [connection signal="click_on_customer" from="Customer0" to="." method="_on_Customer_click_on_customer"]
 [connection signal="click_on_customer" from="Customer1" to="." method="_on_Customer_click_on_customer"]
 [connection signal="click_on_customer" from="Customer2" to="." method="_on_Customer_click_on_customer"]
