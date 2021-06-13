@@ -6,11 +6,16 @@ enum ResourceType {
 	ETTERCAP,
 	MERMAID,
 	AWESOME,
+	BLOSSOM,
+	BEHEMOTH,
+	ECTOPLASM,
+	RIDDLER,
 	CRAP,
 	LIQUID_AWESOME,
 	BOILED_MERMAID,
 	MAIDS_CAP,
 	BURNERS_HAIR,
+	FLAMING_BLOSSOM
 }
 
 static func is_resource_potion(resource_type): 
@@ -33,7 +38,15 @@ static func sprites_names_for_resource_types(resource_type):
 		ResourceType.MERMAID:
 			return "mermaid"
 		ResourceType.AWESOME:
-			return "awesome"	
+			return "awesome"
+		ResourceType.BLOSSOM:
+			return "blossom"
+		ResourceType.BEHEMOTH:
+			return "behemoth"
+		ResourceType.ECTOPLASM:
+			return "ectoplasm"
+		ResourceType.RIDDLER:
+			return "riddler"	
 		#### POTIONS ####
 		ResourceType.CRAP:
 			print("RETURNING CRAP: " + str(ResourceType.CRAP))
@@ -47,3 +60,5 @@ static func sprites_names_for_resource_types(resource_type):
 			return "purple"
 		ResourceType.BURNERS_HAIR:
 			return "teal"
+		ResourceType.FLAMING_BLOSSOM:
+			return "orange"

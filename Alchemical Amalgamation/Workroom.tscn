@@ -167,7 +167,7 @@ __meta__ = {
 [node name="ShelfForIngredients" type="Node2D" parent="."]
 
 [node name="WaterResource" parent="ShelfForIngredients" instance=ExtResource( 2 )]
-position = Vector2( 992, 128 )
+position = Vector2( 992, 129 )
 
 [node name="EttercapResource" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1064, 168 )
@@ -184,10 +184,20 @@ position = Vector2( 1184, 256 )
 resource_type = 4
 display_name = "Pure Awesome"
 
-[node name="PotionOfCrap" parent="ShelfForIngredients" instance=ExtResource( 2 )]
+[node name="Blossom" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 992, 240 )
 resource_type = 5
-display_name = "Failed Potion"
+display_name = "Blossom"
+
+[node name="Behemoth" parent="ShelfForIngredients" instance=ExtResource( 2 )]
+position = Vector2( 1152, 352 )
+resource_type = 6
+display_name = "Behemoth Tooth"
+
+[node name="Ectoplasm" parent="ShelfForIngredients" instance=ExtResource( 2 )]
+position = Vector2( 1072, 288 )
+resource_type = 7
+display_name = "Ectoplams"
 
 [node name="Hourglasses" type="Node2D" parent="."]
 position = Vector2( 16, 208 )
@@ -222,4 +232,6 @@ centered = false
 [connection signal="drag_resource" from="ShelfForIngredients/EttercapResource" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/MermaidResource" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/AwesomeResource" to="." method="_on_ResourceForShelf_drag_resource"]
-[connection signal="drag_resource" from="ShelfForIngredients/PotionOfCrap" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Blossom" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Behemoth" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Ectoplasm" to="." method="_on_ResourceForShelf_drag_resource"]
