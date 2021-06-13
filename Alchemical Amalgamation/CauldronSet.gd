@@ -26,6 +26,9 @@ enum Heat {
 	BLAZE
 }
 
+func _ready(): 
+	$CauldronDone.visible = false
+
 func _on_BellowsSprite_animation_finished():
 	var glowing_hot = false
 	$Bellows/BellowsSprite.stop()
@@ -144,7 +147,19 @@ func _process(delta):
 	coal -= delta * burn_consumption_multiplier
 
 
+
 # PUBLIC_FUNCTIONS
+func add_ingredient_to_cauldron(): 
+	print("CAULDRON: ADD")
+	$CauldronDone.visible = true
+
+func finish_cauldron(): 
+	$CauldronDone.visible = true
+	
+func empty_cauldron(): 
+	print("CAULDRON: EMPTY")
+	$CauldronDone.visible = false
+
 func get_heat_level_cauldron():
 	return heat_level_fire
 
