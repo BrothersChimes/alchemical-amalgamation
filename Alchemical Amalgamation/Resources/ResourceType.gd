@@ -7,7 +7,9 @@ enum ResourceType {
 	MERMAID,
 	AWESOME,
 	CRAP,
-	DILUTE_AWESOME
+	DILUTE_AWESOME,
+	MAIDS_CAP,
+	BURNERS_HAIR,
 }
 
 static func is_resource_potion(resource_type): 
@@ -36,3 +38,7 @@ static func sprites_names_for_resource_types(resource_type):
 			return "yellow"
 		ResourceType.DILUTE_AWESOME:
 			return "green"
+		ResourceType.MAIDS_CAP:
+			return "purple"
+		ResourceType.BURNERS_HAIR:
+			return "teal"
