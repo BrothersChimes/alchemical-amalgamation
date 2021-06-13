@@ -7,7 +7,8 @@ enum ResourceType {
 	MERMAID,
 	AWESOME,
 	CRAP,
-	DILUTE_AWESOME,
+	LIQUID_AWESOME,
+	BOILED_MERMAID,
 	MAIDS_CAP,
 	BURNERS_HAIR,
 }
@@ -35,8 +36,12 @@ static func sprites_names_for_resource_types(resource_type):
 			return "awesome"	
 		#### POTIONS ####
 		ResourceType.CRAP:
+			print("RETURNING CRAP: " + str(ResourceType.CRAP))
 			return "yellow"
 		ResourceType.LIQUID_AWESOME:
+			return "green"
+		ResourceType.BOILED_MERMAID:
+			print("RETURNING BOILED_MERMAID: " + str(ResourceType.BOILED_MERMAID))
 			return "green"
 		ResourceType.MAIDS_CAP:
 			return "purple"

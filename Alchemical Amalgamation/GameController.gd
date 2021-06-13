@@ -134,13 +134,15 @@ func cauldron_process(delta):
 		cauldron_timer += delta
 		var cauldron_temp = $CauldronSet.get_heat_level_cauldron()
 		if cauldron_temp < cauldron_recipe.MinHeat or cauldron_temp > cauldron_recipe.MaxHeat:
-			print("WRONG TEMP TIME: " + str(wrong_temp_time))
 			wrong_temp_time += delta
 		if cauldron_timer >= cauldron_recipe.BoilTime:
 			if not is_potion_done:
 				cauldron_potion_done()
-		if cauldron_timer >= CAULDRON_BURN_TIME or wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
+			wrong_temp_time += delta
+		if wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
+			print("Potion ruined due to wrong temperature")
 			is_potion_ruined = true
+			
 	
 func _on_CauldronArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
@@ -165,10 +167,16 @@ func start_boiling_cauldron(ingredient):
 	cauldron_recipe = cauldron_recipes.recipe_for(ingredient)
 	
 func get_cauldron_contents(): 
+	if not is_potion_done:
+		print("Potion not done")
+	if not is_potion_ruined:
+		print("Potion ruined")
 	if not is_potion_done or is_potion_ruined: 
+
 		set_carried_resource_to(ResourceType.CRAP)
 	else:
 		var good_contents = cauldron_recipe.Output
+		print("GOOD CONTENTS: " + str(good_contents))
 		set_carried_resource_to(good_contents) # TODO
 	empty_out_cauldron()
 	

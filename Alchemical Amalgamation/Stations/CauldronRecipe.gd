@@ -22,8 +22,7 @@ class Recipe:
 	var MaxHeat: int
 	
 var recipes = [
-	create_recipe(ResourceType.MERMAID, 5, ResourceType.DILUTE_AWESOME, 
-		Heat.LOW, Heat.BLAZE),
+	create_recipe(ResourceType.MERMAID, 5, ResourceType.BOILED_MERMAID, Heat.LOW, Heat.BLAZE),
 ]
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, 1, ResourceType.CRAP, 
