@@ -12,7 +12,7 @@ class Recipe:
 	var Output: int
 	
 var recipes = [
-	create_recipe(ResourceType.WATER, ResourceType.AWESOME, ResourceType.NONE, ResourceType.DILUTE_AWESOME),
+	create_recipe(ResourceType.WATER, ResourceType.AWESOME, ResourceType.NONE, ResourceType.LIQUID_AWESOME),
 	create_recipe(ResourceType.ETTERCAP, ResourceType.MERMAID, ResourceType.NONE, ResourceType.MAIDS_CAP),
 	create_recipe(ResourceType.MAIDS_CAP, ResourceType.AWESOME, ResourceType.WATER, ResourceType.BURNERS_HAIR),
 ]
