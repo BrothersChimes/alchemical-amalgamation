@@ -17,6 +17,8 @@ var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NON
 var CustomersQueue = preload("res://Customers/CustomersQueue.gd")
 var customersQueue = CustomersQueue.new()
 
+var gold = 1000
+var rep = 0
 
 var customer_desired_resources = [
 	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
@@ -25,6 +27,16 @@ var customer_desired_resources = [
 
 func _ready():
 	set_start_customer()
+	$Gold.set_gold(gold)
+	$Reputation.set_reputation(rep)
+	
+func add_gold(extra_gold): 
+	gold += extra_gold
+	$Gold.set_gold(gold)
+	
+func add_reputation(extra_reputation): 
+	rep += extra_reputation
+	$Reputation.set_reputation(rep)
 	
 func _process(delta): 
 	cauldron_process(delta)
@@ -60,9 +72,13 @@ func _on_CustomerText_sell_potion_to(customer_number):
 	if resource_carried == ResourceType.NONE:
 		return
 	if resource_carried == customer_desired_resources[customer_number]:
-		print("SUCCESS!")
+		$SuccessAndFailureText.set_text_success()
+		add_gold(100)
+		add_reputation(1)
 	else:
-		print("FAILURE!")
+		$SuccessAndFailureText.set_text_failure()
+		add_gold(-100)
+		add_reputation(-1)
 	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
 
