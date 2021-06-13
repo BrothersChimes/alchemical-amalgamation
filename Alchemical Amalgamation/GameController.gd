@@ -8,9 +8,33 @@ var ResourceType = ResourceTypeFile.ResourceType
 var resource_carried = ResourceType.NONE
 var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NONE]
 
+var CustomersQueue = preload("res://Customers/CustomersQueue.gd")
+var customersQueue = CustomersQueue.new()
+
+var customer_desired_resources = [
+	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
+	ResourceType.NONE, ResourceType.NONE
+]
+
 func _ready():
-	resource_carried = ResourceType.NONE
-	resource_combinator 
+	set_start_customer()
+
+func set_start_customer(): 
+	set_customers()
+
+func set_customers(): 
+	var queue = customersQueue.customers
+	
+	for i in range(0, customer_desired_resources.size()):
+		if queue.empty():
+			return
+		var customer = customer_desired_resources[i]
+		if customer != ResourceType.NONE:
+			continue
+		var next_customer = queue.front()
+		customer_desired_resources[i] = next_customer.Desire
+		$CustomerText.create_customer_with_message(i, next_customer.Message)
+		queue.pop_front()
 
 func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
@@ -22,13 +46,20 @@ func _on_Workroom_destroy_resource():
 func _on_Workroom_drop_resource():
 	set_carried_resource_to(ResourceType.NONE)
 	
-func _on_CustomerText_sell_potion_to(customer):
+func _on_CustomerText_sell_potion_to(customer_number):
+	if resource_carried == ResourceType.NONE:
+		return
+	if resource_carried == customer_desired_resources[customer_number]:
+		print("SUCCESS!")
+	else:
+		print("FAILURE!")
+	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
-#	var held_resource = $ResourceDrag
-#	if held_resource != null:
-#		held_resource.destroy()
-#		customer.sell_potion(held_resource)
-#	resource_carried = ResourceType.NONE
+
+func cycle_customer(customer_number): 
+	$CustomerText.remove_customer(customer_number)
+	customer_desired_resources[customer_number] = ResourceType.NONE
+	set_customers()
 	
 func _on_Workroom_pick_up_resource(resource_type):
 	if resource_carried == ResourceType.NONE:
@@ -52,3 +83,5 @@ func set_combinator_resource_to(slot_num, resource_type):
 func set_carried_resource_to(resource_type): 
 	resource_carried = resource_type
 	$ResourceDrag.change_resource(resource_type)
+
+

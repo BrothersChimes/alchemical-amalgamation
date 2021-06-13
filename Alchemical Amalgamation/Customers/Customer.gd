@@ -1,10 +1,20 @@
 extends Node2D
 
-signal sell_potion_to(This)
+const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
+var ResourceType = ResourceTypeFile.ResourceType
+
+export var customer_number = 0
+
+signal  click_on_customer(number)
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
-		emit_signal("sell_potion_to", self)
+		emit_signal("click_on_customer", customer_number)
 
-func sell_potion(potion): 
-	queue_free()
+func set_customer_message(message): 
+	print("Setting message")
+	$RichTextLabel.text = message
+	visible = true
+	
+func remove_customer(): 
+	visible = false
