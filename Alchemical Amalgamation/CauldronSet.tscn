@@ -185,6 +185,7 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="CauldronBusy" type="Node2D" parent="."]
+visible = false
 
 [node name="ContentsSprite" type="Sprite" parent="CauldronBusy"]
 position = Vector2( 288, 48 )
