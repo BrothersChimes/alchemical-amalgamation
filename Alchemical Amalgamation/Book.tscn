@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Assets/Ingredients/ingredient_ectoplasm.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Ingredients/potion_teal.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Ingredients/potion_green.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Ingredients/potion_orange.png" type="Texture" id=29]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -113,6 +114,22 @@ region = Rect2( 144, 0, 48, 32 )
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
 "frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -1176,6 +1193,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1286,6 +1304,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1621,6 +1640,7 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 19 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -2159,18 +2179,21 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="Page10/Right"]
-position = Vector2( 598.184, 49.5662 )
+position = Vector2( 475.972, 91.1436 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page10/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
-margin_bottom = 220.0
+margin_bottom = 273.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Boiled Mermaid"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2191,14 +2214,15 @@ __meta__ = {
 }
 
 [node name="Line2" type="RichTextLabel" parent="Page10/Right"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
+margin_left = 141.224
+margin_top = 361.979
+margin_right = 598.224
+margin_bottom = 528.979
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Mermaid boiled in the Cauldron on a cold, medium or hot fire until ready."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2238,8 +2262,9 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page10/Right"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
+position = Vector2( 606.199, 363.708 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Page10/Right"]
@@ -2252,25 +2277,43 @@ position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Page10/Right"]
+position = Vector2( 583.435, 348.786 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 23 )
+frame = 1
+speed_scale = 0.25
+playing = true
+centered = false
+
 [node name="Page11" type="Node2D" parent="."]
-visible = false
 
 [node name="Left" type="Node2D" parent="Page11"]
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Page11/Left"]
+position = Vector2( 576.033, 280.064 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 23 )
+speed_scale = 0.25
+playing = true
+centered = false
+
 [node name="TitleSprite" type="Sprite" parent="Page11/Left"]
-position = Vector2( 600.037, 66.6708 )
+position = Vector2( 506.598, 130.743 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page11/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
-margin_bottom = 220.0
+margin_bottom = 279.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Flaming Blossom"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2292,13 +2335,14 @@ __meta__ = {
 
 [node name="Line2" type="RichTextLabel" parent="Page11/Left"]
 margin_left = 145.0
-margin_top = 327.677
+margin_top = 328.0
 margin_right = 602.0
-margin_bottom = 427.677
+margin_bottom = 508.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Blossom boiled in the Cauldron over a medium or hot fire until ready."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2338,6 +2382,8 @@ centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page11/Left"]
 position = Vector2( 600.536, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 22 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Page11/Left"]
