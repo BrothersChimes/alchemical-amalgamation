@@ -55,7 +55,7 @@ func set_customers():
 			continue
 		var next_customer = queue.front()
 		customer_desired_resources[i] = next_customer.Desire
-		$CustomerText.create_customer_with_message(i, next_customer.Message)
+		$CustomerText.create_customer_with_message_and_item(i, next_customer.Message, next_customer.Desire)
 		queue.pop_front()
 
 func _on_Workroom_drag_resource_from_shelf(resource_type):

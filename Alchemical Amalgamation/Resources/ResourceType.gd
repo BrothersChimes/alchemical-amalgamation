@@ -2,12 +2,12 @@ extends Node
 
 enum ResourceType { 
 	NONE,
-	AWESOME,
-	BEHEMOTH,
-	BLOSSOM,
-	ECTOPLASM,
 	ETTERCAP,
 	MERMAID,
+	AWESOME,
+	BLOSSOM,
+	BEHEMOTH,
+	ECTOPLASM,
 	RIDDLER,
 	WATER,
 	CRAP,
@@ -15,6 +15,7 @@ enum ResourceType {
 	BOILED_MERMAID,
 	MAIDS_CAP,
 	BURNERS_HAIR,
+	FLAMING_BLOSSOM
 }
 
 static func is_resource_potion(resource_type): 
@@ -59,3 +60,5 @@ static func sprites_names_for_resource_types(resource_type):
 			return "purple"
 		ResourceType.BURNERS_HAIR:
 			return "teal"
+		ResourceType.FLAMING_BLOSSOM:
+			return "orange"
