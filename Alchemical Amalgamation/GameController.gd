@@ -1,39 +1,41 @@
 extends Node2D
 
-onready var global_vars = get_node("/root/GlobalVariables")
 
-var ResourceDrag = preload("res://Resources/ResourceDrag.tscn") # resource is loaded at compile time
+
+const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
+var ResourceType = ResourceTypeFile.ResourceType
+
+var resource_carried = ResourceType.NONE
+var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NONE]
 
 func _ready():
-	pass # Replace with function body.
+	resource_carried = ResourceType.NONE
+	resource_combinator 
 
-func _on_Workroom_drag_resource():
-	if not global_vars.is_carrying_item:
-		var res = ResourceDrag.instance()
-		global_vars.is_carrying_item = true
-		add_child(res)
-
-func _on_Workroom_destroy_resource():
-	var held_resource = $ResourceDrag
-	if held_resource != null:
-		held_resource.destroy()
-	global_vars.is_carrying_item = false
+func _on_Workroom_drag_resource_from_shelf(resource_type):
+	if resource_carried == ResourceType.NONE:
+		resource_carried = resource_type
+		$ResourceDrag.change_resource(resource_type)
 		
+func _on_Workroom_destroy_resource():
+	resource_carried = ResourceType.NONE
+	$ResourceDrag.change_resource(ResourceType.NONE)
+	
 func _on_Workroom_drop_resource():
-	var held_resource = $ResourceDrag
-	if held_resource != null:
-		held_resource.destroy()
-	global_vars.is_carrying_item = false
+	resource_carried = ResourceType.NONE
+	$ResourceDrag.change_resource(ResourceType.NONE)
 	
 func _on_CustomerText_sell_potion_to(customer):
-	var held_resource = $ResourceDrag
-	if held_resource != null:
-		held_resource.destroy()
-		customer.sell_potion(held_resource)
-
+	resource_carried = ResourceType.NONE
+	$ResourceDrag.change_resource(ResourceType.NONE)
+#	var held_resource = $ResourceDrag
+#	if held_resource != null:
+#		held_resource.destroy()
+#		customer.sell_potion(held_resource)
+#	resource_carried = ResourceType.NONE
+	
 func _on_Workroom_pick_up_resource(resource_type):
-	print("PICKED UP RESOURCE")
-	if not global_vars.is_carrying_item:
-		var res = ResourceDrag.instance()
-		global_vars.is_carrying_item = true
-		add_child(res)
+	if resource_carried == ResourceType.NONE:
+		resource_carried = resource_type
+		$ResourceDrag.change_resource(resource_type)
+
