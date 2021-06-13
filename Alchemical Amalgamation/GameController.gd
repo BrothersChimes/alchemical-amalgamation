@@ -7,7 +7,11 @@ const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
 var ResourceType = ResourceTypeFile.ResourceType
 
 const CombinatorRecipes = preload("res://Stations/CombinatorRecipe.gd")
-var recipes = CombinatorRecipes.new()
+var combinator_recipes = CombinatorRecipes.new()
+
+const CauldronRecipes = preload("res://Stations/CauldronRecipe.gd")
+var cauldron_recipes = CauldronRecipes.new()
+
 
 var NOTHING = [ResourceType.NONE, ResourceType.NONE, ResourceType.NONE]
 var resource_carried = ResourceType.NONE
@@ -18,9 +22,26 @@ var customersQueue = CustomersQueue.new()
 
 var cauldron_contents = ResourceType.NONE
 
-var cauldron_max_time = 10
+
+enum Heat {
+	DEAD,
+	LOW,
+	MED,
+	HIGH,
+	BLAZE,
+	ANY
+}
+const CAULDRON_BURN_TIME = 2
+const CAULDRON_WRONG_TEMP_ALLOWED_TIME = 5
+var cauldron_max_time = 2
 var cauldron_timer = 0
+var wrong_temp_time = 0
 var is_cauldron_boiling = false
+var is_potion_done = false
+var is_potion_ruined = false
+var preferred_cauldron_temp_low = Heat.ANY
+var preferred_cauldron_temp_high = Heat.ANY
+var cauldron_recipe = null
 
 var customer_desired_resources = [
 	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
@@ -31,8 +52,20 @@ func _ready():
 	set_start_customer()
 	
 func _process(delta): 
-	if is_cauldron_boiling: 
+	cauldron_process(delta)
+				
+func cauldron_process(delta): 
+	if is_cauldron_boiling and cauldron_recipe != null: 
 		cauldron_timer -= delta
+		var cauldron_temp = $CauldronSet.get_heat_level_cauldron()
+		if cauldron_temp < cauldron_recipe.MinHeat or cauldron_temp > cauldron_recipe.MaxHeat:
+			wrong_temp_time += delta
+		if cauldron_timer <= 0:
+			if not is_potion_done:
+				cauldron_potion_done()
+		if cauldron_timer <= -CAULDRON_BURN_TIME or wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
+			is_potion_ruined = true	
+
 
 func set_start_customer(): 
 	set_customers()
@@ -103,7 +136,7 @@ func _on_Workroom_click_on_combinator_output():
 	print("GAME CONTROLLER CLICK ON COMBINATOR OUTPUT")
 	if resource_combinator == NOTHING:
 		return
-	var recipe_output = recipes.recipe_for(resource_combinator)
+	var recipe_output = combinator_recipes.recipe_for(resource_combinator)
 	for slot_num in range(0,3,1):
 		set_combinator_resource_to(slot_num, ResourceType.NONE)
 	set_carried_resource_to(recipe_output)
@@ -121,12 +154,33 @@ func on_cauldron_click():
 		start_boiling_cauldron(resource_carried)
 		set_carried_resource_to(ResourceType.NONE)
 	elif resource_carried == ResourceType.NONE and cauldron_contents != ResourceType.NONE:
-		var cauldron_set = $CauldronSet
-		cauldron_set.empty_cauldron()
-		set_carried_resource_to(cauldron_contents)
-		cauldron_contents = ResourceType.NONE
+		get_cauldron_contents()
 		
 func start_boiling_cauldron(ingredient): 
-	var cauldron_set = $CauldronSet
-	cauldron_set.add_ingredient_to_cauldron()
+	is_potion_done = false
+	is_potion_ruined = false
+	is_cauldron_boiling = true
+	cauldron_timer = cauldron_max_time
+	wrong_temp_time = 0
+	$CauldronSet.add_ingredient_to_cauldron()
 	cauldron_contents = ingredient
+	var cauldron_recipe = cauldron_recipes.recipe_for(ingredient)
+	
+func get_cauldron_contents(): 
+	if not is_potion_done or is_potion_ruined: 
+		set_carried_resource_to(ResourceType.CRAP)
+	else:
+		var good_contents = cauldron_recipe.Output
+		set_carried_resource_to(good_contents) # TODO
+	empty_out_cauldron()
+	
+func empty_out_cauldron(): 
+	is_potion_done = false
+	is_potion_ruined = false
+	is_cauldron_boiling = false
+	$CauldronSet.empty_cauldron()
+	cauldron_contents = ResourceType.NONE
+
+func cauldron_potion_done(): 
+	is_potion_done = true
+	$CauldronSet.finish_cauldron()
