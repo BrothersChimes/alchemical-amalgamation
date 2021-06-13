@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -11,17 +11,108 @@
 [ext_resource path="res://Assets/Stations/station_trash.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Resources/resource_log.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Stations/station_cauldron.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Stations/station_cauldron_fire_spritesheet.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Stations/station_woodpile.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Stations/station_coal.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Stations/station_bellows_spritesheet.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Stations/station_cauldron_shine.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Resources/resource_coal.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Stations/station_bellows.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Stations/station_shovel_contents_coals.png" type="Texture" id=19]
+[ext_resource path="res://Book.gd" type="Script" id=20]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 40
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 12 )
+region = Rect2( 256, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 12 )
+region = Rect2( 192, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 12 )
+region = Rect2( 192, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 12 )
+region = Rect2( 256, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 15 )
+region = Rect2( 48, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 15 )
+region = Rect2( 96, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 15 )
+region = Rect2( 144, 0, 48, 32 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Book" type="Node2D"]
+position = Vector2( 2, 0 )
+script = ExtResource( 20 )
 
 [node name="BookSprite" type="Sprite" parent="."]
 position = Vector2( 342, 321.521 )
@@ -32,7 +123,6 @@ centered = false
 offset = Vector2( -15.2923, -25.4637 )
 
 [node name="Page1" type="Node2D" parent="."]
-visible = false
 
 [node name="Left" type="Node2D" parent="Page1"]
 
@@ -40,26 +130,11 @@ visible = false
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page1/Left"]
-margin_left = 140.587
-margin_top = 76.0
-margin_right = 601.587
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Instructions"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Line1" type="RichTextLabel" parent="Page1/Left"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
+margin_left = 134.512
+margin_top = 54.1693
+margin_right = 591.512
+margin_bottom = 154.169
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -72,9 +147,9 @@ __meta__ = {
 
 [node name="Line2" type="RichTextLabel" parent="Page1/Left"]
 margin_left = 147.0
-margin_top = 198.0
+margin_top = 43.6744
 margin_right = 604.0
-margin_bottom = 360.0
+margin_bottom = 205.674
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -88,9 +163,9 @@ __meta__ = {
 
 [node name="Line3" type="RichTextLabel" parent="Page1/Left"]
 margin_left = 148.175
-margin_top = 366.835
+margin_top = 211.011
 margin_right = 605.175
-margin_bottom = 466.835
+margin_bottom = 311.011
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -103,9 +178,9 @@ __meta__ = {
 
 [node name="Line4" type="RichTextLabel" parent="Page1/Left"]
 margin_left = 145.0
-margin_top = 469.5
+margin_top = 303.188
 margin_right = 602.0
-margin_bottom = 569.5
+margin_bottom = 403.188
 rect_pivot_offset = Vector2( 180.876, 76.7054 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -118,14 +193,29 @@ __meta__ = {
 
 [node name="Line5" type="RichTextLabel" parent="Page1/Left"]
 margin_left = 145.0
-margin_top = 577.443
+margin_top = 415.626
 margin_right = 602.0
-margin_bottom = 677.443
+margin_bottom = 515.626
 rect_pivot_offset = Vector2( 180.876, 76.7054 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press LEFT (left) and RIGHT (right) to flip pages."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line6" type="RichTextLabel" parent="Page1/Left"]
+margin_left = 145.0
+margin_top = 523.027
+margin_right = 602.0
+margin_bottom = 680.027
+rect_pivot_offset = Vector2( 180.876, 76.7054 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Press SPACEBAR (spacebar) to jump to Recipes or the start of the book"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -155,10 +245,10 @@ position = Vector2( 598.184, 49.5662 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page1/Right"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 603.0
-margin_bottom = 220.0
+margin_left = 143.495
+margin_top = 55.0237
+margin_right = 607.495
+margin_bottom = 199.024
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
@@ -171,9 +261,9 @@ __meta__ = {
 
 [node name="Line1" type="RichTextLabel" parent="Page1/Right"]
 margin_left = 145.0
-margin_top = 204.0
+margin_top = 174.034
 margin_right = 602.0
-margin_bottom = 304.0
+margin_bottom = 274.034
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -186,9 +276,9 @@ __meta__ = {
 
 [node name="Line2" type="RichTextLabel" parent="Page1/Right"]
 margin_left = 145.0
-margin_top = 327.677
+margin_top = 302.206
 margin_right = 602.0
-margin_bottom = 427.677
+margin_bottom = 402.206
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -201,9 +291,9 @@ __meta__ = {
 
 [node name="Line3" type="RichTextLabel" parent="Page1/Right"]
 margin_left = 145.0
-margin_top = 443.031
+margin_top = 420.556
 margin_right = 602.0
-margin_bottom = 543.031
+margin_bottom = 520.556
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
@@ -1063,11 +1153,23 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Page6" type="Node2D" parent="."]
+visible = false
 
 [node name="Left" type="Node2D" parent="Page6"]
 
 [node name="TitleSprite" type="Sprite" parent="Page6/Left"]
-position = Vector2( 600.037, 66.6708 )
+position = Vector2( 401.146, 5.26817 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="TitleSprite2" type="AnimatedSprite" parent="Page6/Left"]
+position = Vector2( 408.461, 2.66965 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 8 )
+frame = 2
+speed_scale = 0.25
+playing = true
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page6/Left"]
@@ -1109,7 +1211,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Fires get hotter when they have lots of wood"
+text = "Add wood to your fire with W (w)."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1124,48 +1226,61 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You can make a fire hotter with bellows with B (b)"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line4" type="RichTextLabel" parent="Page6/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
+margin_left = 143.586
+margin_top = 563.012
+margin_right = 600.586
+margin_bottom = 663.012
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You can make a fire colder by shoveling embers with E (e)"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line1Sprite" type="Sprite" parent="Page6/Left"]
-position = Vector2( 605.298, 215.928 )
+position = Vector2( 604.541, 188.827 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 10 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page6/Left"]
-position = Vector2( 600.536, 308.963 )
+position = Vector2( 593.284, 284.005 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Page6/Left"]
-position = Vector2( 600.536, 424.875 )
+position = Vector2( 582.151, 455.988 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Page6/Left"]
-position = Vector2( 600.536, 543.308 )
+position = Vector2( 603.364, 574.421 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="Right" type="Node2D" parent="Page6"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page6/Right"]
-position = Vector2( 598.184, 49.5662 )
+[node name="TitleSprite" type="AnimatedSprite" parent="Page6/Right"]
+position = Vector2( 545.839, 14.6561 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 8 )
+frame = 2
+speed_scale = 0.25
+playing = true
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page6/Right"]
@@ -1259,24 +1374,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page6/Right"]
-position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+[node name="Line1Sprite" type="AnimatedSprite" parent="Page6/Right"]
+position = Vector2( 468.283, 98.4188 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
+frame = 4
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page6/Right"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
+[node name="Line2Sprite" type="AnimatedSprite" parent="Page6/Right"]
+position = Vector2( 466.696, 180.964 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
+frame = 3
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page6/Right"]
-position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
+[node name="Line3Sprite" type="AnimatedSprite" parent="Page6/Right"]
+position = Vector2( 468.283, 257.159 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
+frame = 2
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page6/Right"]
-position = Vector2( 600.536, 543.308 )
-scale = Vector2( 8, 8 )
+[node name="Line4Sprite" type="AnimatedSprite" parent="Page6/Right"]
+position = Vector2( 468.283, 353.99 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
+frame = 1
+centered = false
+
+[node name="Line5Sprite" type="AnimatedSprite" parent="Page6/Right"]
+position = Vector2( 471.458, 444.472 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
 centered = false
 
 [node name="Page7" type="Node2D" parent="."]
@@ -1285,7 +1414,9 @@ visible = false
 [node name="Left" type="Node2D" parent="Page7"]
 
 [node name="TitleSprite" type="Sprite" parent="Page7/Left"]
-position = Vector2( 600.037, 66.6708 )
+position = Vector2( 426.508, 33.2998 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page7/Left"]
@@ -1297,7 +1428,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Coal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1312,6 +1443,8 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Coal can be added to a fire.
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1319,27 +1452,29 @@ __meta__ = {
 
 [node name="Line2" type="RichTextLabel" parent="Page7/Left"]
 margin_left = 145.0
-margin_top = 327.677
+margin_top = 282.292
 margin_right = 602.0
-margin_bottom = 427.677
+margin_bottom = 382.292
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Coal burns hot when blown by a bellow."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line3" type="RichTextLabel" parent="Page7/Left"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
+margin_left = 146.335
+margin_top = 413.665
+margin_right = 603.335
+margin_bottom = 513.665
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Fires need wood to burn, coal only makes it hotter."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1361,10 +1496,14 @@ __meta__ = {
 
 [node name="Line1Sprite" type="Sprite" parent="Page7/Left"]
 position = Vector2( 600.536, 190.53 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page7/Left"]
-position = Vector2( 600.536, 308.963 )
+position = Vector2( 592.527, 274.257 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Page7/Left"]
@@ -1378,10 +1517,6 @@ centered = false
 [node name="Right" type="Node2D" parent="Page7"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page7/Right"]
-position = Vector2( 598.184, 49.5662 )
-centered = false
-
 [node name="Title" type="RichTextLabel" parent="Page7/Right"]
 margin_left = 139.0
 margin_top = 76.0
@@ -1391,6 +1526,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Bellows"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1470,6 +1606,14 @@ centered = false
 [node name="Line4Sprite" type="Sprite" parent="Page7/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
+centered = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Page7/Right"]
+position = Vector2( 440.497, 36.0407 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 19 )
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Page8" type="Node2D" parent="."]
