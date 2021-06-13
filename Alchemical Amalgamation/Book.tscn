@@ -119,17 +119,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 12 )
 region = Rect2( 128, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 12 )
 region = Rect2( 64, 0, 64, 96 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -1640,7 +1640,6 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 19 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -2280,8 +2279,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Page10/Right"]
 position = Vector2( 583.435, 348.786 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 23 )
-frame = 1
+frames = SubResource( 22 )
 speed_scale = 0.25
 playing = true
 centered = false
@@ -2293,7 +2291,7 @@ centered = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Page11/Left"]
 position = Vector2( 576.033, 280.064 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 23 )
+frames = SubResource( 22 )
 speed_scale = 0.25
 playing = true
 centered = false
@@ -2398,18 +2396,21 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="Page11/Right"]
-position = Vector2( 598.184, 49.5662 )
+position = Vector2( 537.776, 87.3211 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page11/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
-margin_bottom = 220.0
+margin_bottom = 203.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Iron Spice"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2424,6 +2425,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Potion of Burner's Hair"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2438,6 +2440,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Potion of Flaming Blossom"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2452,6 +2455,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Behemoth"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2466,6 +2470,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Combine"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2473,22 +2478,25 @@ __meta__ = {
 
 [node name="Line1Sprite" type="Sprite" parent="Page11/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 27 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page11/Right"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
+position = Vector2( 596.76, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Page11/Right"]
-position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
+position = Vector2( 594.873, 417.324 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 25 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Page11/Right"]
 position = Vector2( 600.536, 543.308 )
-scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="Page12" type="Node2D" parent="."]

@@ -62,3 +62,5 @@ static func sprites_names_for_resource_types(resource_type):
 			return "teal"
 		ResourceType.FLAMING_BLOSSOM:
 			return "orange"
+		ResourceType.IRON_SPICE
+			return "orange"
