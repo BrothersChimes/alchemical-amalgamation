@@ -60,9 +60,9 @@ func _on_CustomerText_sell_potion_to(customer_number):
 	if resource_carried == ResourceType.NONE:
 		return
 	if resource_carried == customer_desired_resources[customer_number]:
-		print("SUCCESS!")
+		$SuccessAndFailureText.set_text_success()
 	else:
-		print("FAILURE!")
+		$SuccessAndFailureText.set_text_failure()
 	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Workroom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CustomerText.tscn" type="PackedScene" id=2]
@@ -10,6 +10,14 @@
 [ext_resource path="res://CauldronSet.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Main.gd" type="Script" id=9]
 [ext_resource path="res://Book.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://SuccessAndFailureText.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128, 96 )
@@ -19,6 +27,36 @@ script = ExtResource( 9 )
 
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="SuccessAndFailureText" type="Node2D" parent="GameController"]
+z_index = 10
+script = ExtResource( 12 )
+
+[node name="SuccessText" type="RichTextLabel" parent="GameController/SuccessAndFailureText"]
+visible = false
+margin_left = 320.0
+margin_top = 288.0
+margin_right = 1440.0
+margin_bottom = 512.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.196078, 1, 0, 1 )
+text = "SUCCESSFUL SALE!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FailText" type="RichTextLabel" parent="GameController/SuccessAndFailureText"]
+visible = false
+margin_left = 512.0
+margin_top = 288.0
+margin_right = 1248.0
+margin_bottom = 512.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 0.133333, 0, 1 )
+text = "FAILED SALE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BookArea" type="Area2D" parent="GameController"]
 position = Vector2( 640, 128 )
