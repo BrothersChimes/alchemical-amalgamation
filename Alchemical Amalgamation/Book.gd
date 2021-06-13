@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-const RECIPE_START = 4
+const RECIPE_START = 7
 var index = 0
 var pagenumbers = [
 	"Page1",
