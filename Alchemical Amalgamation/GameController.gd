@@ -18,6 +18,10 @@ var customersQueue = CustomersQueue.new()
 
 var cauldron_contents = ResourceType.NONE
 
+var cauldron_max_time = 10
+var cauldron_timer = 0
+var is_cauldron_boiling = false
+
 var customer_desired_resources = [
 	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
 	ResourceType.NONE, ResourceType.NONE
@@ -25,6 +29,10 @@ var customer_desired_resources = [
 
 func _ready():
 	set_start_customer()
+	
+func _process(delta): 
+	if is_cauldron_boiling: 
+		cauldron_timer -= delta
 
 func set_start_customer(): 
 	set_customers()
@@ -110,15 +118,15 @@ func _on_CauldronArea_input_event(viewport, event, shape_idx):
 
 func on_cauldron_click(): 
 	if resource_carried != ResourceType.NONE and cauldron_contents == ResourceType.NONE:
-		print("ADDING TO CAULDRON")
-		var cauldron_set = $CauldronSet
-		cauldron_set.add_ingredient_to_cauldron()
-		cauldron_contents = resource_carried
+		start_boiling_cauldron(resource_carried)
 		set_carried_resource_to(ResourceType.NONE)
 	elif resource_carried == ResourceType.NONE and cauldron_contents != ResourceType.NONE:
-		print("REMOVING FROM CAULDRON")
 		var cauldron_set = $CauldronSet
 		cauldron_set.empty_cauldron()
 		set_carried_resource_to(cauldron_contents)
 		cauldron_contents = ResourceType.NONE
 		
+func start_boiling_cauldron(ingredient): 
+	var cauldron_set = $CauldronSet
+	cauldron_set.add_ingredient_to_cauldron()
+	cauldron_contents = ingredient

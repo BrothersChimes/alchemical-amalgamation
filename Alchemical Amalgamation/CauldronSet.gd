@@ -150,14 +150,12 @@ func _process(delta):
 
 # PUBLIC_FUNCTIONS
 func add_ingredient_to_cauldron(): 
-	print("CAULDRON: ADD")
 	$CauldronDone.visible = true
 
 func finish_cauldron(): 
 	$CauldronDone.visible = true
 	
-func empty_cauldron(): 
-	print("CAULDRON: EMPTY")
+func empty_cauldron():
 	$CauldronDone.visible = false
 
 func get_heat_level_cauldron():
