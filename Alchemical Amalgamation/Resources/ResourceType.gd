@@ -2,10 +2,14 @@ extends Node
 
 enum ResourceType { 
 	NONE,
-	WATER,
+	AWESOME,
+	BEHEMOTH,
+	BLOSSOM,
+	ECTOPLASM,
 	ETTERCAP,
 	MERMAID,
-	AWESOME,
+	RIDDLER,
+	WATER,
 	CRAP,
 	LIQUID_AWESOME,
 	BOILED_MERMAID,
@@ -26,14 +30,22 @@ static func sprite_path_for_resource_type(resource_type):
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
 		#### RAW MATERIALS ####
-		ResourceType.WATER: 
-			return "water"
-		ResourceType.ETTERCAP:
-			return "etter"
-		ResourceType.MERMAID:
-			return "mermaid"
 		ResourceType.AWESOME:
 			return "awesome"	
+		ResourceType.BEHEMOTH:
+			return "behemoth"	
+		ResourceType.BLOSSOM:
+			return "blossom"	
+		ResourceType.ECTOPLASM:
+			return "ectoplasm"	
+		ResourceType.ETTERCAP:
+			return "etter"
+		ResourceType.RIDDLER:
+			return "riddler"
+		ResourceType.MERMAID:
+			return "mermaid"
+		ResourceType.WATER: 
+			return "water"
 		#### POTIONS ####
 		ResourceType.CRAP:
 			print("RETURNING CRAP: " + str(ResourceType.CRAP))

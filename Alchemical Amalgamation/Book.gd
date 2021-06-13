@@ -42,6 +42,9 @@ var pagenumbers = [
 
 func _ready():
 	get_node(pagenumbers[0]).visible = true
+	for page in pagenumbers:
+		get_node(page).visible = false
+	get_node(pagenumbers[0]).visible = true
 	
 
 func _process(delta):
