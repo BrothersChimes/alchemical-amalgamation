@@ -3,9 +3,9 @@ extends Node2D
 var heat = 0
 var coal = 0
 var wood = 0
-var heat_coals = 0
+var heat_embers = 0
 var heat_level_fire = Heat.DEAD
-var heat_level_coals = Heat.DEAD
+var heat_level_embers = Heat.DEAD
 var has_coal = 1
 const CAULDRON_HEAT_GLOW_THRESHOLD = 20
 const BELLOWS_HEAT_ADDITION = 20
@@ -38,10 +38,11 @@ func _on_BellowsSprite_animation_finished():
 		heat = HEAT_MAX
 
 func print_stats():
+	print("heat: ", heat)
 	print("heat_level_fire: ", heat_level_fire)
-	print("embers: ", heat_coals)
+	print("embers: ", heat_embers)
 	print("wood: ", wood)
-	print("heat_level_coals: ", coal)
+	print("coal: ", coal)
 	
 
 func _process(delta):
@@ -62,12 +63,15 @@ func _process(delta):
 		has_coal = 1
 	else:
 		has_coal = 0
-	heat -= delta
-	heat_coals -= delta
+	if heat >= wood:
+		heat -= delta
+	else:
+		heat += delta / 2
+	heat_embers -= delta
 	if Input.is_action_just_pressed("shovel_embers") && heat > 0:
 		print("embers shoveled")
 		print_stats()
-		heat_coals += 0.3 * heat
+		heat_embers += 0.3 * heat
 		heat -= 0.3 * heat
 		wood -= 5
 		coal -= 5
@@ -77,8 +81,8 @@ func _process(delta):
 		coal = 0
 	if heat <= 0:
 		heat = 0
-	if heat_coals <= 0:
-		heat_coals = 0
+	if heat_embers <= 0:
+		heat_embers = 0
 	if heat >= CAULDRON_HEAT_GLOW_THRESHOLD:
 		$Cauldron/CauldronHotSprite.visible = true
 		$Cauldron/CauldronColdSprite.visible = false
@@ -92,37 +96,36 @@ func _process(delta):
 	if heat <= 0:
 		$Fire/FireSprite.set_frame(0)
 		heat_level_fire = Heat.DEAD
-		burn_consumption_multiplier = 0.025
 	elif heat <= HEAT_LOW:
 		$Fire/FireSprite.set_frame(1)
 		heat_level_fire = Heat.LOW
-		burn_consumption_multiplier = 0.05
+		burn_consumption_multiplier = 0.25
 	elif heat <= HEAT_MED:
 		$Fire/FireSprite.set_frame(2)
 		heat_level_fire = Heat.MED
-		burn_consumption_multiplier = 0.15
+		burn_consumption_multiplier = 0.5
 	elif heat <= HEAT_HIGH:
 		$Fire/FireSprite.set_frame(3)
 		heat_level_fire = Heat.HIGH
-		burn_consumption_multiplier = 0.3
+		burn_consumption_multiplier = 1
 	elif heat <= HEAT_BLAZE:
 		$Fire/FireSprite.set_frame(4)
 		heat_level_fire = Heat.BLAZE
-		burn_consumption_multiplier = 0.6
-	if heat_coals <= 0:
-		heat_level_coals = Heat.DEAD
+		burn_consumption_multiplier = 1.5
+	if heat_embers <= 0:
+		heat_level_embers = Heat.DEAD
 		$Coals/CoalsSprite.set_frame(0)
-	elif heat_coals <= HEAT_LOW:
-		heat_level_coals = Heat.LOW
+	elif heat_embers <= HEAT_LOW:
+		heat_level_embers = Heat.LOW
 		$Coals/CoalsSprite.set_frame(1)
-	elif heat_coals <= 60:
-		heat_level_coals = Heat.MED
+	elif heat_embers <= 60:
+		heat_level_embers = Heat.MED
 		$Coals/CoalsSprite.set_frame(2)
-	elif heat_coals <= 80:
-		heat_level_coals = Heat.HIGH
+	elif heat_embers <= 80:
+		heat_level_embers = Heat.HIGH
 		$Coals/CoalsSprite.set_frame(3)
-	elif heat_coals <= 100:
-		heat_level_coals = Heat.BLAZE
+	elif heat_embers <= 100:
+		heat_level_embers = Heat.BLAZE
 		$Coals/CoalsSprite.set_frame(4)
 	if wood <= 0:
 		$Wood/WoodSprite.set_frame(0)
@@ -134,13 +137,13 @@ func _process(delta):
 		$Wood/WoodSprite.set_frame(3)
 	elif wood <= 100:
 		$Wood/WoodSprite.set_frame(4)
-	wood -= 1 * burn_consumption_multiplier
-	coal -= 1 * burn_consumption_multiplier
+	wood -= delta * burn_consumption_multiplier
+	coal -= delta * burn_consumption_multiplier
 
 
 # PUBLIC_FUNCTIONS
-func get_heat_cauldron():
-	return heat_level_coals
-
-func get_heat_embers():
+func get_heat_level_cauldron():
 	return heat_level_fire
+
+func get_heat_level_embers():
+	return heat_level_embers
