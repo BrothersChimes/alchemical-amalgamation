@@ -7,6 +7,7 @@ var heat_embers = 0
 var heat_level_fire = Heat.DEAD
 var heat_level_embers = Heat.DEAD
 var has_coal = 1
+var counter = 0
 const CAULDRON_HEAT_GLOW_THRESHOLD = 20
 const BELLOWS_HEAT_ADDITION = 20
 const HEAT_MAX = 100
@@ -25,6 +26,7 @@ enum Heat {
 	HIGH,
 	BLAZE
 }
+
 
 func _ready(): 
 	$CauldronDone.visible = false
@@ -145,6 +147,14 @@ func _process(delta):
 		$Wood/WoodSprite.set_frame(4)
 	wood -= delta * burn_consumption_multiplier
 	coal -= delta * burn_consumption_multiplier
+	counter += delta
+	if counter > 2:
+		print("COUNT")
+		counter = 0
+		if get_node("CauldronBusy/SpoonSprite").flip_h:
+			get_node("CauldronBusy/SpoonSprite").flip_h = 0
+		else:
+			get_node("CauldronBusy/SpoonSprite").flip_h = 1
 
 
 
