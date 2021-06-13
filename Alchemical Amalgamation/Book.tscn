@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Assets/Stations/station_combiner_empty.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Backgrounds/background_item_single.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ingredients/ingredient_etter.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ingredients/potion_yellow.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ingredients/potion_purple.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Stations/station_trash.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Resources/resource_log.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Stations/station_cauldron.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -245,6 +250,7 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Page2" type="Node2D" parent="."]
+visible = false
 
 [node name="Left" type="Node2D" parent="Page2"]
 
@@ -336,7 +342,7 @@ centered = false
 [node name="Line1Sprite2" type="Sprite" parent="Page2/Left"]
 position = Vector2( 632.285, 222.278 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page2/Left"]
@@ -382,7 +388,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Drag raw materials off the shelf and onto devices"
+text = "Drag raw materials off the shelf and onto devices."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -397,7 +403,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Each ingredient costs gold"
+text = "Each ingredient costs gold."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -412,6 +418,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Wasting ingredients wastes money."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -434,6 +441,7 @@ __meta__ = {
 [node name="Line1Sprite" type="Sprite" parent="Page2/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page2/Right"]
@@ -685,6 +693,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Used to dispose of undesirables."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -699,6 +708,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Drag and drop unwanted items into the trashcan."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -713,6 +723,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Takes everything. Gives nothing back."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -733,15 +744,15 @@ __meta__ = {
 }
 
 [node name="Line1Sprite" type="Sprite" parent="Page4/Left"]
-position = Vector2( 600.536, 190.53 )
-centered = false
-
-[node name="Line1Sprite2" type="Sprite" parent="Page4/Left"]
-position = Vector2( 600.536, 190.53 )
+position = Vector2( 600.536, 209.579 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page4/Left"]
-position = Vector2( 600.536, 308.963 )
+position = Vector2( 600.536, 326.424 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Page4/Left"]
@@ -756,7 +767,9 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="Page4/Right"]
-position = Vector2( 598.184, 49.5662 )
+position = Vector2( 183.873, 116.237 )
+scale = Vector2( 16, 16 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page4/Right"]
@@ -816,9 +829,9 @@ __meta__ = {
 }
 
 [node name="Line4" type="RichTextLabel" parent="Page4/Right"]
-margin_left = 145.0
+margin_left = 146.587
 margin_top = 548.87
-margin_right = 602.0
+margin_right = 603.587
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
@@ -867,7 +880,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Cauldron"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -882,6 +895,8 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "The Cauldron boils ingredients.
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -896,6 +911,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Drag items into the cauldron."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -903,13 +919,14 @@ __meta__ = {
 
 [node name="Line3" type="RichTextLabel" parent="Page5/Left"]
 margin_left = 145.0
-margin_top = 443.031
+margin_top = 414.458
 margin_right = 602.0
-margin_bottom = 543.031
+margin_bottom = 514.458
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "The heat of the fire affects the boiling of the cauldron."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -924,6 +941,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Don't let it get too hot or cold whilst boiling."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -949,7 +967,9 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="Page5/Right"]
-position = Vector2( 598.184, 49.5662 )
+position = Vector2( 179.11, 19.4056 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Page5/Right"]
@@ -1043,7 +1063,6 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Page6" type="Node2D" parent="."]
-visible = false
 
 [node name="Left" type="Node2D" parent="Page6"]
 
@@ -1060,7 +1079,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Fire"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1075,6 +1094,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "The fire heats the cauldron. It needs wood to burn."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1089,6 +1109,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Fires get hotter when they have lots of wood"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1123,7 +1144,9 @@ __meta__ = {
 }
 
 [node name="Line1Sprite" type="Sprite" parent="Page6/Left"]
-position = Vector2( 600.536, 190.53 )
+position = Vector2( 605.298, 215.928 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Page6/Left"]
@@ -1154,6 +1177,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Fire Levels"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1168,6 +1192,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Dead"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1175,13 +1200,14 @@ __meta__ = {
 
 [node name="Line2" type="RichTextLabel" parent="Page6/Right"]
 margin_left = 145.0
-margin_top = 327.677
+margin_top = 284.817
 margin_right = 602.0
-margin_bottom = 427.677
+margin_bottom = 384.817
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Cold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1189,19 +1215,35 @@ __meta__ = {
 
 [node name="Line3" type="RichTextLabel" parent="Page6/Right"]
 margin_left = 145.0
-margin_top = 443.031
+margin_top = 371.598
 margin_right = 602.0
-margin_bottom = 543.031
+margin_bottom = 471.598
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Medium"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line4" type="RichTextLabel" parent="Page6/Right"]
+margin_left = 145.0
+margin_top = 471.087
+margin_right = 602.0
+margin_bottom = 571.087
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Hot"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line5" type="RichTextLabel" parent="Page6/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -1210,6 +1252,8 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Blazing
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
