@@ -9,12 +9,12 @@ func _ready():
 
 class Recipe:
 	var Ingredients : Array
-	var Output: intI
+	var Output: int
 	
 var recipes = [
 	create_recipe(ResourceType.WATER, ResourceType.AWESOME, ResourceType.NONE, ResourceType.LIQUID_AWESOME),
 	create_recipe(ResourceType.ETTERCAP, ResourceType.MERMAID, ResourceType.NONE, ResourceType.MAIDS_CAP),
-	create_recipe(ResourceType.MAIDS_CAP, ResourceType.AWESOME, ResourceType.WATER, ResourceType.BURNERS_HAIR),
+	create_recipe(ResourceType.MAIDS_CAP, ResourceType.AWESOME, ResourceType.NONE, ResourceType.BURNERS_HAIR),
 	create_recipe(ResourceType.BURNERS_HAIR, ResourceType.FLAMING_BLOSSOM, ResourceType.BEHEMOTH, ResourceType.IRON_SPICE),
 ]
 

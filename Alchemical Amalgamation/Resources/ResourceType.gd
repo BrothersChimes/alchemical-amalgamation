@@ -15,7 +15,8 @@ enum ResourceType {
 	BOILED_MERMAID,
 	MAIDS_CAP,
 	BURNERS_HAIR,
-	FLAMING_BLOSSOM
+	FLAMING_BLOSSOM,
+	IRON_SPICE
 }
 
 static func is_resource_potion(resource_type): 
@@ -62,5 +63,5 @@ static func sprites_names_for_resource_types(resource_type):
 			return "teal"
 		ResourceType.FLAMING_BLOSSOM:
 			return "orange"
-		ResourceType.IRON_SPICE
+		ResourceType.IRON_SPICE:
 			return "orange"
