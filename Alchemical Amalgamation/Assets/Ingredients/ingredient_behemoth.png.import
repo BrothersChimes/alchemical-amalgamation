@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/station_cauldron_contents_pink.png-1a1a65b84526c55741104b6a4e505cee.stex"
+path="res://.import/ingredient_behemoth.png-37b7aa6544924eea6ffa28ae08a6bfff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ingredients/station_cauldron_contents_pink.png"
-dest_files=[ "res://.import/station_cauldron_contents_pink.png-1a1a65b84526c55741104b6a4e505cee.stex" ]
+source_file="res://Assets/Ingredients/ingredient_behemoth.png"
+dest_files=[ "res://.import/ingredient_behemoth.png-37b7aa6544924eea6ffa28ae08a6bfff.stex" ]
 
 [params]
 
