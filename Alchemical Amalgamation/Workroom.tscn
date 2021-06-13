@@ -130,10 +130,12 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="ingredient_water" type="Sprite" parent="Book"]
+visible = false
 position = Vector2( 320, 64 )
 texture = ExtResource( 10 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Book"]
+visible = false
 margin_left = 331.735
 margin_top = 54.1123
 margin_right = 371.735
@@ -146,6 +148,7 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Book"]
+visible = false
 margin_left = 297.0
 margin_top = 33.0
 margin_right = 377.0
