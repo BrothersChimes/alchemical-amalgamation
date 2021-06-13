@@ -32,6 +32,8 @@ func _on_BellowsSprite_animation_finished():
 	var bellows_heat_multiplier = ((HEAT_MAX - heat) / HEAT_MAX)
 	if bellows_heat_multiplier > BELLOWS_HEAT_MULTIPLIER_MAX:
 		bellows_heat_multiplier = BELLOWS_HEAT_MULTIPLIER_MAX
+	if wood <= 0:
+		return
 	heat += BELLOWS_HEAT_ADDITION * bellows_heat_multiplier + (has_coal * BELLOWS_HEAT_ADDITION)
 
 	if heat > HEAT_MAX:
@@ -75,7 +77,8 @@ func _process(delta):
 		heat -= 0.3 * heat
 		wood -= 5
 		coal -= 5
-	if wood < 0:
+	if wood <= 0:
+		heat -= delta * 3
 		wood = 0
 	if coal < 0:
 		coal = 0
