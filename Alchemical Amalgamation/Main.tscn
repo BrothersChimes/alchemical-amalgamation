@@ -47,7 +47,6 @@ position = Vector2( 352, 352 )
 z_index = -1
 
 [node name="Book" parent="." instance=ExtResource( 10 )]
-visible = false
 z_index = 10
 [connection signal="open_book" from="GameController" to="." method="_on_GameController_open_book"]
 [connection signal="input_event" from="GameController/BookArea" to="GameController" method="_on_BookArea_input_event"]
