@@ -13,7 +13,7 @@ class Recipe:
 	
 var recipes = [
 	create_recipe(ResourceType.WATER, ResourceType.AWESOME, ResourceType.NONE, 
-	ResourceType.DILUTE_AWESOME)
+	ResourceType.LIQUID_AWESOME)
 ]
 
 func create_recipe(ingredient1, ingredient2, ingredient3, output): 

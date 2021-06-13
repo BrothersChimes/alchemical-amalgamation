@@ -22,7 +22,7 @@ class Recipe:
 	var MaxHeat: int
 	
 var recipes = [
-	create_recipe(ResourceType.MERMAID, 2, ResourceType.DILUTE_AWESOME, 
+	create_recipe(ResourceType.MERMAID, 5, ResourceType.DILUTE_AWESOME, 
 		Heat.LOW, Heat.BLAZE),
 ]
 
@@ -42,14 +42,7 @@ func recipe_for(ingredient):
 	for recipe in recipes: 
 		var rec_ingredient = recipe.Ingredient	
 		if ingredient == rec_ingredient: 
-			print("GOOD RECIPE")
+			print("Cauldron: Good recipe")
 			return recipe
-	print("CRAP RECIPE")
+	print("Cauldron: Crap recipe")
 	return CRAP_RECIPE
-
-#func recipe_for(ingredient): 
-#	for recipe in recipes: 
-#		var rec_ingredient = recipe.Ingredient	
-#		if ingredient == rec_ingredient: 
-#			return recipe
-#	return ResourceType.CRAP

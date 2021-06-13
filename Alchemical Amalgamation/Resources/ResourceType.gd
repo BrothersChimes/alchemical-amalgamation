@@ -34,5 +34,5 @@ static func sprites_names_for_resource_types(resource_type):
 		#### POTIONS ####
 		ResourceType.CRAP:
 			return "yellow"
-		ResourceType.DILUTE_AWESOME:
+		ResourceType.LIQUID_AWESOME:
 			return "green"
