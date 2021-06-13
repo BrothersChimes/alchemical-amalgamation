@@ -22,7 +22,6 @@ var customersQueue = CustomersQueue.new()
 
 var cauldron_contents = ResourceType.NONE
 
-
 enum Heat {
 	DEAD,
 	LOW,
@@ -56,15 +55,15 @@ func _process(delta):
 				
 func cauldron_process(delta): 
 	if is_cauldron_boiling and cauldron_recipe != null: 
-		cauldron_timer -= delta
+		cauldron_timer += delta
 		var cauldron_temp = $CauldronSet.get_heat_level_cauldron()
 		if cauldron_temp < cauldron_recipe.MinHeat or cauldron_temp > cauldron_recipe.MaxHeat:
 			wrong_temp_time += delta
-		if cauldron_timer <= 0:
+		if cauldron_timer >= cauldron_recipe.BoilTime:
 			if not is_potion_done:
 				cauldron_potion_done()
-		if cauldron_timer <= -CAULDRON_BURN_TIME or wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
-			is_potion_ruined = true	
+		if cauldron_timer >= CAULDRON_BURN_TIME or wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
+			is_potion_ruined = true
 
 
 func set_start_customer(): 
@@ -157,14 +156,15 @@ func on_cauldron_click():
 		get_cauldron_contents()
 		
 func start_boiling_cauldron(ingredient): 
+	print("Start boiling")
 	is_potion_done = false
 	is_potion_ruined = false
 	is_cauldron_boiling = true
-	cauldron_timer = cauldron_max_time
+	cauldron_timer = 0
 	wrong_temp_time = 0
 	$CauldronSet.add_ingredient_to_cauldron()
 	cauldron_contents = ingredient
-	var cauldron_recipe = cauldron_recipes.recipe_for(ingredient)
+	cauldron_recipe = cauldron_recipes.recipe_for(ingredient)
 	
 func get_cauldron_contents(): 
 	if not is_potion_done or is_potion_ruined: 
@@ -181,6 +181,7 @@ func empty_out_cauldron():
 	$CauldronSet.empty_cauldron()
 	cauldron_contents = ResourceType.NONE
 
-func cauldron_potion_done(): 
+func cauldron_potion_done():
+	print("CAULDRON POTION DONE") 
 	is_potion_done = true
 	$CauldronSet.finish_cauldron()

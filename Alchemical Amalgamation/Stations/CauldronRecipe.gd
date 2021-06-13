@@ -22,11 +22,11 @@ class Recipe:
 	var MaxHeat: int
 	
 var recipes = [
-	create_recipe(ResourceType.MERMAID, 10, ResourceType.DILUTE_AWESOME, 
+	create_recipe(ResourceType.MERMAID, 2, ResourceType.DILUTE_AWESOME, 
 		Heat.LOW, Heat.BLAZE),
 ]
 
-var CRAP_RECIPE = create_recipe(ResourceType.CRAP, 10, ResourceType.CRAP, 
+var CRAP_RECIPE = create_recipe(ResourceType.CRAP, 1, ResourceType.CRAP, 
 		Heat.DEAD, Heat.BLAZE)
 
 func create_recipe(ingredient, boil_time, output, min_heat, max_heat): 
