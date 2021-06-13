@@ -6,6 +6,5 @@ signal drag_resource(resource_type)
 func _ready():
 	pass # Replace with function body.
 
-
 func _on_ResourceForShelf_drag_resource(resource_type):
 	emit_signal("drag_resource", resource_type)
