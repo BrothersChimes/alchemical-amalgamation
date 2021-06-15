@@ -160,11 +160,6 @@ func cauldron_process(delta):
 		if wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
 			print("Potion ruined due to wrong temperature")
 			is_potion_ruined = true
-			
-	
-func _on_CauldronArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
-		on_cauldron_click()
 
 func on_cauldron_click(): 
 	if resource_carried != ResourceType.NONE and cauldron_contents == ResourceType.NONE:
@@ -208,3 +203,25 @@ func empty_out_cauldron():
 func cauldron_potion_done():
 	is_potion_done = true
 	$CauldronSet.finish_cauldron()
+
+
+	
+func _on_CauldronArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		on_cauldron_click()
+		
+func _on_BellowsArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		$CauldronSet.bellows_pressed_event()
+
+func _on_WoodArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		$CauldronSet.wood_add_event()
+
+func _on_CoalArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		$CauldronSet.coal_add_event()
+		
+func _on_ShovelArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed():
+		$CauldronSet.shovel_embers_event()

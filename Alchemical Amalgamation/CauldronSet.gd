@@ -50,18 +50,13 @@ func print_stats():
 	print("embers: ", heat_embers)
 	print("wood: ", wood)
 	print("coal: ", coal)
-	
 
 func _process(delta):
 	var	burn_consumption_multiplier = 0
 	if Input.is_action_just_pressed("add_wood"):
-		print("wood added")
-		print_stats()
-		wood += 30
+		wood_add_event()
 	if Input.is_action_just_pressed("add_coal"):
-		print("coal added")
-		print_stats()
-		coal += 20
+		coal_add_event()
 	if wood > WOOD_MAX:
 		wood = WOOD_MAX
 	if coal > COAL_MAX:
@@ -76,12 +71,7 @@ func _process(delta):
 		heat += delta / 2
 	heat_embers -= delta
 	if Input.is_action_just_pressed("shovel_embers") && heat > 0:
-		print("embers shoveled")
-		print_stats()
-		heat_embers += 0.3 * heat
-		heat -= 0.3 * heat
-		wood -= 5
-		coal -= 5
+		shovel_embers_event()
 	if wood <= 0:
 		heat -= delta * 3
 		wood = 0
@@ -98,9 +88,7 @@ func _process(delta):
 		$Cauldron/CauldronHotSprite.visible = false
 		$Cauldron/CauldronColdSprite.visible = true
 	if Input.is_action_just_pressed("bellows"):
-		print("bellows blown")
-		print_stats()
-		$Bellows/BellowsSprite.play("default")
+		bellows_pressed_event()
 	if heat <= 0:
 		$Fire/FireSprite.set_frame(0)
 		heat_level_fire = Heat.DEAD
@@ -156,7 +144,28 @@ func _process(delta):
 		else:
 			get_node("CauldronBusy/SpoonSprite").flip_h = 1
 
+func wood_add_event(): 
+	print("wood added")
+	print_stats()
+	wood += 30
 
+func coal_add_event(): 
+	print("coal added")
+	print_stats()
+	coal += 20
+
+func shovel_embers_event():
+	print("embers shoveled")
+	print_stats()
+	heat_embers += 0.3 * heat
+	heat -= 0.3 * heat
+	wood -= 5
+	coal -= 5
+
+func bellows_pressed_event():
+	print("bellows blown")
+	print_stats()
+	$Bellows/BellowsSprite.play("default")
 
 # PUBLIC_FUNCTIONS
 func add_ingredient_to_cauldron(): 
