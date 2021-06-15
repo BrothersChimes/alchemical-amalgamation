@@ -61,6 +61,7 @@ func set_customers():
 func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
 		set_carried_resource_to(resource_type)
+		add_gold(-20)
 		
 func _on_Workroom_destroy_resource():
 	set_carried_resource_to(ResourceType.NONE)
@@ -77,8 +78,8 @@ func _on_CustomerText_sell_potion_to(customer_number):
 		add_reputation(1)
 	else:
 		$SuccessAndFailureText.set_text_failure()
-		add_gold(-100)
-		add_reputation(-1)
+		add_gold(-500)
+		add_reputation(-5)
 	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
 

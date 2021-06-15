@@ -150,7 +150,6 @@ __meta__ = {
 [node name="Book" parent="." instance=ExtResource( 10 )]
 visible = false
 z_index = 10
-[connection signal="open_book" from="GameController" to="." method="_on_GameController_open_book"]
 [connection signal="input_event" from="GameController/BookArea" to="GameController" method="_on_BookArea_input_event"]
 [connection signal="click_on_combinator_output" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_output"]
 [connection signal="click_on_combinator_slot" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_slot"]

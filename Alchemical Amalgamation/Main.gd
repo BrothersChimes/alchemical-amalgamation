@@ -1,15 +1,16 @@
 extends Node2D
 
-var is_book_open = false
+var is_book_open = true
 
 var game_controller
 var book
 
 func _ready():
 	game_controller = $GameController
+	game_controller.visible = true
 	book = $Book
 	book.visible = true
-	remove_child(book)
+	remove_child(game_controller)
 
 func _on_GameController_open_book():
 	open_book()
