@@ -140,6 +140,7 @@ const CAULDRON_WRONG_TEMP_ALLOWED_TIME = 5
 var cauldron_max_time = 2
 var cauldron_timer = 0
 var wrong_temp_time = 0
+var overboil_time = 0
 var is_cauldron_boiling = false
 var is_potion_done = false
 var is_potion_ruined = false
@@ -147,19 +148,52 @@ var preferred_cauldron_temp_low = Heat.ANY
 var preferred_cauldron_temp_high = Heat.ANY
 var cauldron_recipe = null
 
-func cauldron_process(delta): 
+enum PotionDisplayState  {
+	FINE, OVERCOOKED, COLD, HOT, BAD_TEMP, BAD
+}
+
+var potion_display_state = PotionDisplayState.FINE
+
+func cauldron_process(delta):
 	if is_cauldron_boiling and cauldron_recipe != null: 
+		potion_display_state = PotionDisplayState.FINE
 		cauldron_timer += delta
 		var cauldron_temp = $CauldronSet.get_heat_level_cauldron()
-		if cauldron_temp < cauldron_recipe.MinHeat or cauldron_temp > cauldron_recipe.MaxHeat:
+		if cauldron_temp < cauldron_recipe.MinHeat:
+			potion_display_state = PotionDisplayState.COLD
+			wrong_temp_time += delta
+		elif cauldron_temp > cauldron_recipe.MaxHeat:
+			potion_display_state = PotionDisplayState.HOT
 			wrong_temp_time += delta
 		if cauldron_timer >= cauldron_recipe.BoilTime:
 			if not is_potion_done:
 				cauldron_potion_done()
-			wrong_temp_time += delta
+			overboil_time += delta
 		if wrong_temp_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME: 
-			print("Potion ruined due to wrong temperature")
+			potion_display_state = PotionDisplayState.BAD_TEMP
 			is_potion_ruined = true
+			cauldron_potion_ruined()
+		elif overboil_time >= CAULDRON_WRONG_TEMP_ALLOWED_TIME:
+			potion_display_state = PotionDisplayState.OVERCOOKED
+			is_potion_ruined = true
+			cauldron_potion_ruined()
+	set_cauldron_status_label()
+			
+func set_cauldron_status_label(): 
+	var status = $CauldronSet/CauldronStatusLabel
+	status.visible = potion_display_state != PotionDisplayState.FINE and cauldron_contents != ResourceType.NONE
+	#status.visible = true
+	match(potion_display_state):
+		PotionDisplayState.OVERCOOKED: 
+			status.text = "Boiled too long"
+		PotionDisplayState.COLD: 
+			status.text = "Fire too cold"	
+		PotionDisplayState.HOT: 
+			status.text = "Fire too hot"
+		PotionDisplayState.BAD_TEMP: 
+			status.text = "Bad temp too long"
+		PotionDisplayState.BAD:
+			status.text = "Bad recipe"
 
 func on_cauldron_click(): 
 	if resource_carried != ResourceType.NONE and cauldron_contents == ResourceType.NONE:
@@ -173,12 +207,16 @@ func start_boiling_cauldron(ingredient):
 	is_potion_done = false
 	is_potion_ruined = false
 	is_cauldron_boiling = true
+
 	cauldron_timer = 0
 	wrong_temp_time = 0
 	$CauldronSet.add_ingredient_to_cauldron()
 	cauldron_contents = ingredient
 	cauldron_recipe = cauldron_recipes.recipe_for(ingredient)
-	
+	if cauldron_recipe.Output == ResourceType.CRAP:
+		potion_display_state = PotionDisplayState.BAD
+		cauldron_potion_ruined()
+		
 func get_cauldron_contents(): 
 	if not is_potion_done:
 		print("Potion not done")
@@ -197,15 +235,23 @@ func empty_out_cauldron():
 	is_potion_done = false
 	is_potion_ruined = false
 	is_cauldron_boiling = false
+	overboil_time = 0
 	$CauldronSet.empty_cauldron()
 	cauldron_contents = ResourceType.NONE
 
+func cauldron_potion_ruined(): 
+	is_potion_done = true
+	is_potion_ruined = true
+	is_cauldron_boiling = false
+	$CauldronSet.ruin_cauldron()
+
 func cauldron_potion_done():
 	is_potion_done = true
-	$CauldronSet.finish_cauldron()
-
-
-	
+	if is_potion_ruined: 
+		$CauldronSet.ruin_cauldron()
+	else: 
+		$CauldronSet.finish_cauldron()
+		
 func _on_CauldronArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		on_cauldron_click()

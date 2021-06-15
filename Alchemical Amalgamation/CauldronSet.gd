@@ -171,14 +171,22 @@ func bellows_pressed_event():
 func add_ingredient_to_cauldron(): 
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = true
+	$CauldronRuined.visible = false
 	
 func finish_cauldron(): 
 	$CauldronDone.visible = true
 	$CauldronBusy.visible = false
+	$CauldronRuined.visible = false
+	
+func ruin_cauldron(): 
+	$CauldronDone.visible = false
+	$CauldronBusy.visible = false
+	$CauldronRuined.visible = true
 	
 func empty_cauldron():
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = false
+	$CauldronRuined.visible = false
 	
 func get_heat_level_cauldron():
 	return heat_level_fire

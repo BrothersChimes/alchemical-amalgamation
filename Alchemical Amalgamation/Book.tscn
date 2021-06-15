@@ -576,7 +576,6 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Page3" type="Node2D" parent="."]
-visible = false
 
 [node name="Left" type="Node2D" parent="Page3"]
 
@@ -670,7 +669,7 @@ centered = false
 [node name="Line3Sprite" type="Sprite" parent="Page3/Left"]
 position = Vector2( 613.236, 453.449 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 28 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Page3/Left"]
@@ -1179,6 +1178,7 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Page6" type="Node2D" parent="."]
+visible = false
 
 [node name="Left" type="Node2D" parent="Page6"]
 
@@ -1192,6 +1192,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1302,6 +1303,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
+frame = 1
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1638,7 +1640,6 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 19 )
-frame = 3
 speed_scale = 0.5
 playing = true
 centered = false
