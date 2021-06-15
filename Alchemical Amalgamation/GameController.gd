@@ -103,7 +103,8 @@ func _on_Workroom_click_on_combinator_slot(slot_num):
 
 func set_combinator_resource_to(slot_num, resource_type): 
 	resource_combinator[slot_num] = resource_type
-	$Workroom.set_combinator_slot_to_item(slot_num, resource_type)
+	var recipe_output = combinator_recipes.recipe_for(resource_combinator)
+	$Workroom.set_combinator_slot_to_item(slot_num, resource_type, recipe_output)
 	
 func set_carried_resource_to(resource_type): 
 	resource_carried = resource_type
