@@ -62,6 +62,7 @@ func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
 		set_carried_resource_to(resource_type)
 		add_gold(-20)
+		$Workroom/PurchaseSound.play()
 		
 func _on_Workroom_destroy_resource():
 	if resource_carried != ResourceType.NONE:
@@ -97,9 +98,13 @@ func _on_Workroom_pick_up_resource(resource_type):
 func _on_Workroom_click_on_combinator_slot(slot_num):
 	var combinator_resource_type = resource_combinator[slot_num]
 	if resource_carried == ResourceType.NONE:
+		if combinator_resource_type != ResourceType.NONE:
+			$Workroom/DropPotionSound.play()
 		set_combinator_resource_to(slot_num, ResourceType.NONE)
 		set_carried_resource_to(combinator_resource_type)
 	elif combinator_resource_type == ResourceType.NONE:
+		if resource_carried != ResourceType.NONE: 
+			$Workroom/DropPotionSound.play()
 		set_combinator_resource_to(slot_num, resource_carried)
 		set_carried_resource_to(ResourceType.NONE)
 
@@ -113,8 +118,9 @@ func set_carried_resource_to(resource_type):
 	$ResourceDrag.change_resource(resource_type)
 
 func _on_Workroom_click_on_combinator_output():
-	if resource_combinator == NOTHING:
+	if resource_combinator == NOTHING or resource_carried != ResourceType.NONE:
 		return
+	$Workroom/PickUpPotionSound.play()
 	var recipe_output = combinator_recipes.recipe_for(resource_combinator)
 	for slot_num in range(0,3,1):
 		set_combinator_resource_to(slot_num, ResourceType.NONE)

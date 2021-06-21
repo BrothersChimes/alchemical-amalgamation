@@ -192,6 +192,7 @@ func ruin_cauldron():
 	$CauldronBusy.visible = false
 	$CauldronRuined.visible = true
 	$CauldronBusy/CauldronStartSound.stop()
+	$CauldronRuined/CauldronFailSound.play()
 	
 func empty_cauldron():
 	$CauldronDone.visible = false
