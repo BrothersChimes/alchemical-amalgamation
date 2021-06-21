@@ -26,5 +26,5 @@ func set_output_to_item(resource_type):
 	$CombinatorOutput/Sprite.texture = load(resource_path)
 
 func _on_CombinatorOutputArea2D_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		emit_signal("click_on_combinator_output")

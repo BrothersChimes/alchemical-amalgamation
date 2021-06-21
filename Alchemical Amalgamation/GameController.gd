@@ -40,6 +40,8 @@ func add_reputation(extra_reputation):
 	
 func _process(delta): 
 	cauldron_process(delta)
+	if Input.is_action_just_pressed("drop_potion"):
+		drop_potion_event()
 
 func set_start_customer(): 
 	set_customers()
@@ -58,6 +60,10 @@ func set_customers():
 		$CustomerText.create_customer_with_message_and_item(i, next_customer.Message, next_customer.Desire)
 		queue.pop_front()
 
+func drop_potion_event(): 
+	if resource_carried == ResourceType.CRAP:
+		destroy_carried_resource()
+		
 func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
 		set_carried_resource_to(resource_type)
@@ -68,10 +74,13 @@ func _on_Workroom_drag_resource_from_shelf(resource_type):
 		$Workroom/DropPotionSound.play()
 	
 func _on_Workroom_destroy_resource():
+	destroy_carried_resource()
+
+func destroy_carried_resource(): 
 	if resource_carried != ResourceType.NONE:
 		$Workroom/BinSound.play()
 	set_carried_resource_to(ResourceType.NONE)
-	
+
 func _on_Workroom_drop_resource():
 	set_carried_resource_to(ResourceType.NONE)
 	
@@ -264,21 +273,21 @@ func cauldron_potion_done():
 		$CauldronSet.finish_cauldron()
 		
 func _on_CauldronArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		on_cauldron_click()
 		
 func _on_BellowsArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		$CauldronSet.bellows_pressed_event()
 
 func _on_WoodArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		$CauldronSet.wood_add_event()
 
 func _on_CoalArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		$CauldronSet.coal_add_event()
 		
 func _on_ShovelArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		$CauldronSet.shovel_embers_event()
