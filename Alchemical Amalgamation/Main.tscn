@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Workroom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CustomerText.tscn" type="PackedScene" id=2]
@@ -64,6 +64,14 @@ size = 32
 outline_size = 2
 outline_color = Color( 0.941176, 0.27451, 0.415686, 1 )
 use_mipmaps = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 48.0
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+outline_size = 2
 font_data = ExtResource( 11 )
 
 [node name="Main" type="Node2D"]
@@ -237,6 +245,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CombinatorOutArea" type="Area2D" parent="GameController"]
+position = Vector2( 384, 136 )
+
+[node name="CombinatorOutCollider" type="CollisionShape2D" parent="GameController/CombinatorOutArea"]
+shape = SubResource( 10 )
+
+[node name="CombinatorAltText" type="Label" parent="GameController/CombinatorOutArea"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Some alt text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Book" parent="." instance=ExtResource( 10 )]
 visible = false
 z_index = 10
@@ -259,3 +284,5 @@ stream = ExtResource( 18 )
 [connection signal="input_event" from="GameController/WoodArea" to="GameController" method="_on_WoodArea_input_event"]
 [connection signal="input_event" from="GameController/CoalArea" to="GameController" method="_on_CoalArea_input_event"]
 [connection signal="input_event" from="GameController/ShovelArea" to="GameController" method="_on_ShovelArea_input_event"]
+[connection signal="area_entered" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_entered"]
+[connection signal="area_exited" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_exited"]

@@ -39,6 +39,7 @@ text = "Water"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="area_entered" from="ResourceArea" to="." method="_on_ResourceArea_area_entered"]
 [connection signal="area_exited" from="ResourceArea" to="." method="_on_ResourceArea_area_exited"]
 [connection signal="input_event" from="ResourceArea" to="." method="_on_ResourceArea_input_event"]

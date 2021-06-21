@@ -173,37 +173,30 @@ position = Vector2( 992, 129 )
 [node name="EttercapResource" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1064, 168 )
 resource_type = 1
-display_name = "Etter Cap"
 
 [node name="MermaidResource" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1128, 208 )
 resource_type = 2
-display_name = "Mermaid Horn"
 
 [node name="AwesomeResource" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1184, 256 )
 resource_type = 3
-display_name = "Pure Awesome"
 
 [node name="Blossom" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 992, 240 )
 resource_type = 4
-display_name = "Blossom"
 
 [node name="Behemoth" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1136, 336 )
 resource_type = 5
-display_name = "Behemoth Tooth"
 
 [node name="Ectoplasm" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1008, 384 )
 resource_type = 6
-display_name = "Ectoplams"
 
 [node name="Riddler" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 1072, 288 )
 resource_type = 7
-display_name = "Riddler"
 
 [node name="Hourglasses" type="Node2D" parent="."]
 position = Vector2( 16, 208 )

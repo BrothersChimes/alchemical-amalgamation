@@ -8,7 +8,7 @@ var ResourceType = ResourceTypeFile.ResourceType
 
 const CombinatorRecipes = preload("res://Stations/CombinatorRecipe.gd")
 var combinator_recipes = CombinatorRecipes.new()
-
+var combinator_output = ResourceType.NONE
 
 var NOTHING = [ResourceType.NONE, ResourceType.NONE, ResourceType.NONE]
 var resource_carried = ResourceType.NONE
@@ -123,6 +123,7 @@ func _on_Workroom_click_on_combinator_slot(slot_num):
 func set_combinator_resource_to(slot_num, resource_type): 
 	resource_combinator[slot_num] = resource_type
 	var recipe_output = combinator_recipes.recipe_for(resource_combinator)
+	combinator_output = recipe_output
 	$Workroom.set_combinator_slot_to_item(slot_num, resource_type, recipe_output)
 	
 func set_carried_resource_to(resource_type): 
@@ -291,3 +292,15 @@ func _on_CoalArea_input_event(viewport, event, shape_idx):
 func _on_ShovelArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		$CauldronSet.shovel_embers_event()
+
+func _on_CombinatorOutArea_area_entered(area):
+	var text_area = $CombinatorOutArea/CombinatorAltText
+	if area.name == "HoverHackArea":
+		if combinator_output != ResourceType.NONE:
+			text_area.text = ResourceTypeFile.display_name(combinator_output)
+			text_area.visible = true
+
+			
+func _on_CombinatorOutArea_area_exited(area):
+	if area.name == "HoverHackArea":
+		$CombinatorOutArea/CombinatorAltText.visible = false
