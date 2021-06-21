@@ -26,8 +26,13 @@ func open_book():
 	is_book_open = true
 	add_child(book)
 	remove_child(game_controller)
+	$BookOpenSound.play()
+	$BookCloseSound.stop()
 	
 func close_book():
 	is_book_open = false
 	add_child(game_controller)
 	remove_child(book)
+	$BookOpenSound.stop()
+	$BookCloseSound.play()
+	

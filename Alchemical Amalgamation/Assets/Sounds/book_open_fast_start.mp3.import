@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/book_open_fast_start.mp3-6983e64f788ecd1242e03d2d30368750.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/book_open_fast_start.mp3"
+dest_files=[ "res://.import/book_open_fast_start.mp3-6983e64f788ecd1242e03d2d30368750.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

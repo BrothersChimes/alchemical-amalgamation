@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/book_flip_quick.mp3-f59a915c6c4332aaa45ca702401cc334.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/book_flip_quick.mp3"
+dest_files=[ "res://.import/book_flip_quick.mp3-f59a915c6c4332aaa45ca702401cc334.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

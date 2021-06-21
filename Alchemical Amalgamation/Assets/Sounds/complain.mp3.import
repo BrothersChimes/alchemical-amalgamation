@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/complain.mp3-8667ae91347ce8a2c1a91afb117764ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/complain.mp3"
+dest_files=[ "res://.import/complain.mp3-8667ae91347ce8a2c1a91afb117764ba.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

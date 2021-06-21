@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/combine.mp3-c437f1f7cf39c4d74c393d2db606f923.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/combine.mp3"
+dest_files=[ "res://.import/combine.mp3-c437f1f7cf39c4d74c393d2db606f923.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -7,7 +7,7 @@ func _ready():
 	visible = false
 
 func _process(_delta):
-	var pos = get_viewport().get_mouse_position()
+	var pos = get_viewport().get_mouse_position() -Vector2(32,32)
 	position = pos
 
 func change_resource(resource_type): 

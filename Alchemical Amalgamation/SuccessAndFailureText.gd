@@ -11,11 +11,13 @@ func _process(delta):
 func set_text_success(): 
 	$SuccessText.visible = true
 	$FailText.visible = false
+	$HappySound.play()
 	text_timer = 0
 	
 func set_text_failure(): 
 	$SuccessText.visible = false
 	$FailText.visible = true
+	$UnhappySound.play()
 	text_timer = 0
 	
 func set_text_none(): 

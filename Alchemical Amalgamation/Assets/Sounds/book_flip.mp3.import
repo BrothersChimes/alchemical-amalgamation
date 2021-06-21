@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/book_flip.mp3-43a5ace4b66386e13472eca92ac66074.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/book_flip.mp3"
+dest_files=[ "res://.import/book_flip.mp3-43a5ace4b66386e13472eca92ac66074.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

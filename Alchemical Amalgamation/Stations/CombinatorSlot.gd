@@ -8,7 +8,7 @@ func _ready():
 	$Sprite.visible = false
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		print("COMBINATOR SLOT CLICKED")
 		emit_signal("click_on_combinator_slot", slot_num)
 

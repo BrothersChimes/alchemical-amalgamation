@@ -50,18 +50,13 @@ func print_stats():
 	print("embers: ", heat_embers)
 	print("wood: ", wood)
 	print("coal: ", coal)
-	
 
 func _process(delta):
 	var	burn_consumption_multiplier = 0
 	if Input.is_action_just_pressed("add_wood"):
-		print("wood added")
-		print_stats()
-		wood += 30
+		wood_add_event()
 	if Input.is_action_just_pressed("add_coal"):
-		print("coal added")
-		print_stats()
-		coal += 20
+		coal_add_event()
 	if wood > WOOD_MAX:
 		wood = WOOD_MAX
 	if coal > COAL_MAX:
@@ -76,12 +71,7 @@ func _process(delta):
 		heat += delta / 2
 	heat_embers -= delta
 	if Input.is_action_just_pressed("shovel_embers") && heat > 0:
-		print("embers shoveled")
-		print_stats()
-		heat_embers += 0.3 * heat
-		heat -= 0.3 * heat
-		wood -= 5
-		coal -= 5
+		shovel_embers_event()
 	if wood <= 0:
 		heat -= delta * 3
 		wood = 0
@@ -98,9 +88,7 @@ func _process(delta):
 		$Cauldron/CauldronHotSprite.visible = false
 		$Cauldron/CauldronColdSprite.visible = true
 	if Input.is_action_just_pressed("bellows"):
-		print("bellows blown")
-		print_stats()
-		$Bellows/BellowsSprite.play("default")
+		bellows_pressed_event()
 	if heat <= 0:
 		$Fire/FireSprite.set_frame(0)
 		heat_level_fire = Heat.DEAD
@@ -156,21 +144,63 @@ func _process(delta):
 		else:
 			get_node("CauldronBusy/SpoonSprite").flip_h = 1
 
+func wood_add_event(): 
+	print("wood added")
+	print_stats()
+	wood += 30
+	$Wood/WoodSound.play()
 
+func coal_add_event(): 
+	print("coal added")
+	print_stats()
+	coal += 20
+	$Coals/CoalSound.play()
+
+func shovel_embers_event():
+	print("embers shoveled")
+	print_stats()
+	heat_embers += 0.3 * heat
+	heat -= 0.3 * heat
+	wood -= 5
+	coal -= 5
+	$ShovelCoalSound.play()
+
+func bellows_pressed_event():
+	print_stats()
+	if not $Bellows/BellowsSprite.is_playing():
+		print("bellows blown")
+		$Bellows/BellowsSprite.play("default")
+		$Bellows/BellowsSound.play()
 
 # PUBLIC_FUNCTIONS
 func add_ingredient_to_cauldron(): 
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = true
+	$CauldronRuined.visible = false
+	$CauldronBusy/CauldronStartSound.play()
+	$DropLiquidSound.play()
 	
 func finish_cauldron(): 
 	$CauldronDone.visible = true
 	$CauldronBusy.visible = false
+	$CauldronRuined.visible = false
+	$CauldronBusy/CauldronStartSound.stop()
+	$CauldronDone/CauldronDoneSound.play()
+
+func ruin_cauldron(): 
+	$CauldronDone.visible = false
+	$CauldronBusy.visible = false
+	$CauldronRuined.visible = true
+	$CauldronBusy/CauldronStartSound.stop()
+	$CauldronRuined/CauldronFailSound.play()
 	
 func empty_cauldron():
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = false
-	
+	$CauldronRuined.visible = false
+	$CauldronBusy/CauldronStartSound.stop()
+	$DropLiquidSound.play()
+
 func get_heat_level_cauldron():
 	return heat_level_fire
 
