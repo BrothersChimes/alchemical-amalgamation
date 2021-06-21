@@ -52,12 +52,15 @@ func _process(delta):
 	print(index)
 	print(pagenumbers[index])
 	if Input.is_action_just_pressed("ui_left"):
+		$BookFlipSound.play()
 		if index > 0:
 			index -= 1
 	if Input.is_action_just_pressed("ui_right"):
+		$BookFlipSound.play()
 		if index < pagenumbers.size() - 1:
 			index += 1
 	if Input.is_action_just_pressed("bellows"):
+		$BookFlipSound.play()
 		if index >= RECIPE_START:
 			index = 0
 		else:

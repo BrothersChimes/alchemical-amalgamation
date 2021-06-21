@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/potion_fail.mp3-89ab4af0dedb4df9843298ae1b3c8402.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/potion_fail.mp3"
+dest_files=[ "res://.import/potion_fail.mp3-89ab4af0dedb4df9843298ae1b3c8402.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

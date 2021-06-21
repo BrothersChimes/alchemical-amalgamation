@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Stations/station_bellows_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Stations/station_cauldron.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Stations/station_cauldron_spoon.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Stations/station_cauldron_liquid.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Stations/station_cauldron_contents_yellow.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sounds/bellows_pump_long.mp3" type="AudioStream" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -129,6 +130,9 @@ frames = SubResource( 5 )
 speed_scale = 0.5
 centered = false
 
+[node name="BellowsSound" type="AudioStreamPlayer" parent="Bellows"]
+stream = ExtResource( 12 )
+
 [node name="Cauldron" type="Node2D" parent="."]
 position = Vector2( 288, 48 )
 
@@ -214,4 +218,5 @@ position = Vector2( 304, 16 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 centered = false
+
 [connection signal="animation_finished" from="Bellows/BellowsSprite" to="." method="_on_BellowsSprite_animation_finished"]

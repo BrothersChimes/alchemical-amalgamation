@@ -163,9 +163,11 @@ func shovel_embers_event():
 	coal -= 5
 
 func bellows_pressed_event():
-	print("bellows blown")
 	print_stats()
-	$Bellows/BellowsSprite.play("default")
+	if not $Bellows/BellowsSprite.is_playing():
+		print("bellows blown")
+		$Bellows/BellowsSprite.play("default")
+		$Bellows/BellowsSound.play()
 
 # PUBLIC_FUNCTIONS
 func add_ingredient_to_cauldron(): 

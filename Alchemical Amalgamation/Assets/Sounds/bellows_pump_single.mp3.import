@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bellows_pump_single.mp3-ec6c3d67ee732881477e4839c362ba38.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/bellows_pump_single.mp3"
+dest_files=[ "res://.import/bellows_pump_single.mp3-ec6c3d67ee732881477e4839c362ba38.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

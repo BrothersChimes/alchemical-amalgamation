@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/drop_wood.mp3-71ca92796b38e196cb9d9d911b089339.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/drop_wood.mp3"
+dest_files=[ "res://.import/drop_wood.mp3-71ca92796b38e196cb9d9d911b089339.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

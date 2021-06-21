@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Assets/Ingredients/potion_teal.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Ingredients/potion_green.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Ingredients/potion_orange.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -1192,7 +1193,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1303,7 +1304,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
-frame = 1
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1640,6 +1641,7 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 19 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -6168,3 +6170,6 @@ centered = false
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
+
+[node name="BookFlipSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
