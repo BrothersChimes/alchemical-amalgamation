@@ -19,6 +19,9 @@ enum ResourceType {
 	IRON_SPICE
 }
 
+static func is_resource_raw(resource_type): 
+	return resource_type > ResourceType.NONE and resource_type < ResourceType.CRAP
+	
 static func is_resource_potion(resource_type): 
 	return resource_type >= ResourceType.CRAP
 
@@ -28,6 +31,7 @@ static func sprite_path_for_resource_type(resource_type):
 		return "res://Assets/Ingredients/potion_" + resource_name + ".png"
 	return "res://Assets/Ingredients/ingredient_" + resource_name + ".png"
 	
+
 	
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
