@@ -64,6 +64,8 @@ func _on_Workroom_drag_resource_from_shelf(resource_type):
 		add_gold(-20)
 		
 func _on_Workroom_destroy_resource():
+	if resource_carried != ResourceType.NONE:
+		$Workroom/BinSound.play()
 	set_carried_resource_to(ResourceType.NONE)
 	
 func _on_Workroom_drop_resource():

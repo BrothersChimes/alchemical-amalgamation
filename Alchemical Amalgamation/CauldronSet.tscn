@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/Stations/station_bellows_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Stations/station_cauldron.png" type="Texture" id=2]
@@ -12,6 +12,12 @@
 [ext_resource path="res://Assets/Stations/station_cauldron_liquid.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Stations/station_cauldron_contents_yellow.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sounds/bellows_pump_long.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sounds/drop_stone.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Sounds/drop_wood.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Sounds/shovel_coal.mp3" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Sounds/cauldron_bubble.mp3" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Sounds/drop_liquid.mp3" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Sounds/combine.mp3" type="AudioStream" id=18]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -165,6 +171,9 @@ scale = Vector2( 4, 4 )
 frames = SubResource( 17 )
 centered = false
 
+[node name="CoalSound" type="AudioStreamPlayer" parent="Coals"]
+stream = ExtResource( 13 )
+
 [node name="Wood" type="Node2D" parent="."]
 position = Vector2( 288, 192 )
 
@@ -173,6 +182,9 @@ position = Vector2( 0, -144 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 22 )
 centered = false
+
+[node name="WoodSound" type="AudioStreamPlayer" parent="Wood"]
+stream = ExtResource( 14 )
 
 [node name="CauldronDone" type="Node2D" parent="."]
 visible = false
@@ -188,6 +200,9 @@ position = Vector2( 16, -16 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 centered = false
+
+[node name="CauldronDoneSound" type="AudioStreamPlayer" parent="CauldronDone"]
+stream = ExtResource( 18 )
 
 [node name="CauldronRuined" type="Node2D" parent="."]
 visible = false
@@ -218,5 +233,14 @@ position = Vector2( 304, 16 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 centered = false
+
+[node name="CauldronStartSound" type="AudioStreamPlayer" parent="CauldronBusy"]
+stream = ExtResource( 16 )
+
+[node name="ShovelCoalSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="DropLiquidSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
 
 [connection signal="animation_finished" from="Bellows/BellowsSprite" to="." method="_on_BellowsSprite_animation_finished"]

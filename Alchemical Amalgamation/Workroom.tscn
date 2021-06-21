@@ -230,6 +230,7 @@ position = Vector2( 192, 32 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 21 )
 centered = false
+
 [connection signal="destroy_resource" from="WasteBasket" to="." method="_on_WasteBasket_destroy_resource"]
 [connection signal="click_on_combinator_output" from="Combinator" to="." method="_on_Combinator_click_on_combinator_output"]
 [connection signal="click_on_combinator_slot" from="Combinator" to="." method="_on_Combinator_click_on_combinator_slot"]

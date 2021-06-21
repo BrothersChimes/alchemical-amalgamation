@@ -148,11 +148,13 @@ func wood_add_event():
 	print("wood added")
 	print_stats()
 	wood += 30
+	$Wood/WoodSound.play()
 
 func coal_add_event(): 
 	print("coal added")
 	print_stats()
 	coal += 20
+	$Coals/CoalSound.play()
 
 func shovel_embers_event():
 	print("embers shoveled")
@@ -161,6 +163,7 @@ func shovel_embers_event():
 	heat -= 0.3 * heat
 	wood -= 5
 	coal -= 5
+	$ShovelCoalSound.play()
 
 func bellows_pressed_event():
 	print_stats()
@@ -174,22 +177,29 @@ func add_ingredient_to_cauldron():
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = true
 	$CauldronRuined.visible = false
+	$CauldronBusy/CauldronStartSound.play()
+	$DropLiquidSound.play()
 	
 func finish_cauldron(): 
 	$CauldronDone.visible = true
 	$CauldronBusy.visible = false
 	$CauldronRuined.visible = false
-	
+	$CauldronBusy/CauldronStartSound.stop()
+	$CauldronDone/CauldronDoneSound.play()
+
 func ruin_cauldron(): 
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = false
 	$CauldronRuined.visible = true
+	$CauldronBusy/CauldronStartSound.stop()
 	
 func empty_cauldron():
 	$CauldronDone.visible = false
 	$CauldronBusy.visible = false
 	$CauldronRuined.visible = false
-	
+	$CauldronBusy/CauldronStartSound.stop()
+	$DropLiquidSound.play()
+
 func get_heat_level_cauldron():
 	return heat_level_fire
 
