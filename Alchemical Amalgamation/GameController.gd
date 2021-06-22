@@ -151,7 +151,7 @@ func _on_Workroom_click_on_combinator_output():
 	set_carried_resource_to(recipe_output)
 	
 func _on_BookArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		emit_signal("open_book")
 	
 const CauldronRecipes = preload("res://Stations/CauldronRecipe.gd")
