@@ -14,6 +14,9 @@ func _ready():
 
 func _on_GameController_open_book():
 	open_book()
+	
+func _on_Book_close_book():
+	close_book()
 
 func _process(delta):
 	if Input.is_action_just_pressed("book"):
@@ -35,4 +38,3 @@ func close_book():
 	remove_child(book)
 	$BookOpenSound.stop()
 	$BookCloseSound.play()
-	

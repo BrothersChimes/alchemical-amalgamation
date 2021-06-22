@@ -263,7 +263,6 @@ __meta__ = {
 }
 
 [node name="Book" parent="." instance=ExtResource( 10 )]
-visible = false
 z_index = 10
 
 [node name="BookOpenSound" type="AudioStreamPlayer" parent="."]
@@ -287,3 +286,4 @@ stream = ExtResource( 18 )
 [connection signal="input_event" from="GameController/ShovelArea" to="GameController" method="_on_ShovelArea_input_event"]
 [connection signal="area_entered" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_entered"]
 [connection signal="area_exited" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_exited"]
+[connection signal="close_book" from="Book" to="." method="_on_Book_close_book"]

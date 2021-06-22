@@ -1,5 +1,6 @@
 extends Node2D
 
+signal close_book
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -46,25 +47,52 @@ func _ready():
 		get_node(page).visible = false
 	get_node(pagenumbers[0]).visible = true
 	
-
 func _process(delta):
 	var cur_index = index
-	print(index)
-	print(pagenumbers[index])
 	if Input.is_action_just_pressed("ui_left"):
-		$BookFlipSound.play()
-		if index > 0:
-			index -= 1
+		left_action()
 	if Input.is_action_just_pressed("ui_right"):
-		$BookFlipSound.play()
-		if index < pagenumbers.size() - 1:
-			index += 1
+		right_action()
 	if Input.is_action_just_pressed("bellows"):
-		$BookFlipSound.play()
-		if index >= RECIPE_START:
-			index = 0
-		else:
-			index = RECIPE_START
+		space_action()
+	set_page_based_on_index(cur_index)
+
+func left_action(): 
+	$BookFlipSound.play()
+	if index > 0:
+		index -= 1
+		
+func right_action(): 
+	$BookFlipSound.play()
+	if index < pagenumbers.size() - 1:
+		index += 1
+		
+func space_action(): 
+	$BookFlipSound.play()
+	if index >= RECIPE_START:
+		index = 0
+	else:
+		index = RECIPE_START	
+
+func set_page_based_on_index(cur_index): 
+	# print(index)
+	# print(pagenumbers[index])
 	if cur_index != index:
 		get_node(pagenumbers[cur_index]).visible = false
 		get_node(pagenumbers[index]).visible = true
+
+func _on_PreviousArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		var cur_index = index
+		left_action()
+		set_page_based_on_index(cur_index)
+		
+func _on_NextArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		var cur_index = index
+		right_action()
+		set_page_based_on_index(cur_index)
+		
+func _on_CloseArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		emit_signal("close_book")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -30,6 +30,9 @@
 [ext_resource path="res://Assets/Ingredients/potion_green.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Ingredients/potion_orange.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
+[ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=31]
+[ext_resource path="res://Assets/UI/book_next.png" type="Texture" id=32]
+[ext_resource path="res://Assets/UI/book_prev.png" type="Texture" id=33]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -135,6 +138,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 32, 32 )
 
 [node name="Book" type="Node2D"]
 position = Vector2( 2, 0 )
@@ -1193,7 +1205,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
-frame = 2
+frame = 3
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1304,7 +1316,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
-frame = 2
+frame = 3
 speed_scale = 0.25
 playing = true
 centered = false
@@ -1641,7 +1653,7 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 19 )
-frame = 1
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -6173,3 +6185,49 @@ centered = false
 
 [node name="BookFlipSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 30 )
+
+[node name="CloseButton" type="Node2D" parent="."]
+position = Vector2( 1334, 32 )
+
+[node name="Sprite" type="Sprite" parent="CloseButton"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="CloseArea2D" type="Area2D" parent="CloseButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseButton/CloseArea2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 23 )
+
+[node name="NextButton" type="Node2D" parent="."]
+position = Vector2( 1414, 728 )
+
+[node name="Sprite" type="Sprite" parent="NextButton"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="NextArea2D" type="Area2D" parent="NextButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextButton/NextArea2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 24 )
+
+[node name="PreviousButton" type="Node2D" parent="."]
+position = Vector2( 62, 728 )
+
+[node name="Sprite" type="Sprite" parent="PreviousButton"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="PreviousArea2D" type="Area2D" parent="PreviousButton"]
+position = Vector2( 32, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PreviousButton/PreviousArea2D"]
+shape = SubResource( 25 )
+
+[connection signal="input_event" from="CloseButton/CloseArea2D" to="." method="_on_CloseArea2D_input_event"]
+[connection signal="input_event" from="NextButton/NextArea2D" to="." method="_on_NextArea2D_input_event"]
+[connection signal="input_event" from="PreviousButton/PreviousArea2D" to="." method="_on_PreviousArea2D_input_event"]
