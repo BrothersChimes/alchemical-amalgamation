@@ -14,7 +14,7 @@ func _ready():
 signal drag_resource(resource_type)
 
 func _on_ResourceArea_input_event(_viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		emit_signal("drag_resource", resource_type)
 
 func _on_ResourceArea_area_entered(area):

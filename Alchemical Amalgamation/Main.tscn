@@ -276,6 +276,7 @@ stream = ExtResource( 18 )
 [connection signal="input_event" from="GameController/BookArea" to="GameController" method="_on_BookArea_input_event"]
 [connection signal="click_on_combinator_output" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_output"]
 [connection signal="click_on_combinator_slot" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_slot"]
+[connection signal="click_on_holding_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_holding_resource"]
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
 [connection signal="drag_resource_from_shelf" from="GameController/Workroom" to="GameController" method="_on_Workroom_drag_resource_from_shelf"]
 [connection signal="sell_potion_to" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_sell_potion_to"]

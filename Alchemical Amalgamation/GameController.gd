@@ -61,9 +61,20 @@ func set_customers():
 		queue.pop_front()
 
 func drop_potion_event(): 
-	if resource_carried == ResourceType.CRAP:
+	if resource_carried == ResourceType.NONE:
+		return
+	elif resource_carried == ResourceType.CRAP:
 		destroy_carried_resource()
-		
+	elif ResourceTypeFile.is_resource_raw(resource_carried):
+		$Workroom/PurchaseSound.play()
+		set_carried_resource_to(ResourceType.NONE)
+		add_gold(20)
+	else: 
+		var could_place = $Workroom.place_resource_on_first_open_holder(resource_carried)
+		if could_place: 
+			set_carried_resource_to(ResourceType.NONE)
+			$Workroom/PickUpPotionSound.play()
+
 func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
 		set_carried_resource_to(resource_type)
@@ -304,3 +315,9 @@ func _on_CombinatorOutArea_area_entered(area):
 func _on_CombinatorOutArea_area_exited(area):
 	if area.name == "HoverHackArea":
 		$CombinatorOutArea/CombinatorAltText.visible = false
+
+func _on_Workroom_click_on_holding_resource(resource, number):
+	var was_carried = resource_carried
+	set_carried_resource_to(resource)
+	$Workroom.set_holder_to(was_carried, number)
+	$Workroom/PickUpPotionSound.play()

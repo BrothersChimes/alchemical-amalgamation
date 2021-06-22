@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Stations/station_coal.png" type="Texture" id=1]
 [ext_resource path="res://Resources/ResourceForShelf.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Assets/Stations/station_mortar_in_use.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Stations/station_retort_in_use.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Stations/station_aludel_empty.png" type="Texture" id=18]
+[ext_resource path="res://Resources/HolderForShelf.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Stations/station_hourglass_4.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Stations/station_hourglass_2.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Stations/station_hourglass_3.png" type="Texture" id=23]
@@ -186,17 +187,32 @@ resource_type = 3
 position = Vector2( 992, 240 )
 resource_type = 4
 
+[node name="Riddler" parent="ShelfForIngredients" instance=ExtResource( 2 )]
+position = Vector2( 1040, 288 )
+resource_type = 7
+
 [node name="Behemoth" parent="ShelfForIngredients" instance=ExtResource( 2 )]
-position = Vector2( 1136, 336 )
+position = Vector2( 1104, 320 )
 resource_type = 5
 
 [node name="Ectoplasm" parent="ShelfForIngredients" instance=ExtResource( 2 )]
-position = Vector2( 1008, 384 )
+position = Vector2( 1168, 368 )
 resource_type = 6
 
-[node name="Riddler" parent="ShelfForIngredients" instance=ExtResource( 2 )]
-position = Vector2( 1072, 288 )
-resource_type = 7
+[node name="HolderForShelf0" parent="ShelfForIngredients" instance=ExtResource( 19 )]
+position = Vector2( 992, 368 )
+
+[node name="HolderForShelf1" parent="ShelfForIngredients" instance=ExtResource( 19 )]
+position = Vector2( 1056, 416 )
+my_number = 1
+
+[node name="HolderForShelf2" parent="ShelfForIngredients" instance=ExtResource( 19 )]
+position = Vector2( 1120, 464 )
+my_number = 2
+
+[node name="HolderForShelf3" parent="ShelfForIngredients" instance=ExtResource( 19 )]
+position = Vector2( 1184, 512 )
+my_number = 3
 
 [node name="Hourglasses" type="Node2D" parent="."]
 position = Vector2( 16, 208 )
@@ -233,6 +249,10 @@ centered = false
 [connection signal="drag_resource" from="ShelfForIngredients/MermaidResource" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/AwesomeResource" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/Blossom" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Riddler" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/Behemoth" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/Ectoplasm" to="." method="_on_ResourceForShelf_drag_resource"]
-[connection signal="drag_resource" from="ShelfForIngredients/Riddler" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf0" to="." method="_on_HolderForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf1" to="." method="_on_HolderForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf2" to="." method="_on_HolderForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf3" to="." method="_on_HolderForShelf_drag_resource"]
