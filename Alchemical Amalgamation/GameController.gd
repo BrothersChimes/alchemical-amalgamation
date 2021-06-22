@@ -80,9 +80,14 @@ func _on_Workroom_drag_resource_from_shelf(resource_type):
 		set_carried_resource_to(resource_type)
 		add_gold(-20)
 		$Workroom/PurchaseSound.play()
-	elif ResourceTypeFile.is_resource_raw(resource_carried) and resource_carried != resource_type:
-		set_carried_resource_to(resource_type)
-		$Workroom/DropPotionSound.play()
+	elif ResourceTypeFile.is_resource_raw(resource_carried):
+		if resource_carried == resource_type:
+			set_carried_resource_to(ResourceType.NONE)
+			add_gold(20)
+			$Workroom/PurchaseSound.play()
+		else:
+			set_carried_resource_to(resource_type)
+			$Workroom/DropPotionSound.play()
 	
 func _on_Workroom_destroy_resource():
 	destroy_carried_resource()

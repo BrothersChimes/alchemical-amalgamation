@@ -263,6 +263,7 @@ __meta__ = {
 }
 
 [node name="Book" parent="." instance=ExtResource( 10 )]
+visible = false
 z_index = 10
 
 [node name="BookOpenSound" type="AudioStreamPlayer" parent="."]
