@@ -41,3 +41,14 @@ func place_resource_on_first_open_holder(resource):
 		
 func set_holder_to(resource, number): 
 	get_node("ShelfForIngredients/HolderForShelf" + str(number)).set_resource_to(resource)
+
+func setup_for_day_0(): 
+	$station_woodpile.visible = false
+	$station_coal.visible = false
+	$station_shovel_empty.visible = false
+	
+func setup_for_final_days(): 
+	$station_woodpile.visible = true
+	$station_coal.visible = true
+	$station_shovel_empty.visible = true
+	

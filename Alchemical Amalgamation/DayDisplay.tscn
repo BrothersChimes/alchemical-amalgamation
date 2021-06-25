@@ -1,0 +1,3716 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://DayDisplay.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
+[ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=31]
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 32, 32 )
+
+[node name="DayDisplay" type="Node2D"]
+position = Vector2( 2, 0 )
+script = ExtResource( 1 )
+
+[node name="BookSprite" type="Sprite" parent="."]
+position = Vector2( 342, 321.521 )
+scale = Vector2( 25.5101, 17.2174 )
+z_index = -1
+texture = ExtResource( 23 )
+centered = false
+offset = Vector2( -15.2923, -25.4637 )
+
+[node name="NextDayPage" type="Node2D" parent="."]
+
+[node name="Left" type="Node2D" parent="NextDayPage"]
+
+[node name="TitleSprite" type="Sprite" parent="NextDayPage/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="NextDayPage/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Day Ended"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="NextDayPage/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="NextDayPage/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="NextDayPage/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="NextDayPage/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="NextDayPage/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="NextDayPage/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="NextDayPage/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="NextDayPage/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="NextDayPage"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="NextDayPage/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="NextDayPage/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="NextDayPage/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="NextDayPage/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="NextDayPage/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="NextDayPage/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="NextDayPage/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="NextDayPage/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="NextDayPage/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="NextDayPage/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page13" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page13"]
+
+[node name="TitleSprite" type="Sprite" parent="Page13/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page13/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page13/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page13/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page13/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page13/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page13/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page13/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page13/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page13/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page13"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page13/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page13/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page13/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page13/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page13/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page13/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page13/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page13/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page13/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page13/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page14" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page14"]
+
+[node name="TitleSprite" type="Sprite" parent="Page14/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page14/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page14/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page14/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page14/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page14/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page14/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page14/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page14/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page14/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page14"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page14/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page14/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page14/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page14/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page14/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page14/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page14/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page14/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page14/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page14/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page15" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page15"]
+
+[node name="TitleSprite" type="Sprite" parent="Page15/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page15/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page15/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page15/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page15/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page15/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page15/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page15/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page15/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page15/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page15"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page15/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page15/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page15/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page15/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page15/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page15/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page15/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page15/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page15/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page15/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page16" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page16"]
+
+[node name="TitleSprite" type="Sprite" parent="Page16/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page16/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page16/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page16/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page16/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page16/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page16/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page16/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page16/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page16/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page16"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page16/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page16/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page16/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page16/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page16/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page16/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page16/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page16/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page16/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page16/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page17" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page17"]
+
+[node name="TitleSprite" type="Sprite" parent="Page17/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page17/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page17/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page17/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page17/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page17/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page17/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page17/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page17/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page17/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page17"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page17/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page17/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page17/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page17/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page17/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page17/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page17/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page17/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page17/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page17/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page18" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page18"]
+
+[node name="TitleSprite" type="Sprite" parent="Page18/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page18/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page18/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page18/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page18/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page18/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page18/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page18/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page18/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page18/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page18"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page18/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page18/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page18/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page18/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page18/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page18/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page18/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page18/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page18/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page18/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page19" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page19"]
+
+[node name="TitleSprite" type="Sprite" parent="Page19/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page19/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page19/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page19/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page19/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page19/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page19/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page19/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page19/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page19/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page19"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page19/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page19/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page19/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page19/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page19/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page19/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page19/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page19/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page19/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page19/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page20" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page20"]
+
+[node name="TitleSprite" type="Sprite" parent="Page20/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page20/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page20/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page20/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page20/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page20/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page20/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page20/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page20/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page20/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page20"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page20/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page20/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page20/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page20/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page20/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page20/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page20/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page20/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page20/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page20/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page21" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page21"]
+
+[node name="TitleSprite" type="Sprite" parent="Page21/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page21/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page21/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page21/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page21/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page21/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page21/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page21/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page21/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page21/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page21"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page21/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page21/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page21/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page21/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page21/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page21/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page21/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page21/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page21/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page21/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page22" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page22"]
+
+[node name="TitleSprite" type="Sprite" parent="Page22/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page22/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page22/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page22/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page22/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page22/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page22/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page22/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page22/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page22/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page22"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page22/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page22/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page22/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page22/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page22/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page22/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page22/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page22/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page22/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page22/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page23" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page23"]
+
+[node name="TitleSprite" type="Sprite" parent="Page23/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page23/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page23/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page23/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page23/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page23/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page23/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page23/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page23/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page23/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page23"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page23/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page23/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page23/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page23/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page23/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page23/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page23/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page23/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page23/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page23/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page24" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page24"]
+
+[node name="TitleSprite" type="Sprite" parent="Page24/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page24/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page24/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page24/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page24/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page24/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page24/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page24/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page24/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page24/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page24"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page24/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page24/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page24/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page24/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page24/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page24/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page24/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page24/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page24/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page24/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page25" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page25"]
+
+[node name="TitleSprite" type="Sprite" parent="Page25/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page25/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page25/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page25/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page25/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page25/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page25/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page25/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page25/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page25/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page25"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page25/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page25/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page25/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page25/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page25/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page25/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page25/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page25/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page25/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page25/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page26" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page26"]
+
+[node name="TitleSprite" type="Sprite" parent="Page26/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page26/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page26/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page26/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page26/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page26/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page26/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page26/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page26/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page26/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page26"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page26/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page26/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page26/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page26/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page26/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page26/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page26/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page26/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page26/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page26/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page27" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page27"]
+
+[node name="TitleSprite" type="Sprite" parent="Page27/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page27/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page27/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page27/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page27/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page27/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page27/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page27/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page27/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page27/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page27"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page27/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page27/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page27/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page27/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page27/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page27/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page27/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page27/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page27/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page27/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page28" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page28"]
+
+[node name="TitleSprite" type="Sprite" parent="Page28/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page28/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page28/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page28/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page28/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page28/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page28/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page28/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page28/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page28/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page28"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page28/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page28/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page28/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page28/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page28/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page28/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page28/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page28/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page28/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page28/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page29" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page29"]
+
+[node name="TitleSprite" type="Sprite" parent="Page29/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page29/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page29/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page29/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page29/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page29/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page29/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page29/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page29/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page29/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page29"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page29/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page29/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page29/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page29/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page29/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page29/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page29/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page29/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page29/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page29/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Page30" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Page30"]
+
+[node name="TitleSprite" type="Sprite" parent="Page30/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page30/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Introduction"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page30/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page30/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page30/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page30/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page30/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page30/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page30/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page30/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Page30"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Page30/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Page30/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Page30/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Page30/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Page30/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Page30/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Page30/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Page30/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Page30/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Page30/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="BookFlipSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+
+[node name="CloseButton" type="Node2D" parent="."]
+position = Vector2( 1334, 32 )
+
+[node name="Sprite" type="Sprite" parent="CloseButton"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="CloseArea2D" type="Area2D" parent="CloseButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseButton/CloseArea2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 23 )
+
+[connection signal="input_event" from="CloseButton/CloseArea2D" to="." method="_on_CloseArea2D_input_event"]

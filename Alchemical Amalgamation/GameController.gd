@@ -1,7 +1,7 @@
 extends Node2D
 
 signal open_book
-
+signal end_day
 
 const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
 var ResourceType = ResourceTypeFile.ResourceType
@@ -16,9 +16,17 @@ var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NON
 
 var CustomersQueue = preload("res://Customers/CustomersQueue.gd")
 var customersQueue = CustomersQueue.new()
+onready var cauldron_set = get_node("CauldronSet")
+var has_cauldron_set = false
 
+var day = 0
 var gold = 1000
 var rep = 0
+
+const DAY_LENGTH = 10
+var day_timer = 0
+var day_first_third = DAY_LENGTH / 3
+var day_second_third = day_first_third*2
 
 var customer_desired_resources = [
 	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
@@ -26,9 +34,63 @@ var customer_desired_resources = [
 ]
 
 func _ready():
-	set_start_customer()
 	$Gold.set_gold(gold)
 	$Reputation.set_reputation(rep)
+	setup_for_day(0)
+
+func _process(delta): 
+	cauldron_process(delta)
+	if Input.is_action_just_pressed("drop_potion"):
+		drop_potion_event()
+	day_process(delta)
+
+func day_process(delta): 
+	### TODO Debug - remove
+	if Input.is_action_just_pressed("end_day"):
+		print("Day ended.")
+		emit_signal("end_day")
+		restart_day()
+	###
+	day_timer += delta
+	if day_timer >= DAY_LENGTH:
+		print("Day ended.")
+		emit_signal("end_day")
+		restart_day()
+	elif day_timer >= day_second_third:
+		# print("second third reached")
+		$Clock/AnimatedSprite.frame = 2
+	elif day_timer >= day_first_third:
+		# print("First third reached")
+		$Clock/AnimatedSprite.frame = 1	
+
+func restart_day(): 
+	day_timer = 0
+	$Clock/AnimatedSprite.frame = 0
+
+func setup_for_day(day_num): 
+	day = day_num
+	if day_num == 0: 
+		setup_for_day_0()
+	else: 
+		setup_for_final_days()
+	restart_day()
+	set_start_customer()
+
+func setup_for_day_0(): 
+	has_cauldron_set = false
+	remove_child(cauldron_set)
+	$WoodArea.visible = false
+	$CoalArea.visible = false
+	$ShovelArea.visible = false
+	$Workroom.setup_for_day_0()
+
+func setup_for_final_days(): 
+	has_cauldron_set = true
+	add_child(cauldron_set)
+	$WoodArea.visible = true
+	$CoalArea.visible = true
+	$ShovelArea.visible = true
+	$Workroom.setup_for_final_days()
 	
 func add_gold(extra_gold): 
 	gold += extra_gold
@@ -37,17 +99,17 @@ func add_gold(extra_gold):
 func add_reputation(extra_reputation): 
 	rep += extra_reputation
 	$Reputation.set_reputation(rep)
-	
-func _process(delta): 
-	cauldron_process(delta)
-	if Input.is_action_just_pressed("drop_potion"):
-		drop_potion_event()
 
 func set_start_customer(): 
+	customer_desired_resources = [
+		ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
+		ResourceType.NONE, ResourceType.NONE
+	]
 	set_customers()
 
 func set_customers(): 
-	var queue = customersQueue.customers
+	#NOTE: Does not duplicate the array - changes here are changes there
+	var queue = customersQueue.customers_for_day(day)
 	
 	for i in range(0, customer_desired_resources.size()):
 		if queue.empty():
@@ -192,6 +254,8 @@ enum PotionDisplayState  {
 var potion_display_state = PotionDisplayState.FINE
 
 func cauldron_process(delta):
+	if not has_cauldron_set: 
+		return
 	if is_cauldron_boiling and cauldron_recipe != null: 
 		potion_display_state = PotionDisplayState.FINE
 		cauldron_timer += delta
