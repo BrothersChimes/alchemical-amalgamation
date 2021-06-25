@@ -47,13 +47,11 @@ func _process(delta):
 func day_process(delta): 
 	### TODO Debug - remove
 	if Input.is_action_just_pressed("end_day"):
-		print("Day ended.")
 		emit_signal("end_day")
 		restart_day()
 	###
 	day_timer += delta
 	if day_timer >= DAY_LENGTH:
-		print("Day ended.")
 		emit_signal("end_day")
 		restart_day()
 	elif day_timer >= day_second_third:

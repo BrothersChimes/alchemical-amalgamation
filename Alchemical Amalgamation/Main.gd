@@ -11,6 +11,7 @@ var day_display
 var day = 0
 
 func _ready():
+	print("DAY: " + str(day))
 	game_controller = $GameController
 	game_controller.visible = true
 	book = $Book
@@ -67,9 +68,8 @@ func close_day_display():
 
 func _on_GameController_end_day():
 	close_both()
-	print("Ended day " + str(day))
-	day += 1
 	day_display.set_day(day)
+	day += 1
 	is_day_display_open = true
 	add_child(day_display)
 

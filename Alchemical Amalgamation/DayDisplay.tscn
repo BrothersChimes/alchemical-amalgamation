@@ -6,16 +6,16 @@
 [ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
 [ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=31]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 80
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 32 )
 
 [node name="DayDisplay" type="Node2D"]
@@ -30,308 +30,130 @@ texture = ExtResource( 23 )
 centered = false
 offset = Vector2( -15.2923, -25.4637 )
 
-[node name="NextDayPage" type="Node2D" parent="."]
-
-[node name="Left" type="Node2D" parent="NextDayPage"]
-
-[node name="TitleSprite" type="Sprite" parent="NextDayPage/Left"]
-position = Vector2( 600.037, 66.6708 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="NextDayPage/Left"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Day Ended"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="NextDayPage/Left"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="NextDayPage/Left"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="NextDayPage/Left"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="NextDayPage/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="NextDayPage/Left"]
-position = Vector2( 600.536, 190.53 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="NextDayPage/Left"]
-position = Vector2( 600.536, 308.963 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="NextDayPage/Left"]
-position = Vector2( 600.536, 424.875 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="NextDayPage/Left"]
-position = Vector2( 600.536, 543.308 )
-centered = false
-
-[node name="Right" type="Node2D" parent="NextDayPage"]
-position = Vector2( 662.718, 0 )
-
-[node name="TitleSprite" type="Sprite" parent="NextDayPage/Right"]
-position = Vector2( 598.184, 49.5662 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="NextDayPage/Right"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 603.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="NextDayPage/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="NextDayPage/Right"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="NextDayPage/Right"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="NextDayPage/Right"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="NextDayPage/Right"]
-position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="NextDayPage/Right"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="NextDayPage/Right"]
-position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="NextDayPage/Right"]
-position = Vector2( 600.536, 543.308 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Page13" type="Node2D" parent="."]
+[node name="Day0" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page13"]
+[node name="Left" type="Node2D" parent="Day0"]
 
-[node name="TitleSprite" type="Sprite" parent="Page13/Left"]
+[node name="TitleSprite" type="Sprite" parent="Day0/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page13/Left"]
+[node name="Title" type="RichTextLabel" parent="Day0/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "End of Day 1"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line1" type="RichTextLabel" parent="Day0/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line2" type="RichTextLabel" parent="Day0/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line3" type="RichTextLabel" parent="Day0/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line4" type="RichTextLabel" parent="Day0/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Day0/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Day0/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Day0/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Day0/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page13"]
+[node name="Right" type="Node2D" parent="Day0"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page13/Right"]
+[node name="TitleSprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page13/Right"]
+[node name="Title" type="RichTextLabel" parent="Day0/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day0/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -339,192 +161,192 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page13/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line2" type="RichTextLabel" parent="Day0/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line3" type="RichTextLabel" parent="Day0/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line4" type="RichTextLabel" parent="Day0/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page14" type="Node2D" parent="."]
+[node name="Day1" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page14"]
+[node name="Left" type="Node2D" parent="Day1"]
 
-[node name="TitleSprite" type="Sprite" parent="Page14/Left"]
+[node name="TitleSprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page14/Left"]
+[node name="Title" type="RichTextLabel" parent="Day1/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "End of Day 2"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page14/Left"]
+[node name="Line1" type="RichTextLabel" parent="Day1/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page14/Left"]
+[node name="Line2" type="RichTextLabel" parent="Day1/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page14/Left"]
+[node name="Line3" type="RichTextLabel" parent="Day1/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page14/Left"]
+[node name="Line4" type="RichTextLabel" parent="Day1/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page14/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page14/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page14/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page14/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page14"]
+[node name="Right" type="Node2D" parent="Day1"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page14/Right"]
+[node name="TitleSprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page14/Right"]
+[node name="Title" type="RichTextLabel" parent="Day1/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day1/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -532,192 +354,192 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page14/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page14/Right"]
+[node name="Line2" type="RichTextLabel" parent="Day1/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page14/Right"]
+[node name="Line3" type="RichTextLabel" parent="Day1/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page14/Right"]
+[node name="Line4" type="RichTextLabel" parent="Day1/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page14/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page14/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page14/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page14/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page15" type="Node2D" parent="."]
+[node name="Day2" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page15"]
+[node name="Left" type="Node2D" parent="Day2"]
 
-[node name="TitleSprite" type="Sprite" parent="Page15/Left"]
+[node name="TitleSprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page15/Left"]
+[node name="Title" type="RichTextLabel" parent="Day2/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "End of Day 3"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page15/Left"]
+[node name="Line1" type="RichTextLabel" parent="Day2/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page15/Left"]
+[node name="Line2" type="RichTextLabel" parent="Day2/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page15/Left"]
+[node name="Line3" type="RichTextLabel" parent="Day2/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page15/Left"]
+[node name="Line4" type="RichTextLabel" parent="Day2/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page15/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page15/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page15/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page15/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page15"]
+[node name="Right" type="Node2D" parent="Day2"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page15/Right"]
+[node name="TitleSprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page15/Right"]
+[node name="Title" type="RichTextLabel" parent="Day2/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day2/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -725,192 +547,192 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page15/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page15/Right"]
+[node name="Line2" type="RichTextLabel" parent="Day2/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page15/Right"]
+[node name="Line3" type="RichTextLabel" parent="Day2/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page15/Right"]
+[node name="Line4" type="RichTextLabel" parent="Day2/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page15/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page15/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page15/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page15/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page16" type="Node2D" parent="."]
+[node name="Day3" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page16"]
+[node name="Left" type="Node2D" parent="Day3"]
 
-[node name="TitleSprite" type="Sprite" parent="Page16/Left"]
+[node name="TitleSprite" type="Sprite" parent="Day3/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page16/Left"]
+[node name="Title" type="RichTextLabel" parent="Day3/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "End of Day 4"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page16/Left"]
+[node name="Line1" type="RichTextLabel" parent="Day3/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page16/Left"]
+[node name="Line2" type="RichTextLabel" parent="Day3/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page16/Left"]
+[node name="Line3" type="RichTextLabel" parent="Day3/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page16/Left"]
+[node name="Line4" type="RichTextLabel" parent="Day3/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Day3/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Day3/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Day3/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Day3/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page16"]
+[node name="Right" type="Node2D" parent="Day3"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page16/Right"]
+[node name="TitleSprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page16/Right"]
+[node name="Title" type="RichTextLabel" parent="Day3/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day3/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -918,192 +740,192 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page16/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page16/Right"]
+[node name="Line2" type="RichTextLabel" parent="Day3/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page16/Right"]
+[node name="Line3" type="RichTextLabel" parent="Day3/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page16/Right"]
+[node name="Line4" type="RichTextLabel" parent="Day3/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page17" type="Node2D" parent="."]
+[node name="Day4" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page17"]
+[node name="Left" type="Node2D" parent="Day4"]
 
-[node name="TitleSprite" type="Sprite" parent="Page17/Left"]
+[node name="TitleSprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page17/Left"]
+[node name="Title" type="RichTextLabel" parent="Day4/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "End of Day 5"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page17/Left"]
+[node name="Line1" type="RichTextLabel" parent="Day4/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page17/Left"]
+[node name="Line2" type="RichTextLabel" parent="Day4/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page17/Left"]
+[node name="Line3" type="RichTextLabel" parent="Day4/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page17/Left"]
+[node name="Line4" type="RichTextLabel" parent="Day4/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page17/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page17/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page17/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page17/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page17"]
+[node name="Right" type="Node2D" parent="Day4"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page17/Right"]
+[node name="TitleSprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page17/Right"]
+[node name="Title" type="RichTextLabel" parent="Day4/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day4/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -1111,192 +933,192 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page17/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page17/Right"]
+[node name="Line2" type="RichTextLabel" parent="Day4/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page17/Right"]
+[node name="Line3" type="RichTextLabel" parent="Day4/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page17/Right"]
+[node name="Line4" type="RichTextLabel" parent="Day4/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page17/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page17/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page17/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page17/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page18" type="Node2D" parent="."]
+[node name="Day5" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page18"]
+[node name="Left" type="Node2D" parent="Day5"]
 
-[node name="TitleSprite" type="Sprite" parent="Page18/Left"]
+[node name="TitleSprite" type="Sprite" parent="Day5/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page18/Left"]
+[node name="Title" type="RichTextLabel" parent="Day5/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "End of Day 6"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page18/Left"]
+[node name="Line1" type="RichTextLabel" parent="Day5/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page18/Left"]
+[node name="Line2" type="RichTextLabel" parent="Day5/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page18/Left"]
+[node name="Line3" type="RichTextLabel" parent="Day5/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page18/Left"]
+[node name="Line4" type="RichTextLabel" parent="Day5/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page18/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Day5/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page18/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Day5/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page18/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Day5/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page18/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Day5/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page18"]
+[node name="Right" type="Node2D" parent="Day5"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page18/Right"]
+[node name="TitleSprite" type="Sprite" parent="Day5/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page18/Right"]
+[node name="Title" type="RichTextLabel" parent="Day5/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day5/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
@@ -1304,78 +1126,257 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page18/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page18/Right"]
+[node name="Line2" type="RichTextLabel" parent="Day5/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page18/Right"]
+[node name="Line3" type="RichTextLabel" parent="Day5/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page18/Right"]
+[node name="Line4" type="RichTextLabel" parent="Day5/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page18/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Day5/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page18/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Day5/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page18/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Day5/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page18/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Day5/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="DayN" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="DayN"]
+
+[node name="TitleSprite" type="Sprite" parent="DayN/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="DayN/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "End of Day N"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="DayN/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="DayN/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="DayN/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="DayN/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="DayN/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="DayN/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="DayN/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="DayN/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="DayN"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="DayN/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="DayN/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="DayN/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="DayN/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="DayN/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="DayN/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="DayN/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="DayN/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="DayN/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="DayN/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
@@ -1396,7 +1397,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -1411,7 +1412,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1425,7 +1426,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1439,7 +1440,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1453,7 +1454,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1490,7 +1491,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1504,7 +1505,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1518,7 +1519,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1532,7 +1533,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1546,7 +1547,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1589,7 +1590,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -1604,7 +1605,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1618,7 +1619,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1632,7 +1633,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1646,7 +1647,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1683,7 +1684,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1697,7 +1698,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1711,7 +1712,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1725,7 +1726,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1739,7 +1740,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1782,7 +1783,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -1797,7 +1798,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1811,7 +1812,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1825,7 +1826,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1839,7 +1840,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1876,7 +1877,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1890,7 +1891,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1904,7 +1905,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1918,7 +1919,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1932,7 +1933,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1975,7 +1976,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -1990,7 +1991,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2004,7 +2005,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2018,7 +2019,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2032,7 +2033,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2069,7 +2070,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2083,7 +2084,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2097,7 +2098,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2111,7 +2112,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2125,7 +2126,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2168,7 +2169,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2183,7 +2184,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2197,7 +2198,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2211,7 +2212,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2225,7 +2226,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2262,7 +2263,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2276,7 +2277,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2290,7 +2291,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2304,7 +2305,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2318,7 +2319,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2361,7 +2362,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2376,7 +2377,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2390,7 +2391,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2404,7 +2405,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2418,7 +2419,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2455,7 +2456,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2469,7 +2470,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2483,7 +2484,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2497,7 +2498,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2511,7 +2512,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2554,7 +2555,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2569,7 +2570,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2583,7 +2584,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2597,7 +2598,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2611,7 +2612,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2648,7 +2649,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2662,7 +2663,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2676,7 +2677,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2690,7 +2691,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2704,7 +2705,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2747,7 +2748,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2762,7 +2763,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2776,7 +2777,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2790,7 +2791,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2804,7 +2805,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2841,7 +2842,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2855,7 +2856,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2869,7 +2870,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2883,7 +2884,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2897,7 +2898,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2940,7 +2941,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2955,7 +2956,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2969,7 +2970,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2983,7 +2984,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2997,7 +2998,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3034,7 +3035,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3048,7 +3049,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3062,7 +3063,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3076,7 +3077,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3090,7 +3091,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3133,7 +3134,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3148,7 +3149,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3162,7 +3163,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3176,7 +3177,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3190,7 +3191,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3227,7 +3228,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3241,7 +3242,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3255,7 +3256,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3269,7 +3270,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3283,7 +3284,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3326,7 +3327,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3341,7 +3342,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3355,7 +3356,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3369,7 +3370,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3383,7 +3384,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3420,7 +3421,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3434,7 +3435,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3448,7 +3449,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3462,7 +3463,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3476,7 +3477,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3519,7 +3520,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3534,7 +3535,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3548,7 +3549,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3562,7 +3563,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3576,7 +3577,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3613,7 +3614,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3627,7 +3628,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3641,7 +3642,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3655,7 +3656,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3669,7 +3670,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3711,6 +3712,6 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseButton/CloseArea2D"]
 position = Vector2( 32, 32 )
-shape = SubResource( 23 )
+shape = SubResource( 3 )
 
 [connection signal="input_event" from="CloseButton/CloseArea2D" to="." method="_on_CloseArea2D_input_event"]
