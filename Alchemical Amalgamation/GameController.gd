@@ -69,12 +69,13 @@ func restart_day():
 
 func setup_for_day(day_num): 
 	day = day_num
+	$Workroom.setup_for_day(day_num)
 	if day_num == 0: 
 		setup_for_day_0()
 	elif day_num == 1: 
 		setup_for_day_1()
 	elif day_num == 2: 
-		setup_for_day_1()
+		setup_for_day_2()
 	else: 
 		setup_for_final_days()
 	restart_day()
@@ -87,11 +88,9 @@ func setup_for_day_0():
 	$CoalArea.visible = false
 	$ShovelArea.visible = false
 	$CombinatorOutArea.visible = false
-	$Workroom.setup_for_day_0()
 
 func setup_for_day_1(): 
 	$CombinatorOutArea.visible = true
-	$Workroom.setup_for_day_1()
 
 func setup_for_day_2(): 
 	has_cauldron_set = true
@@ -99,10 +98,9 @@ func setup_for_day_2():
 	$WoodArea.visible = true
 	$CoalArea.visible = true
 	$ShovelArea.visible = true
-	$Workroom.setup_for_day_2()
 
 func setup_for_final_days(): 
-	$Workroom.setup_for_final_days()
+	pass
 
 func add_gold(extra_gold): 
 	gold += extra_gold

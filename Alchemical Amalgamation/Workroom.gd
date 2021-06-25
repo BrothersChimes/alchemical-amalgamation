@@ -42,20 +42,49 @@ func place_resource_on_first_open_holder(resource):
 func set_holder_to(resource, number): 
 	get_node("ShelfForIngredients/HolderForShelf" + str(number)).set_resource_to(resource)
 
+func setup_for_day(day_num): 
+	$ShelfForIngredients.setup_for_day(day_num)
+	if day_num == 0: 
+		setup_for_day_0()
+	elif day_num == 1: 
+		setup_for_day_1()
+	elif day_num == 2: 
+		setup_for_day_2()
+	elif day_num == 3: 
+		setup_for_day_3()
+	elif day_num == 4: 
+		setup_for_day_4()
+	else: 
+		setup_for_final_days()
+
 func setup_for_day_0(): 
 	$station_woodpile.visible = false
 	$station_coal.visible = false
 	$station_shovel_empty.visible = false
 	$Combinator.visible = false
-
+	$station_alembic_empty.visible = false
+	$station_aludel_empty.visible = false
+	$station_spiral_in_use.visible = false
+	$station_mortar_in_use.visible = false
+	$station_spiral_output_pink.visible = false
+	$station_retort_in_use.visible = false
+	
 func setup_for_day_1(): 
 	$Combinator.visible = true
-
+	
 func setup_for_day_2(): 
 	$station_woodpile.visible = true
 	$station_coal.visible = true
 	$station_shovel_empty.visible = true
 
+func setup_for_day_3(): 
+	$station_mortar_in_use.visible = true
+
+func setup_for_day_4(): 
+	$station_spiral_in_use.visible = true
+	$station_spiral_output_pink.visible = true
+	$station_retort_in_use.visible = true
+
 func setup_for_final_days(): 
-	pass
-	
+	$station_alembic_empty.visible = true
+	$station_aludel_empty.visible = true
