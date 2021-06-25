@@ -2,7 +2,9 @@ extends Node2D
 
 signal close_day_display
 
+var is_success_fail_display_open = false
 var old_index = 0
+var day = 0
 var pagenumbers = [
 	"Day0",
 	"Day1",
@@ -11,8 +13,8 @@ var pagenumbers = [
 	"Day4",
 	"Day5",
 	"DayN",
-	#"Page19",
-	#"Page20",
+	"SUCCESS",
+	"FAIL",
 	#"Page21",
 	#"Page22",
 	#"Page23",
@@ -30,16 +32,27 @@ func _ready():
 	for page in pagenumbers:
 		get_node(page).visible = false
 	get_node(pagenumbers[0]).visible = true
+	var is_success_fail_display_open = false
 	
-func set_day(day): 
-	var max_day = pagenumbers.size()
+func set_success(is_success, gold, rep): 
+	if is_success: 
+		set_page_based_on_index(7)
+		$SUCCESS/Left/Line3.text = "You had " + str(gold) + "gp."
+		$SUCCESS/Left/Line4.text = "You had " + str(rep) + " rep."
+	else: 
+		set_page_based_on_index(8)
+		$FAIL/Left/Line3.text = "You had " + str(gold) + "gp."
+		$FAIL/Left/Line4.text = "You had " + str(rep) + " rep."
+		
+func go_to_day(new_day): 
+	day = new_day
+	var max_day = pagenumbers.size()-2
 	if day >= max_day-1:
-		print("Day " + str(day) + " more than max" + str(max_day-1))
-		$DayN/Left/Title.text = "End of Day " + str(day+1)
+		$DayN/Left/Title.text = "Day " + str(day)
 		set_page_based_on_index(max_day - 1)
 		return
-	print("SET DAY " + str(day))
 	set_page_based_on_index(day)
+	is_success_fail_display_open = false
 
 func set_page_based_on_index(new_index): 
 	get_node(pagenumbers[old_index]).visible = false

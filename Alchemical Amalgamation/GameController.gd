@@ -1,7 +1,7 @@
 extends Node2D
 
 signal open_book
-signal end_day
+signal end_day(is_success)
 
 const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
 var ResourceType = ResourceTypeFile.ResourceType
@@ -20,7 +20,7 @@ onready var cauldron_set = get_node("CauldronSet")
 var has_cauldron_set = false
 
 var day = 0
-var gold = 1000
+var gold = 100
 var rep = 0
 
 const DAY_LENGTH = 60
@@ -44,15 +44,43 @@ func _process(delta):
 		drop_potion_event()
 	day_process(delta)
 
+func is_day_successful(): 
+	#TODO
+	if day == 0: 
+		return gold >= 30 and rep >= 5
+	elif day == 1: 
+		return gold >= 50 and rep >= 12
+	elif day == 2: 
+		return gold >= 200 and rep >= 10
+	elif day == 3: 
+		return gold >= 200 and rep >= 10
+	elif day == 4: 
+		return gold >= 200 and rep >= 10
+	elif day == 5: 
+		return gold >= 200 and rep >= 10
+	elif day == 6: 
+		return gold >= 200 and rep >= 10
+	else: 
+		return gold >= 200 and rep >= 10
+
 func day_process(delta): 
+	var is_success = is_day_successful()
+	if is_success:
+		$SuccessAndFailureText.set_text_none()
+		emit_signal("end_day", is_success, gold, rep)
+		restart_day()
+		return
+
 	### TODO Debug - remove
 	if Input.is_action_just_pressed("end_day"):
-		emit_signal("end_day")
+		$SuccessAndFailureText.set_text_none()
+		emit_signal("end_day", true, gold, rep)
 		restart_day()
 	###
 	day_timer += delta
 	if day_timer >= DAY_LENGTH:
-		emit_signal("end_day")
+		$SuccessAndFailureText.set_text_none()
+		emit_signal("end_day", is_success, gold, rep)
 		restart_day()
 	elif day_timer >= day_second_third:
 		# print("second third reached")
@@ -66,6 +94,7 @@ func restart_day():
 	$Clock/AnimatedSprite.frame = 0
 
 func setup_for_day(day_num): 
+	rep = 0
 	day = day_num
 	$Workroom.setup_for_day(day_num)
 	customersQueue.setup_for_day(day_num)
@@ -81,6 +110,7 @@ func setup_for_day(day_num):
 	set_start_customer()
 
 func setup_for_day_0(): 
+	gold = 20
 	has_cauldron_set = false
 	remove_child(cauldron_set)
 	$WoodArea.visible = false
@@ -89,9 +119,11 @@ func setup_for_day_0():
 	$CombinatorOutArea.visible = false
 
 func setup_for_day_1(): 
+	gold = 100
 	$CombinatorOutArea.visible = true
 
 func setup_for_day_2(): 
+	gold = 200
 	has_cauldron_set = true
 	add_child(cauldron_set)
 	$WoodArea.visible = true
@@ -99,6 +131,7 @@ func setup_for_day_2():
 	$ShovelArea.visible = true
 
 func setup_for_final_days(): 
+	gold = 400
 	pass
 
 func add_gold(extra_gold): 

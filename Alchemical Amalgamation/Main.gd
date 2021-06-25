@@ -1,8 +1,8 @@
 extends Node2D
 
 # TODO this would work better as a state enum
-var is_book_open = true
-var is_day_display_open = false
+var is_book_open = false
+var is_day_display_open = true
 
 var game_controller
 var book
@@ -19,7 +19,8 @@ func _ready():
 	day_display = $DayDisplay
 	day_display.visible = true
 	remove_child(game_controller)
-	remove_child(day_display)
+	remove_child(book)
+	# remove_child(day_display)
 
 func _on_GameController_open_book():
 	open_book()
@@ -58,18 +59,22 @@ func close_both():
 		remove_child(game_controller)
 	
 func close_day_display():
+	if day_display.is_success_fail_display_open: 
+		day_display.go_to_day(day)
+		return
+	day_display.is_success_fail_display_open = true
 	remove_child(day_display)
 	game_controller.setup_for_day(day)
 	is_day_display_open = false
 	is_book_open = false
-	#$BookOpenSound.stop()
 	$BookCloseSound.play()
 	add_child(game_controller)
 
-func _on_GameController_end_day():
+func _on_GameController_end_day(is_success, gold, rep):
 	close_both()
-	day_display.set_day(day)
-	day += 1
+	day_display.set_success(is_success, gold, rep)
+	if is_success:
+		day += 1
 	is_day_display_open = true
 	add_child(day_display)
 

@@ -1,19 +1,65 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://DayDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/UI/UI_reputation.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/UI_coin.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Stations/station_clock.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Stations/station_combiner_empty.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Stations/station_cauldron_fire_spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Stations/station_cauldron_shine.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
 [ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=31]
 
 [sub_resource type="DynamicFont" id=4]
-size = 80
+size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 7 )
+region = Rect2( 192, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 32 )
@@ -40,15 +86,16 @@ position = Vector2( 600.037, 66.6708 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="Day0/Left"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
+margin_left = 134.0
+margin_top = 32.0
+margin_right = 785.0
+margin_bottom = 188.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "End of Day 1"
+text = "Welcome to your 
+first day!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,6 +110,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Use TAB to close this book, and to open the recipe book."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,6 +125,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "The recipe book also contains instructions and guidelines"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,6 +140,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click on objects to interact with them"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,6 +155,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click on items on the shelf and sell them to customers."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -142,6 +193,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -156,6 +208,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -170,6 +223,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 30 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -184,6 +238,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 5 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -203,19 +258,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Day0/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day0/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 8 )
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day0/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day0/Right"]
@@ -241,7 +301,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "End of Day 2"
+text = "Day 1"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -256,6 +316,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Congratulations on completing your training"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -270,6 +331,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Customers will no longer just want raw ingredients"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -284,6 +346,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You will need to combine ingredients into potions"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -298,6 +361,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Check the recipe book for details on how to do that..."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -313,10 +377,12 @@ centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.536, 424.875 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day1/Left"]
 position = Vector2( 600.536, 543.308 )
+texture = ExtResource( 23 )
 centered = false
 
 [node name="Right" type="Node2D" parent="Day1"]
@@ -335,6 +401,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -349,6 +416,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -363,6 +431,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 50 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -377,6 +446,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 12 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -396,19 +466,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Day1/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day1/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 8 )
+frame = 2
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day1/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day1/Right"]
@@ -434,7 +510,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "End of Day 3"
+text = "Day 2"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -449,6 +525,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Now you will need to boil potions in the cauldron"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -463,6 +540,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "It can be complicated so make sure you check the book"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -477,6 +555,8 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Don't worry, the game is paused whilst you are reading"
+fit_content_height = true
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -491,6 +571,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Remember to keep that fire  at the right temperature!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -498,18 +579,23 @@ __meta__ = {
 
 [node name="Line1Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 190.53 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 308.963 )
+texture = ExtResource( 23 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day2/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Day2/Left"]
+[node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
 centered = false
 
 [node name="Right" type="Node2D" parent="Day2"]
@@ -528,6 +614,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -542,6 +629,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -556,6 +644,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 80 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -570,6 +659,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 15 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -589,19 +679,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Day2/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day2/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 8 )
+frame = 2
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day2/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day2/Right"]
@@ -610,7 +706,6 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Day3" type="Node2D" parent="."]
-visible = false
 
 [node name="Left" type="Node2D" parent="Day3"]
 
@@ -627,7 +722,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "End of Day 4"
+text = "Day 3"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -642,6 +737,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "More complex potions sell for more money"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -656,6 +752,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "But they also cost you more if you give the wrong thing"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -721,6 +818,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -735,6 +833,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -749,6 +848,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 80 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -763,6 +863,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 15 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -782,19 +883,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Day3/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day3/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 8 )
+frame = 1
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day3/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day3/Right"]
@@ -820,7 +927,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "End of Day 5"
+text = "Day 4"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1028,6 +1135,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Day 5"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1206,7 +1314,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "End of Day N"
+text = "Day N"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1381,31 +1489,31 @@ position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page19" type="Node2D" parent="."]
+[node name="SUCCESS" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page19"]
+[node name="Left" type="Node2D" parent="SUCCESS"]
 
-[node name="TitleSprite" type="Sprite" parent="Page19/Left"]
+[node name="TitleSprite" type="Sprite" parent="SUCCESS/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page19/Left"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
+[node name="Title" type="RichTextLabel" parent="SUCCESS/Left"]
+margin_left = 134.0
+margin_top = 80.0
+margin_right = 595.0
+margin_bottom = 224.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "SUCCESS!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page19/Left"]
+[node name="Line1" type="RichTextLabel" parent="SUCCESS/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -1414,12 +1522,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You move onto the next day!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page19/Left"]
+[node name="Line2" type="RichTextLabel" parent="SUCCESS/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -1428,12 +1537,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Press TAB or click the X to move on..."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page19/Left"]
+[node name="Line3" type="RichTextLabel" parent="SUCCESS/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -1447,7 +1557,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page19/Left"]
+[node name="Line4" type="RichTextLabel" parent="SUCCESS/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -1461,30 +1571,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page19/Left"]
+[node name="Line1Sprite" type="Sprite" parent="SUCCESS/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page19/Left"]
+[node name="Line2Sprite" type="Sprite" parent="SUCCESS/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page19/Left"]
+[node name="Line3Sprite" type="Sprite" parent="SUCCESS/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page19/Left"]
+[node name="Line4Sprite" type="Sprite" parent="SUCCESS/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page19"]
+[node name="Right" type="Node2D" parent="SUCCESS"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page19/Right"]
+[node name="TitleSprite" type="Sprite" parent="SUCCESS/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page19/Right"]
+[node name="Title" type="RichTextLabel" parent="SUCCESS/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
@@ -1498,7 +1608,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page19/Right"]
+[node name="Line1" type="RichTextLabel" parent="SUCCESS/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -1512,7 +1622,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page19/Right"]
+[node name="Line2" type="RichTextLabel" parent="SUCCESS/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -1526,7 +1636,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page19/Right"]
+[node name="Line3" type="RichTextLabel" parent="SUCCESS/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -1540,7 +1650,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page19/Right"]
+[node name="Line4" type="RichTextLabel" parent="SUCCESS/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -1554,36 +1664,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page19/Right"]
+[node name="Line1Sprite" type="Sprite" parent="SUCCESS/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page19/Right"]
+[node name="Line2Sprite" type="Sprite" parent="SUCCESS/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page19/Right"]
+[node name="Line3Sprite" type="Sprite" parent="SUCCESS/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page19/Right"]
+[node name="Line4Sprite" type="Sprite" parent="SUCCESS/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page20" type="Node2D" parent="."]
+[node name="FAIL" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page20"]
+[node name="Left" type="Node2D" parent="FAIL"]
 
-[node name="TitleSprite" type="Sprite" parent="Page20/Left"]
+[node name="TitleSprite" type="Sprite" parent="FAIL/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page20/Left"]
+[node name="Title" type="RichTextLabel" parent="FAIL/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
@@ -1592,13 +1702,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "FAILURE"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page20/Left"]
+[node name="Line1" type="RichTextLabel" parent="FAIL/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -1607,12 +1717,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You failed to achieve your goal and must restart the day"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page20/Left"]
+[node name="Line2" type="RichTextLabel" parent="FAIL/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -1621,12 +1732,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Press TAB or click the X to restart the day..."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page20/Left"]
+[node name="Line3" type="RichTextLabel" parent="FAIL/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -1640,7 +1752,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page20/Left"]
+[node name="Line4" type="RichTextLabel" parent="FAIL/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -1654,30 +1766,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page20/Left"]
+[node name="Line1Sprite" type="Sprite" parent="FAIL/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page20/Left"]
+[node name="Line2Sprite" type="Sprite" parent="FAIL/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page20/Left"]
+[node name="Line3Sprite" type="Sprite" parent="FAIL/Left"]
 position = Vector2( 600.536, 424.875 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page20/Left"]
+[node name="Line4Sprite" type="Sprite" parent="FAIL/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page20"]
+[node name="Right" type="Node2D" parent="FAIL"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page20/Right"]
+[node name="TitleSprite" type="Sprite" parent="FAIL/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page20/Right"]
+[node name="Title" type="RichTextLabel" parent="FAIL/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
@@ -1691,7 +1803,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page20/Right"]
+[node name="Line1" type="RichTextLabel" parent="FAIL/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -1705,7 +1817,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page20/Right"]
+[node name="Line2" type="RichTextLabel" parent="FAIL/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -1719,7 +1831,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page20/Right"]
+[node name="Line3" type="RichTextLabel" parent="FAIL/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -1733,7 +1845,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page20/Right"]
+[node name="Line4" type="RichTextLabel" parent="FAIL/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -1747,22 +1859,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page20/Right"]
+[node name="Line1Sprite" type="Sprite" parent="FAIL/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page20/Right"]
+[node name="Line2Sprite" type="Sprite" parent="FAIL/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page20/Right"]
+[node name="Line3Sprite" type="Sprite" parent="FAIL/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page20/Right"]
+[node name="Line4Sprite" type="Sprite" parent="FAIL/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false

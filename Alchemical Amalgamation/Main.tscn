@@ -36,66 +36,66 @@ font_data = ExtResource( 11 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128, 96 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=3]
 size = 80
 outline_size = 5
 font_data = ExtResource( 11 )
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 47.7039
 height = 94.7427
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 23
 font_data = ExtResource( 11 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 48, 64 )
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 24.0
 height = 53.13
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 27.1988
 height = 153.591
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 32
 outline_size = 2
 outline_color = Color( 0.701961, 0.482353, 0.00784314, 1 )
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 32
 outline_size = 2
 outline_color = Color( 0.941176, 0.27451, 0.415686, 1 )
 use_mipmaps = true
 font_data = ExtResource( 11 )
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=11]
 radius = 48.0
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 32
 outline_size = 2
 font_data = ExtResource( 11 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 48, 48 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 25 )
 region = Rect2( 48, 0, 48, 48 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 25 )
 region = Rect2( 96, 0, 48, 48 )
 
-[sub_resource type="SpriteFrames" id=15]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "tick",
 "speed": 5.0
@@ -157,7 +157,7 @@ margin_left = 432.0
 margin_top = 416.0
 margin_right = 1416.0
 margin_bottom = 526.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "300gp"
 align = 1
@@ -210,14 +210,14 @@ position = Vector2( 208, 264 )
 [node name="BellowsCollider" type="CollisionShape2D" parent="GameController/CauldronSet/BellowsArea"]
 position = Vector2( -8, 16 )
 rotation = -1.05329
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CauldronStatusLabel" type="Label" parent="GameController/CauldronSet"]
 margin_left = 288.0
 margin_top = 192.0
 margin_right = 544.0
 margin_bottom = 224.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Too hot"
 align = 1
 __meta__ = {
@@ -229,7 +229,7 @@ position = Vector2( 560, 616 )
 
 [node name="WoodCollider" type="CollisionShape2D" parent="GameController/WoodArea"]
 position = Vector2( -256, 88 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CoalArea" type="Area2D" parent="GameController"]
 position = Vector2( 560, 616 )
@@ -237,7 +237,7 @@ position = Vector2( 560, 616 )
 [node name="CoalCollider" type="CollisionShape2D" parent="GameController/CoalArea"]
 position = Vector2( -176, 104 )
 rotation = -0.286517
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="ShovelArea" type="Area2D" parent="GameController"]
 position = Vector2( 560, 616 )
@@ -245,7 +245,7 @@ position = Vector2( 560, 616 )
 [node name="ShovelCollider" type="CollisionShape2D" parent="GameController/ShovelArea"]
 position = Vector2( -40, -120 )
 rotation = 1.16564
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Gold" type="Node2D" parent="GameController"]
 position = Vector2( 280, 800 )
@@ -260,7 +260,7 @@ margin_left = 24.0
 margin_top = -24.0
 margin_right = 472.0
 margin_bottom = 24.0
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "100000 gp"
 __meta__ = {
@@ -280,7 +280,7 @@ margin_left = 48.0
 margin_top = -24.0
 margin_right = 496.0
 margin_bottom = 24.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "10000 Rep"
 __meta__ = {
@@ -291,13 +291,13 @@ __meta__ = {
 position = Vector2( 384, 136 )
 
 [node name="CombinatorOutCollider" type="CollisionShape2D" parent="GameController/CombinatorOutArea"]
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="CombinatorAltText" type="Label" parent="GameController/CombinatorOutArea"]
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Some alt text"
 __meta__ = {
@@ -309,7 +309,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="GameController/Clock"]
 position = Vector2( 1016, 8 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 15 )
+frames = SubResource( 16 )
 animation = "tick"
 centered = false
 
