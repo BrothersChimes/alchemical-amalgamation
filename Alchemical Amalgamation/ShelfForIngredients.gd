@@ -17,7 +17,6 @@ func setup_for_day(day_num):
 	else: 
 		setup_for_final_days()
 
-
 func setup_for_day_0(): 
 	$MermaidResource.visible = false
 	$AwesomeResource.visible = false

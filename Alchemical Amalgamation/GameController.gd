@@ -23,7 +23,7 @@ var day = 0
 var gold = 1000
 var rep = 0
 
-const DAY_LENGTH = 10
+const DAY_LENGTH = 60
 var day_timer = 0
 var day_first_third = DAY_LENGTH / 3
 var day_second_third = day_first_third*2
@@ -70,6 +70,7 @@ func restart_day():
 func setup_for_day(day_num): 
 	day = day_num
 	$Workroom.setup_for_day(day_num)
+	customersQueue.setup_for_day(day_num)
 	if day_num == 0: 
 		setup_for_day_0()
 	elif day_num == 1: 
@@ -119,18 +120,18 @@ func set_start_customer():
 
 func set_customers(): 
 	#NOTE: Does not duplicate the array - changes here are changes there
-	var queue = customersQueue.customers_for_day(day)
+	# var queue = customersQueue.customers_for_day(day)
 	
 	for i in range(0, customer_desired_resources.size()):
-		if queue.empty():
-			return
+#		if queue.empty():
+#			return
 		var customer = customer_desired_resources[i]
 		if customer != ResourceType.NONE:
 			continue
-		var next_customer = queue.front()
+		var next_customer = customersQueue.get_next_customer()
 		customer_desired_resources[i] = next_customer.Desire
 		$CustomerText.create_customer_with_message_and_item(i, next_customer.Message, next_customer.Desire)
-		queue.pop_front()
+		# queue.pop_front()
 
 func drop_potion_event(): 
 	if resource_carried == ResourceType.NONE:
