@@ -46,9 +46,16 @@ func setup_for_day_0():
 	$station_woodpile.visible = false
 	$station_coal.visible = false
 	$station_shovel_empty.visible = false
-	
-func setup_for_final_days(): 
+	$Combinator.visible = false
+
+func setup_for_day_1(): 
+	$Combinator.visible = true
+
+func setup_for_day_2(): 
 	$station_woodpile.visible = true
 	$station_coal.visible = true
 	$station_shovel_empty.visible = true
+
+func setup_for_final_days(): 
+	pass
 	
