@@ -10,6 +10,9 @@ enum ResourceType {
 	ECTOPLASM,
 	RIDDLER,
 	WATER,
+	BRAINBARK,
+	HONEY,
+	STUNBRICK,
 	CRAP,
 	LIQUID_AWESOME,
 	BOILED_MERMAID,
@@ -50,6 +53,12 @@ static func display_name(resource_type):
 			return "Mermaid Horn"
 		ResourceType.WATER: 
 			return "Distilled Water"
+		ResourceType.BRAINBARK:
+			return "Brainbark"
+		ResourceType.HONEY:
+			return "Honey"
+		ResourceType.STUNBRICK:
+			return "Stunbrick"
 		#### POTIONS ####
 		ResourceType.CRAP:
 			return "Failed Potion"
@@ -65,8 +74,6 @@ static func display_name(resource_type):
 			return "Orange Blossom"
 		ResourceType.IRON_SPICE:
 			return "Iron Spice"
-
-
 	
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
@@ -87,6 +94,12 @@ static func sprites_names_for_resource_types(resource_type):
 			return "mermaid"
 		ResourceType.WATER: 
 			return "water"
+		ResourceType.BRAINBARK:
+			return "brainbark"
+		ResourceType.HONEY:
+			return "honey"
+		ResourceType.STUNBRICK:
+			return "stunbrick"
 		#### POTIONS ####
 		ResourceType.CRAP:
 			return "yellow"

@@ -196,19 +196,31 @@ resource_type = 5
 position = Vector2( 1168, 368 )
 resource_type = 6
 
-[node name="HolderForShelf0" parent="ShelfForIngredients" instance=ExtResource( 19 )]
+[node name="Brainbark" parent="ShelfForIngredients" instance=ExtResource( 2 )]
 position = Vector2( 992, 368 )
+resource_type = 9
+
+[node name="Honey" parent="ShelfForIngredients" instance=ExtResource( 2 )]
+position = Vector2( 1072, 432 )
+resource_type = 10
+
+[node name="Stunbrick" parent="ShelfForIngredients" instance=ExtResource( 2 )]
+position = Vector2( 1152, 496 )
+resource_type = 11
+
+[node name="HolderForShelf0" parent="ShelfForIngredients" instance=ExtResource( 19 )]
+position = Vector2( 1032, 40 )
 
 [node name="HolderForShelf1" parent="ShelfForIngredients" instance=ExtResource( 19 )]
-position = Vector2( 1056, 416 )
+position = Vector2( 1088, 80 )
 my_number = 1
 
 [node name="HolderForShelf2" parent="ShelfForIngredients" instance=ExtResource( 19 )]
-position = Vector2( 1120, 464 )
+position = Vector2( 1152, 120 )
 my_number = 2
 
 [node name="HolderForShelf3" parent="ShelfForIngredients" instance=ExtResource( 19 )]
-position = Vector2( 1184, 512 )
+position = Vector2( 1216, 160 )
 my_number = 3
 
 [node name="Hourglasses" parent="." instance=ExtResource( 20 )]
@@ -224,6 +236,9 @@ my_number = 3
 [connection signal="drag_resource" from="ShelfForIngredients/Riddler" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/Behemoth" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/Ectoplasm" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Brainbark" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Honey" to="." method="_on_ResourceForShelf_drag_resource"]
+[connection signal="drag_resource" from="ShelfForIngredients/Stunbrick" to="." method="_on_ResourceForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf0" to="." method="_on_HolderForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf1" to="." method="_on_HolderForShelf_drag_resource"]
 [connection signal="drag_resource" from="ShelfForIngredients/HolderForShelf2" to="." method="_on_HolderForShelf_drag_resource"]
