@@ -30,8 +30,12 @@ centered = false
 position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = -128.0
+[node name="LabelHolder" type="Node2D" parent="."]
+z_index = 10
+
+[node name="Label" type="Label" parent="LabelHolder"]
+margin_left = -208.0
+margin_right = -8.0
 margin_bottom = 34.0
 custom_fonts/font = SubResource( 2 )
 text = "Water"

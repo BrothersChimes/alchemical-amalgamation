@@ -27,7 +27,7 @@ func remove_customer():
 func _on_AltTextArea_area_entered(area):
 	if area.name == "HoverHackArea":
 		if desired_resource_type != ResourceType.NONE:
-			$AltText/AltTextLabel.text = ResourceTypeFile.display_name(desired_resource_type)
+			$AltText/AltTextLabel.text = ResourceTypeFile.display_name(desired_resource_type) + ": " + str(ResourceTypeFile.sale_price_for(desired_resource_type)) + "gp"
 			$AltText/AltTextLabel.visible = true
 
 func _on_AltTextArea_area_exited(area):

@@ -131,7 +131,6 @@ func set_customers():
 		var next_customer = customersQueue.get_next_customer()
 		customer_desired_resources[i] = next_customer.Desire
 		$CustomerText.create_customer_with_message_and_item(i, next_customer.Message, next_customer.Desire)
-		# queue.pop_front()
 
 func drop_potion_event(): 
 	if resource_carried == ResourceType.NONE:
@@ -140,8 +139,8 @@ func drop_potion_event():
 		destroy_carried_resource()
 	elif ResourceTypeFile.is_resource_raw(resource_carried):
 		$Workroom/PurchaseSound.play()
+		add_gold(ResourceTypeFile.buy_price_for(resource_carried))
 		set_carried_resource_to(ResourceType.NONE)
-		add_gold(20)
 	else: 
 		var could_place = $Workroom.place_resource_on_first_open_holder(resource_carried)
 		if could_place: 
@@ -151,14 +150,16 @@ func drop_potion_event():
 func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
 		set_carried_resource_to(resource_type)
-		add_gold(-20)
+		add_gold(-ResourceTypeFile.buy_price_for(resource_type))
 		$Workroom/PurchaseSound.play()
 	elif ResourceTypeFile.is_resource_raw(resource_carried):
 		if resource_carried == resource_type:
 			set_carried_resource_to(ResourceType.NONE)
-			add_gold(20)
+			add_gold(ResourceTypeFile.buy_price_for(resource_type))
 			$Workroom/PurchaseSound.play()
 		else:
+			add_gold(ResourceTypeFile.buy_price_for(resource_carried))
+			add_gold(-ResourceTypeFile.buy_price_for(resource_type))
 			set_carried_resource_to(resource_type)
 			$Workroom/DropPotionSound.play()
 	
@@ -177,12 +178,14 @@ func _on_CustomerText_sell_potion_to(customer_number):
 	if resource_carried == ResourceType.NONE:
 		return
 	if resource_carried == customer_desired_resources[customer_number]:
-		$SuccessAndFailureText.set_text_success()
-		add_gold(100)
+		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
+		$SuccessAndFailureText.set_text_success(sale_price, 1)
+		add_gold(sale_price)
 		add_reputation(1)
 	else:
-		$SuccessAndFailureText.set_text_failure()
-		add_gold(-500)
+		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
+		$SuccessAndFailureText.set_text_failure(sale_price, 5)
+		add_gold(-sale_price*2)
 		add_reputation(-5)
 	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)

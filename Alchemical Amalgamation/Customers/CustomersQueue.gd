@@ -25,7 +25,6 @@ func which_day():
 		return randi()%customers.size()
 	
 	var my_day = min(day, max_day)
-	print("MY DAY:" + str(my_day))
 	if my_day == 0: 
 		return 0
 	if my_day == 1: 
@@ -43,9 +42,7 @@ func which_day():
 	rand_list.append(my_day)
 	rand_list.append(my_day)
 	rand_list.append(my_day)
-	print("RAND LIST: " + str(rand_list))
 	var which_point = randi()%rand_list.size()
-	print("WHICH POINT: " + str(rand_list))
 	return rand_list[which_point] 
 
 var customers_day_0 = [
@@ -94,7 +91,6 @@ var customers =  [
 
 func get_next_customer(): 
 	var which_day = which_day()
-	print("WHICH DAY: " + str(which_day))
 	var customer_array = customers[which_day]
 	var element = randi()%customer_array.size()
 	var customer = customer_array[element]
