@@ -21,6 +21,9 @@ func setup_for_day(day_num):
 #TODO 
 func which_day():
 	var max_day = customers.size() - 1
+	if day > max_day:
+		return randi()%customers.size()
+	
 	var my_day = min(day, max_day)
 	print("MY DAY:" + str(my_day))
 	if my_day == 0: 
