@@ -64,9 +64,9 @@ func setup_for_day_0():
 	$Combinator.visible = false
 	$station_alembic_empty.visible = false
 	$station_aludel_empty.visible = false
-	$station_spiral_in_use.visible = false
-	$station_spiral_output_pink.visible = false
-	$station_retort_in_use.visible = false
+#	$station_spiral_in_use.visible = false
+#	$station_spiral_output_pink.visible = false
+#	$station_retort_in_use.visible = false
 	
 func setup_for_day_1(): 
 	$Combinator.visible = true
@@ -80,9 +80,10 @@ func setup_for_day_3():
 	pass
 
 func setup_for_day_4(): 
-	$station_spiral_in_use.visible = true
-	$station_spiral_output_pink.visible = true
-	$station_retort_in_use.visible = true
+	pass
+#	$station_spiral_in_use.visible = true
+#	$station_spiral_output_pink.visible = true
+#	$station_retort_in_use.visible = true
 
 func setup_for_final_days(): 
 	$station_alembic_empty.visible = true

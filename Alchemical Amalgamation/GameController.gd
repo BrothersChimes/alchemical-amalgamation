@@ -39,6 +39,7 @@ func _ready():
 func _process(delta): 
 	cauldron_process(delta)
 	mortar_process(delta)
+	spiral_process(delta)
 	if Input.is_action_just_pressed("drop_potion"):
 		drop_potion_event()
 	day_process(delta)
@@ -123,6 +124,9 @@ func setup_for_day_0():
 	$CoalArea.visible = false
 	$ShovelArea.visible = false
 	$CombinatorOutArea.visible = false
+	
+	$SpiralmouthSet.visible = true
+	has_spiral = true
 
 func setup_for_day_1(): 
 	gold = 100
@@ -493,3 +497,40 @@ func mortar_slam_pestle():
 		is_mortar_done = true
 		mortar_set.finish_mortar()
 				
+
+### Spiralmouth.
+const SpiralRecipe = preload("res://Stations/SpiralRecipe.gd")
+var spiral_recipe = SpiralRecipe.new()
+
+onready var spiral_set = get_node("SpiralmouthSet")
+var spiral_contents = ResourceType.NONE
+var is_spiral_done = false
+const SPIRAL_FINISH_TIME = 10
+var spiral_time = 0
+var	has_spiral = false
+
+func spiral_process(delta):
+	if not has_spiral: 
+		return
+	if spiral_contents != ResourceType.NONE and not is_spiral_done: 
+		spiral_time += delta
+		if spiral_time >= SPIRAL_FINISH_TIME: 
+			spiral_set.finish_spiral()
+			is_spiral_done = true
+
+func _on_SpiralmouthSet_spiral_click():
+	if not has_spiral: 
+		return
+	if resource_carried != ResourceType.NONE and spiral_contents == ResourceType.NONE:
+		spiral_time = 0
+		spiral_contents = spiral_recipe.recipe_for(resource_carried).Output
+		spiral_set.add_ingredient_to_spiral()
+		is_spiral_done = false
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and spiral_contents != ResourceType.NONE:
+		spiral_set.take_ingredient_from_spiral()
+		if is_spiral_done:
+			set_carried_resource_to(spiral_contents)
+		else: 
+			set_carried_resource_to(ResourceType.CRAP)
+		spiral_contents = ResourceType.NONE
