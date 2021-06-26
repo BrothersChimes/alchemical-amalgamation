@@ -11,7 +11,6 @@ var had_failure = false
 
 const MAX_DAY = 6
 
-const RECIPE_START = 7
 var index = 0
 var pagenumbers = [
 	"Day0",
@@ -111,10 +110,15 @@ func right_action():
 		
 func space_action(): 
 	$BookFlipSound.play()
-	if index >= RECIPE_START:
-		index = 0
-	else:
-		index = RECIPE_START	
+	var book_start = pagenumbers.find("WelcomePurpose")
+	var day_goal = book_start - 1
+	var recipe_start = pagenumbers.find("Ingredients")
+	if index < book_start: 
+		index = book_start
+	elif index < recipe_start: 
+		index = recipe_start
+	else: 
+		index = day_goal
 
 func set_page_based_on_index(cur_index): 
 	# print(index)
