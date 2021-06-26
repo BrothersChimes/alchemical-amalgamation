@@ -65,7 +65,6 @@ func setup_for_day_0():
 	$station_alembic_empty.visible = false
 	$station_aludel_empty.visible = false
 	$station_spiral_in_use.visible = false
-	$station_mortar_in_use.visible = false
 	$station_spiral_output_pink.visible = false
 	$station_retort_in_use.visible = false
 	

@@ -23,7 +23,7 @@ var day = 0
 var gold = 100
 var rep = 0
 
-const DAY_LENGTH = 3
+const DAY_LENGTH = 120 # Seconds the day lasts
 var day_timer = 0
 var day_first_third = DAY_LENGTH / 3
 var day_second_third = day_first_third*2
@@ -437,3 +437,31 @@ func _on_Workroom_click_on_holding_resource(resource, number):
 	set_carried_resource_to(resource)
 	$Workroom.set_holder_to(was_carried, number)
 	$Workroom/PickUpPotionSound.play()
+
+
+### MORTAR
+onready var mortar_set = get_node("MortarSet")
+var mortar_contents = ResourceType.NONE
+var is_mortar_done = false
+const REQUIRED_PESTLE_SLAMS = 6
+var pestle_slams = 0
+
+func _on_MortarSet_mortar_click():
+	if resource_carried != ResourceType.NONE and mortar_contents == ResourceType.NONE:
+		pestle_slams = 0
+		mortar_contents = resource_carried
+		mortar_set.add_ingredient_to_mortar()
+		is_mortar_done = false
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and mortar_contents != ResourceType.NONE:
+		if is_mortar_done:
+			set_carried_resource_to(mortar_contents)
+			mortar_set.take_ingredient_from_mortar()
+			mortar_contents = ResourceType.NONE
+		else: 
+			if pestle_slams < REQUIRED_PESTLE_SLAMS: 
+				pestle_slams += 1
+				mortar_set.slam_pestle()
+			else: 
+				is_mortar_done = true
+				mortar_set.finish_mortar()

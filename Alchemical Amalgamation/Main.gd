@@ -49,11 +49,4 @@ func _on_GameController_end_day(is_success, gold, rep):
 		book.add_sucess_page(day)
 	else: 
 		book.add_failure_page(day)
-	#else: 
-	#	book.set_failure_page(day)
 	open_book()
-	# day_display.set_success(is_success, gold, rep)
-#	if is_success:
-#		day += 1
-#	is_day_display_open = true
-#	add_child(day_display)
