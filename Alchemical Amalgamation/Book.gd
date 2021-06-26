@@ -7,9 +7,14 @@ signal close_book_to_day_display(is_left)
 # var a = 2
 # var b = "text"
 
+var had_failure = false
+
+const MAX_DAY = 6
+
 const RECIPE_START = 7
 var index = 0
 var pagenumbers = [
+	"Day0",
 	"WelcomePurpose",
 	"CustomersIngredients",
 	"Joiner",
@@ -58,29 +63,51 @@ func _process(delta):
 		space_action()
 	set_page_based_on_index(cur_index)
 
+func add_sucess_page(day): 
+	if had_failure: 
+		change_page_to(1)
+		pagenumbers.remove(0)
+		had_failure = false
+	if day == MAX_DAY: 
+		change_page_to(0)
+		pagenumbers.insert(MAX_DAY, "DayN")
+		change_page_to(MAX_DAY)
+		return
+	elif day > MAX_DAY:
+		change_page_to(MAX_DAY)
+		return
+	change_page_to(0)
+	pagenumbers.insert(day, "Day" + str(day))
+	change_page_to(day)
+
+func add_failure_page(day): 
+	if had_failure: 
+		change_page_to(0)
+		return
+	had_failure = true
+	get_node(pagenumbers[index]).visible = false
+	index = 0
+	pagenumbers.insert(0, "FAIL")
+	get_node(pagenumbers[0]).visible = true
+
+func change_page_to(page): 
+	var cur_index = index
+	index = page
+	set_page_based_on_index(cur_index)
+		
 func left_action(): 
 	$BookFlipSound.play()
 	if index > 0:
 		index -= 1
 	else: 
-		emit_signal("close_book_to_day_display", true)
+		index = pagenumbers.size() - 1
 
-func set_to_first_page(): 
-	var cur_index = index
-	index = 0
-	set_page_based_on_index(cur_index)
-
-func set_to_last_page(): 
-	var cur_index = index 
-	index = pagenumbers.size() - 1
-	set_page_based_on_index(cur_index)
-	
 func right_action(): 
 	$BookFlipSound.play()
 	if index < pagenumbers.size() - 1:
 		index += 1
 	else: 
-		emit_signal("close_book_to_day_display", false)
+		index = 0
 		
 func space_action(): 
 	$BookFlipSound.play()

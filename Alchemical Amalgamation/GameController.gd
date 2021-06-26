@@ -23,7 +23,7 @@ var day = 0
 var gold = 100
 var rep = 0
 
-const DAY_LENGTH = 60
+const DAY_LENGTH = 3
 var day_timer = 0
 var day_first_third = DAY_LENGTH / 3
 var day_second_third = day_first_third*2
@@ -34,8 +34,6 @@ var customer_desired_resources = [
 ]
 
 func _ready():
-	$Gold.set_gold(gold)
-	$Reputation.set_reputation(rep)
 	setup_for_day(0)
 
 func _process(delta): 
@@ -67,21 +65,23 @@ func day_process(delta):
 	var is_success = is_day_successful()
 	if is_success:
 		$SuccessAndFailureText.set_text_none()
+		day = day + 1
 		emit_signal("end_day", is_success, gold, rep)
-		restart_day()
+		setup_for_day(day)
 		return
 
 	### TODO Debug - remove
 	if Input.is_action_just_pressed("end_day"):
 		$SuccessAndFailureText.set_text_none()
+		day = day + 1
+		print("DAY: " + str(day))
 		emit_signal("end_day", true, gold, rep)
-		restart_day()
-	###
+		setup_for_day(day)
 	day_timer += delta
 	if day_timer >= DAY_LENGTH:
 		$SuccessAndFailureText.set_text_none()
 		emit_signal("end_day", is_success, gold, rep)
-		restart_day()
+		setup_for_day(day)
 	elif day_timer >= day_second_third:
 		# print("second third reached")
 		$Clock/AnimatedSprite.frame = 2
@@ -90,12 +90,15 @@ func day_process(delta):
 		$Clock/AnimatedSprite.frame = 1	
 
 func restart_day(): 
+	set_carried_resource_to(ResourceType.NONE)
 	day_timer = 0
-	$Clock/AnimatedSprite.frame = 0
-
-func setup_for_day(day_num): 
 	rep = 0
-	day = day_num
+	$Clock/AnimatedSprite.frame = 0
+	$Gold.set_gold(gold)
+	$Reputation.set_reputation(rep)
+	set_start_customer()
+	
+func setup_for_day(day_num): 
 	$Workroom.setup_for_day(day_num)
 	customersQueue.setup_for_day(day_num)
 	if day_num == 0: 
@@ -107,7 +110,6 @@ func setup_for_day(day_num):
 	else: 
 		setup_for_final_days()
 	restart_day()
-	set_start_customer()
 
 func setup_for_day_0(): 
 	gold = 20
