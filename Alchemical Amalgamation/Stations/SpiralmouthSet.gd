@@ -12,8 +12,8 @@ func add_ingredient_to_spiral():
 	$Output.visible = false
 	
 func finish_spiral(): 
-	$Empty.visible = false
-	$InUse.visible = true
+	$Empty.visible = true
+	$InUse.visible = false
 	$Output.visible = true
 	
 func take_ingredient_from_spiral(): 

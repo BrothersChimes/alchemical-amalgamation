@@ -40,6 +40,7 @@ func _process(delta):
 	cauldron_process(delta)
 	mortar_process(delta)
 	spiral_process(delta)
+	alembic_process(delta)
 	if Input.is_action_just_pressed("drop_potion"):
 		drop_potion_event()
 	day_process(delta)
@@ -513,11 +514,11 @@ func mortar_slam_pestle():
 	if pestle_slams < REQUIRED_PESTLE_SLAMS: 
 		pestle_slams += 1
 		mortar_set.slam_pestle()
+		$MortarSet/PestleSound.play()
 	else: 
 		is_mortar_done = true
 		mortar_set.finish_mortar()
-				
-
+	
 ### Spiralmouth.
 const SpiralRecipe = preload("res://Stations/SpiralRecipe.gd")
 var spiral_recipe = SpiralRecipe.new()
@@ -525,7 +526,7 @@ var spiral_recipe = SpiralRecipe.new()
 onready var spiral_set = get_node("SpiralmouthSet")
 var spiral_contents = ResourceType.NONE
 var is_spiral_done = false
-const SPIRAL_FINISH_TIME = 1
+const SPIRAL_FINISH_TIME = 15
 var spiral_time = 0
 var	has_spiral = false
 
@@ -556,5 +557,56 @@ func _on_SpiralmouthSet_spiral_click():
 		spiral_contents = ResourceType.NONE
 
 ### Alembic
+const AlembicRecipe = preload("res://Stations/AlembicRecipe.gd")
+var alembic_recipe = AlembicRecipe.new()
+
 onready var alembic_set = get_node("AlembicSet")
+var alembic_contents = ResourceType.NONE
+var is_alembic_done = false
+const ALEMBIC_FINISH_TIME = 5
+const ALEMBIC_WRONG_TEMP_ALLOWED_TIME = 4
+var alembic_time = 0
 var has_alembic = false
+var alembic_wrong_temp_time = 0
+
+func alembic_process(delta):
+	if not has_alembic: 
+		return
+	if alembic_contents != ResourceType.NONE and not is_alembic_done: 
+		alembic_time += delta
+		if not does_alembic_have_right_temp(): 
+			alembic_wrong_temp_time += delta
+			$AlembicSet/AlembicStatusLabel.visible = true
+		else: 
+			$AlembicSet/AlembicStatusLabel.visible = false
+		if alembic_wrong_temp_time >= ALEMBIC_WRONG_TEMP_ALLOWED_TIME:
+			is_alembic_done = true
+			alembic_set.finish_alembic()
+			alembic_contents = ResourceType.CRAP
+		if alembic_time >= ALEMBIC_FINISH_TIME: 
+			alembic_set.finish_alembic()
+			is_alembic_done = true
+
+func does_alembic_have_right_temp():
+	var ember_level = cauldron_set.get_heat_level_embers()
+	return ember_level >= Heat.HIGH
+
+func _on_AlembicSet_alembic_click():
+	if not has_alembic: 
+		return
+	if resource_carried != ResourceType.NONE and alembic_contents == ResourceType.NONE:
+		alembic_time = 0
+		alembic_wrong_temp_time = 0
+		$AlembicSet/AlembicStatusLabel.visible = false
+		alembic_contents = alembic_recipe.recipe_for(resource_carried).Output
+		alembic_set.add_ingredient_to_alembic()
+		is_alembic_done = false
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and alembic_contents != ResourceType.NONE:
+		alembic_set.take_ingredient_from_alembic()
+		$AlembicSet/AlembicStatusLabel.visible = false
+		if is_alembic_done:
+			set_carried_resource_to(alembic_contents)
+		else: 
+			set_carried_resource_to(ResourceType.CRAP)
+		alembic_contents = ResourceType.NONE

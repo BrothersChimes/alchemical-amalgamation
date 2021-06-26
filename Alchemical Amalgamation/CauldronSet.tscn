@@ -165,6 +165,8 @@ frames = SubResource( 11 )
 frame = 3
 centered = false
 
+[node name="FireSound" type="AudioStreamPlayer" parent="Fire"]
+
 [node name="Coals" type="Node2D" parent="."]
 position = Vector2( 688, 352 )
 

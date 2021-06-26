@@ -12,8 +12,8 @@ func add_ingredient_to_alembic():
 	$Output.visible = false
 	
 func finish_alembic(): 
-	$Empty.visible = false
-	$InUse.visible = true
+	$Empty.visible = true
+	$InUse.visible = false
 	$Output.visible = true
 	
 func take_ingredient_from_alembic(): 
