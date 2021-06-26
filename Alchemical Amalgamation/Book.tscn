@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -47,6 +47,7 @@
 [ext_resource path="res://Assets/Stations/station_spiral_in_use.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Stations/station_retort_in_use.png" type="Texture" id=46]
 [ext_resource path="res://Assets/Ingredients/potion_bile.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=48]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -217,6 +218,22 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=39]
+size = 32
+font_data = ExtResource( 48 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 32
+font_data = ExtResource( 48 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 32
+font_data = ExtResource( 48 )
+
+[sub_resource type="DynamicFont" id=42]
+size = 32
+font_data = ExtResource( 48 )
 
 [sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 32, 32 )
@@ -426,6 +443,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -635,7 +653,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -760,7 +778,7 @@ centered = false
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
 frames = SubResource( 10 )
-frame = 2
+frame = 1
 playing = true
 centered = false
 
@@ -849,7 +867,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1055,7 +1073,6 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -2903,7 +2920,6 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 18 )
-frame = 4
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3014,7 +3030,6 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 18 )
-frame = 4
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3351,6 +3366,7 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 29 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -4885,6 +4901,7 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="BehemothPlasma" type="Node2D" parent="."]
+visible = false
 
 [node name="Left" type="Node2D" parent="BehemothPlasma"]
 
@@ -5092,16 +5109,16 @@ position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page16" type="Node2D" parent="."]
+[node name="Credits" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page16"]
+[node name="Left" type="Node2D" parent="Credits"]
 
-[node name="TitleSprite" type="Sprite" parent="Page16/Left"]
+[node name="TitleSprite" type="Sprite" parent="Credits/Left"]
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page16/Left"]
+[node name="Title" type="RichTextLabel" parent="Credits/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
@@ -5110,13 +5127,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 12 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Credits"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page16/Left"]
+[node name="Line1" type="RichTextLabel" parent="Credits/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -5125,26 +5142,31 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Pure Awesome
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page16/Left"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
+[node name="Line2" type="RichTextLabel" parent="Credits/Left"]
+margin_left = 142.0
+margin_top = 256.0
+margin_right = 599.0
+margin_bottom = 404.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 39 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Project Lead
+Game design
+Programming"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page16/Left"]
+[node name="Line3" type="RichTextLabel" parent="Credits/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -5153,49 +5175,57 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Stunbrick"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page16/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
+[node name="Line4" type="RichTextLabel" parent="Credits/Left"]
+margin_left = 142.0
+margin_top = 488.0
+margin_right = 599.0
+margin_bottom = 648.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 40 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Game Design
+Programming
+Sprites for glass stations"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Credits/Left"]
 position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 21 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Credits/Left"]
 position = Vector2( 600.536, 308.963 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Credits/Left"]
 position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 42 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page16/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Credits/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page16"]
+[node name="Right" type="Node2D" parent="Credits"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page16/Right"]
+[node name="TitleSprite" type="Sprite" parent="Credits/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page16/Right"]
+[node name="Title" type="RichTextLabel" parent="Credits/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
@@ -5209,7 +5239,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page16/Right"]
+[node name="Line1" type="RichTextLabel" parent="Credits/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -5218,26 +5248,29 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Riddler Sentinel"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page16/Right"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
+[node name="Line2" type="RichTextLabel" parent="Credits/Right"]
+margin_left = 143.0
+margin_top = 256.0
+margin_right = 600.0
+margin_bottom = 428.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 41 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Game Design
+Primary Artist"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page16/Right"]
+[node name="Line3" type="RichTextLabel" parent="Credits/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -5246,41 +5279,45 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Purple Planet Music"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page16/Right"]
+[node name="Line4" type="RichTextLabel" parent="Credits/Right"]
 margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
+margin_top = 549.0
+margin_right = 623.0
+margin_bottom = 649.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 42 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "https://www.purple-planet.com"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Credits/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 24 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Credits/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Credits/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page16/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Credits/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false

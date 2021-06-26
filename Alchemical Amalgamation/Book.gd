@@ -29,7 +29,7 @@ var pagenumbers = [
 	"BlossomSpice",
 	"FangVengeance",
 	"BehemothPlasma",
-	#"Page12",
+	"Credits",
 	#"Page13",
 	#"Page14",
 	#"Page15",
