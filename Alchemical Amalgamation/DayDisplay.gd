@@ -1,6 +1,7 @@
 extends Node2D
 
 signal close_day_display
+signal close_day_display_to_book(is_left)
 
 var is_success_fail_display_open = false
 var old_index = 0
@@ -34,11 +35,28 @@ func _ready():
 	get_node(pagenumbers[0]).visible = true
 	var is_success_fail_display_open = false
 	
+func _process(delta):
+	if Input.is_action_just_pressed("ui_left"):
+		left_action()
+	if Input.is_action_just_pressed("ui_right"):
+		right_action()
+
+func left_action(): 
+	$BookFlipSound.play() 
+	emit_signal("close_day_display_to_book", true)
+		
+func right_action(): 
+	$BookFlipSound.play()
+	emit_signal("close_day_display_to_book", false)
+	
 func set_success(is_success, gold, rep): 
+	$PreviousButton.visible = false	
+	$NextButton.visible = false
 	if is_success: 
-		set_page_based_on_index(7)
-		$SUCCESS/Left/Line3.text = "You had " + str(gold) + "gp."
-		$SUCCESS/Left/Line4.text = "You had " + str(rep) + " rep."
+#		set_page_based_on_index(7)
+#		$SUCCESS/Left/Line3.text = "You had " + str(gold) + "gp."
+#		$SUCCESS/Left/Line4.text = "You had " + str(rep) + " rep."
+		emit_signal("close_day_display")
 	else: 
 		set_page_based_on_index(8)
 		$FAIL/Left/Line3.text = "You had " + str(gold) + "gp."
@@ -53,7 +71,9 @@ func go_to_day(new_day):
 		return
 	set_page_based_on_index(day)
 	is_success_fail_display_open = false
-
+	$PreviousButton.visible = true
+	$NextButton.visible = true
+	
 func set_page_based_on_index(new_index): 
 	get_node(pagenumbers[old_index]).visible = false
 	get_node(pagenumbers[new_index]).visible = true
@@ -62,3 +82,18 @@ func set_page_based_on_index(new_index):
 func _on_CloseArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		emit_signal("close_day_display")
+
+func _on_NextArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		if not is_success_fail_display_open:
+			emit_signal("close_day_display_to_book", false)
+		else: 
+			emit_signal("close_day_display")
+
+func _on_PreviousArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		if not is_success_fail_display_open:
+			emit_signal("close_day_display_to_book", true)
+		else: 
+			emit_signal("close_day_display")
+

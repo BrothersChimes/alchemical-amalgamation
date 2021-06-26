@@ -343,4 +343,6 @@ visible = false
 [connection signal="area_entered" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_entered"]
 [connection signal="area_exited" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_exited"]
 [connection signal="close_book" from="Book" to="." method="_on_Book_close_book"]
+[connection signal="close_book_to_day_display" from="Book" to="." method="_on_Book_close_book_to_day_display"]
 [connection signal="close_day_display" from="DayDisplay" to="." method="_on_DayDisplay_close_day_display"]
+[connection signal="close_day_display_to_book" from="DayDisplay" to="." method="_on_DayDisplay_close_day_display_to_book"]

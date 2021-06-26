@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://DayDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=2]
@@ -8,11 +8,13 @@
 [ext_resource path="res://Assets/Stations/station_combiner_empty.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Stations/station_cauldron_fire_spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Stations/station_cauldron_shine.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/book_next.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/book_prev.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
 [ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=31]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
@@ -21,47 +23,47 @@ font_data = ExtResource( 2 )
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 48, 48 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 48, 0, 48, 48 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 48, 48 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 7 )
 region = Rect2( 192, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 64, 96 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 32, 32 )
 
 [node name="DayDisplay" type="Node2D"]
@@ -92,7 +94,7 @@ margin_right = 785.0
 margin_bottom = 188.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Welcome to your 
 first day!"
@@ -191,7 +193,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -261,7 +263,8 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day0/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 8 )
+frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -299,7 +302,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 1"
 scroll_active = false
@@ -399,7 +402,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -469,8 +472,8 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day1/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 8 )
-frame = 2
+frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -508,7 +511,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 2"
 scroll_active = false
@@ -593,8 +596,7 @@ centered = false
 
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
-frames = SubResource( 12 )
-frame = 1
+frames = SubResource( 10 )
 playing = true
 centered = false
 
@@ -612,7 +614,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -682,8 +684,8 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day2/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 8 )
-frame = 2
+frames = SubResource( 6 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -720,7 +722,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 3"
 scroll_active = false
@@ -816,7 +818,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -886,8 +888,7 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day3/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 8 )
-frame = 1
+frames = SubResource( 6 )
 speed_scale = 0.5
 playing = true
 centered = false
@@ -925,7 +926,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 4"
 scroll_active = false
@@ -1019,7 +1020,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1118,7 +1119,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "End of Day 6"
 scroll_active = false
@@ -1213,7 +1214,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1312,7 +1313,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day N"
 scroll_active = false
@@ -1406,7 +1407,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1505,7 +1506,7 @@ margin_right = 595.0
 margin_bottom = 224.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "SUCCESS!"
 scroll_active = false
@@ -1601,7 +1602,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1700,7 +1701,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "FAILURE"
 scroll_active = false
@@ -1796,7 +1797,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1895,7 +1896,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -1989,7 +1990,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2088,7 +2089,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2182,7 +2183,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2281,7 +2282,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2375,7 +2376,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2474,7 +2475,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2568,7 +2569,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2667,7 +2668,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2761,7 +2762,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2860,7 +2861,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -2954,7 +2955,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3053,7 +3054,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3147,7 +3148,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3246,7 +3247,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3340,7 +3341,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3439,7 +3440,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3533,7 +3534,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3632,7 +3633,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -3726,7 +3727,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3824,6 +3825,36 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseButton/CloseArea2D"]
 position = Vector2( 32, 32 )
-shape = SubResource( 3 )
+shape = SubResource( 11 )
+
+[node name="NextButton" type="Node2D" parent="."]
+position = Vector2( 1414, 728 )
+
+[node name="Sprite" type="Sprite" parent="NextButton"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="NextArea2D" type="Area2D" parent="NextButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextButton/NextArea2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 11 )
+
+[node name="PreviousButton" type="Node2D" parent="."]
+position = Vector2( 62, 728 )
+
+[node name="Sprite" type="Sprite" parent="PreviousButton"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="PreviousArea2D" type="Area2D" parent="PreviousButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PreviousButton/PreviousArea2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 11 )
 
 [connection signal="input_event" from="CloseButton/CloseArea2D" to="." method="_on_CloseArea2D_input_event"]
+[connection signal="input_event" from="NextButton/NextArea2D" to="." method="_on_NextArea2D_input_event"]
+[connection signal="input_event" from="PreviousButton/PreviousArea2D" to="." method="_on_PreviousArea2D_input_event"]

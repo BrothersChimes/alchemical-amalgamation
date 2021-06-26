@@ -70,6 +70,30 @@ func close_day_display():
 	$BookCloseSound.play()
 	add_child(game_controller)
 
+func close_book_to_day_display(is_left):
+	day_display.is_success_fail_display_open = false
+	day_display.go_to_day(day)
+	is_day_display_open = true
+	is_book_open = false
+	$BookCloseSound.play()
+	add_child(day_display)
+	remove_child(book)
+	
+func close_day_display_open_book(is_left): 
+	day_display.is_success_fail_display_open = false
+	is_day_display_open = false
+	is_book_open = true
+	if is_left:
+		print("IS LEFT")
+		book.set_to_last_page()
+	else: 
+		print("IS RIGHT")
+		book.set_to_first_page()
+	add_child(book)
+	remove_child(day_display)
+	$BookOpenSound.play()
+	$BookCloseSound.stop()
+
 func _on_GameController_end_day(is_success, gold, rep):
 	close_both()
 	day_display.set_success(is_success, gold, rep)
@@ -81,3 +105,8 @@ func _on_GameController_end_day(is_success, gold, rep):
 func _on_DayDisplay_close_day_display():
 	close_day_display()
 
+func _on_DayDisplay_close_day_display_to_book(is_left):
+	close_day_display_open_book(is_left)
+
+func _on_Book_close_book_to_day_display(is_left):
+	close_book_to_day_display(is_left)

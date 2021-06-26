@@ -1,6 +1,7 @@
 extends Node2D
 
 signal close_book
+signal close_book_to_day_display(is_left)
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -61,11 +62,25 @@ func left_action():
 	$BookFlipSound.play()
 	if index > 0:
 		index -= 1
-		
+	else: 
+		emit_signal("close_book_to_day_display", true)
+
+func set_to_first_page(): 
+	var cur_index = index
+	index = 0
+	set_page_based_on_index(cur_index)
+
+func set_to_last_page(): 
+	var cur_index = index 
+	index = pagenumbers.size() - 1
+	set_page_based_on_index(cur_index)
+	
 func right_action(): 
 	$BookFlipSound.play()
 	if index < pagenumbers.size() - 1:
 		index += 1
+	else: 
+		emit_signal("close_book_to_day_display", false)
 		
 func space_action(): 
 	$BookFlipSound.play()
