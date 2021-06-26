@@ -22,7 +22,8 @@ enum ResourceType {
 	IRON_SPICE,
 	FANG_SHARD,
 	VENGEANCE_POWDER,
-	BEHEMOTH_DUST
+	BEHEMOTH_DUST,
+	ECTO_PLASMA,
 }
 
 static func is_resource_raw(resource_type): 
@@ -83,6 +84,8 @@ static func display_name(resource_type):
 			return "Vengeance Powder"
 		ResourceType.BEHEMOTH_DUST:
 			return "Behemoth Dust"
+		ResourceType.ECTO_PLASMA:
+			return "Ecto Plasma"
 
 static func buy_price_for(resource_type): 
 	if not is_resource_raw(resource_type): 
@@ -137,6 +140,8 @@ static func sale_price_for(resource_type):
 			return 60
 		ResourceType.BEHEMOTH_DUST:
 			return 100
+		ResourceType.ECTO_PLASMA:
+			return 200
 	
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
@@ -184,3 +189,5 @@ static func sprites_names_for_resource_types(resource_type):
 			return "purple"
 		ResourceType.BEHEMOTH_DUST:
 			return "lavender"
+		ResourceType.ECTO_PLASMA:
+			return "bile"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -46,6 +46,7 @@
 [ext_resource path="res://Assets/Ingredients/ingredient_honey.png" type="Texture" id=44]
 [ext_resource path="res://Assets/Stations/station_spiral_in_use.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Stations/station_retort_in_use.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Ingredients/potion_bile.png" type="Texture" id=47]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -425,7 +426,6 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -635,6 +635,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -759,7 +760,7 @@ centered = false
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
 frames = SubResource( 10 )
-frame = 1
+frame = 2
 playing = true
 centered = false
 
@@ -848,6 +849,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1053,7 +1055,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -2901,7 +2903,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 18 )
-frame = 1
+frame = 4
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3012,7 +3014,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 18 )
-frame = 1
+frame = 4
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3541,7 +3543,6 @@ centered = false
 position = Vector2( 319.282, 160 )
 scale = Vector2( 16, 16 )
 frames = SubResource( 32 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -4883,19 +4884,18 @@ position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Behemoth" type="Node2D" parent="."]
-visible = false
+[node name="BehemothPlasma" type="Node2D" parent="."]
 
-[node name="Left" type="Node2D" parent="Behemoth"]
+[node name="Left" type="Node2D" parent="BehemothPlasma"]
 
-[node name="TitleSprite" type="Sprite" parent="Behemoth/Left"]
+[node name="TitleSprite" type="Sprite" parent="BehemothPlasma/Left"]
 position = Vector2( 598, 96 )
 scale = Vector2( 4, 4 )
 z_as_relative = false
 texture = ExtResource( 38 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Behemoth/Left"]
+[node name="Title" type="RichTextLabel" parent="BehemothPlasma/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 606.0
@@ -4910,7 +4910,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Behemoth/Left"]
+[node name="Line1" type="RichTextLabel" parent="BehemothPlasma/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -4924,7 +4924,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Behemoth/Left"]
+[node name="Line2" type="RichTextLabel" parent="BehemothPlasma/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -4939,7 +4939,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Behemoth/Left"]
+[node name="Line3" type="RichTextLabel" parent="BehemothPlasma/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -4954,7 +4954,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Behemoth/Left"]
+[node name="Line4" type="RichTextLabel" parent="BehemothPlasma/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -4968,34 +4968,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Behemoth/Left"]
+[node name="Line1Sprite" type="Sprite" parent="BehemothPlasma/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Behemoth/Left"]
+[node name="Line2Sprite" type="Sprite" parent="BehemothPlasma/Left"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 25 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Behemoth/Left"]
+[node name="Line3Sprite" type="Sprite" parent="BehemothPlasma/Left"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 39 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Behemoth/Left"]
+[node name="Line4Sprite" type="Sprite" parent="BehemothPlasma/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Behemoth"]
+[node name="Right" type="Node2D" parent="BehemothPlasma"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Behemoth/Right"]
-position = Vector2( 598.184, 49.5662 )
+[node name="TitleSprite" type="Sprite" parent="BehemothPlasma/Right"]
+position = Vector2( 495.282, 88 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 47 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Behemoth/Right"]
+[node name="Title" type="RichTextLabel" parent="BehemothPlasma/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
@@ -5004,12 +5006,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 12 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Ecto Plasma"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Behemoth/Right"]
+[node name="Line1" type="RichTextLabel" parent="BehemothPlasma/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -5023,7 +5026,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Behemoth/Right"]
+[node name="Line2" type="RichTextLabel" parent="BehemothPlasma/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -5032,12 +5035,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Haven Ghoul Ectoplasm"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Behemoth/Right"]
+[node name="Line3" type="RichTextLabel" parent="BehemothPlasma/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -5046,12 +5050,13 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Condensed in Spiralmouth"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Behemoth/Right"]
+[node name="Line4" type="RichTextLabel" parent="BehemothPlasma/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -5065,22 +5070,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Behemoth/Right"]
+[node name="Line1Sprite" type="Sprite" parent="BehemothPlasma/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Behemoth/Right"]
+[node name="Line2Sprite" type="Sprite" parent="BehemothPlasma/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 26 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Behemoth/Right"]
+[node name="Line3Sprite" type="Sprite" parent="BehemothPlasma/Right"]
 position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 45 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Behemoth/Right"]
+[node name="Line4Sprite" type="Sprite" parent="BehemothPlasma/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false

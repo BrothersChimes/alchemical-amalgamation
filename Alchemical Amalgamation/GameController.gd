@@ -23,7 +23,7 @@ var day = 0
 var gold = 100
 var rep = 0
 
-const DAY_LENGTH = 120 # Seconds the day lasts
+const DAY_LENGTH = 180 # Seconds the day lasts
 var day_timer = 0
 var day_first_third = DAY_LENGTH / 3
 var day_second_third = day_first_third*2
@@ -49,19 +49,19 @@ func is_day_successful():
 	if day == 0: 
 		return gold >= 30 and rep >= 5
 	elif day == 1: 
-		return gold >= 50 and rep >= 12
+		return gold >= 100 and rep >= 8
 	elif day == 2: 
-		return gold >= 200 and rep >= 10
+		return gold >= 300 and rep >= 12
 	elif day == 3: 
-		return gold >= 200 and rep >= 10
+		return gold >= 500 and rep >= 15
 	elif day == 4: 
-		return gold >= 200 and rep >= 10
+		return gold >= 800 and rep >= 18
 	elif day == 5: 
-		return gold >= 200 and rep >= 10
+		return gold >= 1200 and rep >= 20
 	elif day == 6: 
-		return gold >= 200 and rep >= 10
+		return gold >= 1500 and rep >= 25
 	else: 
-		return gold >= 200 and rep >= 10
+		return gold >= 2000 and rep >= 30
 
 func day_process(delta): 
 	var is_success = is_day_successful()
@@ -111,6 +111,12 @@ func setup_for_day(day_num):
 		setup_for_day_2()
 	elif day_num == 3: 
 		setup_for_day_3()
+	elif day_num == 4: 
+		setup_for_day_4()
+	elif day_num == 5: 
+		setup_for_day_5()
+	elif day_num == 6: 
+		setup_for_day_6()
 	else: 
 		setup_for_final_days()
 	restart_day()
@@ -120,20 +126,18 @@ func setup_for_day_0():
 	has_cauldron_set = false
 	remove_child(cauldron_set)
 	remove_child(mortar_set)
+	remove_child(spiral_set)
 	$WoodArea.visible = false
 	$CoalArea.visible = false
 	$ShovelArea.visible = false
 	$CombinatorOutArea.visible = false
-	
-	$SpiralmouthSet.visible = true
-	has_spiral = true
 
 func setup_for_day_1(): 
-	gold = 100
+	gold = 20
 	$CombinatorOutArea.visible = true
 
 func setup_for_day_2(): 
-	gold = 200
+	gold = 50
 	has_cauldron_set = true
 	add_child(cauldron_set)
 	$WoodArea.visible = true
@@ -141,12 +145,23 @@ func setup_for_day_2():
 	$ShovelArea.visible = true
 
 func setup_for_day_3(): 
-	gold = 200
+	gold = 100
 	has_mortar_set = true
 	add_child(mortar_set)
 
+func setup_for_day_4():
+	gold = 100
+	add_child(spiral_set)
+	has_spiral = true
+
+func setup_for_day_5():
+	gold = 100
+
+func setup_for_day_6():
+	gold = 100
+	
 func setup_for_final_days(): 
-	gold = 400
+	gold = 100
 	pass
 
 func add_gold(extra_gold): 
@@ -229,12 +244,14 @@ func _on_CustomerText_sell_potion_to(customer_number):
 		add_gold(sale_price)
 		add_reputation(1)
 	else:
+		var lost_gold = (1+day)*10
 		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
-		$SuccessAndFailureText.set_text_failure(sale_price, 5)
-		add_gold(-sale_price*2)
-		add_reputation(-5)
+		$SuccessAndFailureText.set_text_failure(lost_gold, 3)
+		add_gold(- lost_gold)
+		add_reputation(-3)
 	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
+
 
 func cycle_customer(customer_number): 
 	$CustomerText.remove_customer(customer_number)
@@ -505,7 +522,7 @@ var spiral_recipe = SpiralRecipe.new()
 onready var spiral_set = get_node("SpiralmouthSet")
 var spiral_contents = ResourceType.NONE
 var is_spiral_done = false
-const SPIRAL_FINISH_TIME = 10
+const SPIRAL_FINISH_TIME = 1
 var spiral_time = 0
 var	has_spiral = false
 

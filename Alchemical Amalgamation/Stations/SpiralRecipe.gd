@@ -8,10 +8,8 @@ class Recipe:
 	var Output: int
 	
 var recipes = [
-	create_recipe(ResourceType.ETTERCAP,ResourceType.ETTERCAP),
-	create_recipe(ResourceType.MERMAID,ResourceType.FANG_SHARD),
-	create_recipe(ResourceType.RIDDLER, ResourceType.VENGEANCE_POWDER),
-	create_recipe(ResourceType.BEHEMOTH,ResourceType.BEHEMOTH_DUST),
+	create_recipe(ResourceType.ECTOPLASM,ResourceType.ECTO_PLASMA),
+	create_recipe(ResourceType.LIQUID_AWESOME,ResourceType.AWESOME),
 ]
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)

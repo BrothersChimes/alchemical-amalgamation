@@ -77,6 +77,7 @@ var customers_day_3 = [
 var customers_day_4 = [
 	create_customer("What is brain bark?", ResourceType.BRAINBARK),
 	create_customer("MMmmmm... honey!", ResourceType.HONEY),
+	create_customer("Ecto... plasma", ResourceType.ECTO_PLASMA),	
 ]
 
 var customers_day_5 = [
