@@ -38,6 +38,7 @@ func _ready():
 
 func _process(delta): 
 	cauldron_process(delta)
+	mortar_process(delta)
 	if Input.is_action_just_pressed("drop_potion"):
 		drop_potion_event()
 	day_process(delta)
@@ -107,6 +108,8 @@ func setup_for_day(day_num):
 		setup_for_day_1()
 	elif day_num == 2: 
 		setup_for_day_2()
+	elif day_num == 3: 
+		setup_for_day_3()
 	else: 
 		setup_for_final_days()
 	restart_day()
@@ -115,6 +118,7 @@ func setup_for_day_0():
 	gold = 20
 	has_cauldron_set = false
 	remove_child(cauldron_set)
+	remove_child(mortar_set)
 	$WoodArea.visible = false
 	$CoalArea.visible = false
 	$ShovelArea.visible = false
@@ -131,6 +135,11 @@ func setup_for_day_2():
 	$WoodArea.visible = true
 	$CoalArea.visible = true
 	$ShovelArea.visible = true
+
+func setup_for_day_3(): 
+	gold = 200
+	has_mortar_set = true
+	add_child(mortar_set)
 
 func setup_for_final_days(): 
 	gold = 400
@@ -439,17 +448,32 @@ func _on_Workroom_click_on_holding_resource(resource, number):
 	$Workroom/PickUpPotionSound.play()
 
 
-### MORTAR
+### MORTAR.
+const MortarRecipe = preload("res://Stations/MortarRecipe.gd")
+var mortar_recipe = MortarRecipe.new()
+
 onready var mortar_set = get_node("MortarSet")
 var mortar_contents = ResourceType.NONE
 var is_mortar_done = false
 const REQUIRED_PESTLE_SLAMS = 6
 var pestle_slams = 0
+var	has_mortar_set = false
 
+func mortar_process(_delta):
+	if not has_mortar_set: 
+		return
+	if not is_mortar_done: 
+		if Input.is_action_just_pressed("pestle_left") and pestle_slams % 2 == 0:
+			 mortar_slam_pestle()
+		elif Input.is_action_just_pressed("pestle_right") and pestle_slams % 2 == 1: 
+			mortar_slam_pestle()
+	
 func _on_MortarSet_mortar_click():
+	if not has_mortar_set: 
+		return
 	if resource_carried != ResourceType.NONE and mortar_contents == ResourceType.NONE:
 		pestle_slams = 0
-		mortar_contents = resource_carried
+		mortar_contents = mortar_recipe.recipe_for(resource_carried).Output
 		mortar_set.add_ingredient_to_mortar()
 		is_mortar_done = false
 		set_carried_resource_to(ResourceType.NONE)
@@ -459,9 +483,13 @@ func _on_MortarSet_mortar_click():
 			mortar_set.take_ingredient_from_mortar()
 			mortar_contents = ResourceType.NONE
 		else: 
-			if pestle_slams < REQUIRED_PESTLE_SLAMS: 
-				pestle_slams += 1
-				mortar_set.slam_pestle()
-			else: 
-				is_mortar_done = true
-				mortar_set.finish_mortar()
+			mortar_slam_pestle()
+				
+func mortar_slam_pestle(): 
+	if pestle_slams < REQUIRED_PESTLE_SLAMS: 
+		pestle_slams += 1
+		mortar_set.slam_pestle()
+	else: 
+		is_mortar_done = true
+		mortar_set.finish_mortar()
+				

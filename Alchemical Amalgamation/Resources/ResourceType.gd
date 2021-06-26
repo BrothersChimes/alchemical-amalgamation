@@ -19,7 +19,10 @@ enum ResourceType {
 	MAIDS_CAP,
 	BURNERS_HAIR,
 	FLAMING_BLOSSOM,
-	IRON_SPICE
+	IRON_SPICE,
+	FANG_SHARD,
+	VENGEANCE_POWDER,
+	BEHEMOTH_DUST
 }
 
 static func is_resource_raw(resource_type): 
@@ -40,23 +43,23 @@ static func display_name(resource_type):
 		ResourceType.AWESOME:
 			return "Pure Awesome"	
 		ResourceType.BEHEMOTH:
-			return "Behemoth Tooth"	
+			return "Behemoth Scale"	
 		ResourceType.BLOSSOM:
-			return "Blossom"	
+			return "Opulence Blossom"	
 		ResourceType.ECTOPLASM:
-			return "Ectoplasm"	
+			return "Haven Ghoul Ectoplasm"	
 		ResourceType.ETTERCAP:
-			return "Ettercap"
+			return "Etter Cap"
 		ResourceType.RIDDLER:
-			return "Riddler"
+			return "Riddler's Vengeance"
 		ResourceType.MERMAID:
-			return "Mermaid Horn"
+			return "Mermaid Fang"
 		ResourceType.WATER: 
 			return "Distilled Water"
 		ResourceType.BRAINBARK:
-			return "Brainbark"
+			return "Brainbark Stem"
 		ResourceType.HONEY:
-			return "Honey"
+			return "Werewolf Honey"
 		ResourceType.STUNBRICK:
 			return "Stunbrick"
 		#### POTIONS ####
@@ -71,9 +74,15 @@ static func display_name(resource_type):
 		ResourceType.BURNERS_HAIR:
 			return "Burner's Hair"
 		ResourceType.FLAMING_BLOSSOM:
-			return "Orange Blossom"
+			return "Flaming Blossom"
 		ResourceType.IRON_SPICE:
 			return "Iron Spice"
+		ResourceType.FANG_SHARD:
+			return "Fang Shards"
+		ResourceType.VENGEANCE_POWDER:
+			return "Vengeance Powder"
+		ResourceType.BEHEMOTH_DUST:
+			return "Behemoth Dust"
 
 static func buy_price_for(resource_type): 
 	if not is_resource_raw(resource_type): 
@@ -122,6 +131,12 @@ static func sale_price_for(resource_type):
 			return 100
 		ResourceType.IRON_SPICE:
 			return 200
+		ResourceType.FANG_SHARD:
+			return 15
+		ResourceType.VENGEANCE_POWDER:
+			return 60
+		ResourceType.BEHEMOTH_DUST:
+			return 100
 	
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
@@ -163,3 +178,9 @@ static func sprites_names_for_resource_types(resource_type):
 			return "orange"
 		ResourceType.IRON_SPICE:
 			return "orange"
+		ResourceType.FANG_SHARD:
+			return "peach"
+		ResourceType.VENGEANCE_POWDER:
+			return "purple"
+		ResourceType.BEHEMOTH_DUST:
+			return "lavender"

@@ -69,6 +69,9 @@ var customers_day_3 = [
 	create_customer("I need a Behemoth part", ResourceType.BEHEMOTH),
 	create_customer("Some mysterious ectoplasm", ResourceType.ECTOPLASM),
 	create_customer("Iron Spice!", ResourceType.IRON_SPICE),
+	create_customer("I need fang shards", ResourceType.FANG_SHARD),
+	create_customer("Behemoth Dust", ResourceType.BEHEMOTH_DUST),
+	create_customer("Powder for vengeance!", ResourceType.VENGEANCE_POWDER),
 ]
 	
 var customers_day_4 = [

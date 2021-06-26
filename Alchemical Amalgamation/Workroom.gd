@@ -77,7 +77,7 @@ func setup_for_day_2():
 	$station_shovel_empty.visible = true
 
 func setup_for_day_3(): 
-	$station_mortar_in_use.visible = true
+	pass
 
 func setup_for_day_4(): 
 	$station_spiral_in_use.visible = true

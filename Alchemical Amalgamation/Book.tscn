@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -36,116 +36,124 @@
 [ext_resource path="res://Assets/Stations/station_clock.png" type="Texture" id=34]
 [ext_resource path="res://Assets/UI/UI_reputation.png" type="Texture" id=35]
 [ext_resource path="res://Assets/UI/UI_coin.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Ingredients/potion_peach.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Ingredients/potion_lavender.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Stations/station_mortar_empty.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Stations/station_pestle.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Stations/station_mortar_in_use.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Ingredients/ingredient_stunbrick.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Ingredients/ingredient_brainbark.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Ingredients/ingredient_honey.png" type="Texture" id=44]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=36]
 size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=37]
 size = 40
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 34 )
 region = Rect2( 0, 0, 48, 48 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 34 )
 region = Rect2( 48, 0, 48, 48 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 34 )
 region = Rect2( 96, 0, 48, 48 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 12 )
 region = Rect2( 192, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 12 )
 region = Rect2( 128, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 12 )
 region = Rect2( 64, 0, 64, 96 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=45]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
 } ]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=46]
 size = 40
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=12]
-size = 80
+[sub_resource type="DynamicFont" id=47]
+size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 12 )
 region = Rect2( 256, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 12 )
 region = Rect2( 192, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 12 )
 region = Rect2( 128, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 12 )
 region = Rect2( 64, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 64, 96 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=53]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 12 )
 region = Rect2( 64, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 12 )
 region = Rect2( 128, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 12 )
 region = Rect2( 192, 0, 64, 96 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 12 )
 region = Rect2( 256, 0, 64, 96 )
 
-[sub_resource type="SpriteFrames" id=24]
+[sub_resource type="SpriteFrames" id=59]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -173,6 +181,22 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 40 )
+region = Rect2( 0, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 40 )
+region = Rect2( 16, 0, 16, 32 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
 } ]
 
 [sub_resource type="AtlasTexture" id=30]
@@ -205,7 +229,7 @@ position = Vector2( 2, 0 )
 script = ExtResource( 20 )
 
 [node name="BookSprite" type="Sprite" parent="."]
-position = Vector2( 342, 321.521 )
+position = Vector2( 342, 320 )
 scale = Vector2( 25.5101, 17.2174 )
 z_index = -1
 texture = ExtResource( 2 )
@@ -229,7 +253,7 @@ margin_right = 785.0
 margin_bottom = 188.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Welcome to your 
 first day!"
@@ -245,7 +269,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press Right (right) to read the game instructions. "
 scroll_active = false
@@ -260,7 +284,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press TAB (tab) to open and close this book."
 scroll_active = false
@@ -275,7 +299,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Click on objects to interact with them"
 scroll_active = false
@@ -290,7 +314,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Click on items on the shelf and sell them to customers."
 scroll_active = false
@@ -328,7 +352,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -343,7 +367,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Before the end of the day:"
 scroll_active = false
@@ -358,7 +382,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 30 gold"
 scroll_active = false
@@ -373,7 +397,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 5 rep"
 scroll_active = false
@@ -388,7 +412,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -398,8 +422,7 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day0/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
-frame = 2
+frames = SubResource( 41 )
 speed_scale = 0.5
 playing = true
 centered = false
@@ -438,7 +461,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 1"
 scroll_active = false
@@ -453,7 +476,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Congratulations on completing your training"
 scroll_active = false
@@ -468,7 +491,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Customers will no longer just want raw ingredients"
 scroll_active = false
@@ -483,7 +506,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "You will need to combine ingredients into potions"
 scroll_active = false
@@ -498,7 +521,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Check the recipe book for details on how to do that..."
 scroll_active = false
@@ -538,7 +561,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -553,7 +576,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Before the end of the day:"
 scroll_active = false
@@ -568,7 +591,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 50 gold"
 scroll_active = false
@@ -583,7 +606,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 12 rep"
 scroll_active = false
@@ -598,7 +621,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -608,8 +631,8 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day1/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
-frame = 1
+frames = SubResource( 41 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -648,7 +671,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 2"
 scroll_active = false
@@ -663,7 +686,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Now you will need to boil potions in the cauldron"
 scroll_active = false
@@ -678,7 +701,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "It can be complicated so make sure you check the book"
 scroll_active = false
@@ -693,7 +716,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Don't worry, the game is paused whilst you are reading"
 fit_content_height = true
@@ -709,7 +732,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Remember to keep that fire  at the right temperature!"
 scroll_active = false
@@ -733,7 +756,8 @@ centered = false
 
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
-frames = SubResource( 10 )
+frames = SubResource( 45 )
+frame = 2
 playing = true
 centered = false
 
@@ -751,7 +775,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -766,7 +790,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Before the end of the day:"
 scroll_active = false
@@ -781,7 +805,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 80 gold"
 scroll_active = false
@@ -796,7 +820,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 15 rep"
 scroll_active = false
@@ -811,7 +835,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -821,8 +845,8 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day2/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
-frame = 1
+frames = SubResource( 41 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -861,7 +885,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 3"
 scroll_active = false
@@ -876,7 +900,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "More complex potions sell for more money"
 scroll_active = false
@@ -891,7 +915,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "But they also cost you more if you give the wrong thing"
 scroll_active = false
@@ -906,7 +930,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -920,7 +944,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -957,7 +981,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Goal"
 scroll_active = false
@@ -972,7 +996,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Before the end of the day:"
 scroll_active = false
@@ -987,7 +1011,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 80 gold"
 scroll_active = false
@@ -1002,7 +1026,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Have at least 15 rep"
 scroll_active = false
@@ -1017,7 +1041,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1027,7 +1051,8 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="Day3/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
+frames = SubResource( 41 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1066,7 +1091,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 4"
 scroll_active = false
@@ -1081,7 +1106,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1095,7 +1120,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1109,7 +1134,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1123,7 +1148,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1160,7 +1185,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1174,7 +1199,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1188,7 +1213,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1202,7 +1227,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1216,7 +1241,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1260,7 +1285,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 5"
 scroll_active = false
@@ -1275,7 +1300,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day 5"
 scroll_active = false
@@ -1290,7 +1315,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1304,7 +1329,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1318,7 +1343,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1355,7 +1380,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1369,7 +1394,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1383,7 +1408,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1397,7 +1422,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1411,7 +1436,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1455,7 +1480,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Day N"
 scroll_active = false
@@ -1470,7 +1495,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1484,7 +1509,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1498,7 +1523,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1512,7 +1537,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1549,7 +1574,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1563,7 +1588,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1577,7 +1602,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1591,7 +1616,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1605,7 +1630,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1649,7 +1674,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "FAILURE"
 scroll_active = false
@@ -1664,7 +1689,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "You failed to achieve your goal and must restart the day"
 scroll_active = false
@@ -1679,7 +1704,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press TAB or click the X to restart the day..."
 scroll_active = false
@@ -1694,7 +1719,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Flip the book to the right to see your goals."
 scroll_active = false
@@ -1709,7 +1734,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1746,7 +1771,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 36 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1760,7 +1785,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1774,7 +1799,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1788,7 +1813,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1802,7 +1827,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 37 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -1845,7 +1870,7 @@ margin_right = 591.512
 margin_bottom = 154.169
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Welcome to"
 scroll_active = false
@@ -1860,7 +1885,7 @@ margin_right = 604.0
 margin_bottom = 205.674
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "
 ALCHEMICAL AMALGAMATION!"
@@ -1876,7 +1901,7 @@ margin_right = 605.175
 margin_bottom = 311.011
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press TAB (tab) to open and close this book."
 scroll_active = false
@@ -1891,7 +1916,7 @@ margin_right = 602.0
 margin_bottom = 403.188
 rect_pivot_offset = Vector2( 180.876, 76.7054 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "The game is paused whilst you read this book."
 scroll_active = false
@@ -1906,7 +1931,7 @@ margin_right = 602.0
 margin_bottom = 515.626
 rect_pivot_offset = Vector2( 180.876, 76.7054 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press LEFT (left) and RIGHT (right) to flip pages."
 scroll_active = false
@@ -1921,7 +1946,7 @@ margin_right = 602.0
 margin_bottom = 680.027
 rect_pivot_offset = Vector2( 180.876, 76.7054 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press SPACEBAR (spacebar) to jump to Recipes or the start of the book"
 scroll_active = false
@@ -1959,7 +1984,7 @@ margin_right = 607.495
 margin_bottom = 199.024
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Purpose"
 scroll_active = false
@@ -1974,7 +1999,7 @@ margin_right = 602.0
 margin_bottom = 274.034
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Your purpose is to create potions and sell them for gold!"
 scroll_active = false
@@ -1989,7 +2014,7 @@ margin_right = 602.0
 margin_bottom = 402.206
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Each potion has a very specific recipe."
 scroll_active = false
@@ -2004,7 +2029,7 @@ margin_right = 602.0
 margin_bottom = 520.556
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Follow the recipes in this book exactly to create potions."
 scroll_active = false
@@ -2019,7 +2044,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Give the customers their required potions to gain gold."
 scroll_active = false
@@ -2063,7 +2088,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Customers"
 scroll_active = false
@@ -2078,7 +2103,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Customers will ask for potions and ingredients."
 scroll_active = false
@@ -2093,7 +2118,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Drag the correct potion or ingredient onto a customer."
 scroll_active = false
@@ -2108,7 +2133,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Satisfied customers give you gold and reputation."
 scroll_active = false
@@ -2123,7 +2148,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Unsatisfied customers will sue and ruin your reputation!"
 scroll_active = false
@@ -2169,7 +2194,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Ingredients"
 scroll_active = false
@@ -2184,7 +2209,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Drag raw materials off the shelf and onto devices."
 scroll_active = false
@@ -2199,7 +2224,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Each ingredient costs gold."
 scroll_active = false
@@ -2214,7 +2239,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Wasting ingredients wastes money."
 scroll_active = false
@@ -2229,7 +2254,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2273,7 +2298,7 @@ margin_right = 744.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Alchemical Joiner"
 scroll_active = false
@@ -2288,7 +2313,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Join items in the Alchemical Joiner to create new potions"
 scroll_active = false
@@ -2303,7 +2328,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Drag 2 to 3 items onto the outer 3 nodes."
 scroll_active = false
@@ -2318,7 +2343,7 @@ margin_right = 602.0
 margin_bottom = 595.65
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Click on the flask in the center to get the Joined Potion."
 scroll_active = false
@@ -2333,7 +2358,7 @@ margin_right = 602.0
 margin_bottom = 690.142
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Items can be removed from the outer nodes."
 scroll_active = false
@@ -2375,7 +2400,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2389,7 +2414,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2403,7 +2428,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2417,7 +2442,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2431,7 +2456,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2474,7 +2499,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Trashcan"
 scroll_active = false
@@ -2489,7 +2514,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Used to dispose of undesirables."
 scroll_active = false
@@ -2504,7 +2529,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Drag and drop unwanted items into the trashcan."
 scroll_active = false
@@ -2519,7 +2544,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Takes everything. Gives nothing back."
 scroll_active = false
@@ -2534,7 +2559,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2577,7 +2602,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2591,7 +2616,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2605,7 +2630,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2619,7 +2644,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2633,7 +2658,7 @@ margin_right = 603.587
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2676,7 +2701,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Cauldron"
 scroll_active = false
@@ -2691,7 +2716,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "The Cauldron boils ingredients.
 "
@@ -2707,7 +2732,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Drag items into the cauldron."
 scroll_active = false
@@ -2722,7 +2747,7 @@ margin_right = 602.0
 margin_bottom = 514.458
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "The heat of the fire affects the boiling of the cauldron."
 scroll_active = false
@@ -2737,7 +2762,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Don't let it get too hot or cold whilst boiling."
 scroll_active = false
@@ -2777,7 +2802,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2791,7 +2816,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2805,7 +2830,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2819,7 +2844,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2833,7 +2858,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -2874,7 +2899,7 @@ centered = false
 [node name="TitleSprite2" type="AnimatedSprite" parent="FireLevels/Left"]
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 18 )
+frames = SubResource( 53 )
 frame = 1
 speed_scale = 0.25
 playing = true
@@ -2887,7 +2912,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Fire"
 scroll_active = false
@@ -2902,7 +2927,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "The fire heats the cauldron. It needs wood to burn."
 scroll_active = false
@@ -2917,7 +2942,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Add wood to your fire with W (w)."
 scroll_active = false
@@ -2932,7 +2957,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "You can make a fire hotter with bellows with SPACE"
 scroll_active = false
@@ -2947,7 +2972,7 @@ margin_right = 600.586
 margin_bottom = 663.012
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "You can make a fire colder by shoveling embers with E (e)"
 scroll_active = false
@@ -2985,7 +3010,7 @@ position = Vector2( 662.718, 0 )
 [node name="TitleSprite" type="AnimatedSprite" parent="FireLevels/Right"]
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 18 )
+frames = SubResource( 53 )
 frame = 1
 speed_scale = 0.25
 playing = true
@@ -2998,7 +3023,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Fire Levels"
 scroll_active = false
@@ -3013,7 +3038,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Dead"
 scroll_active = false
@@ -3028,7 +3053,7 @@ margin_right = 602.0
 margin_bottom = 384.817
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Cold"
 scroll_active = false
@@ -3043,7 +3068,7 @@ margin_right = 602.0
 margin_bottom = 471.598
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Medium"
 scroll_active = false
@@ -3058,7 +3083,7 @@ margin_right = 602.0
 margin_bottom = 571.087
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Hot"
 scroll_active = false
@@ -3073,7 +3098,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Blazing
 "
@@ -3085,35 +3110,35 @@ __meta__ = {
 [node name="Line1Sprite" type="AnimatedSprite" parent="FireLevels/Right"]
 position = Vector2( 468.283, 98.4188 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 24 )
+frames = SubResource( 59 )
 frame = 4
 centered = false
 
 [node name="Line2Sprite" type="AnimatedSprite" parent="FireLevels/Right"]
 position = Vector2( 466.696, 180.964 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 24 )
+frames = SubResource( 59 )
 frame = 3
 centered = false
 
 [node name="Line3Sprite" type="AnimatedSprite" parent="FireLevels/Right"]
 position = Vector2( 468.283, 257.159 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 24 )
+frames = SubResource( 59 )
 frame = 2
 centered = false
 
 [node name="Line4Sprite" type="AnimatedSprite" parent="FireLevels/Right"]
 position = Vector2( 468.283, 353.99 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 24 )
+frames = SubResource( 59 )
 frame = 1
 centered = false
 
 [node name="Line5Sprite" type="AnimatedSprite" parent="FireLevels/Right"]
 position = Vector2( 471.458, 444.472 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 24 )
+frames = SubResource( 59 )
 centered = false
 
 [node name="CoalBellows" type="Node2D" parent="."]
@@ -3134,7 +3159,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Coal"
 scroll_active = false
@@ -3149,7 +3174,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Coal can be added to a fire.
 "
@@ -3165,7 +3190,7 @@ margin_right = 602.0
 margin_bottom = 382.292
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Coal burns hot when blown by a bellow."
 scroll_active = false
@@ -3180,7 +3205,7 @@ margin_right = 603.335
 margin_bottom = 513.665
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Fires need wood to burn, coal only makes it hotter."
 scroll_active = false
@@ -3195,7 +3220,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Add coal by pressing Q"
 scroll_active = false
@@ -3233,7 +3258,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Bellows"
 scroll_active = false
@@ -3248,7 +3273,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Press SPACE (space) to pump the bellows."
 scroll_active = false
@@ -3263,7 +3288,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Bellows make your fire burn hotter."
 scroll_active = false
@@ -3278,7 +3303,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3292,7 +3317,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3323,9 +3348,211 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 29 )
-frame = 3
 speed_scale = 0.5
 playing = true
+centered = false
+
+[node name="Mortar" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="Mortar"]
+
+[node name="TitleSprite" type="Sprite" parent="Mortar/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Mortar/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 638.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 47 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Mortar and Pestle"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Mortar/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Place ingredient in the mortar and pestle"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Mortar/Left"]
+margin_left = 145.0
+margin_top = 328.0
+margin_right = 622.0
+margin_bottom = 428.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click, or use the arrow keys,
+or use A and D to move"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Mortar/Left"]
+margin_left = 134.0
+margin_top = 432.0
+margin_right = 591.0
+margin_bottom = 532.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = " the pestle left and right to grind the ingredients."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Mortar/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Check the recipe book to see what can be ground"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Mortar/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Mortar/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Mortar/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Mortar/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Mortar"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Mortar/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Mortar/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 47 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Mortar/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Mortar/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Mortar/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Mortar/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MortarSprite" type="Sprite" parent="Mortar/Right"]
+position = Vector2( 319.282, 160 )
+scale = Vector2( 16, 16 )
+texture = ExtResource( 41 )
+centered = false
+
+[node name="PestleSprite" type="AnimatedSprite" parent="Mortar/Right"]
+position = Vector2( 319.282, 160 )
+scale = Vector2( 16, 16 )
+frames = SubResource( 62 )
+frame = 1
+speed_scale = 0.5
+playing = true
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Mortar/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Mortar/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Ingredients" type="Node2D" parent="."]
@@ -3344,7 +3571,7 @@ margin_right = 742.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Ingredients"
 scroll_active = false
@@ -3359,54 +3586,69 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Awesome"
+text = "Pure Awesome"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line2" type="RichTextLabel" parent="Ingredients/Left"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
+margin_left = 150.0
+margin_top = 282.714
+margin_right = 607.0
+margin_bottom = 382.714
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Behemoth"
+text = "Behemoth Scale"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line3" type="RichTextLabel" parent="Ingredients/Left"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
+margin_left = 150.0
+margin_top = 362.156
+margin_right = 607.0
+margin_bottom = 462.156
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Blossom"
+text = "Opulence Blossom"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line4" type="RichTextLabel" parent="Ingredients/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
+margin_left = 150.0
+margin_top = 440.0
+margin_right = 607.0
+margin_bottom = 540.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Ectoplasm"
+text = "Haven Ghoul Ectoplasm"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line5" type="RichTextLabel" parent="Ingredients/Left"]
+margin_left = 142.0
+margin_top = 520.0
+margin_right = 599.0
+margin_bottom = 620.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Brainbark Stem"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3419,21 +3661,27 @@ texture = ExtResource( 21 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Ingredients/Left"]
-position = Vector2( 600.536, 308.963 )
+position = Vector2( 605.536, 264 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 25 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Ingredients/Left"]
-position = Vector2( 600.536, 424.875 )
+position = Vector2( 605.536, 344 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 22 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Ingredients/Left"]
-position = Vector2( 600.536, 543.308 )
+position = Vector2( 597.536, 432 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 26 )
+centered = false
+
+[node name="Line5Sprite" type="Sprite" parent="Ingredients/Left"]
+position = Vector2( 598, 512 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 43 )
 centered = false
 
 [node name="Right" type="Node2D" parent="Ingredients"]
@@ -3450,7 +3698,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3458,87 +3706,129 @@ __meta__ = {
 }
 
 [node name="Line1" type="RichTextLabel" parent="Ingredients/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
+margin_left = 146.282
+margin_top = 141.47
+margin_right = 603.282
+margin_bottom = 241.47
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Etter"
+text = "Etter Cap"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line2" type="RichTextLabel" parent="Ingredients/Right"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
+margin_left = 151.282
+margin_top = 220.184
+margin_right = 608.282
+margin_bottom = 320.184
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Mermaid"
+text = "Mermaid Fang"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line3" type="RichTextLabel" parent="Ingredients/Right"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
+margin_left = 151.282
+margin_top = 299.626
+margin_right = 608.282
+margin_bottom = 399.626
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Riddler"
+text = "Riddler's Vengeance"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line4" type="RichTextLabel" parent="Ingredients/Right"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
+margin_left = 143.282
+margin_top = 375.032
+margin_right = 600.282
+margin_bottom = 475.032
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Water"
+text = "Distilled Water"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line5" type="RichTextLabel" parent="Ingredients/Right"]
+margin_left = 143.282
+margin_top = 456.0
+margin_right = 600.282
+margin_bottom = 556.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Stunbrick"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line6" type="RichTextLabel" parent="Ingredients/Right"]
+margin_left = 143.282
+margin_top = 544.0
+margin_right = 600.282
+margin_bottom = 644.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Werewolf Honey"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Line1Sprite" type="Sprite" parent="Ingredients/Right"]
-position = Vector2( 600.536, 190.53 )
+position = Vector2( 601.818, 128 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Ingredients/Right"]
-position = Vector2( 600.536, 308.963 )
+position = Vector2( 606.818, 201.47 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 23 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Ingredients/Right"]
-position = Vector2( 600.536, 424.875 )
+position = Vector2( 606.818, 281.47 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 24 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Ingredients/Right"]
-position = Vector2( 600.536, 543.308 )
+position = Vector2( 608.564, 369.47 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
+centered = false
+
+[node name="Line5Sprite" type="Sprite" parent="Ingredients/Right"]
+position = Vector2( 607.282, 464 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 42 )
+centered = false
+
+[node name="Line6Sprite" type="Sprite" parent="Ingredients/Right"]
+position = Vector2( 607.282, 552 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
 centered = false
 
 [node name="AwesomeMaid" type="Node2D" parent="."]
@@ -3547,7 +3837,7 @@ visible = false
 [node name="Left" type="Node2D" parent="AwesomeMaid"]
 
 [node name="TitleSprite" type="Sprite" parent="AwesomeMaid/Left"]
-position = Vector2( 529.617, 123.606 )
+position = Vector2( 582, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 28 )
 centered = false
@@ -3559,7 +3849,7 @@ margin_right = 600.0
 margin_bottom = 268.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Liquid Awesome"
 scroll_active = false
@@ -3574,7 +3864,7 @@ margin_right = 603.498
 margin_bottom = 306.997
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3588,9 +3878,9 @@ margin_right = 603.498
 margin_bottom = 475.623
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "1x Water"
+text = "1x Distilled Water"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3603,9 +3893,9 @@ margin_right = 604.997
 margin_bottom = 590.977
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "1x Awesome"
+text = "1x Pure Awesome"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3618,7 +3908,7 @@ margin_right = 604.997
 margin_bottom = 696.816
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Combine"
 scroll_active = false
@@ -3651,7 +3941,7 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="AwesomeMaid/Right"]
-position = Vector2( 568.218, 103.505 )
+position = Vector2( 455.282, 88 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 8 )
 centered = false
@@ -3663,7 +3953,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Maid's Cap"
 scroll_active = false
@@ -3678,9 +3968,9 @@ margin_right = 606.495
 margin_bottom = 405.885
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Ettercap"
+text = "Etter Cap"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3693,9 +3983,9 @@ margin_right = 604.997
 margin_bottom = 529.562
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Mermaid"
+text = "Mermaid Fang"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3708,7 +3998,7 @@ margin_right = 606.495
 margin_bottom = 644.916
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Combine"
 scroll_active = false
@@ -3723,7 +4013,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3758,7 +4048,7 @@ visible = false
 [node name="Left" type="Node2D" parent="BurnersMermaid"]
 
 [node name="TitleSprite" type="Sprite" parent="BurnersMermaid/Left"]
-position = Vector2( 630.003, 86.1488 )
+position = Vector2( 526, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 27 )
 centered = false
@@ -3770,7 +4060,7 @@ margin_right = 610.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Burner's Hair"
 scroll_active = false
@@ -3785,7 +4075,7 @@ margin_right = 610.99
 margin_bottom = 398.393
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Maid's Cap Potion"
 scroll_active = false
@@ -3800,9 +4090,9 @@ margin_right = 610.99
 margin_bottom = 522.07
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Awesome"
+text = "Pure Awesome"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3815,7 +4105,7 @@ margin_right = 610.99
 margin_bottom = 637.424
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Combine"
 scroll_active = false
@@ -3830,7 +4120,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3862,7 +4152,7 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="BurnersMermaid/Right"]
-position = Vector2( 475.972, 91.1436 )
+position = Vector2( 583.282, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 28 )
 centered = false
@@ -3874,7 +4164,7 @@ margin_right = 603.0
 margin_bottom = 273.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Boiled Mermaid"
 scroll_active = false
@@ -3889,7 +4179,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3897,15 +4187,15 @@ __meta__ = {
 }
 
 [node name="Line2" type="RichTextLabel" parent="BurnersMermaid/Right"]
-margin_left = 141.224
-margin_top = 361.979
-margin_right = 598.224
-margin_bottom = 528.979
+margin_left = 141.0
+margin_top = 362.0
+margin_right = 598.0
+margin_bottom = 568.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "1x Mermaid boiled in the Cauldron on a cold, medium or hot fire until ready."
+text = "1x Mermaid fang boiled in the Cauldron on a cold, medium or hot fire until ready."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3918,7 +4208,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3932,7 +4222,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -3984,7 +4274,7 @@ playing = true
 centered = false
 
 [node name="TitleSprite" type="Sprite" parent="BlossomSpice/Left"]
-position = Vector2( 506.598, 130.743 )
+position = Vector2( 606, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 29 )
 centered = false
@@ -3996,7 +4286,7 @@ margin_right = 600.0
 margin_bottom = 279.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Flaming Blossom"
 scroll_active = false
@@ -4011,7 +4301,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4022,12 +4312,12 @@ __meta__ = {
 margin_left = 145.0
 margin_top = 328.0
 margin_right = 602.0
-margin_bottom = 508.0
+margin_bottom = 544.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "1x Blossom boiled in the Cauldron over a medium or hot fire until ready."
+text = "1x Opulence Blossom boiled in the Cauldron over a medium or hot fire until ready."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4040,7 +4330,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4054,7 +4344,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4083,7 +4373,7 @@ centered = false
 position = Vector2( 662.718, 0 )
 
 [node name="TitleSprite" type="Sprite" parent="BlossomSpice/Right"]
-position = Vector2( 537.776, 87.3211 )
+position = Vector2( 447.282, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 29 )
 centered = false
@@ -4095,7 +4385,7 @@ margin_right = 603.0
 margin_bottom = 203.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Iron Spice"
 scroll_active = false
@@ -4110,7 +4400,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "1x Potion of Burner's Hair"
 scroll_active = false
@@ -4125,7 +4415,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "1x Potion of Flaming Blossom"
 scroll_active = false
@@ -4140,9 +4430,9 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "1x Behemoth"
+text = "1x Behemoth Scale"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -4155,7 +4445,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Combine"
 scroll_active = false
@@ -4186,581 +4476,412 @@ position = Vector2( 600.536, 543.308 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="Page12" type="Node2D" parent="."]
+[node name="FangVengeance" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page12"]
+[node name="Left" type="Node2D" parent="FangVengeance"]
 
-[node name="TitleSprite" type="Sprite" parent="Page12/Left"]
+[node name="TitleSprite" type="Sprite" parent="FangVengeance/Left"]
 position = Vector2( 600.037, 66.6708 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 37 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page12/Left"]
+[node name="Title" type="RichTextLabel" parent="FangVengeance/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Fang Shards"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page12/Left"]
+[node name="Line1" type="RichTextLabel" parent="FangVengeance/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page12/Left"]
+[node name="Line2" type="RichTextLabel" parent="FangVengeance/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Mermaid Fang"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page12/Left"]
+[node name="Line3" type="RichTextLabel" parent="FangVengeance/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Grind in Mortar and Pestle"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page12/Left"]
+[node name="Line4" type="RichTextLabel" parent="FangVengeance/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page12/Left"]
+[node name="Line1Sprite" type="Sprite" parent="FangVengeance/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page12/Left"]
+[node name="Line2Sprite" type="Sprite" parent="FangVengeance/Left"]
 position = Vector2( 600.536, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page12/Left"]
+[node name="Line3Sprite" type="Sprite" parent="FangVengeance/Left"]
 position = Vector2( 600.536, 424.875 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 39 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page12/Left"]
+[node name="Line4Sprite" type="Sprite" parent="FangVengeance/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page12"]
+[node name="Right" type="Node2D" parent="FangVengeance"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page12/Right"]
-position = Vector2( 598.184, 49.5662 )
+[node name="TitleSprite" type="Sprite" parent="FangVengeance/Right"]
+position = Vector2( 655.282, 104 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page12/Right"]
+[node name="Title" type="RichTextLabel" parent="FangVengeance/Right"]
 margin_left = 139.0
 margin_top = 76.0
-margin_right = 603.0
-margin_bottom = 220.0
+margin_right = 687.0
+margin_bottom = 272.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Vengeance Powder"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page12/Right"]
+[node name="Line1" type="RichTextLabel" parent="FangVengeance/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page12/Right"]
+[node name="Line2" type="RichTextLabel" parent="FangVengeance/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Riddler's Vengeance"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page12/Right"]
+[node name="Line3" type="RichTextLabel" parent="FangVengeance/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Grind in Mortar and Pestle"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page12/Right"]
+[node name="Line4" type="RichTextLabel" parent="FangVengeance/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page12/Right"]
+[node name="Line1Sprite" type="Sprite" parent="FangVengeance/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page12/Right"]
+[node name="Line2Sprite" type="Sprite" parent="FangVengeance/Right"]
 position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 24 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page12/Right"]
+[node name="Line3Sprite" type="Sprite" parent="FangVengeance/Right"]
 position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 39 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page12/Right"]
+[node name="Line4Sprite" type="Sprite" parent="FangVengeance/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Page13" type="Node2D" parent="."]
+[node name="Behemoth" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="Page13"]
+[node name="Left" type="Node2D" parent="Behemoth"]
 
-[node name="TitleSprite" type="Sprite" parent="Page13/Left"]
-position = Vector2( 600.037, 66.6708 )
+[node name="TitleSprite" type="Sprite" parent="Behemoth/Left"]
+position = Vector2( 598, 96 )
+scale = Vector2( 4, 4 )
+z_as_relative = false
+texture = ExtResource( 38 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page13/Left"]
+[node name="Title" type="RichTextLabel" parent="Behemoth/Left"]
 margin_left = 139.0
 margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
+margin_right = 606.0
+margin_bottom = 264.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
+text = "Behemoth Dust"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line1" type="RichTextLabel" parent="Behemoth/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line2" type="RichTextLabel" parent="Behemoth/Left"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Behemoth Scale"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line3" type="RichTextLabel" parent="Behemoth/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Grind in Mortar and Pestle"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page13/Left"]
+[node name="Line4" type="RichTextLabel" parent="Behemoth/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line1Sprite" type="Sprite" parent="Behemoth/Left"]
 position = Vector2( 600.536, 190.53 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line2Sprite" type="Sprite" parent="Behemoth/Left"]
 position = Vector2( 600.536, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 25 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line3Sprite" type="Sprite" parent="Behemoth/Left"]
 position = Vector2( 600.536, 424.875 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 39 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page13/Left"]
+[node name="Line4Sprite" type="Sprite" parent="Behemoth/Left"]
 position = Vector2( 600.536, 543.308 )
 centered = false
 
-[node name="Right" type="Node2D" parent="Page13"]
+[node name="Right" type="Node2D" parent="Behemoth"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="Page13/Right"]
+[node name="TitleSprite" type="Sprite" parent="Behemoth/Right"]
 position = Vector2( 598.184, 49.5662 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="Page13/Right"]
+[node name="Title" type="RichTextLabel" parent="Behemoth/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line1" type="RichTextLabel" parent="Behemoth/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line2" type="RichTextLabel" parent="Behemoth/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line3" type="RichTextLabel" parent="Behemoth/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="Page13/Right"]
+[node name="Line4" type="RichTextLabel" parent="Behemoth/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line1Sprite" type="Sprite" parent="Behemoth/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line2Sprite" type="Sprite" parent="Behemoth/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Page13/Right"]
+[node name="Line3Sprite" type="Sprite" parent="Behemoth/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="Page13/Right"]
-position = Vector2( 600.536, 543.308 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Page14" type="Node2D" parent="."]
-visible = false
-
-[node name="Left" type="Node2D" parent="Page14"]
-
-[node name="TitleSprite" type="Sprite" parent="Page14/Left"]
-position = Vector2( 600.037, 66.6708 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="Page14/Left"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="Page14/Left"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page14/Left"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="Page14/Left"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="Page14/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="Page14/Left"]
-position = Vector2( 600.536, 190.53 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="Page14/Left"]
-position = Vector2( 600.536, 308.963 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="Page14/Left"]
-position = Vector2( 600.536, 424.875 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="Page14/Left"]
-position = Vector2( 600.536, 543.308 )
-centered = false
-
-[node name="Right" type="Node2D" parent="Page14"]
-position = Vector2( 662.718, 0 )
-
-[node name="TitleSprite" type="Sprite" parent="Page14/Right"]
-position = Vector2( 598.184, 49.5662 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="Page14/Right"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 603.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="Page14/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page14/Right"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="Page14/Right"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="Page14/Right"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="Page14/Right"]
-position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="Page14/Right"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="Page14/Right"]
-position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="Page14/Right"]
+[node name="Line4Sprite" type="Sprite" parent="Behemoth/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
@@ -4781,7 +4902,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -4796,7 +4917,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4810,7 +4931,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4824,7 +4945,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4838,7 +4959,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4875,7 +4996,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4889,7 +5010,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4903,7 +5024,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4917,7 +5038,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4931,7 +5052,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4974,7 +5095,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -4989,7 +5110,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5003,7 +5124,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5017,7 +5138,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5031,7 +5152,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5068,7 +5189,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5082,7 +5203,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5096,7 +5217,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5110,7 +5231,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5124,7 +5245,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5167,7 +5288,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -5182,7 +5303,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5196,7 +5317,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5210,7 +5331,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5224,7 +5345,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5261,7 +5382,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5275,7 +5396,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5289,7 +5410,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5303,7 +5424,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5317,7 +5438,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5360,7 +5481,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -5375,7 +5496,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5389,7 +5510,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5403,7 +5524,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5417,7 +5538,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5454,7 +5575,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5468,7 +5589,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5482,7 +5603,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5496,7 +5617,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5510,7 +5631,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5553,7 +5674,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -5568,7 +5689,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5582,7 +5703,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5596,7 +5717,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5610,7 +5731,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5647,7 +5768,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5661,7 +5782,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5675,7 +5796,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5689,7 +5810,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5703,7 +5824,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5746,7 +5867,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -5761,7 +5882,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5775,7 +5896,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5789,7 +5910,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5803,7 +5924,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5840,7 +5961,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5854,7 +5975,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5868,7 +5989,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5882,7 +6003,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5896,7 +6017,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5939,7 +6060,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -5954,7 +6075,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5968,7 +6089,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5982,7 +6103,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5996,7 +6117,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6033,7 +6154,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6047,7 +6168,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6061,7 +6182,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6075,7 +6196,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6089,7 +6210,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6132,7 +6253,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -6147,7 +6268,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6161,7 +6282,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6175,7 +6296,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6189,7 +6310,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6226,7 +6347,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6240,7 +6361,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6254,7 +6375,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6268,7 +6389,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6282,7 +6403,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6325,7 +6446,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -6340,7 +6461,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6354,7 +6475,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6368,7 +6489,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6382,7 +6503,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6419,7 +6540,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6433,7 +6554,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6447,7 +6568,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6461,7 +6582,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6475,7 +6596,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6518,7 +6639,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -6533,7 +6654,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6547,7 +6668,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6561,7 +6682,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6575,7 +6696,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6612,7 +6733,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6626,7 +6747,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6640,7 +6761,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6654,7 +6775,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6668,7 +6789,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6711,7 +6832,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -6726,7 +6847,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6740,7 +6861,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6754,7 +6875,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6768,7 +6889,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6805,7 +6926,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6819,7 +6940,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6833,7 +6954,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6847,7 +6968,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6861,7 +6982,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6904,7 +7025,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -6919,7 +7040,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6933,7 +7054,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6947,7 +7068,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6961,7 +7082,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -6998,7 +7119,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7012,7 +7133,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7026,7 +7147,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7040,7 +7161,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7054,7 +7175,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7097,7 +7218,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -7112,7 +7233,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7126,7 +7247,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7140,7 +7261,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7154,7 +7275,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7191,7 +7312,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7205,7 +7326,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7219,7 +7340,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7233,7 +7354,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7247,7 +7368,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7290,7 +7411,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -7305,7 +7426,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7319,7 +7440,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7333,7 +7454,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7347,7 +7468,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7384,7 +7505,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7398,7 +7519,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7412,7 +7533,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7426,7 +7547,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7440,7 +7561,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7483,7 +7604,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -7498,7 +7619,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7512,7 +7633,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7526,7 +7647,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7540,7 +7661,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7577,7 +7698,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7591,7 +7712,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7605,7 +7726,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7619,7 +7740,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7633,7 +7754,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7676,7 +7797,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Introduction"
 scroll_active = false
@@ -7691,7 +7812,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7705,7 +7826,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7719,7 +7840,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7733,7 +7854,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7770,7 +7891,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 47 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7784,7 +7905,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7798,7 +7919,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7812,7 +7933,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -7826,7 +7947,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 46 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
