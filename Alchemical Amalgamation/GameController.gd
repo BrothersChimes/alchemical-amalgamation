@@ -127,6 +127,7 @@ func setup_for_day_0():
 	remove_child(cauldron_set)
 	remove_child(mortar_set)
 	remove_child(spiral_set)
+	remove_child(alembic_set)
 	$WoodArea.visible = false
 	$CoalArea.visible = false
 	$ShovelArea.visible = false
@@ -154,8 +155,10 @@ func setup_for_day_4():
 	add_child(spiral_set)
 	has_spiral = true
 
-func setup_for_day_5():
+func setup_for_day_5():	
 	gold = 100
+	add_child(alembic_set)
+	has_alembic = true
 
 func setup_for_day_6():
 	gold = 100
@@ -551,3 +554,7 @@ func _on_SpiralmouthSet_spiral_click():
 		else: 
 			set_carried_resource_to(ResourceType.CRAP)
 		spiral_contents = ResourceType.NONE
+
+### Alembic
+onready var alembic_set = get_node("AlembicSet")
+var has_alembic = false

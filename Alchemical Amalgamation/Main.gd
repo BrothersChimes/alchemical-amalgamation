@@ -55,7 +55,6 @@ func _on_GameController_end_day(is_success, gold, rep):
 		book.add_failure_page(day)
 	open_book()
 
-
 func _on_MusicControllerArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		if is_music_on:
@@ -67,3 +66,6 @@ func _on_MusicControllerArea2D_input_event(viewport, event, shape_idx):
 			is_music_on = true
 			$MusicCobweb.play()
 		
+func _on_BookArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		open_book()
