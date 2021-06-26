@@ -22,6 +22,7 @@ var pagenumbers = [
 	"FireLevels",
 	"CoalBellows",
 	"Mortar",
+	"Spiralmouth",
 	"Ingredients",
 	"AwesomeMaid",
 	"BurnersMermaid",
