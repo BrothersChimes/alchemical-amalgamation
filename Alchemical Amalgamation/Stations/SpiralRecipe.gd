@@ -10,6 +10,7 @@ class Recipe:
 var recipes = [
 	create_recipe(ResourceType.ECTOPLASM,ResourceType.ECTO_PLASMA),
 	create_recipe(ResourceType.LIQUID_AWESOME,ResourceType.AWESOME),
+	create_recipe(ResourceType.DRAGON_SAUCE, ResourceType.CONCENTRATED_HOT_SAUCE)
 ]
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)

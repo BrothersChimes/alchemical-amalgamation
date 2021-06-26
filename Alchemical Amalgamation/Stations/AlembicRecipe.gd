@@ -8,7 +8,7 @@ class Recipe:
 	var Output: int
 	
 var recipes = [
-	create_recipe(ResourceType.MERMAID,ResourceType.FANG_SHARD)
+	create_recipe(ResourceType.FLAMING_BLOSSOM, ResourceType.DRAGON_SAUCE)
 ]
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)

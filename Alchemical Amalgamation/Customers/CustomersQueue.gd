@@ -81,6 +81,8 @@ var customers_day_4 = [
 ]
 
 var customers_day_5 = [
+	create_customer("Dragon Sauce.", ResourceType.DRAGON_SAUCE),
+	create_customer("Concentrated Dragon Sauce.", ResourceType.CONCENTRATED_HOT_SAUCE),
 	create_customer("STUN. BRICK.", ResourceType.STUNBRICK),
 ]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -48,6 +48,10 @@
 [ext_resource path="res://Assets/Stations/station_retort_in_use.png" type="Texture" id=46]
 [ext_resource path="res://Assets/Ingredients/potion_bile.png" type="Texture" id=47]
 [ext_resource path="res://Assets/Fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=48]
+[ext_resource path="res://Assets/Stations/station_shovel_empty.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Stations/station_embers.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Stations/station_alembic_used.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Stations/station_aludel_in_use.png" type="Texture" id=52]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -198,6 +202,22 @@ region = Rect2( 16, 0, 16, 32 )
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 50 )
+region = Rect2( 240, 0, 80, 16 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 50 )
+region = Rect2( 320, 0, 80, 16 )
+
+[sub_resource type="SpriteFrames" id=45]
+animations = [ {
+"frames": [ SubResource( 43 ), SubResource( 44 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
@@ -443,7 +463,6 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -653,6 +672,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -777,7 +797,6 @@ centered = false
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
 frames = SubResource( 10 )
-frame = 2
 playing = true
 centered = false
 
@@ -866,6 +885,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1071,7 +1091,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -2919,7 +2939,6 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 18 )
-frame = 3
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3030,7 +3049,6 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 18 )
-frame = 3
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3560,7 +3578,6 @@ centered = false
 position = Vector2( 319.282, 160 )
 scale = Vector2( 16, 16 )
 frames = SubResource( 32 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -3769,6 +3786,210 @@ texture = ExtResource( 45 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Spiralmouth/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="AlembicAludel" type="Node2D" parent="."]
+
+[node name="Left" type="Node2D" parent="AlembicAludel"]
+
+[node name="TitleSprite" type="Sprite" parent="AlembicAludel/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="AlembicAludel/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 646.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Alembic and Aludel
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="AlembicAludel/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Sublimate ingredients in the alembic and aludel"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="AlembicAludel/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "These require a high temperature to function"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="AlembicAludel/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Scoop coals with Q (q) or by clicking on the shovel"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="AlembicAludel/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="AlembicAludel/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="AlembicAludel/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="AlembicAludel/Left"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 49 )
+centered = false
+
+[node name="Line4Sprite" type="AnimatedSprite" parent="AlembicAludel/Left"]
+position = Vector2( 222, 600 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 45 )
+speed_scale = 0.5
+playing = true
+centered = false
+
+[node name="Right" type="Node2D" parent="AlembicAludel"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="AlembicAludel/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="AlembicAludel/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="AlembicAludel/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="AlembicAludel/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="AlembicAludel/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="AlembicAludel/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="AlembicAludel/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="AlembicAludel/Right"]
+position = Vector2( 175.282, 368 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 52 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="AlembicAludel/Right"]
+position = Vector2( 231.282, 128 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 51 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="AlembicAludel/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
@@ -5318,199 +5539,6 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Credits/Right"]
-position = Vector2( 600.536, 543.308 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Page17" type="Node2D" parent="."]
-visible = false
-
-[node name="Left" type="Node2D" parent="Page17"]
-
-[node name="TitleSprite" type="Sprite" parent="Page17/Left"]
-position = Vector2( 600.037, 66.6708 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="Page17/Left"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Introduction"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="Page17/Left"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page17/Left"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="Page17/Left"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="Page17/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="Page17/Left"]
-position = Vector2( 600.536, 190.53 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="Page17/Left"]
-position = Vector2( 600.536, 308.963 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="Page17/Left"]
-position = Vector2( 600.536, 424.875 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="Page17/Left"]
-position = Vector2( 600.536, 543.308 )
-centered = false
-
-[node name="Right" type="Node2D" parent="Page17"]
-position = Vector2( 662.718, 0 )
-
-[node name="TitleSprite" type="Sprite" parent="Page17/Right"]
-position = Vector2( 598.184, 49.5662 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="Page17/Right"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 603.0
-margin_bottom = 220.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="Page17/Right"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="Page17/Right"]
-margin_left = 145.0
-margin_top = 327.677
-margin_right = 602.0
-margin_bottom = 427.677
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="Page17/Right"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="Page17/Right"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="Page17/Right"]
-position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="Page17/Right"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="Page17/Right"]
-position = Vector2( 600.536, 424.875 )
-scale = Vector2( 8, 8 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="Page17/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
