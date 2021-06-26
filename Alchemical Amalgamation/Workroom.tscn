@@ -34,7 +34,7 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="station_coal" type="Sprite" parent="."]
-position = Vector2( 96, 640 )
+position = Vector2( 120, 648 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 centered = false

@@ -51,11 +51,10 @@ size = 23
 font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 48, 64 )
+extents = Vector2( 62.6031, 64 )
 
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 24.0
-height = 53.13
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 56.0845, 55.9153 )
 
 [sub_resource type="CapsuleShape2D" id=8]
 radius = 27.1988
@@ -229,16 +228,16 @@ __meta__ = {
 position = Vector2( 560, 616 )
 
 [node name="WoodCollider" type="CollisionShape2D" parent="GameController/WoodArea"]
-position = Vector2( -256, 88 )
+position = Vector2( -240, 88 )
 shape = SubResource( 6 )
 
 [node name="CoalArea" type="Area2D" parent="GameController"]
 position = Vector2( 560, 616 )
 
 [node name="CoalCollider" type="CollisionShape2D" parent="GameController/CoalArea"]
-position = Vector2( -176, 104 )
-rotation = -0.286517
-shape = SubResource( 7 )
+position = Vector2( -120, 96 )
+rotation = -0.00151071
+shape = SubResource( 17 )
 
 [node name="ShovelArea" type="Area2D" parent="GameController"]
 position = Vector2( 560, 616 )
