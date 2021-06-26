@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Workroom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CustomerText.tscn" type="PackedScene" id=2]
@@ -27,6 +27,10 @@
 [ext_resource path="res://Assets/Stations/station_clock.png" type="Texture" id=25]
 [ext_resource path="res://Stations/MortarSet.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Stations/SpiralmouthSet.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/UI/UI_music_off.png" type="Texture" id=28]
+[ext_resource path="res://Assets/UI/UI_music_on.png" type="Texture" id=29]
+[ext_resource path="res://MusicController.gd" type="Script" id=30]
+[ext_resource path="res://Assets/Music/Purple Planet Music - Cobwebbed (1 33) 100bpm.mp3" type="AudioStream" id=31]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -53,7 +57,7 @@ font_data = ExtResource( 11 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 62.6031, 64 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 56.0845, 55.9153 )
 
 [sub_resource type="CapsuleShape2D" id=8]
@@ -101,6 +105,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 32, 32 )
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -147,9 +154,11 @@ shape = SubResource( 2 )
 
 [node name="HappySound" type="AudioStreamPlayer" parent="GameController/SuccessAndFailureText"]
 stream = ExtResource( 21 )
+volume_db = -20.0
 
 [node name="UnhappySound" type="AudioStreamPlayer" parent="GameController/SuccessAndFailureText"]
 stream = ExtResource( 20 )
+volume_db = -20.0
 
 [node name="PriceText" type="Label" parent="GameController/SuccessAndFailureText"]
 visible = false
@@ -173,12 +182,15 @@ stream = ExtResource( 19 )
 
 [node name="PurchaseSound" type="AudioStreamPlayer" parent="GameController/Workroom"]
 stream = ExtResource( 22 )
+volume_db = -10.0
 
 [node name="DropPotionSound" type="AudioStreamPlayer" parent="GameController/Workroom"]
 stream = ExtResource( 24 )
+volume_db = -10.0
 
 [node name="PickUpPotionSound" type="AudioStreamPlayer" parent="GameController/Workroom"]
 stream = ExtResource( 23 )
+volume_db = -10.0
 
 [node name="CustomerText" parent="GameController" instance=ExtResource( 2 )]
 
@@ -237,7 +249,7 @@ position = Vector2( 560, 616 )
 [node name="CoalCollider" type="CollisionShape2D" parent="GameController/CoalArea"]
 position = Vector2( -120, 96 )
 rotation = -0.00151071
-shape = SubResource( 17 )
+shape = SubResource( 7 )
 
 [node name="ShovelArea" type="Area2D" parent="GameController"]
 position = Vector2( 560, 616 )
@@ -317,15 +329,41 @@ centered = false
 
 [node name="SpiralmouthSet" parent="GameController" instance=ExtResource( 27 )]
 
+[node name="MusicController" type="Node2D" parent="GameController"]
+position = Vector2( 1472, 768 )
+script = ExtResource( 30 )
+
+[node name="MusicOn" type="Sprite" parent="GameController/MusicController"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="MusicOff" type="Sprite" parent="GameController/MusicController"]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="MusicControllerArea2D" type="Area2D" parent="GameController/MusicController"]
+
+[node name="MusicControllerCollisionShape" type="CollisionShape2D" parent="GameController/MusicController/MusicControllerArea2D"]
+position = Vector2( 32, 32 )
+shape = SubResource( 17 )
+
 [node name="Book" parent="." instance=ExtResource( 10 )]
 visible = false
 z_index = 10
 
 [node name="BookOpenSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = -10.0
 
 [node name="BookCloseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
+volume_db = -10.0
+
+[node name="MusicCobweb" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
 
 [connection signal="end_day" from="GameController" to="." method="_on_GameController_end_day"]
 [connection signal="open_book" from="GameController" to="." method="_on_GameController_open_book"]
@@ -345,5 +383,6 @@ stream = ExtResource( 18 )
 [connection signal="area_exited" from="GameController/CombinatorOutArea" to="GameController" method="_on_CombinatorOutArea_area_exited"]
 [connection signal="mortar_click" from="GameController/MortarSet" to="GameController" method="_on_MortarSet_mortar_click"]
 [connection signal="spiral_click" from="GameController/SpiralmouthSet" to="GameController" method="_on_SpiralmouthSet_spiral_click"]
+[connection signal="input_event" from="GameController/MusicController/MusicControllerArea2D" to="." method="_on_MusicControllerArea2D_input_event"]
 [connection signal="close_book" from="Book" to="." method="_on_Book_close_book"]
 [connection signal="close_book_to_day_display" from="Book" to="." method="_on_Book_close_book_to_day_display"]
