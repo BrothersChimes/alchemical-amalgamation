@@ -1,24 +1,30 @@
 extends Node2D
 
+signal close_book
+signal close_book_to_day_display(is_left)
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-const RECIPE_START = 7
+var had_failure = false
+
+const MAX_DAY = 6
+
 var index = 0
 var pagenumbers = [
-	"Page1",
-	"Page2",
-	"Page3",
-	"Page4",
-	"Page5",
-	"Page6",
-	"Page7",
-	"Page8",
-	"Page9",
-	"Page10",
-	"Page11",
+	"Day0",
+	"WelcomePurpose",
+	"CustomersIngredients",
+	"Joiner",
+	"Trashcan",
+	"Cauldron",
+	"FireLevels",
+	"CoalBellows",
+	"Ingredients",
+	"AwesomeMaid",
+	"BurnersMermaid",
+	"BlossomSpice",
 	#"Page12",
 	#"Page13",
 	#"Page14",
@@ -46,25 +52,93 @@ func _ready():
 		get_node(page).visible = false
 	get_node(pagenumbers[0]).visible = true
 	
-
 func _process(delta):
 	var cur_index = index
-	print(index)
-	print(pagenumbers[index])
 	if Input.is_action_just_pressed("ui_left"):
-		$BookFlipSound.play()
-		if index > 0:
-			index -= 1
+		left_action()
 	if Input.is_action_just_pressed("ui_right"):
-		$BookFlipSound.play()
-		if index < pagenumbers.size() - 1:
-			index += 1
+		right_action()
 	if Input.is_action_just_pressed("bellows"):
-		$BookFlipSound.play()
-		if index >= RECIPE_START:
-			index = 0
-		else:
-			index = RECIPE_START
+		space_action()
+	set_page_based_on_index(cur_index)
+
+func add_sucess_page(day): 
+	if had_failure: 
+		change_page_to(1)
+		pagenumbers.remove(0)
+		had_failure = false
+	if day == MAX_DAY: 
+		change_page_to(0)
+		pagenumbers.insert(MAX_DAY, "DayN")
+		change_page_to(MAX_DAY)
+		return
+	elif day > MAX_DAY:
+		change_page_to(MAX_DAY)
+		return
+	change_page_to(0)
+	pagenumbers.insert(day, "Day" + str(day))
+	change_page_to(day)
+
+func add_failure_page(day): 
+	if had_failure: 
+		change_page_to(0)
+		return
+	had_failure = true
+	get_node(pagenumbers[index]).visible = false
+	index = 0
+	pagenumbers.insert(0, "FAIL")
+	get_node(pagenumbers[0]).visible = true
+
+func change_page_to(page): 
+	var cur_index = index
+	index = page
+	set_page_based_on_index(cur_index)
+		
+func left_action(): 
+	$BookFlipSound.play()
+	if index > 0:
+		index -= 1
+	else: 
+		index = pagenumbers.size() - 1
+
+func right_action(): 
+	$BookFlipSound.play()
+	if index < pagenumbers.size() - 1:
+		index += 1
+	else: 
+		index = 0
+		
+func space_action(): 
+	$BookFlipSound.play()
+	var book_start = pagenumbers.find("WelcomePurpose")
+	var day_goal = book_start - 1
+	var recipe_start = pagenumbers.find("Ingredients")
+	if index < book_start: 
+		index = book_start
+	elif index < recipe_start: 
+		index = recipe_start
+	else: 
+		index = day_goal
+
+func set_page_based_on_index(cur_index): 
+	# print(index)
+	# print(pagenumbers[index])
 	if cur_index != index:
 		get_node(pagenumbers[cur_index]).visible = false
 		get_node(pagenumbers[index]).visible = true
+
+func _on_PreviousArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		var cur_index = index
+		left_action()
+		set_page_based_on_index(cur_index)
+		
+func _on_NextArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		var cur_index = index
+		right_action()
+		set_page_based_on_index(cur_index)
+		
+func _on_CloseArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		emit_signal("close_book")

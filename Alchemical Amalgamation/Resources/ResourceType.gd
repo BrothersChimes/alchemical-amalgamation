@@ -10,6 +10,9 @@ enum ResourceType {
 	ECTOPLASM,
 	RIDDLER,
 	WATER,
+	BRAINBARK,
+	HONEY,
+	STUNBRICK,
 	CRAP,
 	LIQUID_AWESOME,
 	BOILED_MERMAID,
@@ -50,6 +53,12 @@ static func display_name(resource_type):
 			return "Mermaid Horn"
 		ResourceType.WATER: 
 			return "Distilled Water"
+		ResourceType.BRAINBARK:
+			return "Brainbark"
+		ResourceType.HONEY:
+			return "Honey"
+		ResourceType.STUNBRICK:
+			return "Stunbrick"
 		#### POTIONS ####
 		ResourceType.CRAP:
 			return "Failed Potion"
@@ -66,7 +75,53 @@ static func display_name(resource_type):
 		ResourceType.IRON_SPICE:
 			return "Iron Spice"
 
+static func buy_price_for(resource_type): 
+	if not is_resource_raw(resource_type): 
+		return 0
+	match resource_type:
+		#### RAW MATERIALS ####
+		ResourceType.AWESOME:
+			return 15	
+		ResourceType.BEHEMOTH:
+			return 80	
+		ResourceType.BLOSSOM:
+			return 20	
+		ResourceType.ECTOPLASM:
+			return 80	
+		ResourceType.ETTERCAP:
+			return 5
+		ResourceType.RIDDLER:
+			return 50
+		ResourceType.MERMAID:
+			return 10
+		ResourceType.WATER: 
+			return 2
+		ResourceType.BRAINBARK:
+			return 100
+		ResourceType.HONEY:
+			return 120
+		ResourceType.STUNBRICK:
+			return 200
 
+static func sale_price_for(resource_type): 
+	if is_resource_raw(resource_type): 
+		return int(buy_price_for(resource_type)*1.5)
+	#### POTIONS ####
+	match resource_type:
+		ResourceType.CRAP:
+			return 0
+		ResourceType.LIQUID_AWESOME:
+			return 40
+		ResourceType.BOILED_MERMAID:
+			return 40
+		ResourceType.MAIDS_CAP:
+			return 32
+		ResourceType.BURNERS_HAIR:
+			return 50
+		ResourceType.FLAMING_BLOSSOM:
+			return 100
+		ResourceType.IRON_SPICE:
+			return 200
 	
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
@@ -87,6 +142,12 @@ static func sprites_names_for_resource_types(resource_type):
 			return "mermaid"
 		ResourceType.WATER: 
 			return "water"
+		ResourceType.BRAINBARK:
+			return "brainbark"
+		ResourceType.HONEY:
+			return "honey"
+		ResourceType.STUNBRICK:
+			return "stunbrick"
 		#### POTIONS ####
 		ResourceType.CRAP:
 			return "yellow"

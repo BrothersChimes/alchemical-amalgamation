@@ -137,7 +137,6 @@ func _process(delta):
 	coal -= delta * burn_consumption_multiplier
 	counter += delta
 	if counter > 2:
-		print("COUNT")
 		counter = 0
 		if get_node("CauldronBusy/SpoonSprite").flip_h:
 			get_node("CauldronBusy/SpoonSprite").flip_h = 0

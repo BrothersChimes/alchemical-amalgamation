@@ -1,7 +1,7 @@
 extends Node2D
 
 signal open_book
-
+signal end_day(is_success)
 
 const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
 var ResourceType = ResourceTypeFile.ResourceType
@@ -16,9 +16,17 @@ var resource_combinator= [ResourceType.NONE, ResourceType.NONE, ResourceType.NON
 
 var CustomersQueue = preload("res://Customers/CustomersQueue.gd")
 var customersQueue = CustomersQueue.new()
+onready var cauldron_set = get_node("CauldronSet")
+var has_cauldron_set = false
 
-var gold = 1000
+var day = 0
+var gold = 100
 var rep = 0
+
+const DAY_LENGTH = 3
+var day_timer = 0
+var day_first_third = DAY_LENGTH / 3
+var day_second_third = day_first_third*2
 
 var customer_desired_resources = [
 	ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
@@ -26,10 +34,108 @@ var customer_desired_resources = [
 ]
 
 func _ready():
-	set_start_customer()
+	setup_for_day(0)
+
+func _process(delta): 
+	cauldron_process(delta)
+	if Input.is_action_just_pressed("drop_potion"):
+		drop_potion_event()
+	day_process(delta)
+
+func is_day_successful(): 
+	#TODO
+	if day == 0: 
+		return gold >= 30 and rep >= 5
+	elif day == 1: 
+		return gold >= 50 and rep >= 12
+	elif day == 2: 
+		return gold >= 200 and rep >= 10
+	elif day == 3: 
+		return gold >= 200 and rep >= 10
+	elif day == 4: 
+		return gold >= 200 and rep >= 10
+	elif day == 5: 
+		return gold >= 200 and rep >= 10
+	elif day == 6: 
+		return gold >= 200 and rep >= 10
+	else: 
+		return gold >= 200 and rep >= 10
+
+func day_process(delta): 
+	var is_success = is_day_successful()
+	if is_success:
+		$SuccessAndFailureText.set_text_none()
+		day = day + 1
+		emit_signal("end_day", is_success, gold, rep)
+		setup_for_day(day)
+		return
+
+	### TODO Debug - remove
+	if Input.is_action_just_pressed("end_day"):
+		$SuccessAndFailureText.set_text_none()
+		day = day + 1
+		print("DAY: " + str(day))
+		emit_signal("end_day", true, gold, rep)
+		setup_for_day(day)
+	day_timer += delta
+	if day_timer >= DAY_LENGTH:
+		$SuccessAndFailureText.set_text_none()
+		emit_signal("end_day", is_success, gold, rep)
+		setup_for_day(day)
+	elif day_timer >= day_second_third:
+		# print("second third reached")
+		$Clock/AnimatedSprite.frame = 2
+	elif day_timer >= day_first_third:
+		# print("First third reached")
+		$Clock/AnimatedSprite.frame = 1	
+
+func restart_day(): 
+	set_carried_resource_to(ResourceType.NONE)
+	day_timer = 0
+	rep = 0
+	$Clock/AnimatedSprite.frame = 0
 	$Gold.set_gold(gold)
 	$Reputation.set_reputation(rep)
+	set_start_customer()
 	
+func setup_for_day(day_num): 
+	$Workroom.setup_for_day(day_num)
+	customersQueue.setup_for_day(day_num)
+	if day_num == 0: 
+		setup_for_day_0()
+	elif day_num == 1: 
+		setup_for_day_1()
+	elif day_num == 2: 
+		setup_for_day_2()
+	else: 
+		setup_for_final_days()
+	restart_day()
+
+func setup_for_day_0(): 
+	gold = 20
+	has_cauldron_set = false
+	remove_child(cauldron_set)
+	$WoodArea.visible = false
+	$CoalArea.visible = false
+	$ShovelArea.visible = false
+	$CombinatorOutArea.visible = false
+
+func setup_for_day_1(): 
+	gold = 100
+	$CombinatorOutArea.visible = true
+
+func setup_for_day_2(): 
+	gold = 200
+	has_cauldron_set = true
+	add_child(cauldron_set)
+	$WoodArea.visible = true
+	$CoalArea.visible = true
+	$ShovelArea.visible = true
+
+func setup_for_final_days(): 
+	gold = 400
+	pass
+
 func add_gold(extra_gold): 
 	gold += extra_gold
 	$Gold.set_gold(gold)
@@ -37,41 +143,58 @@ func add_gold(extra_gold):
 func add_reputation(extra_reputation): 
 	rep += extra_reputation
 	$Reputation.set_reputation(rep)
-	
-func _process(delta): 
-	cauldron_process(delta)
-	if Input.is_action_just_pressed("drop_potion"):
-		drop_potion_event()
 
 func set_start_customer(): 
+	customer_desired_resources = [
+		ResourceType.NONE, ResourceType.NONE, ResourceType.NONE,
+		ResourceType.NONE, ResourceType.NONE
+	]
 	set_customers()
 
 func set_customers(): 
-	var queue = customersQueue.customers
+	#NOTE: Does not duplicate the array - changes here are changes there
+	# var queue = customersQueue.customers_for_day(day)
 	
 	for i in range(0, customer_desired_resources.size()):
-		if queue.empty():
-			return
+#		if queue.empty():
+#			return
 		var customer = customer_desired_resources[i]
 		if customer != ResourceType.NONE:
 			continue
-		var next_customer = queue.front()
+		var next_customer = customersQueue.get_next_customer()
 		customer_desired_resources[i] = next_customer.Desire
 		$CustomerText.create_customer_with_message_and_item(i, next_customer.Message, next_customer.Desire)
-		queue.pop_front()
 
 func drop_potion_event(): 
-	if resource_carried == ResourceType.CRAP:
+	if resource_carried == ResourceType.NONE:
+		return
+	elif resource_carried == ResourceType.CRAP:
 		destroy_carried_resource()
-		
+	elif ResourceTypeFile.is_resource_raw(resource_carried):
+		$Workroom/PurchaseSound.play()
+		add_gold(ResourceTypeFile.buy_price_for(resource_carried))
+		set_carried_resource_to(ResourceType.NONE)
+	else: 
+		var could_place = $Workroom.place_resource_on_first_open_holder(resource_carried)
+		if could_place: 
+			set_carried_resource_to(ResourceType.NONE)
+			$Workroom/PickUpPotionSound.play()
+
 func _on_Workroom_drag_resource_from_shelf(resource_type):
 	if resource_carried == ResourceType.NONE:
 		set_carried_resource_to(resource_type)
-		add_gold(-20)
+		add_gold(-ResourceTypeFile.buy_price_for(resource_type))
 		$Workroom/PurchaseSound.play()
-	elif ResourceTypeFile.is_resource_raw(resource_carried) and resource_carried != resource_type:
-		set_carried_resource_to(resource_type)
-		$Workroom/DropPotionSound.play()
+	elif ResourceTypeFile.is_resource_raw(resource_carried):
+		if resource_carried == resource_type:
+			set_carried_resource_to(ResourceType.NONE)
+			add_gold(ResourceTypeFile.buy_price_for(resource_type))
+			$Workroom/PurchaseSound.play()
+		else:
+			add_gold(ResourceTypeFile.buy_price_for(resource_carried))
+			add_gold(-ResourceTypeFile.buy_price_for(resource_type))
+			set_carried_resource_to(resource_type)
+			$Workroom/DropPotionSound.play()
 	
 func _on_Workroom_destroy_resource():
 	destroy_carried_resource()
@@ -88,12 +211,14 @@ func _on_CustomerText_sell_potion_to(customer_number):
 	if resource_carried == ResourceType.NONE:
 		return
 	if resource_carried == customer_desired_resources[customer_number]:
-		$SuccessAndFailureText.set_text_success()
-		add_gold(100)
+		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
+		$SuccessAndFailureText.set_text_success(sale_price, 1)
+		add_gold(sale_price)
 		add_reputation(1)
 	else:
-		$SuccessAndFailureText.set_text_failure()
-		add_gold(-500)
+		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
+		$SuccessAndFailureText.set_text_failure(sale_price, 5)
+		add_gold(-sale_price*2)
 		add_reputation(-5)
 	cycle_customer(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
@@ -140,7 +265,7 @@ func _on_Workroom_click_on_combinator_output():
 	set_carried_resource_to(recipe_output)
 	
 func _on_BookArea_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		emit_signal("open_book")
 	
 const CauldronRecipes = preload("res://Stations/CauldronRecipe.gd")
@@ -176,6 +301,8 @@ enum PotionDisplayState  {
 var potion_display_state = PotionDisplayState.FINE
 
 func cauldron_process(delta):
+	if not has_cauldron_set: 
+		return
 	if is_cauldron_boiling and cauldron_recipe != null: 
 		potion_display_state = PotionDisplayState.FINE
 		cauldron_timer += delta
@@ -304,3 +431,9 @@ func _on_CombinatorOutArea_area_entered(area):
 func _on_CombinatorOutArea_area_exited(area):
 	if area.name == "HoverHackArea":
 		$CombinatorOutArea/CombinatorAltText.visible = false
+
+func _on_Workroom_click_on_holding_resource(resource, number):
+	var was_carried = resource_carried
+	set_carried_resource_to(resource)
+	$Workroom.set_holder_to(was_carried, number)
+	$Workroom/PickUpPotionSound.play()
