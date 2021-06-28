@@ -785,6 +785,7 @@ centered = false
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 centered = false
 
@@ -2927,6 +2928,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 20 )
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3037,6 +3039,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 20 )
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
