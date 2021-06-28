@@ -28,6 +28,9 @@ var recipes = [
 	create_recipe(ResourceType.BEHEMOTH_DUST, 5, ResourceType.CARBUNCLE, Heat.LOW, Heat.MED),
 ]
 
+func recipes(): 
+	return recipes
+
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, 1, ResourceType.CRAP, 
 		Heat.DEAD, Heat.BLAZE)
 
