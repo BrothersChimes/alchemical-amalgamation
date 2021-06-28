@@ -50,8 +50,9 @@ func set_page(alembic_recipe):
 	
 	$IngredientSprite.texture = load(ResourceTypeFile.sprite_path_for_resource_type(ingredient))
 	
-	var instructions = "Heat " + ingredient_name + " over " + generate_heat_text(min_heat) \
-	 + " to " + generate_heat_text(max_heat) + " embers until ready."
+	var instructions = "Distill " + ingredient_name + " over " + generate_heat_text(min_heat) \
+	 + " to " + generate_heat_text(max_heat) + " embers in alembic and aludel " \
+	+ "until ready."
 	
 	$InstructionLine.text = instructions
 
