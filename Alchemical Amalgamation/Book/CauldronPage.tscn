@@ -48,16 +48,16 @@ animations = [ {
 script = ExtResource( 5 )
 
 [node name="TitleSprite" type="Sprite" parent="."]
-position = Vector2( 606, 80 )
+position = Vector2( 611, 124 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 279.0
+margin_left = 144.0
+margin_top = 120.0
+margin_right = 605.0
+margin_bottom = 323.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 4 )

@@ -3,11 +3,14 @@ extends Node2D
 const CombinatorRecipe = preload("res://Stations/CombinatorRecipe.gd")
 const MortarRecipe = preload("res://Stations/MortarRecipe.gd")
 const CauldronRecipe = preload("res://Stations/CauldronRecipe.gd")
+const AlembicRecipe = preload("res://Stations/AlembicRecipe.gd")
+const SpiralRecipe = preload("res://Stations/SpiralRecipe.gd")
 
 var combinator_recipes
 var cauldron_recipes
 var mortar_recipes
-
+var alembic_recipes
+var spiral_recipes
 
 func _ready(): 
 	var combinator_recipe = CombinatorRecipe.new()
@@ -16,6 +19,10 @@ func _ready():
 	cauldron_recipes = cauldron_recipe.recipes()
 	var mortar_recipe = MortarRecipe.new()
 	mortar_recipes = mortar_recipe.recipes()
+	var alembic_recipe = AlembicRecipe.new()
+	alembic_recipes = alembic_recipe.recipes()
+	var spiral_recipe = SpiralRecipe.new()
+	spiral_recipes = spiral_recipe.recipes()
 	$BookSprite.visible = false
 	setup_recipe_pages()
 	
@@ -43,7 +50,10 @@ func setup_recipe_pages():
 		recipe_pages.append(create_recipe(RecipeType.CAULDRON, recipe))
 	for recipe in mortar_recipes: 
 		recipe_pages.append(create_recipe(RecipeType.MORTAR, recipe))
-
+	for recipe in alembic_recipes: 
+		recipe_pages.append(create_recipe(RecipeType.ALEMBIC, recipe))
+	for recipe in spiral_recipes: 
+		recipe_pages.append(create_recipe(RecipeType.SPIRAL, recipe))
 		
 func create_recipe(type, recipe):
 	var recipe_page = RecipePage.new()
@@ -67,8 +77,9 @@ func set_left_page(recipe_page):
 	$CombinatorPageLeft.visible = false
 	$CauldronPageLeft.visible = false
 	$MortarPageLeft.visible = false
-
-	
+	$AlembicPageLeft.visible = false
+	$SpiralPageLeft.visible = false
+		
 	if recipe_page.RecipeType == RecipeType.COMBINATOR:
 		$CombinatorPageLeft.visible = true
 		$CombinatorPageLeft.set_page(recipe_page.Recipe)
@@ -78,11 +89,19 @@ func set_left_page(recipe_page):
 	elif recipe_page.RecipeType == RecipeType.MORTAR:
 		$MortarPageLeft.visible = true
 		$MortarPageLeft.set_page(recipe_page.Recipe)
-
+	elif recipe_page.RecipeType == RecipeType.ALEMBIC:
+		$AlembicPageLeft.visible = true
+		$AlembicPageLeft.set_page(recipe_page.Recipe)
+	elif recipe_page.RecipeType == RecipeType.SPIRAL:
+		$SpiralPageLeft.visible = true
+		$SpiralPageLeft.set_page(recipe_page.Recipe)
+			
 func set_right_page(recipe_page): 
 	$CombinatorPageRight.visible = false
 	$MortarPageRight.visible = false
 	$CauldronPageRight.visible = false
+	$AlembicPageRight.visible = false
+	$SpiralPageRight.visible = false
 		
 	if recipe_page.RecipeType == RecipeType.COMBINATOR:
 		$CombinatorPageRight.visible = true
@@ -93,8 +112,16 @@ func set_right_page(recipe_page):
 	elif recipe_page.RecipeType == RecipeType.MORTAR:
 		$MortarPageRight.visible = true
 		$MortarPageRight.set_page(recipe_page.Recipe)
-		
+	elif recipe_page.RecipeType == RecipeType.ALEMBIC:
+		$AlembicPageRight.visible = true
+		$AlembicPageRight.set_page(recipe_page.Recipe)
+	elif recipe_page.RecipeType == RecipeType.SPIRAL:
+		$SpiralPageRight.visible = true
+		$SpiralPageRight.set_page(recipe_page.Recipe)
+				
 func set_right_page_blank():
 	$CauldronPageRight.visible = false
 	$CombinatorPageRight.visible = false
 	$MortarPageRight.visible = false
+	$AlembicPageRight.visible = false
+	$SpiralPageRight.visible = false

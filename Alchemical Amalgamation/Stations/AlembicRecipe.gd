@@ -15,6 +15,9 @@ var recipes = [
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)
 
+func recipes(): 
+	return recipes
+
 func create_recipe(ingredient, output): 
 	var recipe = Recipe.new()
 	recipe.Ingredient = ingredient

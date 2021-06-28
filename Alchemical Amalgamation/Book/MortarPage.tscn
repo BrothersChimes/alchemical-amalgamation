@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_mortar_empty.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Ingredients/ingredient_mermaid.png" type="Texture" id=4]
 [ext_resource path="res://Book/MortarPage.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Stations/station_pestle.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -16,21 +17,37 @@ font_data = ExtResource( 1 )
 size = 40
 font_data = ExtResource( 1 )
 
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 0, 16, 32 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
 [node name="MortarPage" type="Node2D"]
 position = Vector2( -1, 0 )
 script = ExtResource( 5 )
 
 [node name="TitleSprite" type="Sprite" parent="."]
-position = Vector2( 600.037, 66.6708 )
+position = Vector2( 606.037, 104 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 220.0
+margin_left = 145.0
+margin_top = 113.329
+margin_right = 606.0
+margin_bottom = 257.329
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
@@ -120,10 +137,18 @@ position = Vector2( 600.536, 543.308 )
 centered = false
 
 [node name="BookSprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 342, 320 )
 scale = Vector2( 25.5101, 17.2174 )
 z_index = -1
 texture = ExtResource( 6 )
 centered = false
 offset = Vector2( -15.2923, -25.4637 )
+
+[node name="PestleSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 601, 424 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 5 )
+frame = 1
+speed_scale = 0.5
+playing = true
+centered = false
