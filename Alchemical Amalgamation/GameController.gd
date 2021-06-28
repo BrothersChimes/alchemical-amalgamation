@@ -249,6 +249,10 @@ func destroy_carried_resource():
 func _on_Workroom_drop_resource():
 	set_carried_resource_to(ResourceType.NONE)
 	
+
+func _on_CustomerText_customer_expired(customer_number):
+	customer_fail(customer_number)	
+
 func _on_CustomerText_sell_potion_to(customer_number):
 	if resource_carried == ResourceType.NONE:
 		return
@@ -257,16 +261,19 @@ func _on_CustomerText_sell_potion_to(customer_number):
 		$SuccessAndFailureText.set_text_success(sale_price, 1)
 		add_gold(sale_price)
 		add_reputation(1)
+		cycle_customer(customer_number)
 	else:
-		var lost_gold = (1+day)*5
-		var lost_rep = 3
-		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
-		$SuccessAndFailureText.set_text_failure(lost_gold, lost_rep)
-		add_gold(- lost_gold)
-		add_reputation(-3)
-	cycle_customer(customer_number)
+		customer_fail(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
 
+func customer_fail(customer_number): 
+	var lost_gold = (1+day)*5
+	var lost_rep = 3
+	var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
+	$SuccessAndFailureText.set_text_failure(lost_gold, lost_rep)
+	add_gold(- lost_gold)
+	add_reputation(-3)
+	cycle_customer(customer_number)
 
 func cycle_customer(customer_number): 
 	$CustomerText.remove_customer(customer_number)
@@ -621,3 +628,5 @@ func _on_AlembicSet_alembic_click():
 		else: 
 			set_carried_resource_to(ResourceType.CRAP)
 		alembic_contents = ResourceType.NONE
+
+

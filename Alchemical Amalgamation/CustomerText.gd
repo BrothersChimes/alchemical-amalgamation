@@ -1,6 +1,7 @@
 extends Node2D
 
 signal sell_potion_to(customer_number)
+signal customer_expired(customer_number)
 
 func _on_Customer_click_on_customer(number):
 	emit_signal("sell_potion_to", number)
@@ -20,3 +21,6 @@ func remove_customer(customer_number):
 		2: $Customer2.remove_customer()
 		3: $Customer3.remove_customer()
 		4: $Customer4.remove_customer()
+
+func _on_Customer_time_expired(number):
+	emit_signal("customer_expired", number)

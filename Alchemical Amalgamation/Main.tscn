@@ -433,6 +433,7 @@ autoplay = true
 [connection signal="click_on_holding_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_holding_resource"]
 [connection signal="destroy_resource" from="GameController/Workroom" to="GameController" method="_on_Workroom_destroy_resource"]
 [connection signal="drag_resource_from_shelf" from="GameController/Workroom" to="GameController" method="_on_Workroom_drag_resource_from_shelf"]
+[connection signal="customer_expired" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_customer_expired"]
 [connection signal="sell_potion_to" from="GameController/CustomerText" to="GameController" method="_on_CustomerText_sell_potion_to"]
 [connection signal="input_event" from="GameController/CauldronSet/CauldronArea" to="GameController" method="_on_CauldronArea_input_event"]
 [connection signal="input_event" from="GameController/CauldronSet/BellowsArea" to="GameController" method="_on_BellowsArea_input_event"]

@@ -35,7 +35,12 @@ position = Vector2( 32, 672 )
 customer_number = 4
 
 [connection signal="click_on_customer" from="Customer0" to="." method="_on_Customer_click_on_customer"]
+[connection signal="time_expired" from="Customer0" to="." method="_on_Customer_time_expired"]
 [connection signal="click_on_customer" from="Customer1" to="." method="_on_Customer_click_on_customer"]
+[connection signal="time_expired" from="Customer1" to="." method="_on_Customer_time_expired"]
 [connection signal="click_on_customer" from="Customer2" to="." method="_on_Customer_click_on_customer"]
+[connection signal="time_expired" from="Customer2" to="." method="_on_Customer_time_expired"]
 [connection signal="click_on_customer" from="Customer3" to="." method="_on_Customer_click_on_customer"]
+[connection signal="time_expired" from="Customer3" to="." method="_on_Customer_time_expired"]
 [connection signal="click_on_customer" from="Customer4" to="." method="_on_Customer_click_on_customer"]
+[connection signal="time_expired" from="Customer4" to="." method="_on_Customer_time_expired"]
