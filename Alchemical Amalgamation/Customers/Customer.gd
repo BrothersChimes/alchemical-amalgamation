@@ -5,6 +5,7 @@ var ResourceType = ResourceTypeFile.ResourceType
 var desired_resource_type 
 
 export var customer_number = 0
+var my_bar
 
 var is_active = true
 
@@ -13,17 +14,19 @@ signal time_expired(number)
 
 func _ready(): 
 	$AltText/AltTextLabel.visible = false
+	my_bar = get_node("ProgressBar" + str(customer_number))
+	my_bar.visible = true
 	
 func _process(delta): 
 	if is_active:
-		$ProgressBar.value -= delta*0.5 # About 3 minutes
-		if $ProgressBar.value <= 0: 
+		my_bar.value -= delta*0.5 # About 3 minutes
+		if my_bar.value <= 0: 
 			emit_signal("time_expired", customer_number)
 		# NEED UNIQUE STYLE BOXES TO USE THIS
-#		var r = range_lerp($ProgressBar.value, 1, 100, 1, 0)
-#		var g = range_lerp($ProgressBar.value, 1, 100, 0, 1)
-#		var styleBox = $ProgressBar.get("custom_styles/fg")
-#		styleBox.bg_color = Color(r, g, 0)
+		var r = range_lerp(my_bar.value, 1, 100, 1, 0)
+		var g = range_lerp(my_bar.value, 1, 100, 0, 1)
+		var styleBox = my_bar.get("custom_styles/fg")
+		styleBox.bg_color = Color(r, g, 0)
 		
 		
 func _on_Area2D_input_event(viewport, event, shape_idx):
@@ -36,7 +39,7 @@ func set_customer_message_and_item(message,resource_type):
 	$RichTextLabel.text = message
 	visible = true
 	$ItemPlacement/Sprite.texture = load(ResourceTypeFile.sprite_path_for_resource_type(resource_type))
-	$ProgressBar.value = 80 + randf()*20
+	my_bar.value = 50 + randf()*50
 	
 func remove_customer(): 
 	visible = false
