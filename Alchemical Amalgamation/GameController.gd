@@ -23,9 +23,9 @@ var day = 0
 var gold = 100
 var rep = 0
 
-const DAY_LENGTH = 3
+var day_length = 300 # Seconds the day lasts
 var day_timer = 0
-var day_first_third = DAY_LENGTH / 3
+var day_first_third = day_length / 3
 var day_second_third = day_first_third*2
 
 var customer_desired_resources = [
@@ -38,6 +38,9 @@ func _ready():
 
 func _process(delta): 
 	cauldron_process(delta)
+	mortar_process(delta)
+	spiral_process(delta)
+	alembic_process(delta)
 	if Input.is_action_just_pressed("drop_potion"):
 		drop_potion_event()
 	day_process(delta)
@@ -47,19 +50,19 @@ func is_day_successful():
 	if day == 0: 
 		return gold >= 30 and rep >= 5
 	elif day == 1: 
-		return gold >= 50 and rep >= 12
+		return gold >= 100 and rep >= 10
 	elif day == 2: 
-		return gold >= 200 and rep >= 10
+		return gold >= 300 and rep >= 20
 	elif day == 3: 
-		return gold >= 200 and rep >= 10
+		return gold >= 500 and rep >= 30
 	elif day == 4: 
-		return gold >= 200 and rep >= 10
+		return gold >= 800 and rep >= 40
 	elif day == 5: 
-		return gold >= 200 and rep >= 10
+		return gold >= 1200 and rep >= 40
 	elif day == 6: 
-		return gold >= 200 and rep >= 10
+		return gold >= 1500 and rep >= 40
 	else: 
-		return gold >= 200 and rep >= 10
+		return gold >= 2000 and rep >= 40
 
 func day_process(delta): 
 	var is_success = is_day_successful()
@@ -71,14 +74,16 @@ func day_process(delta):
 		return
 
 	### TODO Debug - remove
-	if Input.is_action_just_pressed("end_day"):
-		$SuccessAndFailureText.set_text_none()
-		day = day + 1
-		print("DAY: " + str(day))
-		emit_signal("end_day", true, gold, rep)
-		setup_for_day(day)
+#	if Input.is_action_just_pressed("end_day"):
+#		$SuccessAndFailureText.set_text_none()
+#		day = day + 1
+#		print("DAY: " + str(day))
+#		emit_signal("end_day", true, gold, rep)
+#		setup_for_day(day)
+	### ^^^^^^^^^^^^^^^^^^^^^ ####
+	
 	day_timer += delta
-	if day_timer >= DAY_LENGTH:
+	if day_timer >= day_length:
 		$SuccessAndFailureText.set_text_none()
 		emit_signal("end_day", is_success, gold, rep)
 		setup_for_day(day)
@@ -92,6 +97,10 @@ func day_process(delta):
 func restart_day(): 
 	set_carried_resource_to(ResourceType.NONE)
 	day_timer = 0
+	if day < 7: 
+		day_length = 300 + 60 * day
+	else: 
+		day_length = 720
 	rep = 0
 	$Clock/AnimatedSprite.frame = 0
 	$Gold.set_gold(gold)
@@ -107,6 +116,14 @@ func setup_for_day(day_num):
 		setup_for_day_1()
 	elif day_num == 2: 
 		setup_for_day_2()
+	elif day_num == 3: 
+		setup_for_day_3()
+	elif day_num == 4: 
+		setup_for_day_4()
+	elif day_num == 5: 
+		setup_for_day_5()
+	elif day_num == 6: 
+		setup_for_day_6()
 	else: 
 		setup_for_final_days()
 	restart_day()
@@ -115,30 +132,55 @@ func setup_for_day_0():
 	gold = 20
 	has_cauldron_set = false
 	remove_child(cauldron_set)
+	remove_child(mortar_set)
+	remove_child(spiral_set)
+	remove_child(alembic_set)
 	$WoodArea.visible = false
 	$CoalArea.visible = false
 	$ShovelArea.visible = false
 	$CombinatorOutArea.visible = false
 
 func setup_for_day_1(): 
-	gold = 100
+	gold = 20
 	$CombinatorOutArea.visible = true
 
 func setup_for_day_2(): 
-	gold = 200
+	gold = 50
 	has_cauldron_set = true
 	add_child(cauldron_set)
 	$WoodArea.visible = true
 	$CoalArea.visible = true
 	$ShovelArea.visible = true
 
+func setup_for_day_3(): 
+	gold = 100
+	has_mortar_set = true
+	add_child(mortar_set)
+
+func setup_for_day_4():
+	gold = 100
+	add_child(alembic_set)
+	has_spiral = true
+
+func setup_for_day_5():	
+	gold = 100
+	add_child(spiral_set)
+	has_alembic = true
+
+func setup_for_day_6():
+	gold = 100
+	
 func setup_for_final_days(): 
-	gold = 400
+	gold = 100
 	pass
 
 func add_gold(extra_gold): 
 	gold += extra_gold
 	$Gold.set_gold(gold)
+	var price_text = ""
+	if extra_gold > 0:
+		price_text = "+"
+	$PriceTextLower.text = price_text + str(extra_gold) + "gp"
 	
 func add_reputation(extra_reputation): 
 	rep += extra_reputation
@@ -207,6 +249,10 @@ func destroy_carried_resource():
 func _on_Workroom_drop_resource():
 	set_carried_resource_to(ResourceType.NONE)
 	
+
+func _on_CustomerText_customer_expired(customer_number):
+	customer_fail(customer_number)	
+
 func _on_CustomerText_sell_potion_to(customer_number):
 	if resource_carried == ResourceType.NONE:
 		return
@@ -215,13 +261,19 @@ func _on_CustomerText_sell_potion_to(customer_number):
 		$SuccessAndFailureText.set_text_success(sale_price, 1)
 		add_gold(sale_price)
 		add_reputation(1)
+		cycle_customer(customer_number)
 	else:
-		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
-		$SuccessAndFailureText.set_text_failure(sale_price, 5)
-		add_gold(-sale_price*2)
-		add_reputation(-5)
-	cycle_customer(customer_number)
+		customer_fail(customer_number)
 	set_carried_resource_to(ResourceType.NONE)
+
+func customer_fail(customer_number): 
+	var lost_gold = (1+day)*5
+	var lost_rep = 3
+	var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
+	$SuccessAndFailureText.set_text_failure(lost_gold, lost_rep)
+	add_gold(- lost_gold)
+	add_reputation(-3)
+	cycle_customer(customer_number)
 
 func cycle_customer(customer_number): 
 	$CustomerText.remove_customer(customer_number)
@@ -437,3 +489,144 @@ func _on_Workroom_click_on_holding_resource(resource, number):
 	set_carried_resource_to(resource)
 	$Workroom.set_holder_to(was_carried, number)
 	$Workroom/PickUpPotionSound.play()
+
+
+### MORTAR.
+const MortarRecipe = preload("res://Stations/MortarRecipe.gd")
+var mortar_recipe = MortarRecipe.new()
+
+onready var mortar_set = get_node("MortarSet")
+var mortar_contents = ResourceType.NONE
+var is_mortar_done = false
+const REQUIRED_PESTLE_SLAMS = 6
+var pestle_slams = 0
+var	has_mortar_set = false
+
+func mortar_process(_delta):
+	if not has_mortar_set: 
+		return
+	if not is_mortar_done: 
+		if Input.is_action_just_pressed("pestle_left") and pestle_slams % 2 == 0:
+			 mortar_slam_pestle()
+		elif Input.is_action_just_pressed("pestle_right") and pestle_slams % 2 == 1: 
+			mortar_slam_pestle()
+	
+func _on_MortarSet_mortar_click():
+	if not has_mortar_set: 
+		return
+	if resource_carried != ResourceType.NONE and mortar_contents == ResourceType.NONE:
+		pestle_slams = 0
+		mortar_contents = mortar_recipe.recipe_for(resource_carried).Output
+		mortar_set.add_ingredient_to_mortar()
+		is_mortar_done = false
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and mortar_contents != ResourceType.NONE:
+		if is_mortar_done:
+			set_carried_resource_to(mortar_contents)
+			mortar_set.take_ingredient_from_mortar()
+			mortar_contents = ResourceType.NONE
+		else: 
+			mortar_slam_pestle()
+				
+func mortar_slam_pestle(): 
+	if pestle_slams < REQUIRED_PESTLE_SLAMS: 
+		pestle_slams += 1
+		mortar_set.slam_pestle()
+		$MortarSet/PestleSound.play()
+	else: 
+		is_mortar_done = true
+		mortar_set.finish_mortar()
+	
+### Spiralmouth.
+const SpiralRecipe = preload("res://Stations/SpiralRecipe.gd")
+var spiral_recipe = SpiralRecipe.new()
+
+onready var spiral_set = get_node("SpiralmouthSet")
+var spiral_contents = ResourceType.NONE
+var is_spiral_done = false
+const SPIRAL_FINISH_TIME = 15
+var spiral_time = 0
+var	has_spiral = false
+
+func spiral_process(delta):
+	if not has_spiral: 
+		return
+	if spiral_contents != ResourceType.NONE and not is_spiral_done: 
+		spiral_time += delta
+		if spiral_time >= SPIRAL_FINISH_TIME: 
+			spiral_set.finish_spiral()
+			is_spiral_done = true
+
+func _on_SpiralmouthSet_spiral_click():
+	if not has_spiral: 
+		return
+	if resource_carried != ResourceType.NONE and spiral_contents == ResourceType.NONE:
+		spiral_time = 0
+		spiral_contents = spiral_recipe.recipe_for(resource_carried).Output
+		spiral_set.add_ingredient_to_spiral()
+		is_spiral_done = false
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and spiral_contents != ResourceType.NONE:
+		spiral_set.take_ingredient_from_spiral()
+		if is_spiral_done:
+			set_carried_resource_to(spiral_contents)
+		else: 
+			set_carried_resource_to(ResourceType.CRAP)
+		spiral_contents = ResourceType.NONE
+
+### Alembic
+const AlembicRecipe = preload("res://Stations/AlembicRecipe.gd")
+var alembic_recipe = AlembicRecipe.new()
+
+onready var alembic_set = get_node("AlembicSet")
+var alembic_contents = ResourceType.NONE
+var is_alembic_done = false
+const ALEMBIC_FINISH_TIME = 5
+const ALEMBIC_WRONG_TEMP_ALLOWED_TIME = 4
+var alembic_time = 0
+var has_alembic = false
+var alembic_wrong_temp_time = 0
+
+func alembic_process(delta):
+	if not has_alembic: 
+		return
+	if alembic_contents != ResourceType.NONE and not is_alembic_done: 
+		alembic_time += delta
+		if not does_alembic_have_right_temp(): 
+			alembic_wrong_temp_time += delta
+			$AlembicSet/AlembicStatusLabel.visible = true
+		else: 
+			$AlembicSet/AlembicStatusLabel.visible = false
+		if alembic_wrong_temp_time >= ALEMBIC_WRONG_TEMP_ALLOWED_TIME:
+			is_alembic_done = true
+			alembic_set.finish_alembic()
+			alembic_contents = ResourceType.CRAP
+		if alembic_time >= ALEMBIC_FINISH_TIME: 
+			alembic_set.finish_alembic()
+			is_alembic_done = true
+
+func does_alembic_have_right_temp():
+	var ember_level = cauldron_set.get_heat_level_embers()
+	return ember_level >= Heat.HIGH
+
+func _on_AlembicSet_alembic_click():
+	if not has_alembic: 
+		return
+	if resource_carried != ResourceType.NONE and alembic_contents == ResourceType.NONE:
+		alembic_time = 0
+		alembic_wrong_temp_time = 0
+		$AlembicSet/AlembicStatusLabel.visible = false
+		alembic_contents = alembic_recipe.recipe_for(resource_carried).Output
+		alembic_set.add_ingredient_to_alembic()
+		is_alembic_done = false
+		set_carried_resource_to(ResourceType.NONE)
+	elif resource_carried == ResourceType.NONE and alembic_contents != ResourceType.NONE:
+		alembic_set.take_ingredient_from_alembic()
+		$AlembicSet/AlembicStatusLabel.visible = false
+		if is_alembic_done:
+			set_carried_resource_to(alembic_contents)
+		else: 
+			set_carried_resource_to(ResourceType.CRAP)
+		alembic_contents = ResourceType.NONE
+
+

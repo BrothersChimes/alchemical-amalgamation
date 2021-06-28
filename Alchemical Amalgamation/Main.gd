@@ -2,6 +2,7 @@ extends Node2D
 
 # TODO this would work better as a state enum
 var is_book_open = true
+var is_music_on = true
 
 var game_controller
 var book
@@ -15,6 +16,7 @@ func _ready():
 	book = $Book
 	book.visible = true
 	remove_child(game_controller)
+	$MusicCobweb.play()
 
 func _on_GameController_open_book():
 	open_book()
@@ -35,6 +37,7 @@ func open_book():
 	remove_child(game_controller)
 	$BookOpenSound.play()
 	$BookCloseSound.stop()
+	# $MusicController.visible = false
 	
 func close_book():
 	is_book_open = false
@@ -42,18 +45,27 @@ func close_book():
 	remove_child(book)
 	$BookOpenSound.stop()
 	$BookCloseSound.play()
-
+	# $MusicController.visible = true
+	
 func _on_GameController_end_day(is_success, gold, rep):
 	if is_success:
 		day += 1
 		book.add_sucess_page(day)
 	else: 
 		book.add_failure_page(day)
-	#else: 
-	#	book.set_failure_page(day)
 	open_book()
-	# day_display.set_success(is_success, gold, rep)
-#	if is_success:
-#		day += 1
-#	is_day_display_open = true
-#	add_child(day_display)
+
+func _on_MusicControllerArea2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		if is_music_on:
+			$GameController/MusicController.music_off()
+			is_music_on = false
+			$MusicCobweb.stop()
+		else: 
+			$GameController/MusicController.music_on()
+			is_music_on = true
+			$MusicCobweb.play()
+		
+func _on_BookArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
+		open_book()

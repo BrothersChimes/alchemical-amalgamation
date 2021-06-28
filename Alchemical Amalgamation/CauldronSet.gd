@@ -27,7 +27,6 @@ enum Heat {
 	BLAZE
 }
 
-
 func _ready(): 
 	$CauldronDone.visible = false
 

@@ -139,6 +139,7 @@ centered = false
 
 [node name="BellowsSound" type="AudioStreamPlayer" parent="Bellows"]
 stream = ExtResource( 12 )
+volume_db = -20.0
 
 [node name="Cauldron" type="Node2D" parent="."]
 position = Vector2( 288, 48 )
@@ -164,6 +165,8 @@ frames = SubResource( 11 )
 frame = 3
 centered = false
 
+[node name="FireSound" type="AudioStreamPlayer" parent="Fire"]
+
 [node name="Coals" type="Node2D" parent="."]
 position = Vector2( 688, 352 )
 
@@ -174,6 +177,7 @@ centered = false
 
 [node name="CoalSound" type="AudioStreamPlayer" parent="Coals"]
 stream = ExtResource( 13 )
+volume_db = -10.0
 
 [node name="Wood" type="Node2D" parent="."]
 position = Vector2( 288, 192 )
@@ -186,6 +190,7 @@ centered = false
 
 [node name="WoodSound" type="AudioStreamPlayer" parent="Wood"]
 stream = ExtResource( 14 )
+volume_db = -10.0
 
 [node name="CauldronDone" type="Node2D" parent="."]
 visible = false
@@ -204,6 +209,7 @@ centered = false
 
 [node name="CauldronDoneSound" type="AudioStreamPlayer" parent="CauldronDone"]
 stream = ExtResource( 18 )
+volume_db = -10.0
 
 [node name="CauldronRuined" type="Node2D" parent="."]
 visible = false
@@ -222,6 +228,7 @@ centered = false
 
 [node name="CauldronFailSound" type="AudioStreamPlayer2D" parent="CauldronRuined"]
 stream = ExtResource( 19 )
+volume_db = -10.0
 
 [node name="CauldronBusy" type="Node2D" parent="."]
 visible = false
@@ -240,11 +247,14 @@ centered = false
 
 [node name="CauldronStartSound" type="AudioStreamPlayer" parent="CauldronBusy"]
 stream = ExtResource( 16 )
+volume_db = -10.0
 
 [node name="ShovelCoalSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+volume_db = -10.0
 
 [node name="DropLiquidSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = -10.0
 
 [connection signal="animation_finished" from="Bellows/BellowsSprite" to="." method="_on_BellowsSprite_animation_finished"]

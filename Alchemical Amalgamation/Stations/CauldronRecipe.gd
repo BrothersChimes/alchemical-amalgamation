@@ -24,7 +24,12 @@ class Recipe:
 var recipes = [
 	create_recipe(ResourceType.MERMAID, 5, ResourceType.BOILED_MERMAID, Heat.LOW, Heat.HIGH),
 	create_recipe(ResourceType.BLOSSOM, 5, ResourceType.FLAMING_BLOSSOM, Heat.MED, Heat.BLAZE),
+	create_recipe(ResourceType.BRAINBARK, 5, ResourceType.GENIUS_BLISTER, Heat.MED, Heat.HIGH),
+	create_recipe(ResourceType.BEHEMOTH_DUST, 5, ResourceType.CARBUNCLE, Heat.LOW, Heat.MED),
 ]
+
+func recipes(): 
+	return recipes
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, 1, ResourceType.CRAP, 
 		Heat.DEAD, Heat.BLAZE)

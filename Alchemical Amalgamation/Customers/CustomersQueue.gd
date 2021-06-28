@@ -46,12 +46,12 @@ func which_day():
 	return rand_list[which_point] 
 
 var customers_day_0 = [
-	create_customer("Water, please!", ResourceType.WATER),
+	create_customer("I'm thirsty!", ResourceType.WATER),
 	create_customer("I want an Etter Cap!", ResourceType.ETTERCAP),
 ]
 
 var customers_day_1 = [
-	create_customer("Gimme that mermaid horn!", ResourceType.MERMAID),
+	create_customer("Gimme that mermaid fang!", ResourceType.MERMAID),
 	create_customer("Some pure awesome!", ResourceType.AWESOME),
 	create_customer("LIQUID AWESOME", ResourceType.LIQUID_AWESOME),
 	create_customer("I want Maid's Cap", ResourceType.MAIDS_CAP),
@@ -62,22 +62,41 @@ var customers_day_2 = [
 	create_customer("Riddle me this...", ResourceType.RIDDLER),
 	create_customer("I require a FLAMING blossom!", ResourceType.FLAMING_BLOSSOM),
 	create_customer("Give me Burner's Hair", ResourceType.BURNERS_HAIR),
-	create_customer("Boiled Mermaid Horn", ResourceType.BOILED_MERMAID),
+	create_customer("Boiled Mermaid fang", ResourceType.BOILED_MERMAID),
 ]
 
 var customers_day_3 = [
 	create_customer("I need a Behemoth part", ResourceType.BEHEMOTH),
 	create_customer("Some mysterious ectoplasm", ResourceType.ECTOPLASM),
 	create_customer("Iron Spice!", ResourceType.IRON_SPICE),
+	create_customer("I need fang shards", ResourceType.FANG_SHARD),
+	create_customer("Behemoth Dust", ResourceType.BEHEMOTH_DUST),
+	create_customer("Powder for vengeance!", ResourceType.VENGEANCE_POWDER),
+	create_customer("Arrr I need to keel haul!", ResourceType.BARNACLE_PASTE),
+	create_customer("Car... buncle?", ResourceType.CARBUNCLE),
 ]
 	
 var customers_day_4 = [
 	create_customer("What is brain bark?", ResourceType.BRAINBARK),
 	create_customer("MMmmmm... honey!", ResourceType.HONEY),
+	create_customer("Jelly jelly jelly", ResourceType.WERE_JELLY),
+	create_customer("Dragon Sauce.", ResourceType.DRAGON_SAUCE),
+	create_customer("Dragon's Bite.", ResourceType.DRAGON_BITE),
+	create_customer("I need something sticky", ResourceType.STICKY_SAUCE),
+	create_customer("Mm yeah melt that spice", ResourceType.MELTED_SPICE),
+	create_customer("I need that hard spice", ResourceType.HARDENED_SPICE),
+	create_customer("Genius! Blister!", ResourceType.GENIUS_BLISTER),
+	create_customer("Brain bran for Brian!", ResourceType.BRAIN_BRAN),
 ]
 
 var customers_day_5 = [
+	create_customer("Ecto... plasma", ResourceType.ECTO_PLASMA),
+	create_customer("Essence of the dragon.", ResourceType.ESSENCE_DRAGON),
+	create_customer("Revenge... of the dragon.", ResourceType.REVENGE_DRAGON),
 	create_customer("STUN. BRICK.", ResourceType.STUNBRICK),
+	create_customer("Some mortar for my pestle.", ResourceType.PESTLE_MORTAR),
+	create_customer("Really dry dust.", ResourceType.DUST_OF_DRYNESS),
+	create_customer("DIAMOND SPICE", ResourceType.DIAMOND_SPICE),
 ]
 
 var customers =  [

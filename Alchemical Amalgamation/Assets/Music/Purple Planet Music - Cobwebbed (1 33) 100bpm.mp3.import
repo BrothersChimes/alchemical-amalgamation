@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Purple Planet Music - Cobwebbed (1 33) 100bpm.mp3-b6fa3a4d07f6c34b2af8bdb766bb1435.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Purple Planet Music - Cobwebbed (1 33) 100bpm.mp3"
+dest_files=[ "res://.import/Purple Planet Music - Cobwebbed (1 33) 100bpm.mp3-b6fa3a4d07f6c34b2af8bdb766bb1435.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
