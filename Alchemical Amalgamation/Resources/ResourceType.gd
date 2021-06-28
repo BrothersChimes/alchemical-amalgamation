@@ -74,7 +74,7 @@ static func display_name(resource_type):
 		ResourceType.MERMAID:
 			return "Mermaid Fang"
 		ResourceType.WATER: 
-			return "Distilled Water"
+			return "Aqua"
 		ResourceType.BRAINBARK:
 			return "Brainbark Stem"
 		ResourceType.HONEY:
@@ -142,88 +142,86 @@ static func buy_price_for(resource_type):
 		return 0
 	match resource_type:
 		#### RAW MATERIALS ####
-		ResourceType.AWESOME:
-			return 15	
-		ResourceType.BEHEMOTH:
-			return 80	
-		ResourceType.BLOSSOM:
-			return 20	
-		ResourceType.ECTOPLASM:
-			return 80	
-		ResourceType.ETTERCAP:
-			return 5
-		ResourceType.RIDDLER:
-			return 50
-		ResourceType.MERMAID:
-			return 10
 		ResourceType.WATER: 
+			return 1
+		ResourceType.ETTERCAP:
+			return 1
+		ResourceType.MERMAID:
 			return 2
+		ResourceType.AWESOME:
+			return 2	
+		ResourceType.BLOSSOM:
+			return 3	
+		ResourceType.RIDDLER:
+			return 3
+		ResourceType.BEHEMOTH:
+			return 5	
+		ResourceType.ECTOPLASM:
+			return 5	
 		ResourceType.BRAINBARK:
-			return 100
+			return 8
 		ResourceType.HONEY:
-			return 120
+			return 8
 		ResourceType.STUNBRICK:
-			return 200
+			return 13
 
 static func sale_price_for(resource_type): 
 	if is_resource_raw(resource_type): 
-		return int(buy_price_for(resource_type)*1.5)
+		return int((buy_price_for(resource_type)+1)*1.5)
 	#### POTIONS ####
 	match resource_type:
 		ResourceType.CRAP:
 			return 0
 		ResourceType.LIQUID_AWESOME:
-			return 40
+			return 6
 		ResourceType.BOILED_MERMAID:
-			return 40
+			return 10
 		ResourceType.MAIDS_CAP:
-			return 32
+			return 6
 		ResourceType.BURNERS_HAIR:
 			return 50
 		ResourceType.FLAMING_BLOSSOM:
-			return 100
-		ResourceType.IRON_SPICE:
-			return 200
-		ResourceType.FANG_SHARD:
 			return 15
-		ResourceType.VENGEANCE_POWDER:
-			return 60
-		ResourceType.BEHEMOTH_DUST:
-			return 100
-		ResourceType.ECTO_PLASMA:
-			return 200
-		ResourceType.DRAGON_SAUCE:
+		ResourceType.IRON_SPICE:
 			return 150
+		ResourceType.FANG_SHARD:
+			return 5
+		ResourceType.VENGEANCE_POWDER:
+			return 8
+		ResourceType.BEHEMOTH_DUST:
+			return 12
+		ResourceType.ECTO_PLASMA:
+			return 50
+		ResourceType.DRAGON_SAUCE:
+			return 40
 		ResourceType.ESSENCE_DRAGON:
 			return 150
 		ResourceType.REVENGE_DRAGON:
-			return 150
+			return 290
 		ResourceType.DRAGON_BITE:
-			return 150
+			return 100
 		ResourceType.STICKY_SAUCE:
-			return 150
+			return 85
 		ResourceType.BARNACLE_PASTE:
-			return 150
+			return 80
 		ResourceType.WERE_JELLY:
-			return 150
+			return 20
 		ResourceType.GENIUS_BLISTER:
-			return 150
-		ResourceType.BARNACLE_PASTE: 
-			return 150
+			return 24
 		ResourceType.PESTLE_MORTAR:
-			return 150
+			return 300
 		ResourceType.HARDENED_SPICE:
-			return 150
+			return 350
 		ResourceType.BRAIN_BRAN:
-			return 150
+			return 20
 		ResourceType.CARBUNCLE:
-			return 150
+			return 40
 		ResourceType.DUST_OF_DRYNESS:
-			return 150
+			return 30
 		ResourceType.MELTED_SPICE:
-			return 150
+			return 200
 		ResourceType.DIAMOND_SPICE:
-			return 150
+			return 400
 
 			
 static func sprites_names_for_resource_types(resource_type): 

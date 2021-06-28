@@ -1,13 +1,6 @@
 Day 0
-	Mermaid
-	Awesome
-	Blossom
-	Riddler
-	Behemoth
-	Ectoplasm
-	Brainbark
-	Honey
-	Stunbrick
+	Water
+	Ettercap
 
 Day 1
 	Mermaid

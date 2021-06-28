@@ -3,14 +3,10 @@ extends Node
 const ResourceTypeFile = preload("res://Resources/ResourceType.gd")
 var ResourceType = ResourceTypeFile.ResourceType
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 class Recipe:
 	var Ingredients : Array
 	var Output: int
-	
 	
 var recipes_for_book = [
 	create_recipe(ResourceType.WATER, ResourceType.AWESOME, ResourceType.NONE, ResourceType.LIQUID_AWESOME),
@@ -25,10 +21,6 @@ var recipes_for_book = [
 	create_recipe(ResourceType.MELTED_SPICE, ResourceType.BRAIN_BRAN, ResourceType.NONE, ResourceType.HARDENED_SPICE),
 ]
 
-var recipes = [
-	create_recipe(ResourceType.NONE, ResourceType.NONE, ResourceType.NONE, ResourceType.NONE),
-].append_array(recipes_for_book)
-
 func recipes_for_book(): 
 	return recipes_for_book
 
@@ -42,7 +34,12 @@ func recipe_for(ingredients):
 	var sorted_array = ingredients.duplicate()
 	sorted_array.sort()
 	
-	for recipe in recipes: 
+	if ingredients[0] == ResourceType.NONE and \
+		ingredients[1] == ResourceType.NONE and  \
+		ingredients[2] == ResourceType.NONE:
+			return  ResourceType.NONE
+	
+	for recipe in recipes_for_book: 
 		var rec_ingredients = recipe.Ingredients.duplicate()
 		rec_ingredients.sort() 
 	
