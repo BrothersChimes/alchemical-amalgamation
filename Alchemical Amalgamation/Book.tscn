@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -36,6 +36,8 @@
 [ext_resource path="res://Assets/Stations/station_clock.png" type="Texture" id=34]
 [ext_resource path="res://Assets/UI/UI_reputation.png" type="Texture" id=35]
 [ext_resource path="res://Assets/UI/UI_coin.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Ingredients/potion_red.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Stations/shelf_store.png" type="Texture" id=38]
 [ext_resource path="res://Assets/Stations/station_pestle.png" type="Texture" id=40]
 [ext_resource path="res://Assets/Stations/station_mortar_in_use.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Ingredients/ingredient_stunbrick.png" type="Texture" id=42]
@@ -1223,6 +1225,7 @@ centered = false
 [node name="Line3Sprite" type="AnimatedSprite" parent="Day4/Left"]
 position = Vector2( 600.536, 424.875 )
 frames = SubResource( 13 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1340,6 +1343,7 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="Day5" type="Node2D" parent="."]
+visible = false
 position = Vector2( 2, 0 )
 
 [node name="Left" type="Node2D" parent="Day5"]
@@ -2962,6 +2966,209 @@ position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
+[node name="ShelfStore" type="Node2D" parent="."]
+
+[node name="Left" type="Node2D" parent="ShelfStore"]
+
+[node name="TitleSprite" type="Sprite" parent="ShelfStore/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="ShelfStore/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 15 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Storage Shelf"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="ShelfStore/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You can click on the top of the shelf to store potions"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="ShelfStore/Left"]
+margin_left = 145.0
+margin_top = 328.0
+margin_right = 602.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "If you right-click with a potion in your hand, it will automatically go to the shelf"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="ShelfStore/Left"]
+margin_left = 133.175
+margin_top = 499.049
+margin_right = 590.175
+margin_bottom = 595.049
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You can store up to 4 potions"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="ShelfStore/Left"]
+margin_left = 133.175
+margin_top = 567.919
+margin_right = 590.175
+margin_bottom = 667.919
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "(Right-clicking failed potions will instead destroy them)"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="ShelfStore/Left"]
+position = Vector2( 600.536, 209.579 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 37 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="ShelfStore/Left"]
+position = Vector2( 600.536, 326.424 )
+scale = Vector2( 4, 4 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="ShelfStore/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="ShelfStore/Left"]
+position = Vector2( 588.711, 562.357 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Right" type="Node2D" parent="ShelfStore"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="ShelfStore/Right"]
+position = Vector2( 427.282, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 38 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="ShelfStore/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 15 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="ShelfStore/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="ShelfStore/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="ShelfStore/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="ShelfStore/Right"]
+margin_left = 146.587
+margin_top = 548.87
+margin_right = 603.587
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="ShelfStore/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="ShelfStore/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="ShelfStore/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="ShelfStore/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
 [node name="Cauldron" type="Node2D" parent="."]
 visible = false
 
@@ -3177,7 +3384,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 23 )
-frame = 1
+frame = 3
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3288,7 +3495,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 23 )
-frame = 1
+frame = 3
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3818,7 +4025,6 @@ centered = false
 position = Vector2( 319.282, 160 )
 scale = Vector2( 16, 16 )
 frames = SubResource( 37 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -4133,7 +4339,6 @@ centered = false
 position = Vector2( 222, 600 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 40 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false

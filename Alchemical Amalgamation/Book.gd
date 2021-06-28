@@ -20,6 +20,7 @@ var pagenumbers = [
 	"CustomersIngredients",
 	"Joiner",
 	"Trashcan",
+	"ShelfStore",
 	"Cauldron",
 	"FireLevels",
 	"CoalBellows",
