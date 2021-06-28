@@ -46,12 +46,12 @@ func which_day():
 	return rand_list[which_point] 
 
 var customers_day_0 = [
-	create_customer("Water, please!", ResourceType.WATER),
+	create_customer("I'm thirsty!", ResourceType.WATER),
 	create_customer("I want an Etter Cap!", ResourceType.ETTERCAP),
 ]
 
 var customers_day_1 = [
-	create_customer("Gimme that mermaid horn!", ResourceType.MERMAID),
+	create_customer("Gimme that mermaid fang!", ResourceType.MERMAID),
 	create_customer("Some pure awesome!", ResourceType.AWESOME),
 	create_customer("LIQUID AWESOME", ResourceType.LIQUID_AWESOME),
 	create_customer("I want Maid's Cap", ResourceType.MAIDS_CAP),
@@ -62,7 +62,7 @@ var customers_day_2 = [
 	create_customer("Riddle me this...", ResourceType.RIDDLER),
 	create_customer("I require a FLAMING blossom!", ResourceType.FLAMING_BLOSSOM),
 	create_customer("Give me Burner's Hair", ResourceType.BURNERS_HAIR),
-	create_customer("Boiled Mermaid Horn", ResourceType.BOILED_MERMAID),
+	create_customer("Boiled Mermaid fang", ResourceType.BOILED_MERMAID),
 ]
 
 var customers_day_3 = [
@@ -72,7 +72,7 @@ var customers_day_3 = [
 	create_customer("I need fang shards", ResourceType.FANG_SHARD),
 	create_customer("Behemoth Dust", ResourceType.BEHEMOTH_DUST),
 	create_customer("Powder for vengeance!", ResourceType.VENGEANCE_POWDER),
-	create_customer("Barnacle paste, please!", ResourceType.BARNACLE_PASTE),
+	create_customer("Arrr I need to keel haul!", ResourceType.BARNACLE_PASTE),
 	create_customer("Car... buncle?", ResourceType.CARBUNCLE),
 ]
 	

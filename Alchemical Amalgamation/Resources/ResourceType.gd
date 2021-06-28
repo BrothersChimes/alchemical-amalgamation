@@ -114,14 +114,12 @@ static func display_name(resource_type):
 			return "Dragon's Bite"
 		ResourceType.STICKY_SAUCE:
 			return "Sticky Sauce"
-		ResourceType.BARNACLE_PASTE:
-			return "Barnacle Paste"
 		ResourceType.WERE_JELLY:
 			return "Were-jelly"
 		ResourceType.GENIUS_BLISTER:
 			return "Genius Blister"
 		ResourceType.BARNACLE_PASTE: 
-			return "Barnacle Paste"
+			return "Keel Haul"
 		ResourceType.PESTLE_MORTAR:
 			return "Pestle Mortar"
 		ResourceType.HARDENED_SPICE:
@@ -173,29 +171,29 @@ static func sale_price_for(resource_type):
 		ResourceType.CRAP:
 			return 0
 		ResourceType.LIQUID_AWESOME:
-			return 6
-		ResourceType.BOILED_MERMAID:
 			return 10
+		ResourceType.BOILED_MERMAID:
+			return 20
 		ResourceType.MAIDS_CAP:
-			return 6
+			return 10
 		ResourceType.BURNERS_HAIR:
 			return 50
 		ResourceType.FLAMING_BLOSSOM:
 			return 15
 		ResourceType.IRON_SPICE:
-			return 150
+			return 100
 		ResourceType.FANG_SHARD:
-			return 5
+			return 10
 		ResourceType.VENGEANCE_POWDER:
-			return 8
+			return 10
 		ResourceType.BEHEMOTH_DUST:
-			return 12
+			return 15
 		ResourceType.ECTO_PLASMA:
 			return 50
 		ResourceType.DRAGON_SAUCE:
-			return 40
+			return 60
 		ResourceType.ESSENCE_DRAGON:
-			return 150
+			return 180
 		ResourceType.REVENGE_DRAGON:
 			return 290
 		ResourceType.DRAGON_BITE:
@@ -203,13 +201,13 @@ static func sale_price_for(resource_type):
 		ResourceType.STICKY_SAUCE:
 			return 85
 		ResourceType.BARNACLE_PASTE:
-			return 80
+			return 90
 		ResourceType.WERE_JELLY:
 			return 20
 		ResourceType.GENIUS_BLISTER:
 			return 24
 		ResourceType.PESTLE_MORTAR:
-			return 300
+			return 380
 		ResourceType.HARDENED_SPICE:
 			return 350
 		ResourceType.BRAIN_BRAN:
@@ -288,8 +286,6 @@ static func sprites_names_for_resource_types(resource_type):
 			return "green"
 		ResourceType.GENIUS_BLISTER:
 			return "lavender"
-		ResourceType.BARNACLE_PASTE: 
-			return "bile"
 		ResourceType.PESTLE_MORTAR:
 			return "peach"
 		ResourceType.HARDENED_SPICE:

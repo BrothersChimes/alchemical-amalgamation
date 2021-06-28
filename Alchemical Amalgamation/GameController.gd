@@ -23,9 +23,9 @@ var day = 0
 var gold = 100
 var rep = 0
 
-const DAY_LENGTH = 300 # Seconds the day lasts
+var day_length = 300 # Seconds the day lasts
 var day_timer = 0
-var day_first_third = DAY_LENGTH / 3
+var day_first_third = day_length / 3
 var day_second_third = day_first_third*2
 
 var customer_desired_resources = [
@@ -74,14 +74,16 @@ func day_process(delta):
 		return
 
 	### TODO Debug - remove
-	if Input.is_action_just_pressed("end_day"):
-		$SuccessAndFailureText.set_text_none()
-		day = day + 1
-		print("DAY: " + str(day))
-		emit_signal("end_day", true, gold, rep)
-		setup_for_day(day)
+#	if Input.is_action_just_pressed("end_day"):
+#		$SuccessAndFailureText.set_text_none()
+#		day = day + 1
+#		print("DAY: " + str(day))
+#		emit_signal("end_day", true, gold, rep)
+#		setup_for_day(day)
+	### ^^^^^^^^^^^^^^^^^^^^^ ####
+	
 	day_timer += delta
-	if day_timer >= DAY_LENGTH:
+	if day_timer >= day_length:
 		$SuccessAndFailureText.set_text_none()
 		emit_signal("end_day", is_success, gold, rep)
 		setup_for_day(day)
@@ -95,6 +97,10 @@ func day_process(delta):
 func restart_day(): 
 	set_carried_resource_to(ResourceType.NONE)
 	day_timer = 0
+	if day < 7: 
+		day_length = 300 + 60 * day
+	else: 
+		day_length = 720
 	rep = 0
 	$Clock/AnimatedSprite.frame = 0
 	$Gold.set_gold(gold)
@@ -171,6 +177,10 @@ func setup_for_final_days():
 func add_gold(extra_gold): 
 	gold += extra_gold
 	$Gold.set_gold(gold)
+	var price_text = ""
+	if extra_gold > 0:
+		price_text = "+"
+	$PriceTextLower.text = price_text + str(extra_gold) + "gp"
 	
 func add_reputation(extra_reputation): 
 	rep += extra_reputation
@@ -248,9 +258,10 @@ func _on_CustomerText_sell_potion_to(customer_number):
 		add_gold(sale_price)
 		add_reputation(1)
 	else:
-		var lost_gold = (1+day)*10
+		var lost_gold = (1+day)*5
+		var lost_rep = 3
 		var sale_price = ResourceTypeFile.sale_price_for(resource_carried)
-		$SuccessAndFailureText.set_text_failure(lost_gold, 3)
+		$SuccessAndFailureText.set_text_failure(lost_gold, lost_rep)
 		add_gold(- lost_gold)
 		add_reputation(-3)
 	cycle_customer(customer_number)

@@ -416,7 +416,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 5 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -470,6 +470,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -625,7 +626,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 6 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -640,7 +641,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 50 gold"
+text = "Have at least 100 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -655,7 +656,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 12 rep"
+text = "Have at least 8 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -679,7 +680,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -839,7 +840,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 7 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -854,7 +855,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 80 gold"
+text = "Have at least 300 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -869,7 +870,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 15 rep"
+text = "Have at least 12 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -893,7 +894,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -964,7 +965,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "But they also cost you more if you give the wrong thing"
+text = "Selling the wrong potion costs you gold and reputation"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1049,7 +1050,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 8 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1064,7 +1065,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 80 gold"
+text = "Have at least 500 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1079,7 +1080,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 15 rep"
+text = "Have at least 18 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1103,7 +1104,6 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1225,7 +1225,6 @@ centered = false
 [node name="Line3Sprite" type="AnimatedSprite" parent="Day4/Left"]
 position = Vector2( 600.536, 424.875 )
 frames = SubResource( 13 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1267,7 +1266,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 9 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1282,7 +1281,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 80 gold"
+text = "Have at least 800 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1297,7 +1296,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 15 rep"
+text = "Have at least 18 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1321,6 +1320,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1475,7 +1475,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 10 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1490,7 +1490,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 80 gold"
+text = "Have at least 1200 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1505,7 +1505,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 15 rep"
+text = "Have at least 20 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1529,6 +1529,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1681,7 +1682,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Before the end of the day:"
+text = "Before 11 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1696,7 +1697,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 80 gold"
+text = "Have at least 1500 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1711,7 +1712,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Have at least 15 rep"
+text = "Have at least 25 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1735,7 +1736,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1872,6 +1873,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1886,6 +1888,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before 12 minutes pass"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1900,6 +1903,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 2000 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1914,6 +1918,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 30 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1933,19 +1938,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="DayN/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="DayN/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 6 )
+frame = 1
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="DayN/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 36 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="DayN/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 35 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="DayN/Right"]
@@ -2967,6 +2978,7 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="ShelfStore" type="Node2D" parent="."]
+visible = false
 
 [node name="Left" type="Node2D" parent="ShelfStore"]
 
@@ -3384,7 +3396,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 23 )
-frame = 3
+frame = 4
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3495,7 +3507,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 23 )
-frame = 3
+frame = 4
 speed_scale = 0.25
 playing = true
 centered = false
@@ -4025,6 +4037,7 @@ centered = false
 position = Vector2( 319.282, 160 )
 scale = Vector2( 16, 16 )
 frames = SubResource( 37 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -4339,6 +4352,7 @@ centered = false
 position = Vector2( 222, 600 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 40 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
