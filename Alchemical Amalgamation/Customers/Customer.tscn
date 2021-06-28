@@ -101,7 +101,7 @@ shape = SubResource( 4 )
 [node name="ProgressBar0" type="ProgressBar" parent="."]
 visible = false
 margin_left = 8.0
-margin_top = 112.0
+margin_top = 116.0
 margin_right = 184.0
 margin_bottom = 126.0
 custom_styles/fg = SubResource( 6 )
@@ -115,7 +115,7 @@ __meta__ = {
 [node name="ProgressBar1" type="ProgressBar" parent="."]
 visible = false
 margin_left = 8.0
-margin_top = 112.0
+margin_top = 116.0
 margin_right = 184.0
 margin_bottom = 126.0
 custom_styles/fg = SubResource( 7 )
@@ -129,7 +129,7 @@ __meta__ = {
 [node name="ProgressBar2" type="ProgressBar" parent="."]
 visible = false
 margin_left = 8.0
-margin_top = 112.0
+margin_top = 116.0
 margin_right = 184.0
 margin_bottom = 126.0
 custom_styles/fg = SubResource( 8 )
@@ -143,7 +143,7 @@ __meta__ = {
 [node name="ProgressBar3" type="ProgressBar" parent="."]
 visible = false
 margin_left = 8.0
-margin_top = 112.0
+margin_top = 116.0
 margin_right = 184.0
 margin_bottom = 126.0
 custom_styles/fg = SubResource( 9 )
@@ -157,7 +157,7 @@ __meta__ = {
 [node name="ProgressBar4" type="ProgressBar" parent="."]
 visible = false
 margin_left = 8.0
-margin_top = 112.0
+margin_top = 116.0
 margin_right = 184.0
 margin_bottom = 126.0
 custom_styles/fg = SubResource( 10 )

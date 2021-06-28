@@ -26,7 +26,7 @@ func _process(delta):
 		var r = range_lerp(my_bar.value, 1, 100, 1, 0)
 		var g = range_lerp(my_bar.value, 1, 100, 0, 1)
 		var styleBox = my_bar.get("custom_styles/fg")
-		styleBox.bg_color = Color(r, g, 0)
+		styleBox.bg_color = Color(r/2, g/2, 0.2)
 		
 		
 func _on_Area2D_input_event(viewport, event, shape_idx):
@@ -39,7 +39,7 @@ func set_customer_message_and_item(message,resource_type):
 	$RichTextLabel.text = message
 	visible = true
 	$ItemPlacement/Sprite.texture = load(ResourceTypeFile.sprite_path_for_resource_type(resource_type))
-	my_bar.value = 50 + randf()*50
+	my_bar.value = 80 + randf()*20
 	
 func remove_customer(): 
 	visible = false
