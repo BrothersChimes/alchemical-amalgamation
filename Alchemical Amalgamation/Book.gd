@@ -9,11 +9,12 @@ signal close_book_to_day_display(is_left)
 
 var had_failure = false
 
-const MAX_DAY = 6
+const MAX_DAY = 7
 
-var index = 0
+var index = 1
 
 var pagenumbers = [
+	"Credits",
 	"Day0",
 	"WelcomePurpose",
 	"CustomersIngredients",
@@ -29,10 +30,10 @@ var pagenumbers = [
 ]
 
 func _ready():
-	get_node(pagenumbers[0]).visible = true
+	get_node(pagenumbers[1]).visible = true
 	for page in pagenumbers:
 		get_node(page).visible = false
-	get_node(pagenumbers[0]).visible = true
+	get_node(pagenumbers[1]).visible = true
 	
 func _process(delta):
 	var cur_index = index
@@ -46,30 +47,30 @@ func _process(delta):
 
 func add_sucess_page(day): 
 	if had_failure: 
-		change_page_to(1)
-		pagenumbers.remove(0)
+		change_page_to(2)
+		pagenumbers.remove(1)
 		had_failure = false
 	if day == MAX_DAY: 
-		change_page_to(0)
+		change_page_to(1)
 		pagenumbers.insert(MAX_DAY, "DayN")
 		change_page_to(MAX_DAY)
 		return
 	elif day > MAX_DAY:
 		change_page_to(MAX_DAY)
 		return
-	change_page_to(0)
-	pagenumbers.insert(day, "Day" + str(day))
-	change_page_to(day)
+	change_page_to(1)
+	pagenumbers.insert(day+1, "Day" + str(day))
+	change_page_to(day+1)
 
 func add_failure_page(day): 
 	if had_failure: 
-		change_page_to(0)
+		change_page_to(1)
 		return
 	had_failure = true
 	get_node(pagenumbers[index]).visible = false
-	index = 0
-	pagenumbers.insert(0, "FAIL")
-	get_node(pagenumbers[0]).visible = true
+	index = 1
+	pagenumbers.insert(1, "FAIL")
+	get_node(pagenumbers[1]).visible = true
 
 func change_page_to(page): 
 	var cur_index = index
@@ -88,7 +89,6 @@ func right_action():
 	if index < pagenumbers.size() - 1 + $BookPair.num_pages():
 		index += 1
 	else: 
-		pass
 		index = 0
 		
 func space_action(): 

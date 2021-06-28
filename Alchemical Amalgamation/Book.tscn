@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Assets/Ingredients/ingredient_ectoplasm.png" type="Texture" id=26]
 [ext_resource path="res://Book/BookPair.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/Ingredients/potion_green.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Stations/station_aludel_in_use-export.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Sounds/book_flip_quick.mp3" type="AudioStream" id=30]
 [ext_resource path="res://Assets/UI/close_button.png" type="Texture" id=31]
 [ext_resource path="res://Assets/UI/book_next.png" type="Texture" id=32]
@@ -92,6 +93,22 @@ region = Rect2( 64, 0, 64, 96 )
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=47]
+animations = [ {
+"frames": [ SubResource( 45 ), SubResource( 46 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
@@ -299,7 +316,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Press Right (right) to read the game instructions. "
+text = "Click on objects to interact with them"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -314,7 +331,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Press TAB (tab) to open and close this book."
+text = "Take items from the shelf and sell them to customers"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -329,7 +346,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Click on objects to interact with them"
+text = "Close this book with TAB or by cliicking the X top-right"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -344,7 +361,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Click on items on the shelf and sell them to customers."
+text = "Play around a bit before you read all the instructions!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -451,7 +468,6 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -661,6 +677,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -785,6 +802,7 @@ centered = false
 [node name="Line4Sprite" type="AnimatedSprite" parent="Day2/Left"]
 position = Vector2( 600.536, 543.308 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 centered = false
 
@@ -873,6 +891,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -958,6 +977,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You now have a mortar and pestle in which to grind"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -972,6 +992,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click on it or use A and D"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -987,6 +1008,8 @@ centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day3/Left"]
 position = Vector2( 600.536, 424.875 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day3/Left"]
@@ -1078,7 +1101,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1134,6 +1157,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You have an aludel you need to heat with coals"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1148,6 +1172,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Use Q or click on the shovel to send the embers over"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1162,6 +1187,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Remember to keep that fire burning hot to get embers!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1176,6 +1202,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Remember to put coal in the fire to get it hot enough"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1183,18 +1210,28 @@ __meta__ = {
 
 [node name="Line1Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 190.53 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 29 )
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 308.963 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 49 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="Day4/Left"]
+[node name="Line3Sprite" type="AnimatedSprite" parent="Day4/Left"]
 position = Vector2( 600.536, 424.875 )
+frames = SubResource( 47 )
+frame = 1
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day4/Left"]
 position = Vector2( 600.536, 543.308 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Right" type="Node2D" parent="Day4"]
@@ -1213,6 +1250,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1227,6 +1265,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1241,6 +1280,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 80 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1255,6 +1295,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 15 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1274,19 +1315,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Day4/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day4/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 6 )
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 36 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day4/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 35 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day4/Right"]
@@ -1328,7 +1374,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Day 5"
+text = "You now have a spiralmouth"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1343,6 +1389,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "It takes a long time, so get those ingredients in early! "
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1389,7 +1436,9 @@ position = Vector2( 600.536, 424.875 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day5/Left"]
-position = Vector2( 600.536, 543.308 )
+position = Vector2( 532, 384 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 45 )
 centered = false
 
 [node name="Right" type="Node2D" parent="Day5"]
@@ -1408,6 +1457,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1422,6 +1472,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1436,6 +1487,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 80 gold"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1450,6 +1502,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 15 rep"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1469,22 +1522,233 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="Day5/Right"]
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day5/Right"]
 position = Vector2( 600.536, 190.53 )
-scale = Vector2( 8, 8 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 6 )
+speed_scale = 0.5
+playing = true
 centered = false
 
 [node name="Line2Sprite" type="Sprite" parent="Day5/Right"]
 position = Vector2( 600.536, 308.963 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 36 )
 centered = false
 
 [node name="Line3Sprite" type="Sprite" parent="Day5/Right"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
+texture = ExtResource( 35 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="Day5/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Day6" type="Node2D" parent="."]
+visible = false
+position = Vector2( 2, 0 )
+
+[node name="Left" type="Node2D" parent="Day6"]
+
+[node name="TitleSprite" type="Sprite" parent="Day6/Left"]
+position = Vector2( 600.037, 66.6708 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Day6/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Day 3"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day6/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "More complex potions sell for more money"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Day6/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "But they also cost you more if you give the wrong thing"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Day6/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Day6/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="Day6/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Day6/Left"]
+position = Vector2( 600.536, 308.963 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Day6/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Day6/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="Day6"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="Day6/Right"]
+position = Vector2( 598.184, 49.5662 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="Day6/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Goal"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="Day6/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Before the end of the day:"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="Day6/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 80 gold"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="Day6/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Have at least 15 rep"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="Day6/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="AnimatedSprite" parent="Day6/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 6 )
+frame = 2
+speed_scale = 0.5
+playing = true
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="Day6/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 36 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="Day6/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 35 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="Day6/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
@@ -1523,6 +1787,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You're on your own from here."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1537,6 +1802,7 @@ rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Good luck, and keep selling potions! "
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1889,32 +2155,17 @@ visible = false
 position = Vector2( 600.037, 66.6708 )
 centered = false
 
-[node name="Line1" type="RichTextLabel" parent="WelcomePurpose/Left"]
-margin_left = 134.512
-margin_top = 54.1693
-margin_right = 591.512
-margin_bottom = 154.169
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Welcome to"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Line2" type="RichTextLabel" parent="WelcomePurpose/Left"]
-margin_left = 147.0
-margin_top = 43.6744
-margin_right = 604.0
-margin_bottom = 205.674
+margin_left = 142.0
+margin_top = 16.0
+margin_right = 599.0
+margin_bottom = 178.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 11 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "
-ALCHEMICAL AMALGAMATION!"
+ALCHEMICAL AMALGAMATION"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2926,7 +3177,7 @@ centered = false
 position = Vector2( 408.461, 2.66965 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 20 )
-frame = 4
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3037,7 +3288,7 @@ position = Vector2( 662.718, 0 )
 position = Vector2( 545.839, 14.6561 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 20 )
-frame = 4
+frame = 2
 speed_scale = 0.25
 playing = true
 centered = false
@@ -3374,7 +3625,6 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 31 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -3567,7 +3817,6 @@ centered = false
 position = Vector2( 319.282, 160 )
 scale = Vector2( 16, 16 )
 frames = SubResource( 34 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -3882,7 +4131,6 @@ centered = false
 position = Vector2( 222, 600 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 37 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false

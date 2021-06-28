@@ -23,7 +23,7 @@ var day = 0
 var gold = 100
 var rep = 0
 
-const DAY_LENGTH = 180 # Seconds the day lasts
+const DAY_LENGTH = 300 # Seconds the day lasts
 var day_timer = 0
 var day_first_third = DAY_LENGTH / 3
 var day_second_third = day_first_third*2

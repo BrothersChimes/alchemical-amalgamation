@@ -401,6 +401,8 @@ volume_db = -10.0
 stream = ExtResource( 31 )
 autoplay = true
 
+[connection signal="end_day" from="GameController" to="." method="_on_GameController_end_day"]
+[connection signal="open_book" from="GameController" to="." method="_on_GameController_open_book"]
 [connection signal="input_event" from="GameController/SuccessAndFailureText/BookArea" to="GameController" method="_on_BookArea_input_event"]
 [connection signal="click_on_combinator_output" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_output"]
 [connection signal="click_on_combinator_slot" from="GameController/Workroom" to="GameController" method="_on_Workroom_click_on_combinator_slot"]
