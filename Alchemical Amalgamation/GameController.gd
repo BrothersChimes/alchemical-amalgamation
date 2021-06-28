@@ -50,19 +50,19 @@ func is_day_successful():
 	if day == 0: 
 		return gold >= 30 and rep >= 5
 	elif day == 1: 
-		return gold >= 100 and rep >= 8
+		return gold >= 100 and rep >= 10
 	elif day == 2: 
-		return gold >= 300 and rep >= 12
+		return gold >= 300 and rep >= 20
 	elif day == 3: 
-		return gold >= 500 and rep >= 15
+		return gold >= 500 and rep >= 30
 	elif day == 4: 
-		return gold >= 800 and rep >= 18
+		return gold >= 800 and rep >= 40
 	elif day == 5: 
-		return gold >= 1200 and rep >= 20
+		return gold >= 1200 and rep >= 40
 	elif day == 6: 
-		return gold >= 1500 and rep >= 25
+		return gold >= 1500 and rep >= 40
 	else: 
-		return gold >= 2000 and rep >= 30
+		return gold >= 2000 and rep >= 40
 
 func day_process(delta): 
 	var is_success = is_day_successful()
