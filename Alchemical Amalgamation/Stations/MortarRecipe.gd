@@ -11,6 +11,9 @@ var recipes = [
 	create_recipe(ResourceType.MERMAID,ResourceType.FANG_SHARD),
 	create_recipe(ResourceType.RIDDLER, ResourceType.VENGEANCE_POWDER),
 	create_recipe(ResourceType.BEHEMOTH,ResourceType.BEHEMOTH_DUST),
+	create_recipe(ResourceType.BRAINBARK,ResourceType.BRAIN_BRAN),
+	create_recipe(ResourceType.STUNBRICK,ResourceType.DUST_OF_DRYNESS),
+
 ]
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)

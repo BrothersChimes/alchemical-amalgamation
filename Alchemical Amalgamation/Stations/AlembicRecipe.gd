@@ -8,7 +8,9 @@ class Recipe:
 	var Output: int
 	
 var recipes = [
-	create_recipe(ResourceType.FLAMING_BLOSSOM, ResourceType.DRAGON_SAUCE)
+	create_recipe(ResourceType.FLAMING_BLOSSOM, ResourceType.DRAGON_SAUCE),
+	create_recipe(ResourceType.HONEY, ResourceType.WERE_JELLY),
+	create_recipe(ResourceType.IRON_SPICE, ResourceType.MELTED_SPICE),
 ]
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)

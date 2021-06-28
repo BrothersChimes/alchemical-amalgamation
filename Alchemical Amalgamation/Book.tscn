@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_book.png" type="Texture" id=2]
@@ -207,37 +207,89 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 50 )
 region = Rect2( 240, 0, 80, 16 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 50 )
 region = Rect2( 320, 0, 80, 16 )
-
-[sub_resource type="SpriteFrames" id=45]
-animations = [ {
-"frames": [ SubResource( 43 ), SubResource( 44 ) ],
-"loop": true,
-"name": "default",
-"speed": 1.0
-} ]
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 12 )
-region = Rect2( 128, 0, 64, 96 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 12 )
-region = Rect2( 64, 0, 64, 96 )
 
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
 "frames": [ SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=49]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=51]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=52]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 64, 96 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 64, 96 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=53]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=54]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=55]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=56]
+size = 40
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=39]
 size = 32
@@ -255,13 +307,13 @@ font_data = ExtResource( 48 )
 size = 32
 font_data = ExtResource( 48 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=37]
+[sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=38]
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 32, 32 )
 
 [node name="Book" type="Node2D"]
@@ -463,6 +515,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -672,7 +725,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -885,7 +938,7 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 2
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -1091,7 +1144,6 @@ __meta__ = {
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -3385,7 +3437,6 @@ centered = false
 position = Vector2( 440.497, 36.0407 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 29 )
-frame = 2
 speed_scale = 0.5
 playing = true
 centered = false
@@ -3578,6 +3629,7 @@ centered = false
 position = Vector2( 319.282, 160 )
 scale = Vector2( 16, 16 )
 frames = SubResource( 32 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -3791,6 +3843,7 @@ scale = Vector2( 8, 8 )
 centered = false
 
 [node name="AlembicAludel" type="Node2D" parent="."]
+visible = false
 
 [node name="Left" type="Node2D" parent="AlembicAludel"]
 
@@ -3890,7 +3943,8 @@ centered = false
 [node name="Line4Sprite" type="AnimatedSprite" parent="AlembicAludel/Left"]
 position = Vector2( 222, 600 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 45 )
+frames = SubResource( 35 )
+frame = 1
 speed_scale = 0.5
 playing = true
 centered = false
@@ -4481,25 +4535,132 @@ position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="BurnersMermaid" type="Node2D" parent="."]
+[node name="BlossomBurner" type="Node2D" parent="."]
 visible = false
 
-[node name="Left" type="Node2D" parent="BurnersMermaid"]
+[node name="Left" type="Node2D" parent="BlossomBurner"]
 
-[node name="TitleSprite" type="Sprite" parent="BurnersMermaid/Left"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BlossomBurner/Left"]
+position = Vector2( 576.033, 280.064 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 48 )
+speed_scale = 0.25
+playing = true
+centered = false
+
+[node name="TitleSprite" type="Sprite" parent="BlossomBurner/Left"]
+position = Vector2( 606, 80 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="BlossomBurner/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 49 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Flaming Blossom"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="BlossomBurner/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 50 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="BlossomBurner/Left"]
+margin_left = 145.0
+margin_top = 328.0
+margin_right = 602.0
+margin_bottom = 544.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 50 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Opulence Blossom boiled in the Cauldron over a medium or hot fire until ready."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="BlossomBurner/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 50 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="BlossomBurner/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 50 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="BlossomBurner/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="BlossomBurner/Left"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="BlossomBurner/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="BlossomBurner/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="BlossomBurner"]
+position = Vector2( 678, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="BlossomBurner/Right"]
 position = Vector2( 526, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="BurnersMermaid/Left"]
+[node name="Title" type="RichTextLabel" parent="BlossomBurner/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 610.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 51 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Burner's Hair"
 scroll_active = false
@@ -4507,14 +4668,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="BurnersMermaid/Left"]
-margin_left = 153.99
-margin_top = 298.393
-margin_right = 610.99
-margin_bottom = 398.393
+[node name="Line1" type="RichTextLabel" parent="BlossomBurner/Right"]
+margin_left = 144.0
+margin_top = 200.0
+margin_right = 601.0
+margin_bottom = 300.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 52 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Maid's Cap Potion"
 scroll_active = false
@@ -4522,14 +4683,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="BurnersMermaid/Left"]
-margin_left = 153.99
-margin_top = 422.07
-margin_right = 610.99
-margin_bottom = 522.07
+[node name="Line2" type="RichTextLabel" parent="BlossomBurner/Right"]
+margin_left = 144.0
+margin_top = 312.0
+margin_right = 601.0
+margin_bottom = 412.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 52 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Flaming Blossom"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="BlossomBurner/Right"]
+margin_left = 144.0
+margin_top = 408.0
+margin_right = 601.0
+margin_bottom = 508.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 52 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Pure Awesome"
 scroll_active = false
@@ -4537,14 +4713,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="BurnersMermaid/Left"]
-margin_left = 153.99
-margin_top = 537.424
-margin_right = 610.99
-margin_bottom = 637.424
+[node name="Line4" type="RichTextLabel" parent="BlossomBurner/Right"]
+margin_left = 144.0
+margin_top = 520.0
+margin_right = 601.0
+margin_bottom = 620.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 52 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Combine"
 scroll_active = false
@@ -4552,51 +4728,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="BurnersMermaid/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="BurnersMermaid/Left"]
-position = Vector2( 609.526, 284.923 )
+[node name="Line1Sprite" type="Sprite" parent="BlossomBurner/Right"]
+position = Vector2( 584, 200 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="BurnersMermaid/Left"]
-position = Vector2( 609.526, 403.356 )
+[node name="Line2Sprite" type="Sprite" parent="BlossomBurner/Right"]
+position = Vector2( 584, 296 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="BlossomBurner/Right"]
+position = Vector2( 584, 392 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 21 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="BurnersMermaid/Left"]
-position = Vector2( 609.526, 519.268 )
+[node name="Line4Sprite" type="Sprite" parent="BlossomBurner/Right"]
+position = Vector2( 584, 528 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="BurnersMermaid/Left"]
-position = Vector2( 600.536, 543.308 )
-centered = false
+[node name="BoiledIron" type="Node2D" parent="."]
+visible = false
 
-[node name="Right" type="Node2D" parent="BurnersMermaid"]
-position = Vector2( 662.718, 0 )
+[node name="Left" type="Node2D" parent="BoiledIron"]
+position = Vector2( 22, 8 )
 
-[node name="TitleSprite" type="Sprite" parent="BurnersMermaid/Right"]
+[node name="TitleSprite" type="Sprite" parent="BoiledIron/Left"]
 position = Vector2( 583.282, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 28 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="BurnersMermaid/Right"]
+[node name="Title" type="RichTextLabel" parent="BoiledIron/Left"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
@@ -4611,7 +4778,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="BurnersMermaid/Right"]
+[node name="Line1" type="RichTextLabel" parent="BoiledIron/Left"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -4625,7 +4792,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="BurnersMermaid/Right"]
+[node name="Line2" type="RichTextLabel" parent="BoiledIron/Left"]
 margin_left = 141.0
 margin_top = 362.0
 margin_right = 598.0
@@ -4640,7 +4807,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="BurnersMermaid/Right"]
+[node name="Line3" type="RichTextLabel" parent="BoiledIron/Left"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -4654,7 +4821,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="BurnersMermaid/Right"]
+[node name="Line4" type="RichTextLabel" parent="BoiledIron/Left"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -4668,154 +4835,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="BurnersMermaid/Right"]
+[node name="Line1Sprite" type="Sprite" parent="BoiledIron/Left"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="BurnersMermaid/Right"]
+[node name="Line2Sprite" type="Sprite" parent="BoiledIron/Left"]
 position = Vector2( 606.199, 363.708 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 23 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="BurnersMermaid/Right"]
+[node name="Line3Sprite" type="Sprite" parent="BoiledIron/Left"]
 position = Vector2( 600.536, 424.875 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="BurnersMermaid/Right"]
+[node name="Line4Sprite" type="Sprite" parent="BoiledIron/Left"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BurnersMermaid/Right"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BoiledIron/Left"]
 position = Vector2( 583.435, 348.786 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 35 )
+frames = SubResource( 38 )
+frame = 1
 speed_scale = 0.25
 playing = true
 centered = false
 
-[node name="BlossomSpice" type="Node2D" parent="."]
-visible = false
-
-[node name="Left" type="Node2D" parent="BlossomSpice"]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="BlossomSpice/Left"]
-position = Vector2( 576.033, 280.064 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 35 )
-speed_scale = 0.25
-playing = true
-centered = false
-
-[node name="TitleSprite" type="Sprite" parent="BlossomSpice/Left"]
-position = Vector2( 606, 80 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 29 )
-centered = false
-
-[node name="Title" type="RichTextLabel" parent="BlossomSpice/Left"]
-margin_left = 139.0
-margin_top = 76.0
-margin_right = 600.0
-margin_bottom = 279.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Flaming Blossom"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1" type="RichTextLabel" parent="BlossomSpice/Left"]
-margin_left = 145.0
-margin_top = 204.0
-margin_right = 602.0
-margin_bottom = 304.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line2" type="RichTextLabel" parent="BlossomSpice/Left"]
-margin_left = 145.0
-margin_top = 328.0
-margin_right = 602.0
-margin_bottom = 544.0
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "1x Opulence Blossom boiled in the Cauldron over a medium or hot fire until ready."
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line3" type="RichTextLabel" parent="BlossomSpice/Left"]
-margin_left = 145.0
-margin_top = 443.031
-margin_right = 602.0
-margin_bottom = 543.031
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line4" type="RichTextLabel" parent="BlossomSpice/Left"]
-margin_left = 145.0
-margin_top = 548.87
-margin_right = 602.0
-margin_bottom = 648.87
-rect_pivot_offset = Vector2( 120.95, 48.9917 )
-mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Line1Sprite" type="Sprite" parent="BlossomSpice/Left"]
-position = Vector2( 600.536, 190.53 )
-centered = false
-
-[node name="Line2Sprite" type="Sprite" parent="BlossomSpice/Left"]
-position = Vector2( 600.536, 308.963 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 22 )
-centered = false
-
-[node name="Line3Sprite" type="Sprite" parent="BlossomSpice/Left"]
-position = Vector2( 600.536, 424.875 )
-centered = false
-
-[node name="Line4Sprite" type="Sprite" parent="BlossomSpice/Left"]
-position = Vector2( 600.536, 543.308 )
-centered = false
-
-[node name="Right" type="Node2D" parent="BlossomSpice"]
+[node name="Right" type="Node2D" parent="BoiledIron"]
 position = Vector2( 662.718, 0 )
 
-[node name="TitleSprite" type="Sprite" parent="BlossomSpice/Right"]
+[node name="TitleSprite" type="Sprite" parent="BoiledIron/Right"]
 position = Vector2( 447.282, 80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 29 )
 centered = false
 
-[node name="Title" type="RichTextLabel" parent="BlossomSpice/Right"]
+[node name="Title" type="RichTextLabel" parent="BoiledIron/Right"]
 margin_left = 139.0
 margin_top = 76.0
 margin_right = 603.0
@@ -4830,7 +4889,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1" type="RichTextLabel" parent="BlossomSpice/Right"]
+[node name="Line1" type="RichTextLabel" parent="BoiledIron/Right"]
 margin_left = 145.0
 margin_top = 204.0
 margin_right = 602.0
@@ -4845,7 +4904,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line2" type="RichTextLabel" parent="BlossomSpice/Right"]
+[node name="Line2" type="RichTextLabel" parent="BoiledIron/Right"]
 margin_left = 145.0
 margin_top = 327.677
 margin_right = 602.0
@@ -4860,7 +4919,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line3" type="RichTextLabel" parent="BlossomSpice/Right"]
+[node name="Line3" type="RichTextLabel" parent="BoiledIron/Right"]
 margin_left = 145.0
 margin_top = 443.031
 margin_right = 602.0
@@ -4875,7 +4934,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line4" type="RichTextLabel" parent="BlossomSpice/Right"]
+[node name="Line4" type="RichTextLabel" parent="BoiledIron/Right"]
 margin_left = 145.0
 margin_top = 548.87
 margin_right = 602.0
@@ -4890,25 +4949,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Line1Sprite" type="Sprite" parent="BlossomSpice/Right"]
+[node name="Line1Sprite" type="Sprite" parent="BoiledIron/Right"]
 position = Vector2( 600.536, 190.53 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 27 )
 centered = false
 
-[node name="Line2Sprite" type="Sprite" parent="BlossomSpice/Right"]
+[node name="Line2Sprite" type="Sprite" parent="BoiledIron/Right"]
 position = Vector2( 596.76, 308.963 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 29 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="BlossomSpice/Right"]
+[node name="Line3Sprite" type="Sprite" parent="BoiledIron/Right"]
 position = Vector2( 594.873, 417.324 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 25 )
 centered = false
 
-[node name="Line4Sprite" type="Sprite" parent="BlossomSpice/Right"]
+[node name="Line4Sprite" type="Sprite" parent="BoiledIron/Right"]
 position = Vector2( 600.536, 543.308 )
 texture = ExtResource( 4 )
 centered = false
@@ -4931,7 +4990,7 @@ margin_right = 600.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 53 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Fang Shards"
 scroll_active = false
@@ -4946,7 +5005,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 54 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -4960,7 +5019,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 54 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Mermaid Fang"
 scroll_active = false
@@ -4975,7 +5034,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 54 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Grind in Mortar and Pestle"
 scroll_active = false
@@ -4990,7 +5049,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 54 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5242,7 +5301,7 @@ margin_right = 603.0
 margin_bottom = 220.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 12 )
+custom_fonts/normal_font = SubResource( 55 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Ecto Plasma"
 scroll_active = false
@@ -5257,7 +5316,7 @@ margin_right = 602.0
 margin_bottom = 304.0
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 56 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5271,7 +5330,7 @@ margin_right = 602.0
 margin_bottom = 427.677
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 56 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Haven Ghoul Ectoplasm"
 scroll_active = false
@@ -5286,7 +5345,7 @@ margin_right = 602.0
 margin_bottom = 543.031
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 56 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Condensed in Spiralmouth"
 scroll_active = false
@@ -5301,7 +5360,7 @@ margin_right = 602.0
 margin_bottom = 648.87
 rect_pivot_offset = Vector2( 120.95, 48.9917 )
 mouse_filter = 2
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 56 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 scroll_active = false
 __meta__ = {
@@ -5326,6 +5385,644 @@ texture = ExtResource( 45 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="BehemothPlasma/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="CarbuncleBarnacle" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="CarbuncleBarnacle"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CarbuncleBarnacle/Left"]
+position = Vector2( 576.033, 280.064 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 38 )
+speed_scale = 0.25
+playing = true
+centered = false
+
+[node name="TitleSprite" type="Sprite" parent="CarbuncleBarnacle/Left"]
+position = Vector2( 606, 80 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="CarbuncleBarnacle/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Carbuncle"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="CarbuncleBarnacle/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="CarbuncleBarnacle/Left"]
+margin_left = 145.0
+margin_top = 328.0
+margin_right = 602.0
+margin_bottom = 544.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "1x Behemoth Dust
+
+Low-Medium Heat"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="CarbuncleBarnacle/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="CarbuncleBarnacle/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="CarbuncleBarnacle/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="CarbuncleBarnacle/Left"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="CarbuncleBarnacle/Left"]
+position = Vector2( 600.536, 424.875 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="CarbuncleBarnacle/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="CarbuncleBarnacle"]
+position = Vector2( 678, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="CarbuncleBarnacle/Right"]
+position = Vector2( 526, 80 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="CarbuncleBarnacle/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 610.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Barnacle Paste"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="CarbuncleBarnacle/Right"]
+margin_left = 144.0
+margin_top = 200.0
+margin_right = 601.0
+margin_bottom = 300.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Carbuncle"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="CarbuncleBarnacle/Right"]
+margin_left = 144.0
+margin_top = 312.0
+margin_right = 601.0
+margin_bottom = 412.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Water"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="CarbuncleBarnacle/Right"]
+margin_left = 144.0
+margin_top = 408.0
+margin_right = 601.0
+margin_bottom = 508.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="CarbuncleBarnacle/Right"]
+margin_left = 144.0
+margin_top = 520.0
+margin_right = 601.0
+margin_bottom = 620.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Combine"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="CarbuncleBarnacle/Right"]
+position = Vector2( 584, 200 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="CarbuncleBarnacle/Right"]
+position = Vector2( 584, 296 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="CarbuncleBarnacle/Right"]
+position = Vector2( 584, 392 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="CarbuncleBarnacle/Right"]
+position = Vector2( 584, 528 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="BiteSticky" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="BiteSticky"]
+
+[node name="TitleSprite" type="Sprite" parent="BiteSticky/Left"]
+position = Vector2( 582, 80 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="BiteSticky/Left"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 600.0
+margin_bottom = 268.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Dragon Bite"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="BiteSticky/Left"]
+margin_left = 146.498
+margin_top = 206.997
+margin_right = 603.498
+margin_bottom = 306.997
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="BiteSticky/Left"]
+margin_left = 146.498
+margin_top = 375.623
+margin_right = 603.498
+margin_bottom = 475.623
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Dragon Sauce"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="BiteSticky/Left"]
+margin_left = 147.997
+margin_top = 490.977
+margin_right = 604.997
+margin_bottom = 590.977
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Fang Shard"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="BiteSticky/Left"]
+margin_left = 147.997
+margin_top = 596.816
+margin_right = 604.997
+margin_bottom = 696.816
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Combine"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="BiteSticky/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="BiteSticky/Left"]
+position = Vector2( 603.533, 356.909 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="BiteSticky/Left"]
+position = Vector2( 603.533, 472.821 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="BiteSticky/Left"]
+position = Vector2( 603.533, 591.254 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Right" type="Node2D" parent="BiteSticky"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="BiteSticky/Right"]
+position = Vector2( 503.282, 88 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="BiteSticky/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Sticky Sauce
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="BiteSticky/Right"]
+margin_left = 149.495
+margin_top = 305.885
+margin_right = 606.495
+margin_bottom = 405.885
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Were Jelly"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="BiteSticky/Right"]
+margin_left = 147.997
+margin_top = 429.562
+margin_right = 604.997
+margin_bottom = 529.562
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Genius Blister"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="BiteSticky/Right"]
+margin_left = 149.495
+margin_top = 544.916
+margin_right = 606.495
+margin_bottom = 644.916
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Combine"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="BiteSticky/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="BiteSticky/Right"]
+position = Vector2( 605.031, 292.415 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="BiteSticky/Right"]
+position = Vector2( 605.031, 410.848 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="BiteSticky/Right"]
+position = Vector2( 605.031, 526.76 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="BiteSticky/Right"]
+position = Vector2( 600.536, 543.308 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="ASDF" type="Node2D" parent="."]
+visible = false
+
+[node name="Left" type="Node2D" parent="ASDF"]
+
+[node name="TitleSprite" type="Sprite" parent="ASDF/Left"]
+position = Vector2( 598, 96 )
+scale = Vector2( 4, 4 )
+z_as_relative = false
+texture = ExtResource( 38 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="ASDF/Left"]
+margin_left = 142.0
+margin_top = 80.0
+margin_right = 609.0
+margin_bottom = 268.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Carbuncle"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="ASDF/Left"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="ASDF/Left"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Behemoth Scale"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="ASDF/Left"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Grind in Mortar and Pestle"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="ASDF/Left"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="ASDF/Left"]
+position = Vector2( 600.536, 190.53 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="ASDF/Left"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="ASDF/Left"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 39 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="ASDF/Left"]
+position = Vector2( 600.536, 543.308 )
+centered = false
+
+[node name="Right" type="Node2D" parent="ASDF"]
+position = Vector2( 662.718, 0 )
+
+[node name="TitleSprite" type="Sprite" parent="ASDF/Right"]
+position = Vector2( 495.282, 88 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 47 )
+centered = false
+
+[node name="Title" type="RichTextLabel" parent="ASDF/Right"]
+margin_left = 139.0
+margin_top = 76.0
+margin_right = 603.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 12 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Ecto Plasma"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="RichTextLabel" parent="ASDF/Right"]
+margin_left = 145.0
+margin_top = 204.0
+margin_right = 602.0
+margin_bottom = 304.0
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line2" type="RichTextLabel" parent="ASDF/Right"]
+margin_left = 145.0
+margin_top = 327.677
+margin_right = 602.0
+margin_bottom = 427.677
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Haven Ghoul Ectoplasm"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line3" type="RichTextLabel" parent="ASDF/Right"]
+margin_left = 145.0
+margin_top = 443.031
+margin_right = 602.0
+margin_bottom = 543.031
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Condensed in Spiralmouth"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line4" type="RichTextLabel" parent="ASDF/Right"]
+margin_left = 145.0
+margin_top = 548.87
+margin_right = 602.0
+margin_bottom = 648.87
+rect_pivot_offset = Vector2( 120.95, 48.9917 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1Sprite" type="Sprite" parent="ASDF/Right"]
+position = Vector2( 600.536, 190.53 )
+scale = Vector2( 8, 8 )
+centered = false
+
+[node name="Line2Sprite" type="Sprite" parent="ASDF/Right"]
+position = Vector2( 600.536, 308.963 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Line3Sprite" type="Sprite" parent="ASDF/Right"]
+position = Vector2( 600.536, 424.875 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 45 )
+centered = false
+
+[node name="Line4Sprite" type="Sprite" parent="ASDF/Right"]
 position = Vector2( 600.536, 543.308 )
 scale = Vector2( 8, 8 )
 centered = false
@@ -8067,7 +8764,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseButton/CloseArea2D"]
 position = Vector2( 32, 32 )
-shape = SubResource( 36 )
+shape = SubResource( 43 )
 
 [node name="NextButton" type="Node2D" parent="."]
 position = Vector2( 1414, 728 )
@@ -8081,7 +8778,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextButton/NextArea2D"]
 position = Vector2( 32, 32 )
-shape = SubResource( 37 )
+shape = SubResource( 44 )
 
 [node name="PreviousButton" type="Node2D" parent="."]
 position = Vector2( 62, 728 )
@@ -8095,7 +8792,7 @@ centered = false
 position = Vector2( 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PreviousButton/PreviousArea2D"]
-shape = SubResource( 38 )
+shape = SubResource( 45 )
 
 [connection signal="input_event" from="CloseButton/CloseArea2D" to="." method="_on_CloseArea2D_input_event"]
 [connection signal="input_event" from="NextButton/NextArea2D" to="." method="_on_NextArea2D_input_event"]

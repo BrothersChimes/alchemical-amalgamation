@@ -153,12 +153,12 @@ func setup_for_day_3():
 
 func setup_for_day_4():
 	gold = 100
-	add_child(spiral_set)
+	add_child(alembic_set)
 	has_spiral = true
 
 func setup_for_day_5():	
 	gold = 100
-	add_child(alembic_set)
+	add_child(spiral_set)
 	has_alembic = true
 
 func setup_for_day_6():

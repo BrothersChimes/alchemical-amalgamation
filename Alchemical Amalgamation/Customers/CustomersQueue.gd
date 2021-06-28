@@ -72,18 +72,31 @@ var customers_day_3 = [
 	create_customer("I need fang shards", ResourceType.FANG_SHARD),
 	create_customer("Behemoth Dust", ResourceType.BEHEMOTH_DUST),
 	create_customer("Powder for vengeance!", ResourceType.VENGEANCE_POWDER),
+	create_customer("Barnacle paste, please!", ResourceType.BARNACLE_PASTE),
+	create_customer("Car... buncle?", ResourceType.CARBUNCLE),
 ]
 	
 var customers_day_4 = [
 	create_customer("What is brain bark?", ResourceType.BRAINBARK),
 	create_customer("MMmmmm... honey!", ResourceType.HONEY),
-	create_customer("Ecto... plasma", ResourceType.ECTO_PLASMA),	
+	create_customer("Jelly jelly jelly", ResourceType.WERE_JELLY),
+	create_customer("Dragon Sauce.", ResourceType.DRAGON_SAUCE),
+	create_customer("Dragon's Bite.", ResourceType.DRAGON_BITE),
+	create_customer("I need something sticky", ResourceType.STICKY_SAUCE),
+	create_customer("Mm yeah melt that spice", ResourceType.MELTED_SPICE),
+	create_customer("I need that hard spice", ResourceType.HARDENED_SPICE),
+	create_customer("Genius! Blister!", ResourceType.GENIUS_BLISTER),
+	create_customer("Brain bran for Brian!", ResourceType.BRAIN_BRAN),
 ]
 
 var customers_day_5 = [
-	create_customer("Dragon Sauce.", ResourceType.DRAGON_SAUCE),
-	create_customer("Concentrated Dragon Sauce.", ResourceType.CONCENTRATED_HOT_SAUCE),
+	create_customer("Ecto... plasma", ResourceType.ECTO_PLASMA),
+	create_customer("Essence of the dragon.", ResourceType.ESSENCE_DRAGON),
+	create_customer("Revenge... of the dragon.", ResourceType.REVENGE_DRAGON),
 	create_customer("STUN. BRICK.", ResourceType.STUNBRICK),
+	create_customer("Some mortar for my pestle.", ResourceType.PESTLE_MORTAR),
+	create_customer("Really dry dust.", ResourceType.DUST_OF_DRYNESS),
+	create_customer("DIAMOND SPICE", ResourceType.DIAMOND_SPICE),
 ]
 
 var customers =  [

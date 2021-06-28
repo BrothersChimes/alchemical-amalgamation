@@ -25,7 +25,21 @@ enum ResourceType {
 	BEHEMOTH_DUST,
 	ECTO_PLASMA,
 	DRAGON_SAUCE,
-	CONCENTRATED_HOT_SAUCE,
+	REVENGE_DRAGON,
+	ESSENCE_DRAGON,
+	DRAGON_BITE,
+	STICKY_SAUCE,
+	BARNACLE_PASTE,
+	WERE_JELLY,
+	GENIUS_BLISTER,
+	BARNACLE_PASTE, 
+	PESTLE_MORTAR,
+	HARDENED_SPICE,
+	BRAIN_BRAN,
+	CARBUNCLE,
+	DUST_OF_DRYNESS,
+	MELTED_SPICE,
+	DIAMOND_SPICE,
 }
 
 static func is_resource_raw(resource_type): 
@@ -90,8 +104,36 @@ static func display_name(resource_type):
 			return "Ecto Plasma"
 		ResourceType.DRAGON_SAUCE:
 			return "Dragon Sauce"
-		ResourceType.CONCENTRATED_HOT_SAUCE:
-			return "Concentrated Dragon Sauce"
+		ResourceType.ESSENCE_DRAGON:
+			return "Essence of the Dragon"
+		ResourceType.REVENGE_DRAGON:
+			return "Revenge of the Dragon"
+		ResourceType.DRAGON_BITE:
+			return "Dragon's Bite"
+		ResourceType.STICKY_SAUCE:
+			return "Sticky Sauce"
+		ResourceType.BARNACLE_PASTE:
+			return "Barnacle Paste"
+		ResourceType.WERE_JELLY:
+			return "Were-jelly"
+		ResourceType.GENIUS_BLISTER:
+			return "Genius Blister"
+		ResourceType.BARNACLE_PASTE: 
+			return "Barnacle Paste"
+		ResourceType.PESTLE_MORTAR:
+			return "Pestle Mortar"
+		ResourceType.HARDENED_SPICE:
+			return "Hardened Spice"
+		ResourceType.BRAIN_BRAN:
+			return "Brain Bran"
+		ResourceType.CARBUNCLE:
+			return "Carbuncle"
+		ResourceType.DUST_OF_DRYNESS:
+			return "Dust of Dryness"
+		ResourceType.MELTED_SPICE:
+			return "Melted Spice"
+		ResourceType.DIAMOND_SPICE:
+			return "Diamond Spice"
 			
 static func buy_price_for(resource_type): 
 	if not is_resource_raw(resource_type): 
@@ -150,8 +192,37 @@ static func sale_price_for(resource_type):
 			return 200
 		ResourceType.DRAGON_SAUCE:
 			return 150
-		ResourceType.CONCENTRATED_HOT_SAUCE:
-			return 200
+		ResourceType.ESSENCE_DRAGON:
+			return 150
+		ResourceType.REVENGE_DRAGON:
+			return 150
+		ResourceType.DRAGON_BITE:
+			return 150
+		ResourceType.STICKY_SAUCE:
+			return 150
+		ResourceType.BARNACLE_PASTE:
+			return 150
+		ResourceType.WERE_JELLY:
+			return 150
+		ResourceType.GENIUS_BLISTER:
+			return 150
+		ResourceType.BARNACLE_PASTE: 
+			return 150
+		ResourceType.PESTLE_MORTAR:
+			return 150
+		ResourceType.HARDENED_SPICE:
+			return 150
+		ResourceType.BRAIN_BRAN:
+			return 150
+		ResourceType.CARBUNCLE:
+			return 150
+		ResourceType.DUST_OF_DRYNESS:
+			return 150
+		ResourceType.MELTED_SPICE:
+			return 150
+		ResourceType.DIAMOND_SPICE:
+			return 150
+
 			
 static func sprites_names_for_resource_types(resource_type): 
 	match resource_type:
@@ -203,5 +274,33 @@ static func sprites_names_for_resource_types(resource_type):
 			return "bile"
 		ResourceType.DRAGON_SAUCE:
 			return "red"
-		ResourceType.CONCENTRATED_HOT_SAUCE:
+		ResourceType.ESSENCE_DRAGON:
 			return "brown"
+		ResourceType.DRAGON_BITE:
+			return "orange"
+		ResourceType.REVENGE_DRAGON:
+			return "purple"
+		ResourceType.STICKY_SAUCE:
+			return "lavender"
+		ResourceType.BARNACLE_PASTE:
+			return "teal"
+		ResourceType.WERE_JELLY:
+			return "green"
+		ResourceType.GENIUS_BLISTER:
+			return "lavender"
+		ResourceType.BARNACLE_PASTE: 
+			return "bile"
+		ResourceType.PESTLE_MORTAR:
+			return "peach"
+		ResourceType.HARDENED_SPICE:
+			return "brown"
+		ResourceType.BRAIN_BRAN:
+			return "brown"
+		ResourceType.CARBUNCLE:
+			return "peach"
+		ResourceType.DUST_OF_DRYNESS:
+			return "bile"
+		ResourceType.MELTED_SPICE:
+			return "red"
+		ResourceType.DIAMOND_SPICE:
+			return "teal"

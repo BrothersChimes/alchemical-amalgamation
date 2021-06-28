@@ -1,0 +1,29 @@
+Day 0
+	Mermaid
+	Awesome
+	Blossom
+	Riddler
+	Behemoth
+	Ectoplasm
+	Brainbark
+	Honey
+	Stunbrick
+
+Day 1
+	Mermaid
+	Awesome
+
+Day 2
+	Blossom
+	Riddler
+
+Day 3
+	Behemoth
+	Ectoplasm
+
+Day 4
+	Brainbark
+	Honey
+
+Day 5
+	Stunbrick
