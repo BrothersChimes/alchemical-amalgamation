@@ -13,8 +13,10 @@ var recipes = [
 	create_recipe(ResourceType.BEHEMOTH,ResourceType.BEHEMOTH_DUST),
 	create_recipe(ResourceType.BRAINBARK,ResourceType.BRAIN_BRAN),
 	create_recipe(ResourceType.STUNBRICK,ResourceType.DUST_OF_DRYNESS),
-
 ]
+
+func recipes():
+	return recipes
 
 var CRAP_RECIPE = create_recipe(ResourceType.CRAP, ResourceType.CRAP)
 

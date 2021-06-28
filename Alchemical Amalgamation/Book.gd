@@ -12,6 +12,7 @@ var had_failure = false
 const MAX_DAY = 6
 
 var index = 0
+
 var pagenumbers = [
 	"Day0",
 	"WelcomePurpose",
@@ -25,29 +26,6 @@ var pagenumbers = [
 	"Spiralmouth",
 	"AlembicAludel",
 	"Ingredients",
-	"AwesomeMaid",
-	"BlossomBurner",
-	"BoiledIron",
-	"FangVengeance",
-	"BehemothPlasma",
-	"Credits",
-	#"Page14",
-	#"Page15",
-	#"Page16",
-	#"Page17",
-	#"Page18",
-	#"Page19",
-	#"Page20",
-	#"Page21",
-	#"Page22",
-	#"Page23",
-	#"Page24",
-	#"Page25",
-	#"Page26",
-	#"Page27",
-	#"Page28",
-	#"Page29",
-	#"Page30"
 ]
 
 func _ready():
@@ -103,13 +81,14 @@ func left_action():
 	if index > 0:
 		index -= 1
 	else: 
-		index = pagenumbers.size() - 1
+		index = pagenumbers.size() - 1 + $BookPair.num_pages()
 
 func right_action(): 
 	$BookFlipSound.play()
-	if index < pagenumbers.size() - 1:
+	if index < pagenumbers.size() - 1 + $BookPair.num_pages():
 		index += 1
 	else: 
+		pass
 		index = 0
 		
 func space_action(): 
@@ -127,9 +106,28 @@ func space_action():
 func set_page_based_on_index(cur_index): 
 	# print(index)
 	# print(pagenumbers[index])
-	if cur_index != index:
+	if cur_index == index:
+		return 
+		
+	if cur_index < pagenumbers.size() and index < pagenumbers.size():
 		get_node(pagenumbers[cur_index]).visible = false
 		get_node(pagenumbers[index]).visible = true
+	elif cur_index < pagenumbers.size() and index >= pagenumbers.size():
+		get_node(pagenumbers[cur_index]).visible = false
+		set_recipe_page()
+		$BookPair.visible = true
+	elif cur_index >= pagenumbers.size() and index >= pagenumbers.size():
+		#$BookPair.visible = true
+		set_recipe_page()
+		pass
+	elif cur_index >= pagenumbers.size() and index < pagenumbers.size():
+		get_node(pagenumbers[index]).visible = true
+		$BookPair.visible = false
+
+func set_recipe_page(): 
+	var recipe_index = index - pagenumbers.size()
+	print("RECIPE INDEX: " + str(recipe_index))
+	$BookPair.set_recipe_page_to(recipe_index)
 
 func _on_PreviousArea2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:

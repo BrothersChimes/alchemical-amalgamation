@@ -57,6 +57,8 @@ static func sprite_path_for_resource_type(resource_type):
 static func display_name(resource_type): 
 	match resource_type:
 		#### RAW MATERIALS ####
+		ResourceType.NONE:
+			return ""
 		ResourceType.AWESOME:
 			return "Pure Awesome"	
 		ResourceType.BEHEMOTH:
