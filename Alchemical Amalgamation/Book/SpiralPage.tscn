@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Fonts/BLKCHCRY.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Stations/station_spiral_in_use.png" type="Texture" id=2]
@@ -15,6 +15,18 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 48, 80 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="SpiralPage" type="Node2D"]
 position = Vector2( 662.718, 0 )
@@ -110,10 +122,10 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Line3Sprite" type="Sprite" parent="."]
+[node name="Line3Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 600.818, 480 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
+frames = SubResource( 4 )
 centered = false
 
 [node name="Line4Sprite" type="Sprite" parent="."]

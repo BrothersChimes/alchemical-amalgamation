@@ -74,12 +74,12 @@ func day_process(delta):
 		return
 
 	### TODO Debug - remove
-#	if Input.is_action_just_pressed("end_day"):
-#		$SuccessAndFailureText.set_text_none()
-#		day = day + 1
-#		print("DAY: " + str(day))
-#		emit_signal("end_day", true, gold, rep)
-#		setup_for_day(day)
+	if Input.is_action_just_pressed("end_day"):
+		$SuccessAndFailureText.set_text_none()
+		day = day + 1
+		print("DAY: " + str(day))
+		emit_signal("end_day", true, gold, rep)
+		setup_for_day(day)
 	### ^^^^^^^^^^^^^^^^^^^^^ ####
 	
 	day_timer += delta
